@@ -172,7 +172,7 @@ input[type=button] {
 
 /* Other Colors used */
 body {
-  background: #f1f2f6;
+  background: #2f3640;
   font-family: "Roboto", "sans-serif";
   min-height: 100vh;
   display: flex;
@@ -207,6 +207,46 @@ div.aboutUsSummary div p {
 }
 div.aboutUsSummary div img {
   width: 40%;
+}
+
+.navbar {
+  background-color: #f5f6fa;
+}
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  max-height: 3.5rem;
+}
+.navbar ul div {
+  display: flex;
+}
+.navbar ul div .nav-logo {
+  padding: 0.25rem 1rem;
+}
+.navbar ul div .nav-logo img {
+  height: 100%;
+}
+.navbar ul div .nav-item a {
+  display: block;
+  color: #2d3436;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+}
+.navbar ul div .nav-item a.link:hover {
+  background-color: #00000033;
+  transition: background-color 100ms linear;
+}
+.navbar ul div .nav-item a.active {
+  background-color: #f7941d !important;
+  color: #f5f6fa;
+}
+.navbar ul div .nav-item a.active:hover {
+  filter: brightness(0.8);
+}
+.navbar ul div .title a {
+  padding: 1rem 0;
 }
 
 /*# sourceMappingURL=main.css.map */
