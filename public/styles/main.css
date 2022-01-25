@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 *::after,
 *::before {
@@ -5,9 +7,7 @@
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-weight: normal;
   vertical-align: baseline;
-  // background-position: transparent;
 }
 
 main,
@@ -23,18 +23,18 @@ summary {
   display: block;
 }
 
-//handle box-sizing on an inhereted level
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
-//this helps with img scaling, you might have an issue if you didnt make the mebed. If you do comment out height: auto;
 img,
 object,
 embed {
@@ -42,7 +42,6 @@ embed {
   height: auto;
 }
 
-//add smooth scrolling to your pages
 html {
   overflow-y: auto;
 }
@@ -54,11 +53,13 @@ ul {
 blockquote,
 q {
   quotes: none;
-  &::before,
-  &::after {
-    content: "";
-    content: none;
-  }
+}
+
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
 }
 
 abbr[title],
@@ -74,8 +75,9 @@ table {
 
 th {
   font-weight: bold;
-  vertical-align: bottom; //center is also common
+  vertical-align: bottom;
 }
+
 td {
   font-weight: normal;
 }
@@ -101,16 +103,19 @@ pre {
   word-wrap: break-word;
 }
 
-input [type="radio"] {
+input [type='radio'] {
   vertical-align: text-bottom;
 }
-input [type="checkbox"] {
+
+input [type='checkbox'] {
   vertical-align: bottom;
 }
-.ie7 input [type="checkbox"] {
+
+.ie7 input [type='checkbox'] {
   vertical-align: baseline;
 }
-.ie6 input[type="checkbox"] {
+
+.ie6 input[type='checkbox'] {
   vertical-align: text-bottom;
 }
 
@@ -128,7 +133,6 @@ strong {
   font-weight: bold;
 }
 
-//super and sub text
 sub,
 sup {
   font-size: 75%;
@@ -146,28 +150,45 @@ sub {
 
 .clickable,
 label,
-input[type="button"],
-input[type="submit"],
-input[type="file"],
+input[type='button'],
+input[type='submit'],
+input[type='file'],
 button {
   cursor: pointer;
 }
 
-//fix button for IE7
 button,
-input[type="button"] {
+input[type='button'] {
   width: auto;
   overflow: hidden;
 }
 
-//fix scalable images for IE7
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
 
-//fixing conatiner collapse
 .clearfix::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
+
+/* Other Colors used */
+body {
+  background: #f1f2f6;
+  font-family: 'Roboto', 'sans-serif';
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* Other Colors used */
+.App {
+  background-color: red;
+}
+/*# sourceMappingURL=main.css.map */
