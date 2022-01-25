@@ -1,3 +1,3 @@
 # Vet Project
 
-Simple pet adoption website for use with the West-MEC north-east campus Veterinary program.
+Simple pet adoption page for the use of the West-MEC Northeast Campus Veterinary Program
