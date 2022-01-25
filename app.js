@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const connectDB = require('./db/connect');
+const populateProducts = require('./populate')
 
 //important packages
 require('dotenv').config()

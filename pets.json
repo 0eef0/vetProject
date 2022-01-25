@@ -1,0 +1,58 @@
+[
+    {
+        "Name":"Fluffy",
+        "Age":1,
+        "Medical":[],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[],
+        "Notes":"pees the bed",
+        "IMG":[]
+    },
+    {
+        "Name":"Chad",
+        "Age":1,
+        "Medical":[],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[],
+        "Notes":"pees the bed",
+        "IMG":[]
+    },
+    {
+        "Name":"had",
+        "Age":1,
+        "Medical":[],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[],
+        "Notes":"pees the bed",
+        "IMG":[]
+    },
+    {
+        "Name":"Brad",
+        "Age":1,
+        "Medical":[],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[],
+        "Notes":"pees the bed",
+        "IMG":[]
+    },
+    {
+        "Name":"Tuff",
+        "Age":1,
+        "Medical":[],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[],
+        "Notes":"pees the bed",
+        "IMG":[]
+    }
+
+]
