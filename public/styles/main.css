@@ -208,6 +208,7 @@ body {
 }
 
 .navbar ul div {
+  max-height: 3.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,6 +220,11 @@ body {
 
 .navbar ul div .nav-logo img {
   height: 100%;
+}
+
+.navbar ul div .menu-button {
+  display: none;
+  visibility: hidden;
 }
 
 .navbar ul div .nav-item a {
@@ -247,5 +253,77 @@ body {
 
 .navbar ul div .title a {
   padding: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #f5f6fa;
+    height: 7rem;
+  }
+  .navbar ul .menu-button {
+    display: -ms-grid !important;
+    display: grid !important;
+    visibility: visible !important;
+    place-items: center;
+    margin-left: auto;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+  .navbar ul .menu-button i {
+    font-size: 2.5rem;
+  }
+  .navbar ul .menu-button .fa-bars {
+    -webkit-transition: 150ms;
+    transition: 150ms;
+  }
+  .navbar ul .menu-button .open {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  .navbar ul .links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .navbar ul .links .nav-item {
+    background-color: #f5f6fa;
+  }
+  .navbar ul .links .link {
+    background-color: #f5f6fa;
+  }
+  .navbar ul .links {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transition: -webkit-transform 200ms ease-in-out;
+    transition: -webkit-transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  }
+  .navbar ul .links .link {
+    -webkit-transition: opacity 100ms linear;
+    transition: opacity 100ms linear;
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+  }
+  .navbar ul .links.closed {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+  }
+  .navbar ul .links.closed .link {
+    opacity: 0;
+    -webkit-transition-delay: 0ms;
+            transition-delay: 0ms;
+  }
 }
 /*# sourceMappingURL=main.css.map */
