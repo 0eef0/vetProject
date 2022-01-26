@@ -1,6 +1,7 @@
 [
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
@@ -10,7 +11,8 @@
         "Comfort":true
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
@@ -20,7 +22,8 @@
         "Comfort":true
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
@@ -30,7 +33,8 @@
         "Comfort":true
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
@@ -40,7 +44,8 @@
         "Comfort":true
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
