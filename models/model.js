@@ -3,52 +3,56 @@ const mongoose = require('mongoose');
 const ProductSchema = new mongoose.Schema({
     Name: {
         type: String,
-        required: [true, 'Must provide your name'],
+        required: [true, 'Must provide a name'],
         trim: true
     },
     Age: {
         type: Number,
-        required: [true, 'Must provide a age'],
+        required: [true, 'Must provide the age'],
         trim: true
     },
     Gender: {
         type: String,
-        required: [true, 'Must provide your gender'],
-        trim: true
+        required: [true, 'Must provide their gender'],
+        enum: {
+            value: ['Male', 'Female'],
+            message: '{VALUE} is not supported',
+        }
     },
     Medical: {
-        type: String,
-        required: [true, 'Must provide your medical'],
-        trim: true
+        type: Array,
+        default: null
     },
     Color: {
         type: String,
-        required: [true, 'Must provide your color'],
+        required: [true, 'Must provide their color'],
         trim: true
     },
     Breed: {
         type: String,
-        required: [true, 'Must provide your breed'],
+        required: [true, 'Must provide their breed'],
         trim: true
     },
     Species: {
         type: String,
-        required: [true, 'Must provide your species'],
-        trim: true
+        required: [true, 'Must provide their species'],
+        enum: {
+            value: ['Dog', 'Cat'],
+            message: '{VALUE} is not supported',
+        }
     },
     Personality: {
-        type: String,
-        required: [true, 'Must provide your personality'],
-        trim: true
+        type: Array,
+        required: [true, 'Must provide one personality trait']
     },
-    Note: {
+    Notes: {
         type: String,
-        required: [true, 'Must provide your note'],
+        default: null,
         trim: true
     },
     IMG: {
         type: Array,
-        required: [true, 'Must provide your image'],
+        required: [true, 'Must provide an image'],
         trim: true
     }
 });
