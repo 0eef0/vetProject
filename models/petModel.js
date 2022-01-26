@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ProductSchema = new mongoose.Schema({
+const PetSchema = new mongoose.Schema({
     Name: {
         type: String,
         required: [true, 'Must provide a name'],
@@ -58,4 +58,4 @@ const ProductSchema = new mongoose.Schema({
 });
 
 // This is basic validation not advanced
-module.exports = mongoose.model('model', ProductSchema);
+module.exports = mongoose.model('pets', PetSchema);
