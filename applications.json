@@ -8,7 +8,9 @@
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
         "FirstName":"name",
@@ -19,7 +21,9 @@
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
         "FirstName":"name",
@@ -30,7 +34,9 @@
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
         "FirstName":"name",
@@ -41,7 +47,9 @@
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
         "FirstName":"name",
@@ -52,6 +60,8 @@
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     }
 ]
