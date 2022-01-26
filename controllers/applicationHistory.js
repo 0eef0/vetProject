@@ -1,8 +1,8 @@
-const model = require('../models/model')
+const History = require('../models/petModel')
 
-const getAll = async (req, res) => {
+const getAllThree = async (req, res) => {
     try {
-        const products = await model.find({});
+        const products = await History.find({});
         res.status(201).json({products});
     } catch (error) { res.status(500).json({msg: error}) }
 }
@@ -14,35 +14,35 @@ const getAll = async (req, res) => {
 //     } catch (error) { res.status(500).json({msg: error}) }
 // }
 
-const create = async (req, res) => {
+const createThree = async (req, res) => {
     try {
-        const product = await model.create(req.body);
+        const product = await History.create(req.body);
         res.status(201).json({product});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-const get = async (req, res) => {
+const getThree = async (req, res) => {
     try {
-        const product = await model.findById(req.params.id).exec();
+        const product = await History.findById(req.params.id).exec();
         res.status(201).json({product});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-const update = async (req, res) => {
+const updateThree = async (req, res) => {
     try {
         const {id} = req.params;
         const newProduct = req.body;
-        const products = await model.findOneAndUpdate({_id: id}, newProduct);
+        const products = await History.findOneAndUpdate({_id: id}, newProduct);
         res.status(201).json({products});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-const deleteIt = async (req, res) => {
+const deleteItThree = async (req, res) => {
     try {
-        const product = await model.findByIdAndRemove(req.params.id);
+        const product = await History.findByIdAndRemove(req.params.id);
         res.status(201).json({product});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-module.exports = { getAll, create, get, update, deleteIt };
+module.exports = { getAllThree, createThree, getThree, updateThree, deleteItThree };
 
