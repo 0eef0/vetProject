@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./assets/VetLogo.svg" type="image/x-icon">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <!-- roboto font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <!-- link to css -->
+        <link rel="stylesheet" href="./styles/main.css">
+        <title>Vet Science</title>
+    </head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul>
+            <div class="align-left">
+                <li class="nav-logo"><img src="./assets/VetLogo.svg" alt="West-MEC Veterinary Science Logo"></li>
+                <li class="nav-item title"><a href="">West-MEC Veterinary Science</a></li>
+                <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
+            </div>
+            <div class="align-right links closed">
+                <li class="nav-item"><a class="link" href="./index.html">Home</a></li>
+                <li class="nav-item"><a class="link" href="">About</a></li>
+                <li class="nav-item"><a class="link active" href="./pets.html">Adopt</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="banner">
+        <img src='https://animalcareinfo.com/wp-content/uploads/2018/04/AdobeStock_129584968-1024x388.jpeg' alt='this is a cool image of a dog' />
+        <h1>Adopt A Pet</h1>
+    </div>
+
+    <div class="filters">
+        <div class="selection-buttons">
+            <button id="all" class="active">All</button>
+            <button id="cats">Cats</button>
+            <button id="dogs">Dogs</button>
+        </div>
+        <div class="sorting-inputs">
+            <button class="sort-by-button">
+                <div class="sort-by-container">
+                    <p>Sort By:</p>
+                    <p class="sort-by-value">Age</p>
+                </div>
+            </button>
+            <select name="campus" id="campus-select">
+                <option value="northeast">Northeast Campus</option>
+            </select>
+        </div>
+    </div>
+
+    
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- other js files -->
+    <script src="./js/navbar.js"></script>
+    <script src="./js/pets_filter.js"></script>
+</body>
+</html>

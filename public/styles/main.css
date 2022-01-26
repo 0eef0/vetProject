@@ -371,4 +371,118 @@ div.aboutUsSummary div img {
             transition-delay: 0ms;
   }
 }
+
+.banner {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  -webkit-filter: brightness(45%);
+          filter: brightness(45%);
+}
+
+.banner h1 {
+  position: absolute;
+  color: #f5f6fa;
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem auto;
+  width: clamp(90%, 800px, 50%);
+  background-color: #f5f6fa;
+}
+
+.filters .selection-buttons {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0.25rem 0.5rem;
+}
+
+.filters .selection-buttons button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.25rem;
+  outline: 1px solid #0a0d0f;
+  border-radius: 2px;
+  background-color: #ecf0f1;
+}
+
+.filters .selection-buttons button.active {
+  background-color: #f7941d;
+  color: #f5f6fa;
+  outline: 2px solid #f7941d;
+}
+
+.filters .sorting-inputs {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.filters .sorting-inputs .sort-by-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.filters .sorting-inputs button,
+.filters .sorting-inputs select {
+  padding: 0.5rem 1rem;
+  outline: 1px solid #0a0d0f;
+  border-radius: 2px;
+  background-color: #ecf0f1;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .filters .selection-buttons,
+  .filters .sorting-inputs {
+    font-size: 1.25rem;
+    margin: 0.5rem;
+  }
+  .filters .sorting-inputs {
+    margin-inline: 0;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .filters .sorting-inputs button,
+  .filters .sorting-inputs select {
+    margin: 0 0.75rem;
+  }
+}
 /*# sourceMappingURL=main.css.map */
