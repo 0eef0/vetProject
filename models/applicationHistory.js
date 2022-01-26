@@ -1,59 +1,57 @@
 const mongoose = require('mongoose');
 
-const ApplicationsHistorySchema = new mongoose.Schema({
+const ApplicationsSchema = new mongoose.Schema({
     FirstName: {
         type: String,
-        required: [true, 'Must provide a name'],
+        required: [true, 'Must provide a first name'],
         trim: true
     },
     LastName: {
         type: String,
-        required: [true, 'Must provide a name'],
+        required: [true, 'Must provide a last name'],
         trim: true
     },
     Email: {
         type: String,
-        required: [true, 'Must provide a name'],
+        required: [true, 'Must provide an email'],
         trim: true
     },
     PhoneNumber: {
         type: String,
-        required: [true, 'Must provide a name'],
+        required: [true, 'Must provide a phone number'],
         trim: true
     },
     Age: {
         type: Number,
-        required: [true, 'Must provide a name'],
-        trim: true
+        required: [true, 'Must provide your age'],
     },
     lifeStyles: {
         type: String,
-        required: [true, 'Must provide a name'],
+        required: [true, 'Must provide your lifestyle'],
         trim: true
     },
     HasPets: {
-        required: [true, 'Must provide a name'],
-        trim: true
+        type: Boolean,
+        default: false
     },
     PetHistory: {
         type: String,
-        required: [true, 'Must provide a name'],
+        required: [true, 'Must provide your history with pets'],
         trim: true
     },
-    Comfort: {
-        type: String,
-        required: [true, 'Must provide a name'],
-        trim: true
+    PetFriendly: {
+        type: Boolean,
+        default: false
     },
     Accepted: {
-        required: [true, 'Must provide a name'],
-        trim: true
+        type: Boolean,
+        default: false
     },
     Rejected: {
-        required: [true, 'Must provide a name'],
-        trim: true
+        type: Boolean,
+        default: false
     }
 });
 
 // This is basic validation not advanced
-module.exports = mongoose.model('model', ApplicationsHistorySchema);
+module.exports = mongoose.model('model', ApplicationsSchema);

@@ -8,7 +8,7 @@ const start = async(req,res)=>{
         await animal.deleteMany()
         await animal.create(pets)
         console.log('Success!!!!')
-        process.exit(0)
+        // process.exit(0)
     }catch(error){
         console.log(error)
     }
