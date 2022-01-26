@@ -1,52 +1,67 @@
 [
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     },
     {
-        "Name":"name",
+        "FirstName":"name",
+        "LastName":"name",
         "Email":"Something@example.com",
         "Phone-Number":"123-123-1234",
         "Age":100,
         "lifeStyle":"poor",
         "Has-Pets":true,
         "Pet-History":"Had pets didnt feed them so they died",
-        "Comfort":true
+        "Comfort":true,
+        "Accepted":false,
+        "Rejected":false
     }
 ]
