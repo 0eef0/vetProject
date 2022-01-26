@@ -186,27 +186,60 @@ body {
 
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
-  width: 70%;
+  width: clamp(90%, 70%, 2000px);
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f5f6fa;
   margin-top: 5rem;
   margin-right: auto;
   margin-left: auto;
 }
 div.aboutUsSummary h1 {
   text-align: center;
+  font-size: calc(2vw + 1vh);
 }
 div.aboutUsSummary div {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 1rem;
+  padding: 1vw;
 }
 div.aboutUsSummary div p {
   width: 40%;
+  font-size: calc(1.25vw + 0.5vh);
 }
 div.aboutUsSummary div img {
   width: 40%;
+  min-width: 8rem;
+}
+@media only screen and (max-width: 760px) {
+  div.aboutUsSummary h1 {
+    font-size: 1.25rem;
+  }
+  div.aboutUsSummary div {
+    flex-wrap: wrap;
+  }
+  div.aboutUsSummary div p {
+    order: 2;
+    width: 80%;
+    font-size: 1rem;
+  }
+  div.aboutUsSummary div img {
+    order: 1;
+    width: 80%;
+    margin: 0.1rem;
+  }
+}
+
+/* Style for image gallery */
+div.homeGallery {
+  width: clamp(90%, 70%, 2000px);
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f5f6fa;
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #aboutUs {
@@ -304,6 +337,7 @@ div.aboutUsSummary div img {
 }
 .navbar ul div .nav-logo img {
   height: 100%;
+  width: 100%;
 }
 .navbar ul div .menu-button {
   display: none;
@@ -327,8 +361,15 @@ div.aboutUsSummary div img {
 .navbar ul div .nav-item a.active:hover {
   filter: brightness(0.8);
 }
+.navbar ul div .title {
+  display: grid;
+  place-items: center;
+}
 .navbar ul div .title a {
   padding: 1rem 0;
+  font-size: 1.25rem;
+  font-size: clamp(0.5rem, 4vw, 1.25rem);
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -359,10 +400,10 @@ div.aboutUsSummary div img {
     flex-direction: column;
   }
   .navbar ul .links .nav-item {
-    background-color: #f5f6fa;
+    background-color: #f5f6faaa;
   }
   .navbar ul .links .link {
-    background-color: #f5f6fa;
+    background-color: #f5f6faaa;
   }
   .navbar ul .links {
     transform: scaleY(1);
@@ -381,6 +422,40 @@ div.aboutUsSummary div img {
     opacity: 0;
     transition-delay: 0ms;
   }
+}
+div.carousel {
+  position: relative;
+  height: 80vh;
+}
+div.carousel div.carouselImages .carouselImg {
+  position: absolute;
+  height: 100px;
+  top: 1rem;
+  left: 15%;
+  right: 15%;
+  width: 70%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+div.carousel div.carouselImages .carouselImg.activeImg {
+  opacity: 1;
+}
+div.carousel div.carouselBtnPanel {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+div.carousel div.carouselBtnPanel button.carouselBtn {
+  flex-grow: 0.5;
+  margin: 0 1rem;
+  height: 3vh;
+  background-color: #00000033;
+}
+div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=main.css.map */
