@@ -1,0 +1,40 @@
+.navbar {
+	background-color: $light-background;
+	ul {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.25rem;
+		max-height: 3.5rem;
+		div {
+			display: flex;
+			.nav-logo {
+				padding: 0.25rem 1rem;
+				img {
+					height: 100%;
+				}
+			}
+			.nav-item a {
+				display: block;
+				color: $font-dark;
+				font-weight: 500;
+				text-decoration: none;
+				padding: 1rem 1.5rem;
+				&.link:hover {
+					background-color: $transparent-dark;
+
+					transition: background-color 100ms linear;
+				}
+				&.active {
+					background-color: $accent-color !important;
+					color: $font-light;
+					&:hover {
+						filter: brightness(0.8);
+					}
+				}
+			}
+			.title a {
+				padding: 1rem 0;
+			}
+		}
+	}
+}
