@@ -1,0 +1,52 @@
+[
+    {
+        "Name":"name",
+        "Email":"Something@example.com",
+        "Phone-Number":"123-123-1234",
+        "Age":100,
+        "lifeStyle":"poor",
+        "Has-Pets":true,
+        "Pet-History":"Had pets didnt feed them so they died",
+        "Comfort":true
+    },
+    {
+        "Name":"name",
+        "Email":"Something@example.com",
+        "Phone-Number":"123-123-1234",
+        "Age":100,
+        "lifeStyle":"poor",
+        "Has-Pets":true,
+        "Pet-History":"Had pets didnt feed them so they died",
+        "Comfort":true
+    },
+    {
+        "Name":"name",
+        "Email":"Something@example.com",
+        "Phone-Number":"123-123-1234",
+        "Age":100,
+        "lifeStyle":"poor",
+        "Has-Pets":true,
+        "Pet-History":"Had pets didnt feed them so they died",
+        "Comfort":true
+    },
+    {
+        "Name":"name",
+        "Email":"Something@example.com",
+        "Phone-Number":"123-123-1234",
+        "Age":100,
+        "lifeStyle":"poor",
+        "Has-Pets":true,
+        "Pet-History":"Had pets didnt feed them so they died",
+        "Comfort":true
+    },
+    {
+        "Name":"name",
+        "Email":"Something@example.com",
+        "Phone-Number":"123-123-1234",
+        "Age":100,
+        "lifeStyle":"poor",
+        "Has-Pets":true,
+        "Pet-History":"Had pets didnt feed them so they died",
+        "Comfort":true
+    }
+]
