@@ -192,6 +192,41 @@ body {
   background-color: red;
 }
 
+/* styles for the about us paragraph and image */
+div.aboutUsSummary {
+  width: 70%;
+  padding: 1rem;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div.aboutUsSummary h1 {
+  text-align: center;
+}
+
+div.aboutUsSummary div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+div.aboutUsSummary div p {
+  width: 40%;
+}
+
+div.aboutUsSummary div img {
+  width: 40%;
+}
+
 .navbar {
   background-color: #f5f6fa;
 }
@@ -220,6 +255,7 @@ body {
 
 .navbar ul div .nav-logo img {
   height: 100%;
+  width: 100%;
 }
 
 .navbar ul div .menu-button {
@@ -251,8 +287,17 @@ body {
           filter: brightness(0.8);
 }
 
+.navbar ul div .title {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
 .navbar ul div .title a {
   padding: 1rem 0;
+  font-size: 1.25rem;
+  font-size: clamp(0.5rem, 4vw, 1.25rem);
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -293,10 +338,10 @@ body {
             flex-direction: column;
   }
   .navbar ul .links .nav-item {
-    background-color: #f5f6fa;
+    background-color: #f5f6faaa;
   }
   .navbar ul .links .link {
-    background-color: #f5f6fa;
+    background-color: #f5f6faaa;
   }
   .navbar ul .links {
     -webkit-transform: scaleY(1);
