@@ -15,7 +15,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Must provide their gender'],
         enum: {
-            value: ['Male', 'Female'],
+            values: ['Male','Female'],
             message: '{VALUE} is not supported',
         }
     },
@@ -37,7 +37,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Must provide their species'],
         enum: {
-            value: ['Dog', 'Cat'],
+            values: ['Dog', 'Cat','dog','cat'],
             message: '{VALUE} is not supported',
         }
     },
@@ -58,4 +58,4 @@ const ProductSchema = new mongoose.Schema({
 });
 
 // This is basic validation not advanced
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = mongoose.model('model', ProductSchema);
