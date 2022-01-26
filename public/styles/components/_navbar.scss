@@ -12,6 +12,7 @@
 				padding: 0.25rem 1rem;
 				img {
 					height: 100%;
+					width: 100%;
 				}
 			}
 			.menu-button {
@@ -37,8 +38,16 @@
 					}
 				}
 			}
+			.title {
+				display: grid;
+				place-items: center;
+			}
 			.title a {
 				padding: 1rem 0;
+				font-size: 1.25rem; //1rem
+				font-size: clamp(0.5rem, 4vw, 1.25rem);
+
+				white-space: nowrap;
 			}
 		}
 	}
@@ -70,10 +79,10 @@
 		.links {
 			flex-direction: column;
 			.nav-item {
-				background-color: $light-background;
+				background-color: $light-background-translucent;
 			}
 			.link {
-				background-color: $light-background;
+				background-color: $light-background-translucent;
 			}
 		}
 

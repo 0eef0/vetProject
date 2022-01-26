@@ -186,9 +186,46 @@ body {
 
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
+<<<<<<< HEAD
   width: clamp(90%, 70%, 2000px);
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+=======
+  width: 70%;
+  padding: 1rem;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+div.aboutUsSummary h1 {
+  text-align: center;
+}
+
+div.aboutUsSummary div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+div.aboutUsSummary div p {
+  width: 40%;
+}
+
+div.aboutUsSummary div img {
+  width: 40%;
+}
+
+.navbar {
+>>>>>>> 3034be9341f9e9f1da93c80fde54e007c1ebe18a
   background-color: #f5f6fa;
   margin-top: 5rem;
   margin-right: auto;
@@ -260,6 +297,7 @@ div.homeGallery {
 }
 .navbar ul div .nav-logo img {
   height: 100%;
+  width: 100%;
 }
 .navbar ul div .menu-button {
   display: none;
@@ -283,8 +321,21 @@ div.homeGallery {
 .navbar ul div .nav-item a.active:hover {
   filter: brightness(0.8);
 }
+<<<<<<< HEAD
+=======
+
+.navbar ul div .title {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+>>>>>>> 3034be9341f9e9f1da93c80fde54e007c1ebe18a
 .navbar ul div .title a {
   padding: 1rem 0;
+  font-size: 1.25rem;
+  font-size: clamp(0.5rem, 4vw, 1.25rem);
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
@@ -315,10 +366,10 @@ div.homeGallery {
     flex-direction: column;
   }
   .navbar ul .links .nav-item {
-    background-color: #f5f6fa;
+    background-color: #f5f6faaa;
   }
   .navbar ul .links .link {
-    background-color: #f5f6fa;
+    background-color: #f5f6faaa;
   }
   .navbar ul .links {
     transform: scaleY(1);
