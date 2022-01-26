@@ -8,7 +8,7 @@
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
-        "Comfort":true,
+        "PetFriendly":true,
         "Accepted":false,
         "Rejected":false
     },
@@ -21,7 +21,7 @@
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
-        "Comfort":true,
+        "PetFriendly":true,
         "Accepted":false,
         "Rejected":false
     },
@@ -34,7 +34,7 @@
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
-        "Comfort":true,
+        "PetFriendly":true,
         "Accepted":false,
         "Rejected":false
     },
@@ -47,7 +47,7 @@
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
-        "Comfort":true,
+        "PetFriendly":true,
         "Accepted":false,
         "Rejected":false
     },
@@ -60,7 +60,7 @@
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
-        "Comfort":true,
+        "PetFriendly":true,
         "Accepted":false,
         "Rejected":false
     }
