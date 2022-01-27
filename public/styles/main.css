@@ -186,50 +186,11 @@ body {
 
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
-<<<<<<< HEAD
   width: clamp(90%, 70%, 2000px);
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-=======
-  width: 70%;
-  padding: 1rem;
-  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  margin-top: 5rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-div.aboutUsSummary h1 {
-  text-align: center;
-}
-
-div.aboutUsSummary div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem;
-}
-
-div.aboutUsSummary div p {
-  width: 40%;
-}
-
-div.aboutUsSummary div img {
-  width: 40%;
-}
-
-.navbar {
->>>>>>> 3034be9341f9e9f1da93c80fde54e007c1ebe18a
   background-color: #f5f6fa;
-  margin-top: 5rem;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 5rem auto;
 }
 div.aboutUsSummary h1 {
   text-align: center;
@@ -274,7 +235,7 @@ div.homeGallery {
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -321,16 +282,10 @@ div.homeGallery {
 .navbar ul div .nav-item a.active:hover {
   filter: brightness(0.8);
 }
-<<<<<<< HEAD
-=======
-
 .navbar ul div .title {
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
-
->>>>>>> 3034be9341f9e9f1da93c80fde54e007c1ebe18a
 .navbar ul div .title a {
   padding: 1rem 0;
   font-size: 1.25rem;
@@ -392,23 +347,42 @@ div.homeGallery {
 div.carousel {
   position: relative;
   height: 80vh;
+  overflow: hidden;
 }
 div.carousel div.carouselImages .carouselImg {
   position: absolute;
-  height: 100px;
-  top: 1rem;
-  left: 15%;
-  right: 15%;
-  width: 70%;
+  top: calc(50% - 2rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: calc(100% - 2rem - 3vh);
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.75s;
+  object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
 }
+div.carousel div.arrowPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+div.carousel div.arrowPanel i {
+  font-size: 3vw;
+  color: #00000033;
+}
+div.carousel div.arrowPanel i:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
 div.carousel div.carouselBtnPanel {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
+  height: 10%;
+  padding: 1rem;
+  background-color: #f5f6fa;
   left: 0;
   display: flex;
   justify-content: space-around;
@@ -419,6 +393,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn {
   margin: 0 1rem;
   height: 3vh;
   background-color: #00000033;
+  transition: background-color 1s;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   background-color: rgba(0, 0, 0, 0.5);
