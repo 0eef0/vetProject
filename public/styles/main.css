@@ -194,10 +194,11 @@ body {
 
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
-  width: 70%;
+  width: clamp(90%, 70%, 2000px);
   padding: 1rem;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f5f6fa;
   margin-top: 5rem;
   margin-right: auto;
   margin-left: auto;
@@ -205,6 +206,7 @@ div.aboutUsSummary {
 
 div.aboutUsSummary h1 {
   text-align: center;
+  font-size: calc(2vw + 1vh);
 }
 
 div.aboutUsSummary div {
@@ -216,19 +218,58 @@ div.aboutUsSummary div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem;
+  padding: 1vw;
 }
 
 div.aboutUsSummary div p {
   width: 40%;
+  font-size: calc(1.25vw + 0.5vh);
 }
 
 div.aboutUsSummary div img {
   width: 40%;
+  min-width: 8rem;
+}
+
+@media only screen and (max-width: 760px) {
+  div.aboutUsSummary h1 {
+    font-size: 1.25rem;
+  }
+  div.aboutUsSummary div {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  div.aboutUsSummary div p {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 80%;
+    font-size: 1rem;
+  }
+  div.aboutUsSummary div img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 80%;
+    margin: 0.1rem;
+  }
+}
+
+/* Style for image gallery */
+div.homeGallery {
+  width: clamp(90%, 70%, 2000px);
+  padding: 1rem;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f5f6fa;
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .navbar {
   background-color: #f5f6fa;
+  z-index: 1;
 }
 
 .navbar ul {
@@ -474,7 +515,8 @@ div.aboutUsSummary div img {
     margin: 0.5rem;
   }
   .filters .sorting-inputs {
-    margin-inline: 0;
+    margin: 0;
+    margin-block: 0.5rem 0.75rem;
     width: 100%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -484,5 +526,54 @@ div.aboutUsSummary div img {
   .filters .sorting-inputs select {
     margin: 0 0.75rem;
   }
+  .filters .selection-buttons {
+    margin-bottom: 0;
+  }
+}
+
+div.carousel {
+  position: relative;
+  height: 80vh;
+}
+
+div.carousel div.carouselImages .carouselImg {
+  position: absolute;
+  height: 100px;
+  top: 1rem;
+  left: 15%;
+  right: 15%;
+  width: 70%;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+div.carousel div.carouselImages .carouselImg.activeImg {
+  opacity: 1;
+}
+
+div.carousel div.carouselBtnPanel {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+div.carousel div.carouselBtnPanel button.carouselBtn {
+  -webkit-box-flex: 0.5;
+      -ms-flex-positive: 0.5;
+          flex-grow: 0.5;
+  margin: 0 1rem;
+  height: 3vh;
+  background-color: #00000033;
+}
+
+div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
+  background-color: #00000066;
 }
 /*# sourceMappingURL=main.css.map */

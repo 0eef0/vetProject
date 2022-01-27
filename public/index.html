@@ -37,6 +37,27 @@
         <img src='https://animalcareinfo.com/wp-content/uploads/2018/04/AdobeStock_129584968-1024x388.jpeg' alt='this is a cool image of a dog' />
         <h1>West-MEC Veterinary Science</h1>
     </div>
+    
+    <div class="carousel homeGallery">
+        <div class="carouselImages">
+            <div class="carouselImg activeImg" style="background-color: red;">
+                1
+            </div>
+            <div class="carouselImg" style="background-color: blue;">
+                2
+            </div>
+            <div class="carouselImg" style="background-color: green;">
+                3
+            </div>
+        </div>
+        <div class="carouselBtnPanel">
+            <!-- <button class="carouselBtn" onclick="carouselChange(currIndex - 1)">Previous</button> -->
+            <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
+            <button class="carouselBtn" onclick="carouselChange(1)"></button>
+            <button class="carouselBtn" onclick="carouselChange(2)"></button>
+            <!-- <button class="carouselBtn" onclick="carouselChange(currIndex + 1)">Next</button> -->
+        </div>
+    </div>
 
     <div class="aboutUsSummary">
         <h1>About Us</h1>
@@ -44,7 +65,7 @@
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi tempora, accusamus vitae ex laboriosam! Minima, mollitia.
           </p>
-          <img src="./assets/placeholder.jpg">
+          <img src="./assets/placeholder.jpg" alt="this is a placeholder">
         </div>
     </div>
 
@@ -57,6 +78,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <!-- other js files -->
+    <script src="./js/carousel.js"></script>
     <script src="./js/navbar.js"></script>
 </body>
 </html>
