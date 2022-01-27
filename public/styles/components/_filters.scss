@@ -55,13 +55,17 @@
 			margin: 0.5rem;
 		}
 		.sorting-inputs {
-			margin-inline: 0;
+			margin: 0;
+			margin-block: 0.5rem 0.75rem;
 			width: 100%;
 			justify-content: space-between;
 			button,
 			select {
 				margin: 0 0.75rem;
 			}
+		}
+		.selection-buttons {
+			margin-bottom: 0;
 		}
 	}
 }
