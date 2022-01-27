@@ -240,8 +240,86 @@ div.homeGallery {
   margin-left: auto;
 }
 
+#aboutUs {
+  text-align: center;
+}
+#aboutUs h1 {
+  margin: 10px;
+}
+#aboutUs #infoAboutUs {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 880px) {
+  #aboutUs #infoAboutUs * {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 880px) {
+  #aboutUs #infoAboutUs * {
+    width: 50%;
+  }
+}
+#aboutUs .rows {
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  margin: 0.5rem 1rem;
+}
+@media screen and (max-width: 1240px) {
+  #aboutUs .rows {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 750px) {
+  #aboutUs .rows {
+    grid-template-columns: 1fr;
+  }
+}
+#aboutUs .rows div {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid black;
+  margin: 50px;
+}
+#aboutUs .rows div img {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#records main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#records main .record {
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+#records main .record.template {
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  text-decoration: solid;
+}
+#records main .record .moreInfo {
+  justify-self: flex-end;
+}
+
 .navbar {
   background-color: #f5f6fa;
+  z-index: 1;
 }
 .navbar ul {
   display: flex;
@@ -342,6 +420,91 @@ div.homeGallery {
   .navbar ul .links.closed .link {
     opacity: 0;
     transition-delay: 0ms;
+  }
+}
+.banner {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  filter: brightness(45%);
+}
+.banner h1 {
+  position: absolute;
+  color: #f5f6fa;
+  font-size: clamp(1rem, 4vw, 2rem);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  width: clamp(90%, 800px, 50%);
+  background-color: #f5f6fa;
+}
+.filters .selection-buttons {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0.25rem 0.5rem;
+}
+.filters .selection-buttons button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.25rem;
+  outline: 1px solid #0a0d0f;
+  border-radius: 2px;
+  background-color: #ecf0f1;
+}
+.filters .selection-buttons button.active {
+  background-color: #f7941d;
+  color: #f5f6fa;
+  outline: 2px solid #f7941d;
+}
+.filters .sorting-inputs {
+  font-size: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0 0.5rem;
+  display: flex;
+  gap: 2rem;
+}
+.filters .sorting-inputs .sort-by-container {
+  display: flex;
+  gap: 2rem;
+}
+.filters .sorting-inputs button,
+.filters .sorting-inputs select {
+  padding: 0.5rem 1rem;
+  outline: 1px solid #0a0d0f;
+  border-radius: 2px;
+  background-color: #ecf0f1;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filters .selection-buttons,
+.filters .sorting-inputs {
+    font-size: 1.25rem;
+    margin: 0.5rem;
+  }
+  .filters .sorting-inputs {
+    margin: 0;
+    margin-block: 0.5rem 0.75rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .filters .sorting-inputs button,
+.filters .sorting-inputs select {
+    margin: 0 0.75rem;
+  }
+  .filters .selection-buttons {
+    margin-bottom: 0;
   }
 }
 div.carousel {
