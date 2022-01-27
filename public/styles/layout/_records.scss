@@ -1,0 +1,25 @@
+#records{
+	main{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		.record{
+			width: 80%;
+			height: fit-content;
+			display: flex;
+			flex-direction: row;
+			background: white;
+			&.template{
+				border-radius: 10px;
+				padding: 10px;
+				border: 2px solid black;
+				text-decoration: solid;
+			}
+			.moreInfo{
+				justify-self: flex-end;
+			}
+		}
+	}
+}
