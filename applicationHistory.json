@@ -10,7 +10,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -23,7 +24,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -36,7 +38,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -49,7 +52,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -62,6 +66,7 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     }
 ]

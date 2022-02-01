@@ -10,7 +10,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -23,7 +24,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -36,7 +38,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -49,7 +52,8 @@
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
@@ -57,11 +61,12 @@
         "Email":"Something@example.com",
         "PhoneNumber":"123-123-1234",
         "Birthday":"1/01/2020",
-        "lifeStyle":"poor",
+        "LifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     }
 ]
