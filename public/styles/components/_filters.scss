@@ -49,12 +49,14 @@
 	.filters {
 		flex-direction: column;
 		align-items: flex-start;
+		flex-wrap: wrap;
 		.selection-buttons,
 		.sorting-inputs {
 			font-size: 1.25rem;
 			margin: 0.5rem;
 		}
 		.sorting-inputs {
+			flex-wrap: wrap;
 			margin: 0;
 			margin-block: 0.5rem 0.75rem;
 			width: 100%;

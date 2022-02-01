@@ -1,5 +1,6 @@
 .card {
 	width: 100%;
+	max-width: 550px;
 	height: 38vh;
 	margin: auto;
 	background-color: white;
@@ -49,19 +50,20 @@
 		display: flex;
 		justify-content: center;
 		a {
-			background: $medium-light-background;
+			background: $accent-color;
 			color: $font-light;
 			text-decoration: none;
 			font-weight: bold;
 			border-radius: 0.25rem;
 			border: none;
 			padding: 0.25rem 1.25rem;
-			font-size: 0.9rem;
+			font-size: clamp(0.9rem, 10vw, 1.25rem); //min .9rem
 			margin: 1rem;
 
 			transition: background-color 300ms ease;
 			&:hover {
 				background-color: $medium-light-background;
+				color: $accent-color;
 			}
 		}
 	}
@@ -72,14 +74,15 @@
 	}
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 	.card {
 		.content {
 			height: max-content;
 			margin-top: auto;
 			background-color: rgba(0, 0, 0, 0.5);
-			transform: translateY(100%);
-			h2,
+			transform: translateY(
+				calc(100% - (2.4rem + 8px))
+			); //removing font size and padding so name can be seen
 			p,
 			.btnContainer {
 				opacity: 0;

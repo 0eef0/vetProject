@@ -401,7 +401,7 @@ div.homeGallery {
   margin: 0.5rem 1rem;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1280px) {
   .card-container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -656,6 +656,8 @@ div.homeGallery {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .filters .selection-buttons,
   .filters .sorting-inputs {
@@ -663,6 +665,8 @@ div.homeGallery {
     margin: 0.5rem;
   }
   .filters .sorting-inputs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: 0;
     margin-block: 0.5rem 0.75rem;
     width: 100%;
@@ -759,6 +763,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 .card {
   width: 100%;
+  max-width: 550px;
   height: 38vh;
   margin: auto;
   background-color: white;
@@ -814,14 +819,14 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 }
 
 .card .btnContainer a {
-  background: #ecf0f1;
+  background: #f7941d;
   color: #f5f6fa;
   text-decoration: none;
   font-weight: bold;
   border-radius: 0.25rem;
   border: none;
   padding: 0.25rem 1.25rem;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 10vw, 1.25rem);
   margin: 1rem;
   -webkit-transition: background-color 300ms ease;
   transition: background-color 300ms ease;
@@ -829,6 +834,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 .card .btnContainer a:hover {
   background-color: #ecf0f1;
+  color: #f7941d;
 }
 
 .card.empty {
@@ -838,21 +844,20 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   visibility: hidden;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .card .content {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(calc(100% - (2.4rem + 8px)));
+            transform: translateY(calc(100% - (2.4rem + 8px)));
     -webkit-transition: -webkit-transform 300ms ease;
     transition: -webkit-transform 300ms ease;
     transition: transform 300ms ease;
     transition: transform 300ms ease, -webkit-transform 300ms ease;
   }
-  .card .content h2,
   .card .content p,
   .card .content .btnContainer {
     opacity: 0;
