@@ -25,7 +25,7 @@ const ApplicationsSchema = new mongoose.Schema({
         type: Date,
         required: [true, 'Must provide your age'],
     },
-    lifeStyles: {
+    lifeStyle: {
         type: String,
         required: [true, 'Must provide your lifestyle'],
         trim: true
