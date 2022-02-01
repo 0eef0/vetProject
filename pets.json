@@ -2,6 +2,7 @@
     {
         "Name":"Fluffy",
         "Age":1,
+        "Gender":"Male",
         "Medical":[],
         "Color":"blue",
         "Breed":"Boxer",
@@ -13,6 +14,7 @@
     {
         "Name":"Chad",
         "Age":1,
+        "Gender":"Male",
         "Medical":[],
         "Color":"blue",
         "Breed":"Boxer",
@@ -24,6 +26,7 @@
     {
         "Name":"had",
         "Age":1,
+        "Gender":"Male",
         "Medical":[],
         "Color":"blue",
         "Breed":"Boxer",
@@ -35,6 +38,7 @@
     {
         "Name":"Brad",
         "Age":1,
+        "Gender":"Male",
         "Medical":[],
         "Color":"blue",
         "Breed":"Boxer",
@@ -46,6 +50,7 @@
     {
         "Name":"Tuff",
         "Age":1,
+        "Gender":"Male",
         "Medical":[],
         "Color":"blue",
         "Breed":"Boxer",
