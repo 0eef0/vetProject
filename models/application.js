@@ -21,8 +21,8 @@ const ApplicationsSchema = new mongoose.Schema({
         required: [true, 'Must provide a phone number'],
         trim: true
     },
-    Age: {
-        type: Number,
+    Birthday: {
+        type: Date,
         required: [true, 'Must provide your age'],
     },
     LifeStyles: {

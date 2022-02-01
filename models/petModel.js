@@ -6,8 +6,8 @@ const PetSchema = new mongoose.Schema({
         required: [true, 'Must provide a name'],
         trim: true
     },
-    Age: {
-        type: Number,
+    Birthday: {
+        type: Date,
         required: [true, 'Must provide the age'],
         trim: true
     },
