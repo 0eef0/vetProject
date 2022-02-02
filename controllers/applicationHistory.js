@@ -1,4 +1,4 @@
-const History = require('../models/petModel')
+const History = require('../models/application')
 
 const getAllThree = async (req, res) => {
     try {

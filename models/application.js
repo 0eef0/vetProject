@@ -25,7 +25,7 @@ const ApplicationsSchema = new mongoose.Schema({
         type: Date,
         required: [true, 'Must provide your age'],
     },
-    LifeStyles: {
+    lifeStyle: {
         type: String,
         required: [true, 'Must provide your lifestyle'],
         trim: true
@@ -55,7 +55,7 @@ const ApplicationsSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Must provide your Housing'],
         trim: true,
-        enum: { 
+        enum: {
             values: ['House', 'Apartment', 'Rental'], 
             message: '{VALUE} is not supported' 
         }
