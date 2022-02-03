@@ -12,3 +12,13 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
+img{
+	background: $light-background;
+}
+p{
+	padding: 10px;
+}
+hr{
+	margin: 0;
+}
