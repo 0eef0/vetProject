@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ApplicationsSchema = new mongoose.Schema({
+const HistorySchema = new mongoose.Schema({
     FirstName: {
         type: String,
         required: [true, 'Must provide a first name'],
@@ -63,4 +63,4 @@ const ApplicationsSchema = new mongoose.Schema({
 });
 
 // This is basic validation not advanced
-module.exports = mongoose.model('Application', ApplicationsSchema);
+module.exports = mongoose.model('History', HistorySchema);
