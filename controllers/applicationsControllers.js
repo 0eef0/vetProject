@@ -1,4 +1,4 @@
-const application = require('../models/petModel')
+const application = require('../models/application')
 
 const getAllTwo = async (req, res) => {
     try {

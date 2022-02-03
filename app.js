@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const routes = require('./routes/pets')
+const routesApp = require('./routes/applicationRoute')
+const routesHistory = require('./routes/appHistoryRoutes')
 const connectDB = require('./db/connect');
 const populateProducts = require('./populate')
 
@@ -12,8 +14,8 @@ require('dotenv').config()
 //middleware functions
 app.use(express.json())
 app.use('/api/v1/pets', routes);
-app.use('/api/v1/application', routes);
-app.use('/api/v1/applicationHistory', routes);
+app.use('/api/v1/application', routesApp);
+app.use('/api/v1/applicationHistory', routesHistory);
 app.use(express.static("./public"));
 
 //ROUTING
