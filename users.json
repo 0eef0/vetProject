@@ -1,0 +1,34 @@
+[
+    {
+        "FirstName":"name",
+        "LastName":"name",
+        "Email":"something@example.com",
+        "Password":"pass1234",
+        "PhoneNumber":"123-456-7890",
+        "Status":"default"
+    },
+    {
+        "FirstName":"name",
+        "LastName":"name",
+        "Email":"something@example.com",
+        "Password":"pass1234",
+        "PhoneNumber":"123-456-7890",
+        "Status":"default"
+    },
+    {
+        "FirstName":"name",
+        "LastName":"name",
+        "Email":"something@example.com",
+        "Password":"pass1234",
+        "PhoneNumber":"123-456-7890",
+        "Status":"default"
+    },
+    {
+        "FirstName":"name",
+        "LastName":"name",
+        "Email":"something@example.com",
+        "Password":"pass1234",
+        "PhoneNumber":"123-456-7890",
+        "Status":"default"
+    }
+]
