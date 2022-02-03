@@ -28,6 +28,9 @@ app.get('/about', (req, res) => {
 app.get('/adopt', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/pets.html'))
 })
+app.get('/pet', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/individualPet.html'))
+})
 
 
 const port = process.env.PORT || 5000;
