@@ -1,26 +1,59 @@
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
-  width: 70%;
+  width: clamp(90%, 70%, 2000px);
   padding: 1rem;
   box-shadow: $dark-shadow;
-  margin: {
-    top: 5rem;
-    right: auto;
-    left: auto;
-  }
+  background-color: $light-background;
+  margin: 5rem auto;
   h1 {
     text-align: center;
+    font-size: $scalable-header-font;
   }
   div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem;
+    padding: 1vw;
     p {
       width: 40%;
+      font-size: $scalable-text-font;
     }
     img {
       width: 40%;
+      min-width: 8rem;
     }
+  }
+  @media only screen and (max-width: 760px) {
+    & {
+      h1 {
+        font-size: 1.25rem;
+      }
+      div {
+        flex-wrap: wrap;
+        p {
+          order: 2;
+          width: 80%;
+          font-size: 1rem;
+        }
+        img {
+          order: 1;
+          width: 80%;
+          margin: 0.1rem;
+        }
+      }
+    }
+  }
+}
+
+/* Style for image gallery */
+div.homeGallery {
+  width: clamp(90%, 70%, 2000px);
+  padding: 1rem;
+  box-shadow: $dark-shadow;
+  background-color: $light-background;
+  margin: {
+    top: 2.5rem;
+    right: auto;
+    left: auto;
   }
 }

@@ -1,0 +1,73 @@
+.filters {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2rem auto;
+
+	width: clamp(90%, 800px, 50%);
+	background-color: $light-background;
+
+	.selection-buttons {
+		font-size: clamp(0.75rem, 2vw, 1.25rem);
+		margin: 0.25rem 0.5rem;
+		button {
+			padding: 0.5rem 1rem;
+			margin: 0.5rem 0.25rem;
+			outline: 1px solid $dark-background;
+			border-radius: $radius-small;
+			background-color: $medium-light-background;
+
+			&.active {
+				background-color: $accent-color;
+				color: $light-background;
+				outline: 2px solid $accent-color;
+			}
+		}
+	}
+
+	.sorting-inputs {
+		font-size: clamp(0.75rem, 2vw, 1.25rem);
+		margin: 0 0.5rem;
+
+		display: flex;
+		gap: 2rem;
+		.sort-by-container {
+			display: flex;
+			gap: 2rem;
+		}
+		button,
+		select {
+			padding: 0.5rem 1rem;
+			outline: 1px solid $dark-background;
+			border-radius: $radius-small;
+			background-color: $medium-light-background;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.filters {
+		flex-direction: column;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		.selection-buttons,
+		.sorting-inputs {
+			font-size: 1.25rem;
+			margin: 0.5rem;
+		}
+		.sorting-inputs {
+			flex-wrap: wrap;
+			margin: 0;
+			margin-block: 0.5rem 0.75rem;
+			width: 100%;
+			justify-content: space-between;
+			button,
+			select {
+				margin: 0 0.75rem;
+			}
+		}
+		.selection-buttons {
+			margin-bottom: 0;
+		}
+	}
+}

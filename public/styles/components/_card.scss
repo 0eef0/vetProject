@@ -1,0 +1,117 @@
+.card {
+	width: 100%;
+	max-width: 550px;
+	height: 38vh;
+	margin: auto;
+	background-color: white;
+	//   border: 1px solid #444;
+	// margin-inline: auto;
+	border-radius: $radius-medium;
+	overflow: hidden;
+	position: relative;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+
+		position: absolute;
+		inset: 0;
+		// height: max-content;
+		// margin-top: auto;
+
+		color: $clr-white;
+		h2 {
+			text-align: center;
+			// margin: 1rem;
+			padding: 0.25rem;
+			font-size: 2rem;
+			// text-shadow: 1px 1px 0 $clr-black, 1px -1px 0 $clr-black,
+			//   -1px 1px 0 $clr-black, -1px -1px 0 $clr-black;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		p {
+			width: clamp(27%, 405px, 90%);
+			font-size: 14px;
+			margin-inline: auto;
+			margin-top: auto;
+			text-align: center;
+			visibility: hidden;
+			// &::first-letter {
+			//   margin-left: 3rem;
+			// }
+		}
+	}
+	.btnContainer {
+		display: flex;
+		justify-content: center;
+		a {
+			background: $accent-color;
+			color: $font-light;
+			text-decoration: none;
+			font-weight: bold;
+			border-radius: 0.25rem;
+			border: none;
+			padding: 0.25rem 1.25rem;
+			font-size: clamp(0.9rem, 10vw, 1.25rem); //min .9rem
+			margin: 1rem;
+
+			transition: background-color 300ms ease;
+			&:hover {
+				background-color: $medium-light-background;
+				color: $accent-color;
+			}
+		}
+	}
+	&.empty {
+		background: none;
+		box-shadow: none;
+		visibility: hidden;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.card {
+		.content {
+			height: max-content;
+			margin-top: auto;
+			background-color: rgba(0, 0, 0, 0.5);
+			transform: translateY(
+				calc(100% - (2.4rem + 8px))
+			); //removing font size and padding so name can be seen
+			p,
+			.btnContainer {
+				opacity: 0;
+				transition: opacity 200ms linear;
+			}
+
+			transition: transform 300ms ease;
+			h2 {
+				background-color: transparent;
+			}
+			a {
+				padding: 0.5rem 2.5rem;
+				font-size: 1rem;
+			}
+			p {
+				margin-top: 0;
+				visibility: visible;
+			}
+		}
+		&:hover,
+		&:focus-within {
+			.content {
+				transform: translateY(0);
+				h2,
+				p,
+				.btnContainer {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

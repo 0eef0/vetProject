@@ -74,3 +74,7 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+#scss generated files
+public/styles/main.css
+public/styles/main.css.map

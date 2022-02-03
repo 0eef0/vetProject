@@ -19,8 +19,7 @@ app.use(express.static("./public"));
 
 
 
-
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || 5000;
 
 //when adding DB functionality comment this out and uncomment the start function
 // app.listen(port, () => {
