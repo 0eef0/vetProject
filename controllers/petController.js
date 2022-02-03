@@ -33,7 +33,7 @@ const update = async (req, res) => {
         const {id} = req.params;
         const newPet = req.body;
         const pet = await model.findOneAndUpdate({_id: id}, newPet);
-        res.status(201).json({pet});
+        res.status(201).json({newPet});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 

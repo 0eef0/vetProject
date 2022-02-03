@@ -33,7 +33,7 @@ const updateTwo = async (req, res) => {
         const {id} = req.params;
         const newApplication = req.body;
         const application = await applicationModel.findOneAndUpdate({ _id: id }, newApplication);
-        res.status(201).json({application});
+        res.status(201).json({newApplication});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 

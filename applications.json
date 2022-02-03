@@ -11,6 +11,7 @@
         "PetFriendly":true,
         "Accepted":false,
         "Rejected":false,
-        "Housing":"apartment"
+        "Housing":"apartment",
+        "Status": "Current"
     }
 ]
