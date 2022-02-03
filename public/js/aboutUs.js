@@ -4,7 +4,7 @@ async function getInfoAboutUs() {
     try {
         // const { data: aboutUs, } = await axios.get(``);
         main.innerHTML = `
-            <h1>About Us</h1>
+            <h1 class='supText'>About Us</h1>
             <div id="infoAboutUs">
                 <p>${'data.main.info1'}Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
                 mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
@@ -17,24 +17,38 @@ async function getInfoAboutUs() {
                 tempora, accusamus vitae ex laboriosam! Minima, mollitia.</p>
             </div>
             <hr/>
-            <h1>Our Teachers/Team</h1>
+            <h1 class='supText'>Our Teachers/Team</h1>
             <div class="rows">
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
-                mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
-                ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
-                tempora, accusamus vitae ex laboriosam! Minima, mollitia.</div>
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
-                mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
-                ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
-                tempora, accusamus vitae ex laboriosam! Minima, mollitia.</div>
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
-                mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
-                ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
-                tempora, accusamus vitae ex laboriosam! Minima, mollitia.</div>
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
-                mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
-                ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
-                tempora, accusamus vitae ex laboriosam! Minima, mollitia.</div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
+                    mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
+                    ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
+                    tempora, accusamus vitae ex laboriosam! Minima, mollitia.
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
+                    mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
+                    ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
+                    tempora, accusamus vitae ex laboriosam! Minima, mollitia.
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
+                    mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
+                    ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
+                    tempora, accusamus vitae ex laboriosam! Minima, mollitia.
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
+                    mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
+                    ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
+                    tempora, accusamus vitae ex laboriosam! Minima, mollitia.
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
+                    mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
+                    ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
+                    tempora, accusamus vitae ex laboriosam! Minima, mollitia.
+                </div>
             </div>
                 `;
     }
