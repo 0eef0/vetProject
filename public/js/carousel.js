@@ -86,4 +86,4 @@ const prevImg = () => {
 
 setInterval(() => {
     (!pressed) ? nextImg() : pressed = false;
-}, 5000);
+}, 3000);

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +16,8 @@
         rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
-    <title>Vet Science</title>
+    <title>Pet</title>
 </head>
-
 <body>
     <!-- navbar -->
     <nav class="navbar">
@@ -31,48 +29,43 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link active" href="./index.html">Home</a></li>
+                <li class="nav-item"><a class="link" href="./index.html">Home</a></li>
                 <li class="nav-item"><a class="link" href="">About</a></li>
-                <li class="nav-item"><a class="link" href="./pets.html">Adopt</a></li>
+                <li class="nav-item"><a class="link active" href="./pets.html">Adopt</a></li>
             </div>
         </ul>
     </nav>
 
-    <!-- Galley Carousel -->
-    <div class="banner">
-        <img src='https://animalcareinfo.com/wp-content/uploads/2018/04/AdobeStock_129584968-1024x388.jpeg' alt='this is a cool image of a dog' />
-        <h1>West-MEC Veterinary Science</h1>
-    </div>
-    
-    <div class="carousel homeGallery">
-        <div class="carouselImages">
-            <img src="./assets/firstCarousel.jpg" class="carouselImg activeImg">
-            <img src="./assets/secondCarousel.jpg" class="carouselImg">
-            <img src="./assets/thirdCarousel.jpg" class="carouselImg">
+    <div class="petPage">
+        <div class="carousel petGallery">
+            <div class="carouselImages">
+                <img src="./assets/firstCarousel.jpg" class="carouselImg activeImg">
+                <img src="./assets/secondCarousel.jpg" class="carouselImg">
+                <img src="./assets/thirdCarousel.jpg" class="carouselImg">
+            </div>
+            <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
+            <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
+            <div class="carouselBtnPanel">
+                <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
+                <button class="carouselBtn" onclick="carouselChange(1)"></button>
+                <button class="carouselBtn" onclick="carouselChange(2)"></button>
+            </div>
         </div>
-        <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
-        <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
-        <div class="carouselBtnPanel">
-            <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
-            <button class="carouselBtn" onclick="carouselChange(1)"></button>
-            <button class="carouselBtn" onclick="carouselChange(2)"></button>
-        </div>
-    </div>
-
-    <!-- Basic about information -->
-    <div class="aboutUsSummary">
-        <h1>About Us</h1>
-        <div>
+        <div class="petInfo">
+            <h1>Steve</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit
-                mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis
-                ipsa hic libero quis incidunt? Beatae earum quaerat dignissimos totam accusantium, quis iure at sequi
-                tempora, accusamus vitae ex laboriosam! Minima, mollitia.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nobis eos in officiis reprehenderit blanditiis soluta rem iusto numquam, at qui explicabo sit cumque quibusdam dolorem. Totam minima odit voluptatem similique architecto ducimus esse amet placeat exercitationem aliquid dignissimos minus error, sequi harum officia praesentium iusto ratione sint dolor corporis?
             </p>
-            <img src="./assets/placeholder.jpg">
+            <br>
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+            <br>
+            <button><p>Adopt Me!</p></button>
         </div>
     </div>
-
 
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
@@ -82,5 +75,4 @@
     <script src="./js/navbar.js"></script>
     <script src="./js/carousel.js"></script>
 </body>
-
 </html>
