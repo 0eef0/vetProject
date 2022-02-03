@@ -16,10 +16,10 @@
         rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
-    <title>[Pet name will go here]</title>
+    <title>Adoption Form</title>
 </head>
 <body>
-    <!-- navbar -->
+        <!-- navbar -->
     <nav class="navbar">
         <ul>
             <div class="align-left">
@@ -29,42 +29,96 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="./index.html">Home</a></li>
-                <li class="nav-item"><a class="link" href="">About</a></li>
-                <li class="nav-item"><a class="link active" href="./pets.html">Adopt</a></li>
+                <li class="nav-item"><a class="link active" href="/">Home</a></li>
+                <li class="nav-item"><a class="link" href="/about">About</a></li>
+                <li class="nav-item"><a class="link" href="/adopt">Adopt</a></li>
             </div>
         </ul>
     </nav>
 
-    <div class="petPage">
-        <div class="carousel petGallery">
-            <div class="carouselImages">
-                <img src="./assets/firstCarousel.jpg" class="carouselImg activeImg">
-                <img src="./assets/secondCarousel.jpg" class="carouselImg">
-                <img src="./assets/thirdCarousel.jpg" class="carouselImg">
-            </div>
-            <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
-            <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
-            <div class="carouselBtnPanel">
-                <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
-                <button class="carouselBtn" onclick="carouselChange(1)"></button>
-                <button class="carouselBtn" onclick="carouselChange(2)"></button>
-            </div>
-        </div>
-        <div class="petInfo">
-            <h1>Steve</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nobis eos in officiis reprehenderit blanditiis soluta rem iusto numquam, at qui explicabo sit cumque quibusdam dolorem. Totam minima odit voluptatem similique architecto ducimus esse amet placeat exercitationem aliquid dignissimos minus error, sequi harum officia praesentium iusto ratione sint dolor corporis?
-            </p>
-            <br>
-            <ul>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-            </ul>
-            <br>
-            <button><p>Adopt Me!</p></button>
-        </div>
+<!--<div class="question">
+        <h1>Question</h1>
+        <br>
+        <input type="text" maxlength="100">
+    </div>
+    <div class="question">
+        <h1>Question</h1>
+        <br>
+        <textarea maxlength="240"></textarea>
+    </div>
+    <div class="question">
+        <h1>Question</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="choice1">Choice1</label>
+                <input name="q1" type="radio" id="choice1">
+            </li>
+            <li>
+                <label for="choice2">Choice2</label>
+                <input name="q1" type="radio" id="choice2">
+            </li>
+            <li>
+                <label for="choice3">Choice3</label>
+                <input name="q1" type="radio" id="choice3">
+            </li>
+            <li>
+                <label for="choice4">Choice4</label>
+                <input name="q1" type="radio" id="choice4">
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>Question</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="choice5">Choice5</label>
+                <input name="q2" type="checkbox" id="choice5">
+            </li>
+            <li>
+                <label for="choice6">Choice6</label>
+                <input name="q2" type="checkbox" id="choice6">
+            </li>
+            <li>
+                <label for="choice7">Choice7</label>
+                <input name="q2" type="checkbox" id="choice7">
+            </li>
+            <li>
+                <label for="choice8">Choice8</label>
+                <input name="q2" type="checkbox" id="choice8">
+            </li>
+        </ul>
+    </div> -->
+    <div class="question">
+        <h1>First and Last Name</h1>
+        <br>
+        <input type="text" maxlength="100">
+    </div>
+    <div class="question">
+        <h1>Occupation</h1>
+        <br>
+        <input type="text" maxlength="100">
+    </div>
+    <div class="question">
+        <h1>Address</h1>
+        <br>
+        <input type="text" maxlength="100">
+    </div>
+    <div class="question">
+        <h1>Phone Number</h1>
+        <br>
+        <input type="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+    </div>
+    <div class="question">
+        <h1>Email</h1>
+        <br>
+        <input type="text" maxlength="100">
+    </div>
+    <div class="question">
+        <h1>How did you hear about our adoptable animals?</h1>
+        <br>
+        <textarea maxlength="240"></textarea>
     </div>
 
     <!-- footer -->
@@ -101,6 +155,7 @@
             <p>Company Name © 2021</p>
         </div>
     </footer>
+
 
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"

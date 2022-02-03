@@ -52,8 +52,7 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote::before,
-blockquote::after,
+blockquote::before, blockquote::after,
 q::before,
 q::after {
   content: "";
@@ -101,19 +100,19 @@ pre {
   word-wrap: break-word;
 }
 
-input [type="radio"] {
+input [type=radio] {
   vertical-align: text-bottom;
 }
 
-input [type="checkbox"] {
+input [type=checkbox] {
   vertical-align: bottom;
 }
 
-.ie7 input [type="checkbox"] {
+.ie7 input [type=checkbox] {
   vertical-align: baseline;
 }
 
-.ie6 input[type="checkbox"] {
+.ie6 input[type=checkbox] {
   vertical-align: text-bottom;
 }
 
@@ -148,15 +147,15 @@ sub {
 
 .clickable,
 label,
-input[type="button"],
-input[type="submit"],
-input[type="file"],
+input[type=button],
+input[type=submit],
+input[type=file],
 button {
   cursor: pointer;
 }
 
 button,
-input[type="button"] {
+input[type=button] {
   width: auto;
   overflow: hidden;
 }
@@ -378,7 +377,7 @@ div.petPage div.petInfo button {
     font-size: 1.25rem !important;
   }
   div.petPage div p,
-  div.petPage div li {
+div.petPage div li {
     font-size: 1rem !important;
   }
   div.petPage div.petGallery {
@@ -560,7 +559,7 @@ div.petPage div.petInfo button {
     flex-wrap: wrap;
   }
   .filters .selection-buttons,
-  .filters .sorting-inputs {
+.filters .sorting-inputs {
     font-size: 1.25rem;
     margin: 0.5rem;
   }
@@ -572,7 +571,7 @@ div.petPage div.petInfo button {
     justify-content: space-between;
   }
   .filters .sorting-inputs button,
-  .filters .sorting-inputs select {
+.filters .sorting-inputs select {
     margin: 0 0.75rem;
   }
   .filters .selection-buttons {
@@ -603,29 +602,6 @@ div.carousel i.arrow.rightArrow {
   right: 1vw;
   left: auto;
 }
-
-div.carousel i.arrow {
-  position: absolute;
-  top: 50%;
-  bottom: auto;
-  font-size: 2rem;
-  color: #00000033;
-}
-
-div.carousel i.arrow:hover {
-  color: #00000066;
-}
-
-div.carousel i.arrow.leftArrow {
-  left: 1vw;
-  right: auto;
-}
-
-div.carousel i.arrow.rightArrow {
-  right: 1vw;
-  left: auto;
-}
-
 div.carousel div.carouselImages .carouselImg {
   position: absolute;
   top: calc(50% - 2rem);
@@ -639,7 +615,6 @@ div.carousel div.carouselImages .carouselImg {
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
 }
-
 div.carousel div.carouselBtnPanel {
   position: absolute;
   bottom: 0;
@@ -652,9 +627,6 @@ div.carousel div.carouselBtnPanel {
   width: 100%;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn {
-  flex-grow: 0.5;
-  -webkit-box-flex: 0.5;
-  -ms-flex-positive: 0.5;
   flex-grow: 0.5;
   margin: 0 0.25rem;
   height: 3vh;
@@ -737,7 +709,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     transition: transform 300ms ease;
   }
   .card .content p,
-  .card .content .btnContainer {
+.card .content .btnContainer {
     opacity: 0;
     transition: opacity 200ms linear;
   }
@@ -752,145 +724,98 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     margin-top: 0;
     visibility: visible;
   }
-  .card:hover .content,
-  .card:focus-within .content {
+  .card:hover .content, .card:focus-within .content {
     transform: translateY(0);
   }
   .card:hover .content h2,
-  .card:hover .content p,
-  .card:hover .content .btnContainer,
-  .card:focus-within .content h2,
-  .card:focus-within .content p,
-  .card:focus-within .content .btnContainer {
+.card:hover .content p,
+.card:hover .content .btnContainer, .card:focus-within .content h2,
+.card:focus-within .content p,
+.card:focus-within .content .btnContainer {
     opacity: 1;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
 footer {
   color: #f5f6fa;
   background-color: #2d3436;
   margin-top: auto;
 }
-
 footer .row {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
 footer .row.top {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
   color: #f5f6fa;
   padding-top: 1rem;
 }
-
 footer .row.top .col {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 30vw;
   width: 100%;
   text-align: left;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-
 footer .row.top .col ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 footer .row.top .col ul li {
   padding: 0.1rem;
 }
-
 footer .row.top .col ul li.title {
   color: #f7941d;
   font-size: 110%;
   font-weight: bold;
   padding: 0.5rem;
 }
-
 footer .row.top .col ul li a {
   color: #f5f6fa;
   text-decoration: none;
 }
-
 footer .row.top .col ul li a:active {
   color: #f7941d;
 }
-
-footer .row.top .col ul li a:hover,
-footer .row.top .col ul li a:focus {
+footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
   text-decoration: underline;
 }
-
 footer .row.top .col.desc {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 }
-
 footer .row.top .col.desc h3 {
   margin: 0;
   padding: 0.5rem;
   color: #f7941d;
   font-size: 110%;
 }
-
 footer .row.top .col.desc p {
   margin: 0;
 }
-
 footer .row .socials ul {
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
   font-size: 200%;
   margin: 0;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
-
 footer .row .socials ul li {
   padding-inline: 1rem;
 }
-
 footer .row .socials ul li a {
   color: #f5f6fa;
 }
-
 footer .row .socials ul li a:active {
   color: #f7941d;
 }
-
-footer .row .socials ul li a:hover,
-footer .row .socials ul li a:focus {
+footer .row .socials ul li a:hover, footer .row .socials ul li a:focus {
   text-decoration: underline;
 }
-
 footer .row p {
   margin: 0.5rem 0;
 }
@@ -900,4 +825,38 @@ footer .row p {
     text-align: center;
   }
 }
+div.question {
+  margin: 1rem auto;
+  width: clamp(90%, 70%, 2000px);
+  background-color: #f5f6fa;
+  padding: 1rem;
+}
+div.question h1 {
+  font-size: calc(1vw + 1vh);
+}
+div.question input[type=text],
+div.question input[type=tel] {
+  background-color: rgba(34, 34, 34, 0.1);
+  border-bottom: 2px solid #f7941d;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+}
+div.question textarea {
+  background-color: rgba(34, 34, 34, 0.1);
+  border-bottom: 2px solid #f7941d;
+  padding: 1rem;
+  width: 100%;
+  height: 10rem;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+}
+div.question ul {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #f7941d;
+  padding: 1rem;
+}
+
 /*# sourceMappingURL=main.css.map */
