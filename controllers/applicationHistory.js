@@ -2,8 +2,8 @@ const History = require('../models/application')
 
 const getAllThree = async (req, res) => {
     try {
-        const products = await History.find({});
-        res.status(201).json({products});
+        const applications = await History.find({});
+        res.status(201).json({applications});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
@@ -16,33 +16,33 @@ const getAllThree = async (req, res) => {
 
 const createThree = async (req, res) => {
     try {
-        const product = await History.create(req.body);
-        res.status(201).json({product});
+        const application = await History.create(req.body);
+        res.status(201).json({application});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
 const getThree = async (req, res) => {
     try {
-        const product = await History.findById(req.params.id).exec();
-        res.status(201).json({product});
+        const application = await History.findById(req.params.id).exec();
+        res.status(201).json({application});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
 const updateThree = async (req, res) => {
     try {
         const {id} = req.params;
-        const newProduct = req.body;
-        const products = await History.findOneAndUpdate({_id: id}, newProduct);
-        res.status(201).json({products});
+        const newApplication = req.body;
+        const application = await History.findOneAndUpdate({ _id: id }, newApplication);
+        res.status(201).json({application});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-const deleteItThree = async (req, res) => {
-    try {
-        const product = await History.findByIdAndRemove(req.params.id);
-        res.status(201).json({product});
-    } catch (error) { res.status(500).json({msg: error}) }
-}
+// const deleteItThree = async (req, res) => {
+//     try {
+//         const product = await History.findByIdAndRemove(req.params.id);
+//         res.status(201).json({product});
+//     } catch (error) { res.status(500).json({msg: error}) }
+// }
 
-module.exports = { getAllThree, createThree, getThree, updateThree, deleteItThree };
+module.exports = { getAllThree, createThree, getThree, updateThree };
 
