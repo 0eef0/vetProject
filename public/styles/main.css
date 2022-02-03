@@ -52,7 +52,8 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote::before, blockquote::after,
+blockquote::before,
+blockquote::after,
 q::before,
 q::after {
   content: "";
@@ -100,19 +101,19 @@ pre {
   word-wrap: break-word;
 }
 
-input [type=radio] {
+input [type="radio"] {
   vertical-align: text-bottom;
 }
 
-input [type=checkbox] {
+input [type="checkbox"] {
   vertical-align: bottom;
 }
 
-.ie7 input [type=checkbox] {
+.ie7 input [type="checkbox"] {
   vertical-align: baseline;
 }
 
-.ie6 input[type=checkbox] {
+.ie6 input[type="checkbox"] {
   vertical-align: text-bottom;
 }
 
@@ -147,15 +148,15 @@ sub {
 
 .clickable,
 label,
-input[type=button],
-input[type=submit],
-input[type=file],
+input[type="button"],
+input[type="submit"],
+input[type="file"],
 button {
   cursor: pointer;
 }
 
 button,
-input[type=button] {
+input[type="button"] {
   width: auto;
   overflow: hidden;
 }
@@ -377,7 +378,7 @@ div.petPage div.petInfo button {
     font-size: 1.25rem !important;
   }
   div.petPage div p,
-div.petPage div li {
+  div.petPage div li {
     font-size: 1rem !important;
   }
   div.petPage div.petGallery {
@@ -559,7 +560,7 @@ div.petPage div li {
     flex-wrap: wrap;
   }
   .filters .selection-buttons,
-.filters .sorting-inputs {
+  .filters .sorting-inputs {
     font-size: 1.25rem;
     margin: 0.5rem;
   }
@@ -571,7 +572,7 @@ div.petPage div li {
     justify-content: space-between;
   }
   .filters .sorting-inputs button,
-.filters .sorting-inputs select {
+  .filters .sorting-inputs select {
     margin: 0 0.75rem;
   }
   .filters .selection-buttons {
@@ -602,6 +603,29 @@ div.carousel i.arrow.rightArrow {
   right: 1vw;
   left: auto;
 }
+
+div.carousel i.arrow {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  font-size: 2rem;
+  color: #00000033;
+}
+
+div.carousel i.arrow:hover {
+  color: #00000066;
+}
+
+div.carousel i.arrow.leftArrow {
+  left: 1vw;
+  right: auto;
+}
+
+div.carousel i.arrow.rightArrow {
+  right: 1vw;
+  left: auto;
+}
+
 div.carousel div.carouselImages .carouselImg {
   position: absolute;
   top: calc(50% - 2rem);
@@ -615,6 +639,7 @@ div.carousel div.carouselImages .carouselImg {
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
 }
+
 div.carousel div.carouselBtnPanel {
   position: absolute;
   bottom: 0;
@@ -627,6 +652,9 @@ div.carousel div.carouselBtnPanel {
   width: 100%;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn {
+  flex-grow: 0.5;
+  -webkit-box-flex: 0.5;
+  -ms-flex-positive: 0.5;
   flex-grow: 0.5;
   margin: 0 0.25rem;
   height: 3vh;
@@ -709,7 +737,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     transition: transform 300ms ease;
   }
   .card .content p,
-.card .content .btnContainer {
+  .card .content .btnContainer {
     opacity: 0;
     transition: opacity 200ms linear;
   }
@@ -724,14 +752,16 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     margin-top: 0;
     visibility: visible;
   }
-  .card:hover .content, .card:focus-within .content {
+  .card:hover .content,
+  .card:focus-within .content {
     transform: translateY(0);
   }
   .card:hover .content h2,
-.card:hover .content p,
-.card:hover .content .btnContainer, .card:focus-within .content h2,
-.card:focus-within .content p,
-.card:focus-within .content .btnContainer {
+  .card:hover .content p,
+  .card:hover .content .btnContainer,
+  .card:focus-within .content h2,
+  .card:focus-within .content p,
+  .card:focus-within .content .btnContainer {
     opacity: 1;
   }
 }
