@@ -4,64 +4,69 @@
         "LastName":"name",
         "Email":"Something@example.com",
         "PhoneNumber":"123-123-1234",
-        "Age":100,
+        "Birthday":"1/01/2020",
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
         "LastName":"name",
         "Email":"Something@example.com",
         "PhoneNumber":"123-123-1234",
-        "Age":100,
+        "Birthday":"1/01/2020",
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
         "LastName":"name",
         "Email":"Something@example.com",
         "PhoneNumber":"123-123-1234",
-        "Age":100,
+        "Birthday":"1/01/2020",
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
         "LastName":"name",
         "Email":"Something@example.com",
         "PhoneNumber":"123-123-1234",
-        "Age":100,
+        "Birthday":"1/01/2020",
         "lifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     },
     {
         "FirstName":"name",
         "LastName":"name",
         "Email":"Something@example.com",
         "PhoneNumber":"123-123-1234",
-        "Age":100,
-        "lifeStyle":"poor",
+        "Birthday":"1/01/2020",
+        "LifeStyle":"poor",
         "HasPets":true,
         "PetHistory":"Had pets didnt feed them so they died",
         "PetFriendly":true,
         "Accepted":false,
-        "Rejected":false
+        "Rejected":false,
+        "Housing":"apartment"
     }
 ]
