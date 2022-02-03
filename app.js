@@ -1,6 +1,7 @@
 //important things
 const express = require('express')
 const app = express()
+const path = require('path')
 const routes = require('./routes/pets')
 const connectDB = require('./db/connect');
 const populateProducts = require('./populate')
@@ -15,6 +16,16 @@ app.use('/api/v1/application', routes);
 app.use('/api/v1/applicationHistory', routes);
 app.use(express.static("./public"));
 
+//ROUTING
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/index.html'))
+})
+app.get('/about', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/aboutUs.html'))
+})
+app.get('/adopt', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/pets.html'))
+})
 
 
 const port = process.env.PORT || 5000;
