@@ -21,6 +21,9 @@ div.petPage {
     li {
       font-size: $scalable-text-font;
     }
+    a {
+      text-decoration: none !important;
+    }
     button {
       display: block;
       margin: 0 auto;
