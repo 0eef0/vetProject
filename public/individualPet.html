@@ -29,20 +29,16 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="./index.html">Home</a></li>
-                <li class="nav-item"><a class="link" href="">About</a></li>
-                <li class="nav-item"><a class="link active" href="./pets.html">Adopt</a></li>
+                <li class="nav-item"><a class="link" href="/">Home</a></li>
+                <li class="nav-item"><a class="link" href="/about">About</a></li>
+                <li class="nav-item"><a class="link active" href="/adopt">Adopt</a></li>
             </div>
         </ul>
     </nav>
 
     <div class="petPage">
         <div class="carousel petGallery">
-            <div class="carouselImages">
-                <img src="./assets/firstCarousel.jpg" class="carouselImg activeImg">
-                <img src="./assets/secondCarousel.jpg" class="carouselImg">
-                <img src="./assets/thirdCarousel.jpg" class="carouselImg">
-            </div>
+            <div class="carouselImages"></div>
             <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
             <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
             <div class="carouselBtnPanel">
@@ -51,8 +47,9 @@
                 <button class="carouselBtn" onclick="carouselChange(2)"></button>
             </div>
         </div>
+
         <div class="petInfo">
-            <h1>Steve</h1>
+            <h1 class="pet-name">Steve</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nobis eos in officiis reprehenderit blanditiis soluta rem iusto numquam, at qui explicabo sit cumque quibusdam dolorem. Totam minima odit voluptatem similique architecto ducimus esse amet placeat exercitationem aliquid dignissimos minus error, sequi harum officia praesentium iusto ratione sint dolor corporis?
             </p>
@@ -107,6 +104,7 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
+    <script src="./js/indivPet.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="./js/carousel.js"></script>
 </body>

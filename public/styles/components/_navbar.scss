@@ -1,4 +1,6 @@
 .navbar {
+	position: fixed;
+	width: 100%;
 	background-color: $light-background;
 	z-index: 1;
 	ul {

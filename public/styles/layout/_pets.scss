@@ -11,4 +11,11 @@
 	@media screen and (max-width: 768px) {
 		grid-template-columns: 1fr;
 	}
+	.empty-list {
+		position: absolute;
+		font-size: 2rem;
+		color: $font-light;
+		width: 100%;
+		text-align: center;
+	}
 }
