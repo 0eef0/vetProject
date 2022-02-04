@@ -6,7 +6,7 @@ const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
 const routesHistory = require('./routes/appHistoryRoutes')
 const connectDB = require('./db/connect');
-const populateProducts = require('./populate')
+//const populateProducts = require('./populate')
 
 //important packages
 require('dotenv').config()
@@ -47,7 +47,7 @@ const port = process.env.PORT || 5000;
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        await populateProducts()
+        //await populateProducts()
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
