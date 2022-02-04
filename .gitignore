@@ -78,3 +78,5 @@ typings/
 #scss generated files
 public/styles/main.css
 public/styles/main.css.map
+*.css
+*.css

@@ -3,61 +3,23 @@
         "Name":"Fluffy",
         "Birthday":"1/01/2020",
         "Gender":"Male",
-        "Medical":[],
+        "Medical":[
+            "Needs daily antibiotics"
+        ],
         "Color":"blue",
         "Breed":"Boxer",
         "Species":"Dog",
-        "Personality":[],
+        "Personality":[
+            "kind",
+            "playful",
+            "loud",
+            "jumpy"
+        ],
         "Notes":"pees the bed",
-        "IMG":[]
-    },
-    {
-        "Name":"Chad",
-        "Birthday":"10/01/2020",
-        "Gender":"Male",
-        "Medical":[],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[],
-        "Notes":"pees the bed",
-        "IMG":[]
-    },
-    {
-        "Name":"had",
-        "Birthday":"9/10/2020",
-        "Gender":"Male",
-        "Medical":[],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[],
-        "Notes":"pees the bed",
-        "IMG":[]
-    },
-    {
-        "Name":"Brad",
-        "Birthday":"4/12/2020",
-        "Gender":"Male",
-        "Medical":[],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[],
-        "Notes":"pees the bed",
-        "IMG":[]
-    },
-    {
-        "Name":"Tuff",
-        "Birthday":"11/01/2020",
-        "Gender":"Male",
-        "Medical":[],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[],
-        "Notes":"pees the bed",
-        "IMG":[]
+        "IMG": [
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560",
+            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
+        ]
     }
-
 ]
