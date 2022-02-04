@@ -5,7 +5,8 @@ const app = require('./applications.json')
 const animal = require('./models/petModel')
 const form = require('./models/application')
 
-const start = async(req,res)=>{
+const start = async()=>{
+    console.log("populate ran");
     try{
         await connectDB(process.env.MONGO_URI)
         await animal.deleteMany()
