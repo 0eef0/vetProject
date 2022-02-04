@@ -54,10 +54,7 @@ blockquote,
 q {
   quotes: none;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 blockquote::before, blockquote::after,
 q::before,
 q::after {
@@ -106,21 +103,6 @@ pre {
   word-wrap: break-word;
 }
 
-<<<<<<< Updated upstream
-input [type=radio] {
-  vertical-align: text-bottom;
-}
-
-input [type=checkbox] {
-  vertical-align: bottom;
-}
-
-.ie7 input [type=checkbox] {
-  vertical-align: baseline;
-}
-
-.ie6 input[type=checkbox] {
-=======
 input [type='radio'] {
   vertical-align: text-bottom;
 }
@@ -134,7 +116,6 @@ input [type='checkbox'] {
 }
 
 .ie6 input[type='checkbox'] {
->>>>>>> Stashed changes
   vertical-align: text-bottom;
 }
 
@@ -169,25 +150,15 @@ sub {
 
 .clickable,
 label,
-<<<<<<< Updated upstream
-input[type=button],
-input[type=submit],
-input[type=file],
-=======
 input[type='button'],
 input[type='submit'],
 input[type='file'],
->>>>>>> Stashed changes
 button {
   cursor: pointer;
 }
 
 button,
-<<<<<<< Updated upstream
-input[type=button] {
-=======
 input[type='button'] {
->>>>>>> Stashed changes
   width: auto;
   overflow: hidden;
 }
@@ -308,39 +279,23 @@ div.homeGallery {
 #aboutUs {
   text-align: left;
 }
-<<<<<<< Updated upstream
+
 #aboutUs .supText {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 25px;
   margin: auto;
   margin-top: 10px;
-=======
-
-#aboutUs h1 {
-  margin: 10px;
->>>>>>> Stashed changes
 }
 
 #aboutUs #infoAboutUs {
-<<<<<<< Updated upstream
-=======
-  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
->>>>>>> Stashed changes
   height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< Updated upstream
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  background: #f5f6fa;
-  box-sizing: content-box;
-  padding: 16px;
-  margin: 30px;
-=======
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -350,7 +305,11 @@ div.homeGallery {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
->>>>>>> Stashed changes
+  background: #f5f6fa;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 16px;
+  margin: 30px;
 }
 
 @media screen and (min-width: 880px) {
@@ -396,22 +355,15 @@ div.homeGallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< Updated upstream
-  justify-content: center;
-  overflow-y: auto;
-  box-sizing: border-box;
-  background: #f5f6fa;
-  padding: 25px;
-  margin: 15px;
-=======
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow-y: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 2px solid black;
-  margin: 50px;
->>>>>>> Stashed changes
+  background: #f5f6fa;
+  padding: 25px;
+  margin: 15px;
 }
 
 #aboutUs .rows div img {
@@ -426,6 +378,7 @@ div.homeGallery {
   padding-left: 20px;
   margin: 50px;
 }
+
 #records main {
   width: 100%;
   display: -webkit-box;
@@ -449,15 +402,11 @@ div.homeGallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< Updated upstream
-  flex-direction: row;
-  position: relative;
-=======
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
->>>>>>> Stashed changes
+  position: relative;
   background: white;
   padding: 10px;
   border: 2px solid black;
@@ -467,18 +416,12 @@ div.homeGallery {
 
 #records main .record.template {
   border-radius: 10px;
-<<<<<<< Updated upstream
   font-weight: bold;
   margin: 30px;
 }
+
 #records main .record:last-of-type {
   border-bottom: 2px solid black;
-=======
-  padding: 10px;
-  border: 2px solid black;
-  -webkit-text-decoration: solid;
-          text-decoration: solid;
->>>>>>> Stashed changes
 }
 
 #records main .record .moreInfo {
@@ -551,13 +494,11 @@ div.petPage div.petInfo p,
 div.petPage div.petInfo li {
   font-size: calc(1.25vw + 0.5vh);
 }
-<<<<<<< Updated upstream
+
 div.petPage div.petInfo a {
   text-decoration: none !important;
 }
-=======
 
->>>>>>> Stashed changes
 div.petPage div.petInfo button {
   display: block;
   margin: 0 auto;
@@ -578,7 +519,7 @@ div.petPage div.petInfo button {
     font-size: 1.25rem !important;
   }
   div.petPage div p,
-div.petPage div li {
+  div.petPage div li {
     font-size: 1rem !important;
   }
   div.petPage div.petGallery {
@@ -588,6 +529,8 @@ div.petPage div li {
 }
 
 .navbar {
+  position: fixed;
+  width: 100%;
   background-color: #f5f6fa;
   z-index: 1;
 }
@@ -735,7 +678,7 @@ div.petPage div li {
 
 .banner {
   width: 100%;
-  max-height: 250px;
+  max-height: 200px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -746,7 +689,7 @@ div.petPage div li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  margin-top: 3.5rem;
 }
 
 .banner img {
@@ -813,7 +756,6 @@ div.petPage div li {
 
 .filters .sorting-inputs button,
 .filters .sorting-inputs select {
-  padding: 0.5rem 1rem;
   outline: 1px solid #2d3436;
   border-radius: 2px;
   background-color: #ecf0f1;
@@ -832,7 +774,7 @@ div.petPage div li {
         flex-wrap: wrap;
   }
   .filters .selection-buttons,
-.filters .sorting-inputs {
+  .filters .sorting-inputs {
     font-size: 1.25rem;
     margin: 0.5rem;
   }
@@ -847,7 +789,7 @@ div.petPage div li {
             justify-content: space-between;
   }
   .filters .sorting-inputs button,
-.filters .sorting-inputs select {
+  .filters .sorting-inputs select {
     margin: 0 0.75rem;
   }
   .filters .selection-buttons {
@@ -861,10 +803,7 @@ div.carousel {
   overflow: hidden;
   background-color: #f5f6fa;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 div.carousel i.arrow {
   position: absolute;
   top: 50%;
@@ -872,33 +811,21 @@ div.carousel i.arrow {
   font-size: 2rem;
   color: #00000033;
 }
-<<<<<<< Updated upstream
-div.carousel i.arrow:hover {
-  color: #00000066;
-}
-=======
 
 div.carousel i.arrow:hover {
   color: #00000066;
 }
 
->>>>>>> Stashed changes
 div.carousel i.arrow.leftArrow {
   left: 1vw;
   right: auto;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 div.carousel i.arrow.rightArrow {
   right: 1vw;
   left: auto;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 div.carousel div.carouselImages .carouselImg {
   position: absolute;
   top: calc(50% - 2rem);
@@ -916,6 +843,7 @@ div.carousel div.carouselImages .carouselImg {
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
 }
+
 div.carousel div.carouselBtnPanel {
   position: absolute;
   bottom: 0;
@@ -932,13 +860,9 @@ div.carousel div.carouselBtnPanel {
 }
 
 div.carousel div.carouselBtnPanel button.carouselBtn {
-<<<<<<< Updated upstream
-  flex-grow: 0.5;
-=======
   -webkit-box-flex: 0.5;
       -ms-flex-positive: 0.5;
           flex-grow: 0.5;
->>>>>>> Stashed changes
   margin: 0 0.25rem;
   height: 3vh;
   background-color: #00000033;
@@ -1048,7 +972,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     transition: transform 300ms ease, -webkit-transform 300ms ease;
   }
   .card .content p,
-.card .content .btnContainer {
+  .card .content .btnContainer {
     opacity: 0;
     -webkit-transition: opacity 200ms linear;
     transition: opacity 200ms linear;
@@ -1065,18 +989,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     visibility: visible;
   }
   .card:hover .content, .card:focus-within .content {
-<<<<<<< Updated upstream
-    transform: translateY(0);
-  }
-  .card:hover .content h2,
-.card:hover .content p,
-.card:hover .content .btnContainer, .card:focus-within .content h2,
-.card:focus-within .content p,
-.card:focus-within .content .btnContainer {
-    opacity: 1;
-  }
-}
-=======
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
@@ -1089,88 +1001,79 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   }
 }
 
->>>>>>> Stashed changes
 footer {
   color: #f5f6fa;
   background-color: #2d3436;
   margin-top: auto;
 }
+
 footer .row {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-<<<<<<< Updated upstream
-  flex-direction: column;
-  flex-wrap: wrap;
-=======
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
->>>>>>> Stashed changes
 }
+
 footer .row.top {
-<<<<<<< Updated upstream
-  flex-direction: row;
-  justify-content: space-around;
-=======
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
->>>>>>> Stashed changes
   color: #f5f6fa;
   padding-top: 1rem;
 }
+
 footer .row.top .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   max-width: 30vw;
   width: 100%;
   text-align: left;
-<<<<<<< Updated upstream
-  justify-content: space-between;
-=======
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
->>>>>>> Stashed changes
 }
+
 footer .row.top .col ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 footer .row.top .col ul li {
   padding: 0.1rem;
 }
+
 footer .row.top .col ul li.title {
   color: #f7941d;
   font-size: 110%;
   font-weight: bold;
   padding: 0.5rem;
 }
+
 footer .row.top .col ul li a {
   color: #f5f6fa;
   text-decoration: none;
 }
+
 footer .row.top .col ul li a:active {
   color: #f7941d;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
   text-decoration: underline;
 }
+
 footer .row.top .col.desc {
-<<<<<<< Updated upstream
-  flex-direction: column;
-  justify-content: flex-start;
-=======
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1178,47 +1081,48 @@ footer .row.top .col.desc {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
->>>>>>> Stashed changes
 }
+
 footer .row.top .col.desc h3 {
   margin: 0;
   padding: 0.5rem;
   color: #f7941d;
   font-size: 110%;
 }
+
 footer .row.top .col.desc p {
   margin: 0;
 }
+
 footer .row .socials ul {
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   font-size: 200%;
   margin: 0;
-<<<<<<< Updated upstream
-  justify-content: center;
-=======
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
->>>>>>> Stashed changes
 }
+
 footer .row .socials ul li {
   padding-inline: 1rem;
 }
+
 footer .row .socials ul li a {
   color: #f5f6fa;
 }
+
 footer .row .socials ul li a:active {
   color: #f7941d;
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 footer .row .socials ul li a:hover, footer .row .socials ul li a:focus {
   text-decoration: underline;
 }
+
 footer .row p {
   margin: 0.5rem 0;
 }
@@ -1228,24 +1132,27 @@ footer .row p {
     text-align: center;
   }
 }
-<<<<<<< Updated upstream
+
 div.question {
   margin: 1rem auto;
   width: clamp(90%, 70%, 2000px);
   background-color: #f5f6fa;
   padding: 1rem;
 }
+
 div.question h1 {
   font-size: calc(1vw + 1vh);
 }
-div.question input[type=text],
-div.question input[type=tel] {
+
+div.question input[type="text"],
+div.question input[type="tel"] {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
   width: 100%;
   outline: none;
 }
+
 div.question textarea {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
@@ -1256,14 +1163,14 @@ div.question textarea {
   resize: none;
   font-family: inherit;
 }
+
 div.question ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
 }
-
 /*# sourceMappingURL=main.css.map */
-=======
-/*# sourceMappingURL=main.css.map */
->>>>>>> Stashed changes

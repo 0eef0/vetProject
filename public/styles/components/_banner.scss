@@ -1,13 +1,14 @@
 .banner {
 	width: 100%;
-	max-height: 250px;
+	max-height: 200px;
 	overflow: hidden;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	position: relative;
+	// position: relative;
+	margin-top: 3.5rem; //height of navbar
 	img {
 		width: 100%;
 		filter: brightness(45%);
