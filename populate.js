@@ -6,14 +6,13 @@ const animal = require('./models/petModel')
 const form = require('./models/application')
 
 const start = async()=>{
-    console.log("populate ran");
     try{
         await connectDB(process.env.MONGO_URI)
         await animal.deleteMany()
         await form.deleteMany()
         await animal.create(pets)
         await form.create(app)
-        console.log('Success!!!!')
+        console.log('populate.js ran Successfully')
         // process.exit(0)
     }catch(error){
         console.log(error)

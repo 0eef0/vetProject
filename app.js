@@ -4,7 +4,7 @@ const app = express()
 const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
 const connectDB = require('./db/connect');
-const populateProducts = require('./populate')
+// const populateProducts = require('./populate')
 
 //important packages
 require('dotenv').config()
@@ -12,7 +12,7 @@ require('dotenv').config()
 //middleware functions
 app.use(express.json())
 app.use('/api/v1/pets', routes);
-app.use('/api/v1/application', routesApp);
+app.use('/api/v1/applications', routesApp);
 app.use(express.static("./public"));
 
 
@@ -29,7 +29,7 @@ const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
         // await populateProducts()
-        app.listen(port, console.log(`server is listening on port ${port}`));
+        app.listen(port, console.log(`Server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
 start()
