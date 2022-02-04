@@ -108,7 +108,7 @@
     <div class="question">
         <h1>Phone Number</h1>
         <br>
-        <input type="tel" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <input type="tel" maxlength="10" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
     </div>
     <div class="question">
         <h1>Email</h1>
@@ -119,6 +119,28 @@
         <h1>How did you hear about our adoptable animals?</h1>
         <br>
         <textarea maxlength="240"></textarea>
+    </div>
+    <div class="question">
+        <h1>How many children live in your house?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="noChildren">0</label>
+                <input name="numberChildren" type="radio" id="noChildren">
+            </li>
+            <li>
+                <label for="someChildren">1-2</label>
+                <input name="numberChildren" type="radio" id="someChildren">
+            </li>
+            <li>
+                <label for="moreChildren">3-4</label>
+                <input name="numberChildren" type="radio" id="moreChildren">
+            </li>
+            <li>
+                <label for="manyChildren">5+</label>
+                <input name="numberChildren" type="radio" id="manyChildren">
+            </li>
+        </ul>
     </div>
 
     <!-- footer -->

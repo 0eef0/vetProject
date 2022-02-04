@@ -6,7 +6,7 @@ const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
 const routesHistory = require('./routes/appHistoryRoutes')
 const connectDB = require('./db/connect');
-const populateProducts = require('./populate')
+//const populateProducts = require('./populate')
 
 //important packages
 require('dotenv').config()
