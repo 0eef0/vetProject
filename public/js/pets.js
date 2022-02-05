@@ -20,7 +20,7 @@ const showPets = async () => {
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
                     <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
                     <div class="btnContainer">
-                        <a href="/pet?id=${id}">ADOPT ME</a>
+                        <a href="/pet?id=${id}">More Info</a>
                         </div>
                 </div>
             </div>`

@@ -383,7 +383,7 @@ div.petPage {
   justify-content: space-around;
   align-items: center;
   width: clamp(90%, 70%, 2000px);
-  margin: 1.5rem auto;
+  margin: 5rem auto 0 auto;
   padding: 1rem;
   background-color: #f5f6fa;
 }
