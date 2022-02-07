@@ -7,7 +7,8 @@ div.question {
     font-size: $question-font-size;
   }
   input[type="text"],
-  input[type="tel"] {
+  input[type="tel"],
+  input[type="email"] {
     background-color: rgba($color: $clr-black, $alpha: 0.1);
     border-bottom: 2px solid $accent-color;
     padding: 1rem;
@@ -29,5 +30,18 @@ div.question {
     justify-content: space-around;
     border-bottom: 2px solid $accent-color;
     padding: 1rem;
+    @media only screen and (max-width: 760px) {
+      & {
+        display: block;
+      }
+    }
   }
+}
+button#submitAdoptForm {
+  background-color: $accent-color;
+  color: $clr-white;
+  font-family: inherit;
+  padding: 1rem;
+  width: clamp(200px, 10%, 500px);
+  margin: 0 auto;
 }

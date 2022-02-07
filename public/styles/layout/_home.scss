@@ -1,6 +1,6 @@
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
-  width: clamp(90%, 70%, 2000px);
+  width: clamp(80%, 70%, 2000px);
   padding: 1rem;
   box-shadow: $dark-shadow;
   background-color: $light-background;
@@ -51,7 +51,7 @@ div.homeGallery {
   padding: 1rem;
   box-shadow: $dark-shadow;
   margin: {
-    top: 15vh;
+    top: 5vh;
     right: auto;
     left: auto;
   }

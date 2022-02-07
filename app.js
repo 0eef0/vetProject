@@ -19,20 +19,27 @@ app.use(express.static("./public"));
 
 
 //ROUTING
+
+// Front end
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/index.html'))
+    res.sendFile(path.resolve(__dirname, './public/index.html'));
 })
 app.get('/about', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/aboutUs.html'))
+    res.sendFile(path.resolve(__dirname, './public/aboutUs.html'));
 })
 app.get('/adopt', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/pets.html'))
+    res.sendFile(path.resolve(__dirname, './public/pets.html'));
 })
 app.get('/pet', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/individualPet.html'))
+    res.sendFile(path.resolve(__dirname, './public/individualPet.html'));
 })
 app.get('/adoptionform', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adoptForm.html'))
+    res.sendFile(path.resolve(__dirname, './public/adoptForm.html'));
+})
+
+// Admin Panel
+app.get('/login', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
 
 
@@ -51,4 +58,4 @@ const start = async () => {
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
-start()
+start();

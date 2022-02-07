@@ -1,55 +1,57 @@
 div.petPage {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: clamp(90%, 70%, 2000px);
-  margin: 5rem auto 0 auto;
-  padding: 1rem;
-  background-color: $light-background;
-  div {
-    width: 40%;
-  }
-  div.petInfo {
-    h1 {
-      text-align: center;
-      font-size: $scalable-header-font;
-    }
-    ul {
-      list-style-type: circle;
-    }
-    p,
-    li {
-      font-size: $scalable-text-font;
-    }
-    a {
-      text-decoration: none !important;
-    }
-    button {
-      display: block;
-      margin: 0 auto;
-      padding: 1rem;
-      background-color: $accent-color;
-      color: $font-light;
-    }
-  }
-  @media only screen and (max-width: 760px) {
-    & {
-      display: block;
-      div {
-        width: 80%;
-        margin: 0 auto;
-        h1 {
-          font-size: 1.25rem !important;
-        }
-        p,
-        li {
-          font-size: 1rem !important;
-        }
-      }
-      div.petGallery {
-        height: 40vh;
-        margin-bottom: 1rem;
-      }
-    }
-  }
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: clamp(90%, 70%, 2000px);
+	margin: 5rem auto 0 auto;
+	padding: 1rem;
+	background-color: $light-background;
+	div {
+		width: 40%;
+	}
+	div.petInfo {
+		text-align: center;
+		.pet-name {
+			font-size: 2.25rem;
+			margin: 1rem;
+		}
+		ul {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			font-size: 1.25rem;
+			ul {
+				list-style: circle;
+				width: max-content;
+				margin: 0 auto;
+			}
+		}
+		.adopt-button {
+			color: $clr-white;
+			background-color: $accent-color;
+			padding: 0.75rem 1rem;
+			margin: 2rem;
+			border-radius: $radius-medium;
+		}
+	}
+	@media only screen and (max-width: 760px) {
+		& {
+			display: block;
+			div {
+				width: 80%;
+				margin: 0 auto;
+				h1 {
+					font-size: 1.25rem !important;
+				}
+				p,
+				li {
+					font-size: 1rem !important;
+				}
+			}
+			div.petGallery {
+				height: 40vh;
+				margin-bottom: 1rem;
+			}
+		}
+	}
 }

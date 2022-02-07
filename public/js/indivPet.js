@@ -8,7 +8,10 @@ const url = "/api/v1/pets";
 
 const showPet = async () => {
     const { data: {pet},} = await axios.get(`${url}/${id}`)
-    const {IMG} = pet;
+    const {IMG, Name} = pet;
+
+    document.title = `Adopt ${Name}`;
+    petNameDOM.innerHTML = Name;
 
     const carouselImages = IMG.map((image) => {
         return `
