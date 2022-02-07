@@ -1,33 +1,34 @@
-const createAccount = async (req, res) => {
+const accountModel = require('../models/users')
+const createNewAccount = async (req, res) => {
     try {
-        const Login = await applicationModel.create(req.body);
-        res.status(201).json({application});
+        const Login = await accountModel.create(req.body);
+        res.status(201).json({Login});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 const getAllAccounts = async (req, res) => {
     try {
-        const applications = await applicationModel.find({});
-        res.status(201).json({applications});
+        const Login = await accountModel.find({});
+        res.status(201).json({Login});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 const deleteAccount = async (req, res) => {
     try {
-        const application = await applicationModel.findByIdAndRemove(req.params.id);
-        res.status(201).json({application});
+        const Login = await accountModel.findByIdAndRemove(req.params.id);
+        res.status(201).json({Login});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 const updateAccount = async (req, res) => {
     try {
         const {id} = req.params;
-        const newApplication = req.body;
-        const application = await applicationModel.findOneAndUpdate({ _id: id }, newApplication);
-        res.status(201).json({newApplication});
+        const newLogin = req.body;
+        const Login = await accountModel.findOneAndUpdate({ _id: id }, newLogin);
+        res.status(201).json({Login});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
 
 module.exports = {
-    createAccount,
+    createNewAccount,
     getAllAccounts,
     deleteAccount,
     updateAccount

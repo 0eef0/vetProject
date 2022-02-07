@@ -50,9 +50,9 @@ app.get('/AdminLogin',(req, res)=>{
     res.sendFile(path.resolve(__dirname, './public/Login.html'));
 })
 
-app.post('/login', (req, res) => {
-    // Insert Login Code Here
-    let username = req.body.username;
-    let password = req.body.password;
-    res.send(`Username: ${username} Password: ${password}`);
-});
+// app.post('/login', (req, res) => {
+//     // Insert Login Code Here
+//     let username = req.body.username;
+//     let password = req.body.password;
+//     res.send(`Username: ${username} Password: ${password}`);
+// });
