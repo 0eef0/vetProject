@@ -249,8 +249,14 @@ div.aboutUsSummary div img {
 div.homeGallery {
   width: clamp(80%, 70%, 2000px);
   padding: 1rem;
+<<<<<<< HEAD
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   margin-top: 5vh;
+=======
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 15vh;
+>>>>>>> 057a41789350c824d73f95f74dcd602d901c27d4
   margin-right: auto;
   margin-left: auto;
 }
@@ -402,10 +408,15 @@ div.petPage {
 div.petPage div {
   width: 40%;
 }
+<<<<<<< HEAD
 div.petPage div.petInfo h1 {
+=======
+
+div.petPage div.petInfo {
+>>>>>>> 057a41789350c824d73f95f74dcd602d901c27d4
   text-align: center;
-  font-size: calc(2vw + 1vh);
 }
+<<<<<<< HEAD
 div.petPage div.petInfo ul {
   list-style-type: circle;
 }
@@ -420,8 +431,40 @@ div.petPage div.petInfo button {
   display: block;
   margin: 0 auto;
   padding: 1rem;
+=======
+
+div.petPage div.petInfo .pet-name {
+  font-size: 2.25rem;
+  margin: 1rem;
+}
+
+div.petPage div.petInfo ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+div.petPage div.petInfo ul ul {
+  list-style: circle;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+div.petPage div.petInfo .adopt-button {
+  color: #fff;
+>>>>>>> 057a41789350c824d73f95f74dcd602d901c27d4
   background-color: #f7941d;
-  color: #f5f6fa;
+  padding: 0.75rem 1rem;
+  margin: 2rem;
+  border-radius: 8px;
 }
 @media only screen and (max-width: 760px) {
   div.petPage {
