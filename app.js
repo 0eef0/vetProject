@@ -4,6 +4,7 @@ const app = express()
 const path = require('path')
 const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
+const loginRoute = require('./routes/login')
 const connectDB = require('./db/connect');
 const bodyParser = require('body-parser');
 
@@ -16,7 +17,7 @@ require('dotenv').config()
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
-app.use
+app.use('/login', loginRoute)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
