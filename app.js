@@ -6,8 +6,6 @@ const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
 const connectDB = require('./db/connect');
 
-const port = process.env.PORT || 5000
-
 //important packages
 require('dotenv').config()
 
@@ -56,4 +54,4 @@ const start = async () => {
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
-start()
+start();
