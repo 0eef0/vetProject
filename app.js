@@ -5,6 +5,7 @@ const path = require('path')
 const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
 const connectDB = require('./db/connect');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 5000
 
@@ -15,14 +16,19 @@ require('dotenv').config()
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
+app.use
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
 // Starts the apis
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        // await populateProducts()
-        app.listen(port, console.log(`Server is listening on port ${port}`));
+        //await populateProducts()
+        app.listen(port, console.log(`server is listening on port ${port}`));
+    } catch (error) { console.log(error) }
+}
+start()
 //ROUTING
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/index.html'))
@@ -43,20 +49,9 @@ app.get('/AdminLogin',(req, res)=>{
     res.sendFile(path.resolve(__dirname, './public/Login.html'));
 })
 
-
-const port = process.env.PORT || 5000;
-
-//when adding DB functionality comment this out and uncomment the start function
-// app.listen(port, () => {
-//     console.log(`Server is listening on port ${port}....`)
-// })
-
-// uncomment this when adding DB functionality
-const start = async () => {
-    try {
-        await connectDB(process.env.MONGO_URI);
-        //await populateProducts()
-        app.listen(port, console.log(`server is listening on port ${port}`));
-    } catch (error) { console.log(error) }
-}
-start()
+app.post('/login', (req, res) => {
+    // Insert Login Code Here
+    let username = req.body.username;
+    let password = req.body.password;
+    res.send(`Username: ${username} Password: ${password}`);
+});
