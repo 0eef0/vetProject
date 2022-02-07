@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/VetLogo.svg" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- link to css -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>[Pet name will go here]</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul>
+            <div class="align-left">
+                <li class="nav-logo"><img src="./assets/VetLogoNoBorder.png" alt="West-MEC Veterinary Science Logo">
+                </li>
+                <li class="nav-item title"><a href="">West-MEC Veterinary Science</a></li>
+                <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
+            </div>
+            <div class="align-right links closed">
+                <li class="nav-item"><a class="link" href="/">Home</a></li>
+                <li class="nav-item"><a class="link" href="/about">About</a></li>
+                <li class="nav-item"><a class="link active" href="/adopt">Adopt</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="petPage">
+        <div class="carousel petGallery">
+            <div class="carouselImages"></div>
+            <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
+            <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
+            <div class="carouselBtnPanel">
+                <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
+                <button class="carouselBtn" onclick="carouselChange(1)"></button>
+                <button class="carouselBtn" onclick="carouselChange(2)"></button>
+            </div>
+        </div>
+
+        <div class="petInfo">
+            <h1 class="pet-name">Steve</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nobis eos in officiis reprehenderit blanditiis soluta rem iusto numquam, at qui explicabo sit cumque quibusdam dolorem. Totam minima odit voluptatem similique architecto ducimus esse amet placeat exercitationem aliquid dignissimos minus error, sequi harum officia praesentium iusto ratione sint dolor corporis?
+            </p>
+            <br>
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+            <br>
+            <a href="/adoptionform?id=3141592653589"><button><p>Adopt Me!</p></button></a>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- footer -->
+    <footer>
+        <div class="row top">
+            <div class="col">
+                <ul>
+                    <li class="title">Services</li>
+                    <li><a href="/">Web Design</a></li>
+                    <li><a href="/">Hosting</a></li>
+                    <li><a href="/">Development</a></li>
+                </ul>
+                <ul>
+                    <li class="title">About</li>
+                    <li><a href="/">Company</a></li>
+                    <li><a href="/">Team</a></li>
+                    <li><a href="/">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="col desc">
+                <h3>Title</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="socials">
+                <ul>
+                    <li><a href="/"><i class='fab fa-facebook-square'></i></a></li>
+                    <li><a href="/"><i class='fab fa-instagram'></i></a></li>
+                    <li><a href="/"><i class='fab fa-twitter-square'></i></a></li>
+                    <li><a href="/"><i class='fab fa-snapchat-square'></i></a></li>
+                </ul>
+            </div>
+            <p>Company Name © 2021</p>
+        </div>
+    </footer>
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- other js files -->
+    <script src="./js/indivPet.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/carousel.js"></script>
+</body>
+</html>
