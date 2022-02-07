@@ -47,12 +47,11 @@ div.aboutUsSummary {
 
 /* Style for image gallery */
 div.homeGallery {
-  width: clamp(90%, 70%, 2000px);
+  width: clamp(80%, 70%, 2000px);
   padding: 1rem;
   box-shadow: $dark-shadow;
-  background-color: $light-background;
   margin: {
-    top: 2.5rem;
+    top: 15vh;
     right: auto;
     left: auto;
   }

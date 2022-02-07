@@ -1,4 +1,11 @@
 #records{
+	input{
+		height: 50px;
+		width: 35%;
+		border-radius: 50px;
+		padding-left: 20px;
+		margin: 50px;
+	}
 	main{
 		width: 100%;
 		display: flex;
@@ -10,15 +17,23 @@
 			height: fit-content;
 			display: flex;
 			flex-direction: row;
+			position: relative;
 			background: white;
+			padding: 10px;
+			border: 2px solid black;
+			border-bottom: none;
+			font-size: 20px;
 			&.template{
 				border-radius: 10px;
-				padding: 10px;
-				border: 2px solid black;
-				text-decoration: solid;
+				font-weight: bold;
+				margin: 30px;
+			}
+			&:last-of-type{
+				border-bottom: 2px solid black;
 			}
 			.moreInfo{
-				justify-self: flex-end;
+				position: absolute;
+				right: 0;
 			}
 		}
 	}
