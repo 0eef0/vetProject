@@ -1,10 +1,12 @@
 #aboutUs{
-    text-align: left;
+    text-align: center;
     .supText{
         width: fit-content;
         font-size: 25px;
         margin: auto;
         margin-top: 10px;
+        color: white;
+        text-decoration: underline;
     }
     #infoAboutUs{
         height: fit-content;
@@ -42,12 +44,17 @@
         }
         div{
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            overflow-y: auto; 
+            overflow-y: auto;
             box-sizing: border-box;
             background: $light-background;
-            padding: 25px;
+            padding: 30px;
             margin: 15px;
+            h1{
+                margin: 7px;
+                font-size: 18px;
+            }
             img{
                 width: 80%;
                 margin-bottom: 10px;
