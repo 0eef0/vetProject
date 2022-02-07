@@ -2,7 +2,6 @@ const connectDB = require('./db/connect')
 
 const pets = require('./pets.json')
 const app = require('./applications.json')
-const history = require('./applications.json')
 const animal = require('./models/petModel')
 const form = require('./models/application')
 
@@ -13,8 +12,7 @@ const populateProducts = async () => {
         await form.deleteMany()
         await animal.create(pets)
         await form.create(app)
-        await form.create(history)
-        console.log('Success!!!!')
+        console.log('populate.js ran Successfully')
         // process.exit(0)
     }catch(error){
         console.log(error)

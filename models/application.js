@@ -59,8 +59,16 @@ const ApplicationsSchema = new mongoose.Schema({
             values: ['House', 'Apartment', 'Rental','apartment'], 
             message: '{VALUE} is not supported' 
         }
+    },
+    Status: {
+        type: String,
+        default: "Current",
+        enum: {
+            values: ['Current', 'Past'],
+            message: '{VALUE} is not supported'
+        }
     }
 });
 
 // This is basic validation not advanced
-module.exports = mongoose.model('model', ApplicationsSchema);
+module.exports = mongoose.model('Application', ApplicationsSchema);

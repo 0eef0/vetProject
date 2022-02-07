@@ -16,8 +16,8 @@ const getAll = async (req, res) => {
 
 const create = async (req, res) => {
     try {
-        const product = await model.create(req.body);
-        res.status(201).json({product});
+        const pet = await model.create(req.body);
+        res.status(201).json({pet});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
@@ -31,16 +31,16 @@ const get = async (req, res) => {
 const update = async (req, res) => {
     try {
         const {id} = req.params;
-        const newProduct = req.body;
-        const products = await model.findOneAndUpdate({_id: id}, newProduct);
-        res.status(201).json({newProduct});
+        const newPet = req.body;
+        const pet = await model.findOneAndUpdate({_id: id}, newPet);
+        res.status(201).json({newPet});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
 const deleteIt = async (req, res) => {
     try {
-        const product = await model.findByIdAndRemove(req.params.id);
-        res.status(201).json({product});
+        const pet = await model.findByIdAndRemove(req.params.id);
+        res.status(201).json({pet});
     } catch (error) { res.status(500).json({msg: error}) }
 }
 

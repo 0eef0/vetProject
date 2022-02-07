@@ -4,9 +4,9 @@ const app = express()
 const path = require('path')
 const routes = require('./routes/pets')
 const routesApp = require('./routes/applicationRoute')
-const routesHistory = require('./routes/appHistoryRoutes')
 const connectDB = require('./db/connect');
-//const populateProducts = require('./populate')
+
+const port = process.env.PORT || 5000
 
 //important packages
 require('dotenv').config()
@@ -14,10 +14,15 @@ require('dotenv').config()
 //middleware functions
 app.use(express.json())
 app.use('/api/v1/pets', routes);
-app.use('/api/v1/application', routesApp);
-app.use('/api/v1/applicationHistory', routesHistory);
+app.use('/api/v1/applications', routesApp);
 app.use(express.static("./public"));
 
+// Starts the apis
+const start = async () => {
+    try {
+        await connectDB(process.env.MONGO_URI);
+        // await populateProducts()
+        app.listen(port, console.log(`Server is listening on port ${port}`));
 //ROUTING
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/index.html'))

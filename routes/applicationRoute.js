@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {getAllTwo,createTwo,getTwo,updateTwo,deleteItTwo} = require('../controllers/applicationsControllers')
+const { getAllTwo, createTwo, getTwo, updateTwo, deleteItTwo } = require('../controllers/applicationsControllers')
 
 //Controllers for application
 router.route('/').get(getAllTwo).post(createTwo);
