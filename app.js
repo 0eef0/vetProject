@@ -6,6 +6,8 @@ const routesApp = require('./routes/applicationRoute')
 const connectDB = require('./db/connect');
 // const populateProducts = require('./populate')
 
+const port = process.env.PORT || 5000;
+
 //important packages
 require('dotenv').config()
 
@@ -15,16 +17,7 @@ app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
 app.use(express.static("./public"));
 
-
-
-const port = process.env.PORT || 5000;
-
-//when adding DB functionality comment this out and uncomment the start function
-// app.listen(port, () => {
-//     console.log(`Server is listening on port ${port}....`)
-// })
-
-// uncomment this when adding DB functionality
+// Starts the apis
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
