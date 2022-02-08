@@ -25,6 +25,7 @@ module.exports = {
 };
 
 
+
 const { encrypt, decrypt } = require('./crypto');
 const hash = encrypt('Hello World!');
 console.log(hash);
@@ -37,3 +38,4 @@ console.log(hash);
 const text = decrypt(hash);
 // console.log(text); // Hello World!
 console.log(text); // Hello World
+
