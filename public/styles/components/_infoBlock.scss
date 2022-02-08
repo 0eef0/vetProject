@@ -14,6 +14,7 @@
 		position: relative;
 		background: white;
 		padding: 10px;
+		box-sizing: border-box;
 		border: 2px solid black;
 		border-bottom: none;
 		font-size: 20px;
@@ -29,23 +30,15 @@
 			border-bottom: 2px solid black;
 		}
 		.moreInfo{
-			position: absolute;
-			right: 0;
+			margin-left: auto;
+			padding-left: 0;
+			cursor: pointer;
+			user-select: none;
 		}
-		input[type=checkbox]{
+		&.appl{
+			width: 75%;
+			margin-left: 5%;
 			display: none;
-			content: 'sdfsdf';
-			&:checked ~ .appl {
-				display: flex;
-			}
-		}
-		.appl{
-			display: none;
-		}
-		@media screen and (max-width: 904px) {
-			.moreInfo{
-				position: static;
-			}
 		}
 	}
 }

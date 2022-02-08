@@ -7,7 +7,7 @@ const routesApp = require('./routes/applicationRoute');
 const loginRoute = require('./routes/login');
 const connectDB = require('./db/connect');
 const bodyParser = require('body-parser');
-//const populateProducts = require('./populate');
+// const populateProducts = require('./populate');
 
 const port = process.env.PORT || 5000;
 

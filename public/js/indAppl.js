@@ -9,30 +9,42 @@ async function getApplInfo() {
 				<p>Adopter Email</p>
 				<p>Adopter Name</p>
 				<p>Pet Name</p>
-				<p>See Applications</p>
-				<label for="toggle">Toggle</label>
-				<input type='checkbox' id='toggle' />
-				<div class="record appl">
-					<p>Oldest to Newest</p>
-					<p>Adopter Email</p>
-					<p>Adopter Name</p>
-					<p>Pet Name</p>
-					<p class="moreInfo">More Info...</p>
-				</div>
+				<p class='moreInfo' onClick="this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'flex') ? 'none' : 'flex'">See Applications</p>
+			</div>
+			<div class="record appl">
+				<p>Oldest to Newest</p>
+				<p>Adopter Email</p>
+				<p>Adopter Name</p>
+				<p>Pet Name</p>
+				<p class='moreInfo'>More Info...</p>
 			</div>
 			<div class="record">
 				<p>Oldest to Newest</p>
 				<p>Adopter Email</p>
 				<p>Adopter Name</p>
 				<p>Pet Name</p>
-				<p class="moreInfo">More Info...</p>
+				<p class='moreInfo' onClick="this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'flex') ? 'none' : 'flex'">See Applications</p>
+			</div>
+			<div class="record appl">
+				<p>Oldest to Newest</p>
+				<p>Adopter Email</p>
+				<p>Adopter Name</p>
+				<p>Pet Name</p>
+				<p class='moreInfo'>More Info...</p>
 			</div>
 			<div class="record">
 				<p>Oldest to Newest</p>
 				<p>Adopter Email</p>
 				<p>Adopter Name</p>
 				<p>Pet Name</p>
-				<p class="moreInfo">More Info...</p>
+				<p class='moreInfo' onClick="this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'flex') ? 'none' : 'flex'">See Applications</p>
+			</div>
+			<div class="record appl">
+				<p>Oldest to Newest</p>
+				<p>Adopter Email</p>
+				<p>Adopter Name</p>
+				<p>Pet Name</p>
+				<p class='moreInfo'>More Info...</p>
 			</div>
 		`;
 	}
