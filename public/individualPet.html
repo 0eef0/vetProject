@@ -51,34 +51,33 @@
         <div class="petInfo">
             <h1 class="pet-name"></h1>
             <ul>
-                <li>Birthday: <span class="birthday"></span></li>
-                <li>Gender: <span class="gender"></span></li>
-                <li>Color: <span class="color"></span></li>
-                <li>Breed: <span class="breed"></span></li>
-                <li>Species: <span class="species"></span></li>
-                <li>Medical Information:
-                    <ul class="personalityList">
-                        <li>drugs</li>
-                        <li>drugs</li>
-                        <li>drugs</li>
-                        <li>drugs</li>
-                    </ul>
-                </li>
-                <li>Personality:
-                    <ul class="personalityList">
-                        <li>stupid</li>
-                        <li>stupid</li>
-                        <li>stupid</li>
-                        <li>stupid</li>
-                    </ul>
-                </li>
-                <li>Additional Notes: <span class="notes"></span></li>
+                <div class="row">
+                    <div class="col facts">
+                        <li>Birthday: <span class="birthday"></span></li>
+                        <li>Gender: <span class="gender"></span></li>
+                        <li>Color: <span class="color"></span></li>
+                        <li>Breed: <span class="breed"></span></li>
+                        <!-- <li>Species: <span class="species"></span></li> -->
+                    </div>
+                    <div class="col">
+                        <li>Medical Information:
+                            <ul class="medical">
+                                <li>drugs</li>
+                            </ul>
+                        </li>
+                        <li>Personality:
+                            <ul class="personality">
+                                <li>stupid</li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+                <li class="added-note">Additional Notes: <br/><span class="notes">Pees on absolutely everything!</span></li>
 
             </ul>
             <a href="/adoptionform" class="adopt-button">Adopt Me</a>
         </div>
     </div>
-    <br><br>
 
     <!-- footer -->
     <footer>
