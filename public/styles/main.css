@@ -931,7 +931,8 @@ div.question h1 {
 }
 div.question input[type=text],
 div.question input[type=tel],
-div.question input[type=email] {
+div.question input[type=email],
+div.question input[type=number] {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
