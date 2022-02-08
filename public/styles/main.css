@@ -332,36 +332,6 @@ div.homeGallery {
   margin: 50px;
   margin-bottom: 10px;
 }
-#records main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-#records main .record {
-  width: 80%;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  background: white;
-  padding: 10px;
-  border: 2px solid black;
-  border-bottom: none;
-  font-size: 20px;
-}
-#records main .record.template {
-  border-radius: 10px;
-  font-weight: bold;
-  margin: 30px;
-}
-#records main .record:last-of-type {
-  border-bottom: 2px solid black;
-}
-#records main .record .moreInfo {
-  position: absolute;
-  right: 0;
 #records input.search:focus {
   outline: none;
 }
@@ -450,24 +420,64 @@ div.petPage div li {
   }
 }
 
-div#login {
-  width: clamp(200px, 40%, 500px);
+form#login {
+  position: relative;
+  width: clamp(250px, 40%, 500px);
   background-color: #f5f6fa;
   padding: 1rem;
-  height: 70vh;
+  height: 50vh;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
-div#login h1 {
+form#login h1 {
   text-align: center;
   font-size: calc(1.25vw + 0.5vh);
 }
-div#login img {
+form#login img {
   width: 10%;
+  min-width: 30px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+form#login section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+form#login section label {
+  width: 100%;
+  text-align: center;
+}
+form#login section input {
+  padding: 0.5rem;
+  width: 50%;
+  min-width: 150px;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+form#login button {
+  position: absolute;
+  border-radius: 2rem;
+  top: auto;
+  right: 35%;
+  left: 35%;
+  bottom: 10px;
+  padding: 1rem;
+  width: 30%;
+  background-color: #f7941d;
+  color: #fff;
+}
+@media only screen and (max-width: 760px) {
+  form#login h1 {
+    font-size: 1rem;
+  }
+  form#login button {
+    width: 80%;
+    left: 10%;
+    right: 10%;
+  }
 }
 
 .navbar {
