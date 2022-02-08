@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
 
 const ApplicationsSchema = new mongoose.Schema({
-    FirstName: {
+    FullName: {
         type: String,
-        required: [true, 'Must provide a first name'],
-        trim: true
-    },
-    LastName: {
-        type: String,
-        required: [true, 'Must provide a last name'],
+        required: [true, 'Must provide a full name'],
         trim: true
     },
     Occupation: {

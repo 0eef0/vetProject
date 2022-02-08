@@ -7,7 +7,7 @@ const routesApp = require('./routes/applicationRoute');
 const loginRoute = require('./routes/login');
 const connectDB = require('./db/connect');
 const bodyParser = require('body-parser');
-const populateProducts = require('./populate');
+//const populateProducts = require('./populate');
 
 const port = process.env.PORT || 5000;
 
@@ -18,7 +18,7 @@ require('dotenv').config()
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
-app.use('/login', loginRoute)
+//app.use('/login', loginRoute)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
