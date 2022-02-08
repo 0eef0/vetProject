@@ -35,16 +35,10 @@ const getOneAccount = async (req, res) => {
 //     } catch (error) { res.status(500).json({msg: error}) }
 // }
 
-const hash = crypto.createHmac('sha256', secret)
-    .update('I love cupcakes')
-    .digest('hex');
-console.log(hash);
-
 module.exports = {
     // createNewAccount,
     getAllAccounts,
-    getOneAccount,
+    getOneAccount
     // deleteAccount,
     // updateAccount,
-    hash
 }

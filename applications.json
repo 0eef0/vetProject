@@ -10,7 +10,7 @@
         "Children":83,
         "Housing":"apartment",
         "Space":"yes there is space",
-        "Minor":"yes my mom is ok with it",
+        "Minor":false,
         "GuardianContact":"Something@example.com",
         "GuardianName":"name",
         "GuardianPhone":"123-456-7890",
@@ -30,6 +30,6 @@
         "Birthday":"1/01/2020",
         "Accepted":false,
         "Rejected":false,
-        "Status": "Current"
+        "Status": "Active"
     }
 ]
