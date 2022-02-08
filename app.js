@@ -9,7 +9,7 @@ const connectDB = require('./db/connect');
 const bodyParser = require('body-parser');
 const populateProducts = require('./populate');
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 
 //important packages
 require('dotenv').config()
@@ -22,31 +22,42 @@ app.use('/login', loginRoute)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
-// Starts the apis
+// Front end
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/index.html'));
+})
+app.get('/about', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/aboutUs.html'));
+})
+app.get('/adopt', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/pets.html'));
+})
+app.get('/pet', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/individualPet.html'));
+})
+app.get('/adoptionform', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adoptForm.html'));
+})
+
+// Admin Panel
+app.get('/login', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
+})
+
+
+// const port = process.env.PORT || 5000;
+
+//when adding DB functionality comment this out and uncomment the start function
+// app.listen(port, () => {
+//     console.log(`Server is listening on port ${port}....`)
+// })
+
+// uncomment this when adding DB functionality
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        // await populateProducts()
+        //await populateProducts()
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
-start()
-//ROUTING
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/index.html'))
-})
-app.get('/about', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/aboutUs.html'))
-})
-app.get('/adopt', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/pets.html'))
-})
-app.get('/pet', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/individualPet.html'))
-})
-app.get('/adoptionform', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adoptForm.html'))
-})
-app.get('/AdminLogin',(req, res)=>{
-    res.sendFile(path.resolve(__dirname, './public/Login.html'));
-})
+start();
