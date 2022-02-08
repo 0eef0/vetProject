@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllAccounts, createNewAccount, getOneAccount, updateAccount, deleteAccount } = require('../controllers/LoginControllers')
+const { getAllAccounts, getOneAccount } = require('../controllers/LoginControllers')
 
 //Controllers for application
-router.route('/').get(getAllAccounts).post(createNewAccount);
-router.route('/:id').get(getOneAccount).patch(updateAccount).delete(deleteAccount);
+router.route('/').get(getAllAccounts)
+router.route('/:id').get(getOneAccount)
+// router.route('/login').(hash)
+// .post(createNewAccount.patch(updateAccount).delete(deleteAccount););
 
 module.exports = router;
