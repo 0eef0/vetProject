@@ -926,6 +926,7 @@ button#submitAdoptForm {
   position: relative;
   background: white;
   padding: 10px;
+  box-sizing: border-box;
   border: 2px solid black;
   border-bottom: none;
   font-size: 20px;
@@ -942,23 +943,15 @@ button#submitAdoptForm {
   border-bottom: 2px solid black;
 }
 .infoBlock .record .moreInfo {
-  position: absolute;
-  right: 0;
+  margin-left: auto;
+  padding-left: 0;
+  cursor: pointer;
+  user-select: none;
 }
-.infoBlock .record input[type=checkbox] {
+.infoBlock .record.appl {
+  width: 75%;
+  margin-left: 5%;
   display: none;
-  content: "sdfsdf";
-}
-.infoBlock .record input[type=checkbox]:checked ~ .appl {
-  display: flex;
-}
-.infoBlock .record .appl {
-  display: none;
-}
-@media screen and (max-width: 904px) {
-  .infoBlock .record .moreInfo {
-    position: static;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
