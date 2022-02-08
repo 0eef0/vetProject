@@ -8,8 +8,7 @@ const PetSchema = new mongoose.Schema({
     },
     Birthday: {
         type: Date,
-        required: [true, 'Must provide the age'],
-        trim: true
+        required: [true, 'Must provide the age']
     },
     Gender: {
         type: String,
@@ -37,7 +36,7 @@ const PetSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Must provide their species'],
         enum: {
-            values: ['Dog', 'Cat','dog','cat'],
+            values: ['Dog', 'Cat'],
             message: '{VALUE} is not supported',
         }
     },
@@ -52,8 +51,7 @@ const PetSchema = new mongoose.Schema({
     },
     IMG: {
         type: Array,
-        required: [true, 'Must provide an image'],
-        trim: true
+        required: [true, 'Must provide an image']
     }
 });
 

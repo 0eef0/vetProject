@@ -153,7 +153,7 @@ const ApplicationsSchema = new mongoose.Schema({
         type: String,
         default: "Current",
         enum: {
-            values: ['Current', 'Past'],
+            values: ['Active', 'Archive'],
             message: '{VALUE} is not supported'
         }
     }

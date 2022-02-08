@@ -1,11 +1,13 @@
 //important things
-const express = require('express')
-const app = express()
-const path = require('path')
-const routes = require('./routes/pets')
-const routesApp = require('./routes/applicationRoute')
+const express = require('express');
+const app = express();
+const path = require('path');
+const routes = require('./routes/pets');
+const routesApp = require('./routes/applicationRoute');
+const loginRoute = require('./routes/login');
 const connectDB = require('./db/connect');
 const bodyParser = require('body-parser');
+const populateProducts = require('./populate');
 
 const port = process.env.PORT || 5000
 
@@ -16,7 +18,7 @@ require('dotenv').config()
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
-app.use
+app.use('/login', loginRoute)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
@@ -24,7 +26,7 @@ app.use(express.static("./public"));
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        //await populateProducts()
+        // await populateProducts()
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
@@ -48,10 +50,3 @@ app.get('/adoptionform', (req, res) => {
 app.get('/AdminLogin',(req, res)=>{
     res.sendFile(path.resolve(__dirname, './public/Login.html'));
 })
-
-app.post('/login', (req, res) => {
-    // Insert Login Code Here
-    let username = req.body.username;
-    let password = req.body.password;
-    res.send(`Username: ${username} Password: ${password}`);
-});
