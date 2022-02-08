@@ -256,13 +256,15 @@ div.homeGallery {
 }
 
 #aboutUs {
-  text-align: left;
+  text-align: center;
 }
 #aboutUs .supText {
   width: fit-content;
   font-size: 25px;
   margin: auto;
   margin-top: 10px;
+  color: white;
+  text-decoration: underline;
 }
 #aboutUs #infoAboutUs {
   height: fit-content;
@@ -305,24 +307,30 @@ div.homeGallery {
 }
 #aboutUs .rows div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   overflow-y: auto;
   box-sizing: border-box;
   background: #f5f6fa;
-  padding: 25px;
+  padding: 30px;
   margin: 15px;
+}
+#aboutUs .rows div h1 {
+  margin: 7px;
+  font-size: 18px;
 }
 #aboutUs .rows div img {
   width: 80%;
   margin-bottom: 10px;
 }
 
-#records input {
+#records input.search {
   height: 50px;
-  width: 35%;
+  width: 350px;
   border-radius: 50px;
   padding-left: 20px;
   margin: 50px;
+  margin-bottom: 10px;
 }
 #records main {
   width: 100%;
@@ -354,6 +362,8 @@ div.homeGallery {
 #records main .record .moreInfo {
   position: absolute;
   right: 0;
+#records input.search:focus {
+  outline: none;
 }
 
 .card-container {
@@ -947,6 +957,58 @@ button#submitAdoptForm {
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
   margin: 0 auto;
+}
+
+.infoBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.infoBlock .record {
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  background: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-bottom: none;
+  font-size: 20px;
+}
+.infoBlock .record.template {
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 30px;
+}
+.infoBlock .record:first-of-type {
+  margin-top: 30px;
+}
+.infoBlock .record:last-of-type {
+  border-bottom: 2px solid black;
+}
+.infoBlock .record .moreInfo {
+  position: absolute;
+  right: 0;
+}
+.infoBlock .record input[type=checkbox] {
+  display: none;
+  content: "sdfsdf";
+}
+.infoBlock .record input[type=checkbox]:checked ~ .appl {
+  display: flex;
+}
+.infoBlock .record .appl {
+  display: none;
+}
+@media screen and (max-width: 904px) {
+  .infoBlock .record .moreInfo {
+    position: static;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

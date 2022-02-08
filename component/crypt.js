@@ -1,28 +1,37 @@
-const {
-    scrypt,
-    randomFill,
-    createCipheriv} = await import('crypto');
+const crypto = require('crypto');
 
-const algorithm = 'aes-192-cbc';
-const password = 'Password used to generate key';
+const algorithm = 'aes-256-ctr';
+const secretKey = 'vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3';
+const iv = crypto.randomBytes(16);
 
-  // First, we'll generate the key. The key length is dependent on the algorithm.
-  // In this case for aes192, it is 24 bytes (192 bits).
-scrypt(password, 'salt', 24, (err, key) => {
-    if (err) throw err;
-    // Then, we'll generate a random initialization vector
-    randomFill(new Uint8Array(16), (err, iv) => {
-        if (err) throw err;
-      // Once we have the key and iv, we can create and use the cipher...
-        const cipher = createCipheriv(algorithm, key, iv);
+const encrypt = (text) => {
+    const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
+    const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
+    return {
+        iv: iv.toString('hex'),
+        content: encrypted.toString('hex')
+    };
+};
 
-        let encrypted = '';
-        cipher.setEncoding('hex');
+const decrypt = (hash) => {
+    const decipher = crypto.createDecipheriv(algorithm, secretKey, Buffer.from(hash.iv, 'hex'));
+    const decrpyted = Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
+    return decrpyted.toString();
+};
 
-        cipher.on('data', (chunk) => encrypted += chunk);
-        cipher.on('end', () => console.log(encrypted));
+module.exports = {
+    encrypt,
+    decrypt
+};
+const { encrypt, decrypt } = require('./crypto');
+const hash = encrypt('Hello World!');
+console.log(hash);
 
-        cipher.write('some clear text data');
-        cipher.end();
-    });
-});
+// {
+//     iv: '237f306841bd23a418878792252ff6c8',
+//     content: 'e2da5c6073dd978991d8c7cd'
+// }
+
+const text = decrypt(hash);
+console.log(text); // Hello World!
+
