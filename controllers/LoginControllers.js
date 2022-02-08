@@ -1,4 +1,6 @@
-const accountModel = require('../models/users')
+const accountModel = require('../models/users');
+const crypto = require('crypto');
+const secret = 'abcdefg';
 
 const createNewAccount = async (req, res) => {
     try {
@@ -33,11 +35,16 @@ const updateAccount = async (req, res) => {
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
+const hash = crypto.createHmac('sha256', secret)
+    .update('I love cupcakes')
+    .digest('hex');
+console.log(hash);
 
 module.exports = {
     createNewAccount,
     getAllAccounts,
     getOneAccount,
     deleteAccount,
-    updateAccount
+    updateAccount,
+    hash
 }
