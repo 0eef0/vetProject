@@ -146,7 +146,7 @@ const ApplicationsSchema = new mongoose.Schema({
     },
     Status: {
         type: String,
-        default: "Current",
+        default: "Active",
         enum: {
             values: ['Active', 'Archive'],
             message: '{VALUE} is not supported'

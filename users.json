@@ -1,34 +1,32 @@
 [
     {
-        "FirstName":"name",
-        "LastName":"name",
-        "Email":"something@example.com",
-        "Password":"pass1234",
-        "PhoneNumber":"123-456-7890",
-        "Status":"default"
+        "Username": "Vet_Overlord",
+        "Password": {
+            "iv": "430b2b60e5f7a43b76db1149a96da9bc",
+            "content": "bbbfdf2afd1bb27cffda27cdf513"
+        },
+        "Status": "Master",
+        "Logs": []
     },
     {
-        "FirstName":"name",
-        "LastName":"name",
-        "Email":"something@example.com",
-        "Password":"pass1234",
-        "PhoneNumber":"123-456-7890",
-        "Status":"default"
+        "Username": "Animal_King",
+        "Password": {
+            "iv": "df58ab76a7673e9f23bc1e4206a8bb42",
+            "content": "cc015ef255a53ef09d8f6c1970305c"
+        },
+        "Status": "Master",
+        "Logs": []
     },
     {
-        "FirstName":"name",
-        "LastName":"name",
-        "Email":"something@example.com",
-        "Password":"pass1234",
-        "PhoneNumber":"123-456-7890",
-        "Status":"default"
+        "Username": "asdf",
+        "Password": "asdf",
+        "Status": "Admin",
+        "Logs": []
     },
     {
-        "FirstName":"name",
-        "LastName":"name",
-        "Email":"something@example.com",
-        "Password":"pass1234",
-        "PhoneNumber":"123-456-7890",
-        "Status":"default"
+        "Username": "asdf",
+        "Password": "asdf",
+        "Status": "Admin",
+        "Logs": []
     }
 ]

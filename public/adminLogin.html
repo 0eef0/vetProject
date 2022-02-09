@@ -18,6 +18,8 @@
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
     <title>Admin Panel</title>
+
+
 </head>
 
 <body>
@@ -48,7 +50,8 @@
             <br>
             <input type="password" id="loginPass">
         </section>
-        <button type="submit" onclick="">Login</button>
+        <button type="button"
+            onclick="login(document.getElementById('loginEmail').value, document.getElementById('loginPass').value)">Login</button>
     </form>
 
 
@@ -57,7 +60,9 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
-    <script src="./js/navbar.js"></script>
+    <!-- <script src="./js/navbar.js"></script> -->
+    <script src="js/login.js"></script>
+
 </body>
 
 </html>
