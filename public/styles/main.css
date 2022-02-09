@@ -277,6 +277,9 @@ div.homeGallery {
   padding: 16px;
   margin: 30px;
 }
+#aboutUs #infoAboutUs img {
+  padding: 25px;
+}
 @media screen and (min-width: 880px) {
   #aboutUs #infoAboutUs * {
     width: 31%;
@@ -417,6 +420,66 @@ div.petPage div li {
   div.petPage div.petGallery {
     height: 40vh;
     margin-bottom: 1rem;
+  }
+}
+
+form#login {
+  position: relative;
+  width: clamp(250px, 40%, 500px);
+  background-color: #f5f6fa;
+  padding: 1rem;
+  height: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+}
+form#login h1 {
+  text-align: center;
+  font-size: calc(1.25vw + 0.5vh);
+}
+form#login img {
+  width: 10%;
+  min-width: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+form#login section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+form#login section label {
+  width: 100%;
+  text-align: center;
+}
+form#login section input {
+  padding: 0.5rem;
+  width: 50%;
+  min-width: 150px;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+form#login button {
+  position: absolute;
+  border-radius: 2rem;
+  top: auto;
+  right: 35%;
+  left: 35%;
+  bottom: 10px;
+  padding: 1rem;
+  width: 30%;
+  background-color: #f7941d;
+  color: #fff;
+}
+@media only screen and (max-width: 760px) {
+  form#login h1 {
+    font-size: 1rem;
+  }
+  form#login button {
+    width: 80%;
+    left: 10%;
+    right: 10%;
   }
 }
 
@@ -920,6 +983,7 @@ button#submitAdoptForm {
 .infoBlock .record {
   width: 80%;
   height: fit-content;
+  font-size: 20px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -929,8 +993,7 @@ button#submitAdoptForm {
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid black;
-  border-bottom: none;
-  font-size: 20px;
+  margin-bottom: -2px;
 }
 .infoBlock .record.template {
   border-radius: 10px;
@@ -940,19 +1003,24 @@ button#submitAdoptForm {
 .infoBlock .record:first-of-type {
   margin-top: 30px;
 }
-.infoBlock .record:last-of-type {
-  border-bottom: 2px solid black;
-}
 .infoBlock .record .moreInfo {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
   user-select: none;
 }
-.infoBlock .record.appl {
+.infoBlock .appl {
   width: 75%;
+  height: fit-content;
   margin-left: 5%;
   display: none;
+  margin-top: 1px;
+}
+.infoBlock .appl .record {
+  width: 100%;
+}
+.infoBlock .appl .record:first-of-type {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
