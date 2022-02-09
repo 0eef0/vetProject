@@ -1,3 +1,7 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
 div.question {
   margin: 1rem auto;
   width: clamp(90%, 70%, 2000px);

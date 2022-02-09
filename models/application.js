@@ -50,10 +50,6 @@ const ApplicationsSchema = new mongoose.Schema({
         type: Boolean,
         default:null
     },
-    GuardianContact: {
-        type: String,
-        default: null
-    },
     GuardianName: {
         type: String,
         required: [true, 'Must provide a guadian name, put your own name if you are over 18'],
@@ -92,11 +88,6 @@ const ApplicationsSchema = new mongoose.Schema({
     PetExamineReason: {
         type: String,
         default:null,
-        trim: true
-    },
-    InterestedPet: {
-        type: String,
-        required: [true, 'Must provide which pet you are looking at'],
         trim: true
     },
     Qualification: {

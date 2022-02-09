@@ -259,8 +259,6 @@ div.homeGallery {
   text-align: center;
 }
 #aboutUs .supText {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 25px;
   margin: auto;
@@ -269,8 +267,6 @@ div.homeGallery {
   text-decoration: underline;
 }
 #aboutUs #infoAboutUs {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -293,8 +289,6 @@ div.homeGallery {
   }
 }
 #aboutUs .rows {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -414,8 +408,6 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: circle;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -429,8 +421,6 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -489,7 +479,7 @@ form#login section input {
   padding: 0.5rem;
   width: 50%;
   min-width: 150px;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 form#login button {
@@ -740,8 +730,7 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -782,8 +771,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -834,8 +822,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -959,6 +945,11 @@ footer .row p {
     text-align: center;
   }
 }
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 div.question {
   margin: 1rem auto;
   width: clamp(90%, 70%, 2000px);
@@ -1018,8 +1009,6 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   align-items: center;
@@ -1048,13 +1037,12 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .infoBlock .record.appl {
   width: 75%;
   margin-left: 5%;
   display: none;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
