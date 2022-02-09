@@ -7,6 +7,7 @@
 	.record{
 		width: 80%;
 		height: fit-content;
+		font-size: 20px;
 		display: flex;
 		align-items: center;
 		flex-direction: row;
@@ -16,8 +17,7 @@
 		padding: 10px;
 		box-sizing: border-box;
 		border: 2px solid black;
-		border-bottom: none;
-		font-size: 20px;
+		margin-bottom: -2px;
 		&.template{
 			border-radius: 10px;
 			font-weight: bold;
@@ -26,19 +26,24 @@
 		&:first-of-type{
 			margin-top: 30px;
 		}
-		&:last-of-type{
-			border-bottom: 2px solid black;
-		}
 		.moreInfo{
 			margin-left: auto;
 			padding-left: 0;
 			cursor: pointer;
 			user-select: none;
 		}
-		&.appl{
-			width: 75%;
-			margin-left: 5%;
-			display: none;
+	}
+	.appl{
+		width: 75%;
+		height: fit-content;
+		margin-left: 5%;
+		display: none;
+		margin-top: 1px;
+		.record{
+			width: 100%;
+			&:first-of-type{
+				margin-top: 0;
+			}
 		}
 	}
 }
