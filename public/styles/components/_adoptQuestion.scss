@@ -8,7 +8,8 @@ div.question {
   }
   input[type="text"],
   input[type="tel"],
-  input[type="email"] {
+  input[type="email"],
+  input[type="number"] {
     background-color: rgba($color: $clr-black, $alpha: 0.1);
     border-bottom: 2px solid $accent-color;
     padding: 1rem;
