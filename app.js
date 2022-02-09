@@ -44,19 +44,11 @@ app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
 
-
-// const port = process.env.PORT || 5000;
-
-//when adding DB functionality comment this out and uncomment the start function
-// app.listen(port, () => {
-//     console.log(`Server is listening on port ${port}....`)
-// })
-
 // uncomment this when adding DB functionality
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        //await populateProducts()
+        // await populateProducts()
         app.listen(port, console.log(`server is listening on port ${port}`));
     } catch (error) { console.log(error) }
 }
