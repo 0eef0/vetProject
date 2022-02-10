@@ -1,6 +1,7 @@
 {
   "name": "vet-project",
   "version": "1.0.0",
+  "type": "module",
   "description": "Simple pet adoption page for the use of the West-MEC Northeast Campus Verterinary Program",
   "main": "app.js",
   "scripts": {
