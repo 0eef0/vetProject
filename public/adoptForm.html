@@ -35,8 +35,8 @@
             </div>
         </ul>
     </nav>
-
-    <div class="question" style="margin-top: 5vh;">
+<form class="adoptForm">
+        <div class="question" style="margin-top: 5vh;">
         <h1>First and Last Name</h1>
         <br>
         <input type="text" maxlength="100" id="userFullName">
@@ -54,7 +54,7 @@
     <div class="question">
         <h1>Phone Number</h1>
         <br>
-        <input type="tel" maxlength="10" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="userPhoneNumber">
+        <input type="tel" maxlength="10" id="userPhoneNumber">
     </div>
     <div class="question">
         <h1>Email</h1>
@@ -87,9 +87,10 @@
                 <label for="Condominium">Condominium</label>
                 <input name="homeType" type="radio" id="Condominium">
             </li>
-            <li>
-                <label for="Other">Other</label>
-                <input name="homeType" type="text" id="Other">
+            <li style="display: flex; align-items: center; justify-content: space-between;">
+                <label for="otherHomeRadio">Other</label>
+                <input name="homeType" type="radio" id="otherHomeRadio" style="margin: 0 0.1vw;">
+                <input disabled="true" name="homeType" type="text" id="Other" style="height: 3vh;">
             </li>
         </ul>
     </div>
@@ -253,10 +254,11 @@
             </li>
         </ul>
     </div>
-    <br>
-    <button id="submitAdoptForm">Submit</button>
-    <br>
+        <br>
+        <button id="submitAdoptForm" type="submit">Submit</button>
+        <br>
 
+</form>
     <!-- footer -->
     <footer>
         <div class="row top">
