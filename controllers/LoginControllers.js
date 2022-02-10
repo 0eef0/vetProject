@@ -1,13 +1,7 @@
 const accountModel = require('../models/users');
-<<<<<<< HEAD
-// const crypto = require('crypto');
-// import accountModel from '../models/users.js'
-import crypto from 'crypto'
-=======
 const crypto = require('crypto');
 // import accountModel from '../models/users.js'
 // import crypto from 'crypto'
->>>>>>> e0d0fca23b3b4775239eefc21b38d4eb6765366c
 const secret = 'abcdefg';
 
 // const createNewAccount = async (req, res) => {
