@@ -1,7 +1,7 @@
-import loginFunc from '../../component/loginScript';
+const loginFunc = require('../../component/loginScript');
 const time = 'now'
 console.log('test');
 loginFunc();
 
-export default time
+module.exports = time
 //const login = loginFunc;

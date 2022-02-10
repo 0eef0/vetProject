@@ -16,4 +16,4 @@ const loginFunc = (user, pass) => {
 // const text = decrypt(hash);
 // console.log(text); // Hello World!
 
-export default loginFunc;
+module.exports = loginFunc;
