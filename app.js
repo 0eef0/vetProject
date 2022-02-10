@@ -12,10 +12,10 @@
 import express from 'express'
 const app = express()
 import path from 'path'
-import routes from './routes/pets.js'
-import routesApp from './routes/applicationRoute.js'
-import loginRoute from './routes/login.js'
-import connectDB from './db/connect.js'
+//import routes from './routes/pets.js'
+//import routesApp from './routes/applicationRoute.js'
+//import loginRoute from './routes/login.js'
+//import connectDB from './db/connect.js'
 import bodyParser from 'body-parser';
 
 const port = process.env.PORT || 5000;
