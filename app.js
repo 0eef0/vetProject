@@ -1,22 +1,22 @@
 //important things
-// const express = require('express');
-// const app = express();
-// const path = require('path');
-// const routes = require('./routes/pets');
-// const routesApp = require('./routes/applicationRoute');
-// const loginRoute = require('./routes/login');
-// const connectDB = require('./db/connect');
-// const bodyParser = require('body-parser');
-// const populateProducts = require('./populate');
+const express = require('express');
+const app = express();
+const path = require('path');
+const routes = require('./routes/pets');
+const routesApp = require('./routes/applicationRoute');
+const loginRoute = require('./routes/login');
+const connectDB = require('./db/connect');
+const bodyParser = require('body-parser');
+const populateProducts = require('./populate');
 
-import express from 'express'
-const app = express()
-import path from 'path'
-import routes from './routes/pets.js'
-import routesApp from './routes/applicationRoute.js'
-import loginRoute from './routes/login.js'
-import connectDB from './db/connect.js'
-import bodyParser from 'body-parser';
+// import express from 'express'
+// const app = express()
+// import path from 'path'
+// import routes from './routes/pets.js'
+// import routesApp from './routes/applicationRoute.js'
+// import loginRoute from './routes/login.js'
+// import connectDB from './db/connect.js'
+// import bodyParser from 'body-parser';
 
 const port = process.env.PORT || 5000;
 

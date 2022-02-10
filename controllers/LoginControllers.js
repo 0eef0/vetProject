@@ -1,7 +1,7 @@
-// const accountModel = require('../models/users');
-// const crypto = require('crypto');
-import accountModel from '../models/users.js'
-import crypto from 'crypto'
+const accountModel = require('../models/users');
+const crypto = require('crypto');
+// import accountModel from '../models/users.js'
+// import crypto from 'crypto'
 const secret = 'abcdefg';
 
 // const createNewAccount = async (req, res) => {
@@ -37,11 +37,11 @@ const getOneAccount = async (req, res) => {
 //     } catch (error) { res.status(500).json({msg: error}) }
 // }
 
-// module.exports = {
-//     // createNewAccount,
-//     getAllAccounts,
-//     getOneAccount
-//     // deleteAccount,
-//     // updateAccount,
-// }
-export default { getAllAccounts, getOneAccount }
+module.exports = {
+    // createNewAccount,
+    getAllAccounts,
+    getOneAccount
+    // deleteAccount,
+    // updateAccount,
+}
+// export default { getAllAccounts, getOneAccount }
