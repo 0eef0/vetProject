@@ -1,5 +1,5 @@
 // const mongoose = require('mongoose');
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
     Username: {
@@ -52,4 +52,4 @@ const UserSchema = new mongoose.Schema({
 
 // This is basic validation not advanced
 // module.exports = mongoose.model('users', UserSchema);
-export default mongoose.model('users', UserSchema)
+module.exports = mongoose.model('users', UserSchema)
