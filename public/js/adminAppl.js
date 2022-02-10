@@ -1,4 +1,4 @@
-const main = document.querySelector('#indAppl main');
+const main = document.querySelector('#adminApp main');
 
 const recordDrop = "this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'block') ? 'none' : 'block'";
 
