@@ -1,8 +1,9 @@
 {
   "name": "vet-project",
   "version": "1.0.0",
-  "description": "Simple pet adoption page for the use of the West-MEC Northeast Campus Verterinary Program",
+  "description": "Simple pet adoption page for the use of the West-MEC Northeast Campus Veterinary Program",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
