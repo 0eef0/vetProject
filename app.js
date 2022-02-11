@@ -11,15 +11,43 @@
 // const populateProducts = require('./populate');
 
 const express = require('express');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const bodyParser = require('body-parser');
+const LocalStrategy = require('passport-local');
+const passportLocalMongoose = require('passport-local-mongoose');
+
 const app = express();
 const path = require('path');
 const routes = require('./routes/pets.js');
 const routesApp = require('./routes/applicationRoute.js');
 const loginRoute = require('./routes/login.js');
 const connectDB = require('./db/connect.js');
-const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 5000;
+
+const port = process.env.PORT || 5001;
+
+// mongoose.set('useNewUrlParser', true);
+// mongoose.set('useFindAndModify', false);
+// mongoose.set('useCreateIndex', true);
+// mongoose.set('useUnifiedTopology', true);
+// mongoose.connect("mongodb://localhost/auth_demo_app");
+
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(require("express-session")({
+    secret: "Rusty is a dog",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 //important packages
 require('dotenv').config()
@@ -28,8 +56,8 @@ require('dotenv').config()
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
-// app.use('/login', loginRoute)
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use('/login', loginRoute)
+//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
 // Front end
@@ -50,7 +78,10 @@ app.get('/adoptionform', (req, res) => {
 })
 
 // Admin Panel
-app.get('/login', (req, res) => {
+app.get('/loginPage', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
+})
+app.get('/adminHomepage', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
 

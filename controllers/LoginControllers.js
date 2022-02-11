@@ -1,6 +1,8 @@
-// const accountModel = require('../models/users');
+const accountModel = require('../models/users');
+
 // const crypto = require('crypto');
-const accountModel = require('../models/users.js')
+
+//const accountModel = require('../models/users.js')
 const crypto = ('crypto')
 const secret = 'abcdefg';
 
@@ -37,11 +39,11 @@ const getOneAccount = async (req, res) => {
 //     } catch (error) { res.status(500).json({msg: error}) }
 // }
 
-// module.exports = {
-//     // createNewAccount,
-//     getAllAccounts,
-//     getOneAccount
-//     // deleteAccount,
-//     // updateAccount,
-// }
-module.exports = { getAllAccounts, getOneAccount }
+module.exports = {
+    // createNewAccount,
+    getAllAccounts,
+    getOneAccount
+    // deleteAccount,
+    // updateAccount,
+}
+// export default { getAllAccounts, getOneAccount }
