@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +17,9 @@
         rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
-    <title>Adopt</title>
+    <title>Vet Science</title>
 </head>
+
 <body>
     <!-- navbar -->
     <nav class="navbar">
@@ -29,55 +31,48 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="/">Home</a></li>
-                <li class="nav-item"><a class="link" href="/about">About</a></li>
-                <li class="nav-item"><a class="link active" href="/adopt">Adopt</a></li>
+                <li class="nav-item"><a class="link" href="/">Applications</a></li>
+                <li class="nav-item"><a class="link active1" href="/">Pets</a></li>
+                <li class="nav-item"><a class="link" href="/">Record</a></li>
+                <li class="nav-item"><a class="link" href="/">Account</a></li>
             </div>
         </ul>
     </nav>
 
-    <div class="petPage">
-        <div class="carousel petGallery">
-            <div class="carouselImages"></div>
-            <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
-            <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
-            <div class="carouselBtnPanel">
-                <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
-                <button class="carouselBtn" onclick="carouselChange(1)"></button>
-                <button class="carouselBtn" onclick="carouselChange(2)"></button>
-            </div>
+    <div class="filters">
+        <div class="selection-buttons">
+            <button id="all" class="active">All</button>
+            <button id="cats">Cats</button>
+            <button id="dogs">Dogs</button>
         </div>
-
-        <div class="petInfo">
-            <h1 class="pet-name"></h1>
-            <ul>
-                <div class="row">
-                    <div class="col facts">
-                        <li><strong>Birthday:</strong> <span class="birthday"></span></li>
-                        <li><strong>Gender:</strong> <span class="gender"></span></li>
-                        <li><strong>Color:</strong> <span class="color"></span></li>
-                        <li><strong>Breed:</strong> <span class="breed"></span></li>
-                        <!-- <li>Species: <span class="species"></span></li> -->
-                    </div>
-                    <div class="col">
-                        <li><strong>Medical Information:</strong>
-                            <ul class="medical">
-                                <li>drugs</li>
-                            </ul>
-                        </li>
-                        <li><strong>Personality:</strong>
-                            <ul class="personality">
-                                <li>stupid</li>
-                            </ul>
-                        </li>
-                    </div>
+        <div class="sorting-inputs">
+            <button class="sort-by-button">
+                <div class="sort-by-container">
+                    <p>Sort By:</p>
+                    <p class="sort-by-value">Age</p>
                 </div>
-                <li class="added-note"><strong>Additional Notes:</strong> <br/><span class="notes">Pees on absolutely everything!</span></li>
-
-            </ul>
-            <a href="/adoptionform" class="adopt-button">Adopt Me</a>
+            </button>
+            <select name="campus" id="campus-select">
+                <option value="northeast">Northeast Campus</option>
+            </select>
         </div>
     </div>
+
+    <div class="card-container">
+        <!-- <div class="card">
+            <img src='https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80' alt="name of pet" />
+            <div class="content">
+                <h2>Spot</h2>
+                <p>Male Brown Labrador, 5 months old. Available at Northeast Campus.</p>
+                <div class="btnContainer">
+                    <a href="/pet?id=3141592653589">ADOPT ME</a>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+
+
 
     <!-- footer -->
     <footer>
@@ -114,13 +109,15 @@
         </div>
     </footer>
 
+
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
-    <script src="./js/indivPet.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="./js/carousel.js"></script>
+    <script src="./js/pets_filter.js"></script>
+    <script src="./js/pets.js"></script>
 </body>
+
 </html>

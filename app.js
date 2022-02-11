@@ -52,6 +52,9 @@ app.get('/adoptionform', (req, res) => {
 app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
+app.get('/adminPets', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminPets.html'));
+})
 
 // uncomment this when adding DB functionality
 const start = async () => {

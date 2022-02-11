@@ -420,9 +420,10 @@ div.petPage div.petInfo .row .col {
 }
 div.petPage div.petInfo .row .col.facts {
   gap: 0.25rem;
+  justify-content: space-between;
 }
 div.petPage div.petInfo .row .col ul {
-  list-style: circle;
+  list-style: square;
   width: max-content;
   margin: 0 auto;
 }
