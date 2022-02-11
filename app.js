@@ -12,10 +12,10 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const passport = require('passport');
+// const passport = require('passport');
 const bodyParser = require('body-parser');
-const LocalStrategy = require('passport-local');
-const passportLocalMongoose = require('passport-local-mongoose');
+// const LocalStrategy = require('passport-local');
+// const passportLocalMongoose = require('passport-local-mongoose');
 
 const app = express();
 const path = require('path');
@@ -25,7 +25,7 @@ const loginRoute = require('./routes/login.js');
 const connectDB = require('./db/connect.js');
 
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 // mongoose.set('useNewUrlParser', true);
 // mongoose.set('useFindAndModify', false);
@@ -36,14 +36,14 @@ const port = process.env.PORT || 5001;
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(require("express-session")({
-    secret: "Rusty is a dog",
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(require("express-session")({
+//     secret: "Rusty is a dog",
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // passport.use(new LocalStrategy(User.authenticate()));
 // passport.serializeUser(User.serializeUser());
