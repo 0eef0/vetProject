@@ -22,19 +22,19 @@ app.use(express.static("./public"));
 
 // Front end
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/index.ejs'));
+    res.sendFile(path.resolve(__dirname, './public/index.html'));
 })
 app.get('/about', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/aboutUs.ejs'));
+    res.sendFile(path.resolve(__dirname, './public/aboutUs.html'));
 })
 app.get('/adopt', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/pets.ejs'));
+    res.sendFile(path.resolve(__dirname, './public/pets.html'));
 })
 app.get('/pet', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/individualPet.ejs'));
+    res.sendFile(path.resolve(__dirname, './public/individualPet.html'));
 })
 app.get('/adoptionform', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adoptForm.ejs'));
+    res.sendFile(path.resolve(__dirname, './public/adoptForm.html'));
 })
 
 // uncomment this when adding DB functionality
