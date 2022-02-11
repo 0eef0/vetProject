@@ -308,6 +308,8 @@ div.homeGallery {
   }
 }
 #aboutUs .rows {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -423,6 +425,8 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: circle;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -436,6 +440,8 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -745,7 +751,7 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  object-fit: cover;
+
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -786,7 +792,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
 }
 .card .content {
   display: flex;
@@ -1049,10 +1055,7 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  user-select: none;
-}
-.infoBlock .appl {
-  width: 75%;
+
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1062,7 +1065,4 @@ button#submitAdoptForm {
   width: 100%;
 }
 .infoBlock .appl .record:first-of-type {
-  margin-top: 0;
-}
 
-/*# sourceMappingURL=main.css.map */
