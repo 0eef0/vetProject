@@ -751,8 +751,7 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  -o-object-fit: cover;
-     object-fit: cover;
+
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -793,8 +792,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+
 }
 .card .content {
   display: flex;
@@ -845,8 +843,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1034,8 +1030,6 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1061,15 +1055,7 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.infoBlock .appl {
-  width: 75%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
+
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1079,5 +1065,4 @@ button#submitAdoptForm {
   width: 100%;
 }
 .infoBlock .appl .record:first-of-type {
-  margin-top: 0;
-}/*# sourceMappingURL=main.css.map */
+

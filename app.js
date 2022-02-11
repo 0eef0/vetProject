@@ -6,13 +6,14 @@ const bodyParser = require('body-parser');
 const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 
+const express = require('express');
 const app = express();
 const path = require('path');
-const routes = require('./routes/pets');
-const routesApp = require('./routes/applicationRoute');
-const loginRoute = require('./routes/login');
-const connectDB = require('./db/connect');
-const populateProducts = require('./populate');
+const routes = require('./routes/pets.js');
+const routesApp = require('./routes/applicationRoute.js');
+const loginRoute = require('./routes/login.js');
+const connectDB = require('./db/connect.js');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 5001;
 
