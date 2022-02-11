@@ -145,7 +145,7 @@ const ApplicationsSchema = new mongoose.Schema({
     },
     WantedPet: {
         type: String,
-        required: [true, 'Must provide the name of pet youwish to adopt'],
+        required: [true, 'Must provide the name of pet you wish to adopt'],
         trim: true
     }
 });
