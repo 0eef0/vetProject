@@ -7,6 +7,7 @@
 // const loginRoute = require('./routes/login');
 // const connectDB = require('./db/connect');
 // const bodyParser = require('body-parser');
+
 // const populateProducts = require('./populate');
 
 const express = require('express');
