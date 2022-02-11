@@ -36,6 +36,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     let declaw = (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined;
     let acknowledgement = document.getElementById('acknowledgement').checked;
     let acknowledgementAdoption = document.getElementById('acknowledgement2').checked;
+    let wantedPet = document.getElementById('').value
 
 
     console.log( {
@@ -63,10 +64,11 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         Declaw: declaw,
         Acknowledgement: acknowledgement,
         AcknowledgementAdoption: acknowledgementAdoption,
+        WantedPet:wantedPet
     });
 
     try{
-        await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption});
+        await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption, wantedPet});
         console.log(phoneNumber)
     }catch(error){
         console.log(error)

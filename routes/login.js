@@ -1,12 +1,3 @@
-
-const express = require('express');
-// import express from 'express';
-const router = express.Router();
-
-const { getAllAccounts, getOneAccount } = require('../controllers/LoginControllers')
-// import { getAllAccounts, getOneAccount } from '../controllers/LoginControllers.js'
-
-// const express = require('express');
 const express = require('express');
 const router = express.Router();
 
