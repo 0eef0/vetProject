@@ -2,7 +2,7 @@ const accountModel = require('../models/users');
 
 // const crypto = require('crypto');
 
-const accountModel = require('../models/users.js')
+//const accountModel = require('../models/users.js')
 const crypto = ('crypto')
 const secret = 'abcdefg';
 

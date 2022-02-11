@@ -30,7 +30,7 @@
 				text-decoration: none;
 				padding: 1rem 1.5rem;
 				&.link:hover {
-					background-color: $transparent-dark;
+					background-color: $medium-light-background;
 
 					transition: background-color 100ms linear;
 				}
@@ -83,7 +83,7 @@
 		.links {
 			flex-direction: column;
 			.nav-item {
-				background-color: $light-background-translucent;
+				background-color: $light-background;
 			}
 			.link {
 				background-color: $light-background-translucent;
