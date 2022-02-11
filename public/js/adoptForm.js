@@ -1,3 +1,4 @@
+import { createApplication } from '../../controllers/applicationsControllers';
 const adoptFormDOM = document.querySelector('.adoptForm');
 const otherHomeInput = document.getElementById('otherHomeRadio');
 
@@ -38,7 +39,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     let acknowledgementAdoption = document.getElementById('acknowledgement2').checked;
 
 
-    console.log( {
+    let application = {
         FullName: fullName,
         Occupation: occupation,
         Address: address,
@@ -63,11 +64,12 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         Declaw: declaw,
         Acknowledgement: acknowledgement,
         AcknowledgementAdoption: acknowledgementAdoption,
-    });
+    };
 
     try{
-        await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption});
-        console.log(phoneNumber)
+        // await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption});
+        // console.log(phoneNumber)
+        createApplication(application)
     }catch(error){
         console.log(error)
     }
