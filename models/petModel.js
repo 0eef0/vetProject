@@ -51,7 +51,7 @@ const PetSchema = new mongoose.Schema({
     },
     IMG: {
         type: Array,
-        required: [true, 'Must provide an image']
+        required: [true, 'Must provide at least 3 landscape images']
     }
 });
 
