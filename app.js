@@ -57,7 +57,6 @@ app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
 //app.use('/login', loginRoute)
-//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
 
 // Front end
@@ -75,14 +74,6 @@ app.get('/pet', (req, res) => {
 })
 app.get('/adoptionform', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adoptForm.html'));
-})
-
-// Admin Panel
-app.get('/loginPage', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
-})
-app.get('/adminHomepage', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
 
 // uncomment this when adding DB functionality
