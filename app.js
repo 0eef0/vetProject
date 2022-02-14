@@ -1,10 +1,24 @@
 //important things
+// const express = require('express');
+// const app = express();
+// const path = require('path');
+// const routes = require('./routes/pets');
+// const routesApp = require('./routes/applicationRoute');
+// const loginRoute = require('./routes/login');
+// const connectDB = require('./db/connect');
+// const bodyParser = require('body-parser');
+
+// const populateProducts = require('./populate');
+
 const express = require('express');
 const mongoose = require('mongoose');
-const passport = require('passport');
+// const passport = require('passport');
 const bodyParser = require('body-parser');
 const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
+// const LocalStrategy = require('passport-local');
+// const passportLocalMongoose = require('passport-local-mongoose');
+
 const app = express();
 const path = require('path');
 const routes = require('./routes/pets.js');
@@ -23,11 +37,11 @@ const port = process.env.PORT || 5000;
 app.set("view engine", "ejs");
 //app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(require("express-session")({
-    secret: "Rusty is a dog",
-    resave: false,
-    saveUninitialized: false
-}));
+// app.use(require("express-session")({
+//     secret: "Rusty is a dog",
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
 // app.use(passport.initialize());
 // app.use(passport.session());

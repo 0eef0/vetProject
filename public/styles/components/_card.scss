@@ -1,7 +1,8 @@
 .card {
 	width: 100%;
 	max-width: 550px;
-	height: 38vh;
+	// height: 38vh;
+	aspect-ratio: 16 / 9;
 	margin: auto;
 	background-color: white;
 	//   border: 1px solid #444;
@@ -18,6 +19,7 @@
 	.content {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 
 		position: absolute;
 		inset: 0;
@@ -44,6 +46,7 @@
 			// &::first-letter {
 			//   margin-left: 3rem;
 			// }
+			display: none;
 		}
 	}
 	.btnContainer {
@@ -100,6 +103,8 @@
 			p {
 				margin-top: 0;
 				visibility: visible;
+
+				display: block;
 			}
 		}
 		&:hover,
