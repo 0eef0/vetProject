@@ -23,6 +23,10 @@ img {
 p {
 	padding: 10px;
 }
+p.reader{
+	color: transparent !important;
+	user-select: none !important;
+}
 hr {
 	margin: 0;
 }

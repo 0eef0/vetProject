@@ -36,7 +36,11 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     let declaw = (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined;
     let acknowledgement = document.getElementById('acknowledgement').checked;
     let acknowledgementAdoption = document.getElementById('acknowledgement2').checked;
+<<<<<<< HEAD
     //let wantedPet = document.getElementById('').value;
+=======
+    // let wantedPet = document.getElementById('').value
+>>>>>>> ba58d1a134facbd475513ee9a4d58cc52203e05e
 
 
     let application = {
@@ -64,6 +68,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         Declaw: declaw,
         Acknowledgement: acknowledgement,
         AcknowledgementAdoption: acknowledgementAdoption,
+<<<<<<< HEAD
         //WantedPet:wantedPet
     };
 
@@ -71,6 +76,14 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         // await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption, wantedPet});
         // console.log(phoneNumber)
         await console.log(application);
+=======
+        // WantedPet:wantedPet
+    });
+
+    try{
+        await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption});
+        console.log(phoneNumber)
+>>>>>>> ba58d1a134facbd475513ee9a4d58cc52203e05e
     }catch(error){
         console.log(error)
     }

@@ -46,4 +46,3 @@ module.exports = {
     // deleteAccount,
     // updateAccount,
 }
-// export default { getAllAccounts, getOneAccount }

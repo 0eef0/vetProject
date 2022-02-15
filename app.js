@@ -23,7 +23,7 @@ const app = express();
 const path = require('path');
 const routes = require('./routes/pets.js');
 const routesApp = require('./routes/applicationRoute.js');
-const loginRoute = require('./routes/login.js');
+// const loginRoute = require('./routes/login.js');
 const connectDB = require('./db/connect.js');
 
 const port = process.env.PORT || 5000;
@@ -57,8 +57,7 @@ require('dotenv').config()
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
-//app.use('/login', loginRoute)
-//app.use(bodyParser.urlencoded({ extended: false }));
+// app.use('/login', loginRoute)
 app.use(express.static("./public"));
 
 // Front end
