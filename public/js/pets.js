@@ -4,13 +4,13 @@ const url = "/api/v1/pets";
 
 const showPets = async () => {
     try {
-         const { data: {pets},} = await axios.get(url)
-         if (pets.length < 1) {
+        const { data: { pets }, } = await axios.get(url);
+        if (pets.length < 1) {
             petCardContainerDOM.innerHTML = '<h5 class="empty-list">There are no pets available at this time...</h5>';
-             return;
-         }
-         const allPets = pets.map((pet) => {
-            const {_id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG} = pet;
+            return;
+        }
+        const allPets = pets.map((pet) => {
+            const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
             const bDay = new Date(Birthday)
             return `
             <div class="card">
