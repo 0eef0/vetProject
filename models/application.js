@@ -52,7 +52,7 @@ const ApplicationsSchema = new mongoose.Schema({
     },
     GuardianName: {
         type: String,
-        required: [true, 'Must provide a guadian name, put your own name if you are over 18'],
+        required: [true, 'Must provide a guardian name, put your own name if you are over 18'],
         trim: true
     },
     GuardianPhone: {
@@ -62,12 +62,12 @@ const ApplicationsSchema = new mongoose.Schema({
     },
     GuardianEmail: {
         type: String,
-        required: [true, 'Must provide a guardian email, pu tyour own if you are over 18'],
+        required: [true, 'Must provide a guardian email, put your own if you are over 18'],
         trim: true
     },
     CurrentPets: {
         type: String,
-        required: [true, 'Must provide amout of current pets you have and what breed'],
+        required: [true, 'Must provide amount of current pets you have and what breed'],
         trim: true
     },
     PetVaccination: {
