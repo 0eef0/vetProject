@@ -228,7 +228,7 @@ div.aboutUsSummary div {
 }
 div.aboutUsSummary div p {
   width: 40%;
-  font-size: calc(1.25vw + 0.5vh);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 div.aboutUsSummary div img {
   width: 40%;
@@ -291,7 +291,7 @@ div.homeGallery {
 }
 #aboutUs #infoAboutUs div p {
   width: 40%;
-  font-size: calc(1.25vw + 0.5vh);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 #aboutUs #infoAboutUs div img {
   width: 40%;
@@ -486,7 +486,7 @@ form#login {
 }
 form#login h1 {
   text-align: center;
-  font-size: calc(1.25vw + 0.5vh);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 form#login img {
   width: 10%;
@@ -1000,7 +1000,7 @@ div.question {
   padding: 1rem;
 }
 div.question h1 {
-  font-size: calc(1vw + 1vh);
+  font-size: clamp(1rem, 2vw, 1.4rem);
 }
 div.question input[type=text],
 div.question input[type=tel],
@@ -1011,6 +1011,7 @@ div.question input[type=number] {
   padding: 1rem;
   width: 100%;
   outline: none;
+  font-size: 1.25rem;
 }
 div.question textarea {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1022,9 +1023,27 @@ div.question textarea {
   resize: none;
   font-family: inherit;
 }
+div.question input[type=text],
+div.question input[type=tel],
+div.question input[type=email],
+div.question input[type=number],
+div.question textarea {
+  position: relative;
+}
+div.question input[type=text]::after,
+div.question input[type=tel]::after,
+div.question input[type=email]::after,
+div.question input[type=number]::after,
+div.question textarea::after {
+  content: "";
+  position: absolute;
+  background-color: #f7941d;
+  inset: 0;
+}
 div.question ul {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
 }

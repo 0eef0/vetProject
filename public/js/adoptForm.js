@@ -75,6 +75,6 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         await axios.post('/api/v1/applications', {appliJSON});
         console.log(phoneNumber)
     }catch(error){
-        console.log(error)
+        console.log(error.response.data)
     }
 })
