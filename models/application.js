@@ -142,6 +142,11 @@ const ApplicationsSchema = new mongoose.Schema({
             values: ['Active', 'Archive'],
             message: '{VALUE} is not supported'
         }
+    },
+    WantedPet: {
+        type: String,
+        required: [true, 'Must provide the name of pet you wish to adopt'],
+        trim: true
     }
 });
 
