@@ -71,6 +71,6 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption});
         console.log(phoneNumber)
     }catch(error){
-        console.log(error)
+        console.log(error.response.data)
     }
 })
