@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +19,9 @@
     <link rel="stylesheet" href="./styles/main.css">
     <title>Adoption Form</title>
 </head>
+
 <body>
-        <!-- navbar -->
+    <!-- navbar -->
     <nav class="navbar">
         <ul>
             <div class="align-left">
@@ -35,11 +37,16 @@
             </div>
         </ul>
     </nav>
-<form class="adoptForm">
-        <div class="question" style="margin-top: 5vh;">
+    <form class="adoptForm">
+    <div class="question" style="margin-top: 5vh;">
         <h1>First and Last Name</h1>
         <br>
         <input type="text" maxlength="100" id="userFullName" required>
+    </div>
+    <div class="question">
+        <h1>Birthday</h1>
+        <br>
+        <input type="date" maxlength="100" id="userBirthday" required>
     </div>
     <div class="question">
         <h1>Occupation</h1>
@@ -258,7 +265,7 @@
         <button id="submitAdoptForm" type="submit">Submit</button>
         <br>
 
-</form>
+    </form>
     <!-- footer -->
     <footer>
         <div class="row top">
@@ -284,10 +291,34 @@
         <div class="row">
             <div class="socials">
                 <ul>
-                    <li><a href="/"><i class='fab fa-facebook-square'></i></a></li>
-                    <li><a href="/"><i class='fab fa-instagram'></i></a></li>
-                    <li><a href="/"><i class='fab fa-twitter-square'></i></a></li>
-                    <li><a href="/"><i class='fab fa-snapchat-square'></i></a></li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-facebook-square'>
+                                <p class="reader">facebook</p>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-instagram'>
+                                <p class="reader">instagram</p>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-twitter-square'>
+                                <p class="reader">twitter</p>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-snapchat-square'>
+                                <p class="reader">snapchat</p>
+                            </i>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <p>Company Name © 2021</p>
@@ -303,4 +334,5 @@
     <script src="./js/navbar.js"></script>
     <script src="./js/adoptForm.js"></script>
 </body>
+
 </html>

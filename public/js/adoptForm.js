@@ -85,6 +85,6 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         console.log(phoneNumber)
 >>>>>>> ba58d1a134facbd475513ee9a4d58cc52203e05e
     }catch(error){
-        console.log(error)
+        console.log(error.response.data)
     }
 })

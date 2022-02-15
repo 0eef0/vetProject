@@ -39,6 +39,36 @@
         </ul>
     </nav>
 
+    <div id="newPet">
+        <form action="">
+            <input type="text" placeholder="Pet Name" id="petName" required>
+            <input type="date" placeholder="Pet Birthday" id="petBirthday" required>
+            <select name="gender" id="petGender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <select name="species" id="petSpecies" required>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+            </select>
+            <input type="text" id="petColor" placeholder="Pet Color" required>
+            <input type="text" id="petBreed" placeholder="Pet Breed" required>
+            <textarea name="medical" id="medical" placeholder="Medical Details (separate by commas)" required></textarea>
+            <textarea name="personality" id="personality" placeholder="Personality Traits (separate by commas)" required></textarea>
+            <input type="text" placeholder="Other Notes" required>
+            <div id="imageInput">
+                <p>Images:</p>
+                <div id="images">
+                    <input type="file" class="petImg" required><br>
+                    <input type="file" class="petImg" required><br>
+                    <input type="file" class="petImg" required><br>
+                </div>
+                <i class="fas fa-plus" onclick="addImg();" id="addImgBtn"></i>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+
     <div class="filters">
         <div class="selection-buttons">
             <button id="all" class="active">All</button>
@@ -116,6 +146,6 @@
     <!-- other js files -->
     <script src="./js/navbar.js"></script>
     <script src="./js/pets_filter.js"></script>
-    <script src="./js/pets.js"></script>
+    <script src="./js/adminPets.js"></script>
 </body>
 </html>

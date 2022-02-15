@@ -78,11 +78,14 @@ app.get('/adoptionform', (req, res) => {
 })
 
 // Admin Panel
-app.get('/loginPage', (req, res) => {
+app.get('/adminLogin', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
-app.get('/adminHomepage', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
+app.get('/adminApplications', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
+})
+app.get('/adminApplications/:id', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminIndApp.html'));
 })
 app.get('/adminPets', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminPets.html'));
