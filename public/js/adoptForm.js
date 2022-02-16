@@ -13,6 +13,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let fullName = document.getElementById('userFullName').value;
+    let birthday = document.getElementById("userBirthday").value;
     let occupation = document.getElementById('userOccupation').value;
     let address = document.getElementById('userAddress').value;
     let phoneNumber = document.getElementById('userPhoneNumber').value;
@@ -24,7 +25,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     let minor = (document.getElementById('ifUnder18Yes')) ? true : (document.getElementById('ifUnder18No')) ? false : undefined;
     let guardianName = document.getElementById('guardianName').value;
     let guardianPhone = document.getElementById('guardianNumber').value;
-    let guaranteedEmail = document.getElementById('guardianEmail').value;
+    let guardianEmail = document.getElementById('guardianEmail').value;
     let currentPets = document.getElementById('homePets').value;
     let petVaccination = (document.getElementById('otherPetSterNVaxYes').checked) ? true : (document.getElementById('otherPetSterNVaxNo').checked) ? false : (document.getElementById('otherPetSterNVaxNA').checked) ? 'N/A' : undefined;
     let petVaccinationReason = document.getElementById('sterNVaxExplain').value;
@@ -37,39 +38,37 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     let acknowledgement = document.getElementById('acknowledgement').checked;
     let acknowledgementAdoption = document.getElementById('acknowledgement2').checked;
 
-    let application = {
-        FullName: fullName,
-        Occupation: occupation,
-        Address: address,
-        PhoneNumber: phoneNumber,
-        Email: email,
-        UserReference: userReference,
-        Children: children,
-        Housing: housing,
-        Space: space,
-        Minor: minor,
-        GuardianName: guardianName,
-        GuardianPhone: guardianPhone,
-        GuardianEmail: guaranteedEmail,
-        CurrentPets: currentPets,
-        PetVaccination: petVaccination,
-        PetVaccinationReason: petVaccinationReason,
-        PetExamine: petExamine,
-        PetExamineReason: petExamineReason,
-        Qualification: qualification,
-        PetTime: petTime,
-        AffordableMedication: affordableMedication,
-        Declaw: declaw,
-        Acknowledgement: acknowledgement,
-        AcknowledgementAdoption: acknowledgementAdoption,
-        //WantedPet:wantedPet
-    };
+    // let application = {
+    //     FullName: fullName,
+    //     Birthday: birthday,
+    //     Occupation: occupation,
+    //     Address: address,
+    //     PhoneNumber: phoneNumber,
+    //     Email: email,
+    //     UserReference: userReference,
+    //     Children: children,
+    //     Housing: housing,
+    //     Space: space,
+    //     Minor: minor,
+    //     GuardianName: guardianName,
+    //     GuardianPhone: guardianPhone,
+    //     GuardianEmail: guardianEmail,
+    //     CurrentPets: currentPets,
+    //     PetVaccination: petVaccination,
+    //     PetVaccinationReason: petVaccinationReason,
+    //     PetExamine: petExamine,
+    //     PetExamineReason: petExamineReason,
+    //     Qualification: qualification,
+    //     PetTime: petTime,
+    //     AffordableMedication: affordableMedication,
+    //     Declaw: declaw,
+    //     Acknowledgement: acknowledgement,
+    //     AcknowledgementAdoption: acknowledgementAdoption,
+    // };
 
     try{
-        // await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption, wantedPet});
-        console.log(phoneNumber)
-        await console.log(application);
+        await axios.post('/api/v1/applications', {fullName, birthday, occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption});
     }catch(error){
-        console.log(error.response.data)
+        console.log(error.response.data);
     }
 })
