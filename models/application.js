@@ -1,111 +1,111 @@
 const mongoose = require('mongoose');
 
 const ApplicationsSchema = new mongoose.Schema({
-    FullName: {
+    fullName: {
         type: String,
         required: [true, 'Must provide a full name'],
         trim: true
     },
-    Occupation: {
+    occupation: {
         type: String,
         required: [true, 'Must provide an occupation, or say unemployed'],
         trim: true
     },
-    Address: {
+    address: {
         type: String,
         required: [true, 'Must provide a valid Home Address'],
         trim: true
     },
-    PhoneNumber: {
+    phoneNumber: {
         type: String,
         required: [true, 'Must provide a phone number'],
         trim: true
     },
-    Email: {
+    email: {
         type: String,
         required: [true, 'Must provide an email'],
         trim: true
     },
-    UserReference: {
+    userReference: {
         type: String,
         required: [true, 'Must provide a valid Reference'],
         trim: true
     },
-    Children: {
+    children: {
         type: Number,
         required: [true, 'Must provide number of children'],
         trim: true
     },
-    Housing: {
+    housing: {
         type: String,
         required: [true, 'Must provide your Housing'],
         trim: true
     },
-    Space: {
+    space: {
         type: String,
         required: [true, 'Must provide if house provides enough space'],
         trim: true
     },
-    Minor: {
+    minor: {
         type: Boolean,
         default:null
     },
-    GuardianName: {
+    guardianName: {
         type: String,
-        required: [true, 'Must provide a guadian name, put your own name if you are over 18'],
+        required: [true, 'Must provide a guardian name, put your own name if you are over 18'],
         trim: true
     },
-    GuardianPhone: {
+    guardianPhone: {
         type: String,
         required: [true, 'Must provide a guardian phone number, put yours if you are over 18'],
         trim: true
     },
-    GuardianEmail: {
+    guardianEmail: {
         type: String,
-        required: [true, 'Must provide a guardian email, pu tyour own if you are over 18'],
+        required: [true, 'Must provide a guardian email, put your own if you are over 18'],
         trim: true
     },
-    CurrentPets: {
+    currentPets: {
         type: String,
-        required: [true, 'Must provide amout of current pets you have and what breed'],
+        required: [true, 'Must provide amount of current pets you have and what breed'],
         trim: true
     },
-    PetVaccination: {
+    petVaccination: {
         type: Boolean,
         required: [true, 'Must provide if current pets are vaccinated and sterilized'],
         default: null
     },
-    PetVaccinationReason: {
+    petVaccinationReason: {
         type: String,
         default:null,
         trim: true
     },
-    PetExamine: {
+    petExamine: {
         type: String,
         required: [true, 'Must provide if current pet is annually examined'],
         trim: true
     },
-    PetExamineReason: {
+    petExamineReason: {
         type: String,
         default:null,
         trim: true
     },
-    Qualification: {
+    qualification: {
         type: String,
         required: [true, 'Must provide why you think you are qualified'],
         trim: true
     },
-    PetTime: {
+    petTime: {
         type: String,
         required: [true, 'Must provide Where your pet will spend most of their time'],
         trim: true
     },
-    AffordableMedication: {
+    affordableMedication: {
         type: String,
         required: [true, 'Must provide If you can afford medication for your pet'],
         trim: true
     },
-    Declaw: {
+    declaw: {
         type: String,
         default: "Current",
         enum: {
@@ -113,29 +113,29 @@ const ApplicationsSchema = new mongoose.Schema({
             message: '{VALUE} is not supported'
         }
     },
-    Acknowledgement: {
+    acknowledgement: {
         type: Boolean,
         required: [true, 'Must say you agree with the above terms that the information you have provided is true'],
         default: false
     },
-    AcknowledgementAdoption: {
+    acknowledgementAdoption: {
         type: Boolean,
         required: [true, 'Must say you agree with the above terms that you are not guaranteed an adoption'],
         default: false
     },
-    Birthday: {
+    birthday: {
         type: Date,
         required: [true, 'Must provide your age'],
     },
-    Accepted: {
+    accepted: {
         type: Boolean,
         default: false
     },
-    Rejected: {
+    rejected: {
         type: Boolean,
         default: false
     },
-    Status: {
+    status: {
         type: String,
         default: "Active",
         enum: {
@@ -143,11 +143,11 @@ const ApplicationsSchema = new mongoose.Schema({
             message: '{VALUE} is not supported'
         }
     },
-    WantedPet: {
-        type: String,
-        required: [true, 'Must provide the name of pet you wish to adopt'],
-        trim: true
-    }
+    // wantedPet: {
+    //     type: String,
+    //     required: [true, 'Must provide the name of pet you wish to adopt'],
+    //     trim: true
+    // }
 });
 
 // This is basic validation not advanced
