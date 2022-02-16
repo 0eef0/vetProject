@@ -59,14 +59,18 @@ footer {
 			}
 		}
 		.socials {
+			margin-top: 30px;
 			ul {
 				padding: 0;
 				display: flex;
 				list-style: none;
 				font-size: 200%;
 				margin: 0;
-				justify-content: center;
+				justify-content: space-evenly;
 				li {
+					display: flex;
+					justify-content: center;
+					width: 0;	
 					padding-inline: 1rem;
 					a {
 						color: $font-light;

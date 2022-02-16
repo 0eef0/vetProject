@@ -947,15 +947,21 @@ footer .row.top .col.desc h3 {
 footer .row.top .col.desc p {
   margin: 0;
 }
+footer .row .socials {
+  margin-top: 30px;
+}
 footer .row .socials ul {
   padding: 0;
   display: flex;
   list-style: none;
   font-size: 200%;
   margin: 0;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 footer .row .socials ul li {
+  display: flex;
+  justify-content: center;
+  width: 0;
   padding-inline: 1rem;
 }
 footer .row .socials ul li a {
