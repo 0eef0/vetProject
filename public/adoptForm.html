@@ -38,232 +38,229 @@
         </ul>
     </nav>
     <form class="adoptForm">
-        <div class="question" style="margin-top: 5vh;">
-            <h1>First and Last Name</h1>
-            <br>
-            <input type="text" maxlength="100" id="userFullName">
-        </div>
-        <div class="question">
-            <h1>Occupation</h1>
-            <br>
-            <input type="text" maxlength="100" id="userOccupation">
-        </div>
-        <div class="question">
-            <h1>Address</h1>
-            <br>
-            <input type="text" maxlength="100" id="userAddress">
-        </div>
-        <div class="question">
-            <h1>Phone Number</h1>
-            <br>
-            <input type="tel" maxlength="10" id="userPhoneNumber">
-        </div>
-        <div class="question">
-            <h1>Email</h1>
-            <br>
-            <input type="text" maxlength="100" id="userEmail">
-        </div>
-        <div class="question">
-            <h1>How did you hear about our adoptable animals?</h1>
-            <br>
-            <textarea maxlength="240" id="userReference"></textarea>
-        </div>
-        <div class="question">
-            <h1>How many children live in your house?</h1>
-            <br>
-            <input type="number" max="20" min="0" id="numChildren">
-        </div>
-        <div class="question">
-            <h1>What type of home do you live in?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="House">House</label>
-                    <input name="homeType" type="radio" id="House">
-                </li>
-                <li>
-                    <label for="Apartment">Apartment</label>
-                    <input name="homeType" type="radio" id="Apartment">
-                </li>
-                <li>
-                    <label for="Condominium">Condominium</label>
-                    <input name="homeType" type="radio" id="Condominium">
-                </li>
-                <li style="display: flex; align-items: center; justify-content: space-between;">
-                    <label for="otherHomeRadio">Other</label>
-                    <input name="homeType" type="radio" id="otherHomeRadio" style="margin: 0 0.1vw;">
-                    <input disabled="true" name="homeType" type="text" id="Other" style="height: 3vh;">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>If interested in a large dog, will you have adequate space to exercise them or walk them every day?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="lgDogYes">Yes</label>
-                    <input name="lgDog" type="radio" id="lgDogYes">
-                </li>
-                <li>
-                    <label for="lgDogNo">No</label>
-                    <input name="lgDog" type="radio" id="lgDogNo">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>If under the age of 18 years, is your legal guardian aware and approving of the adoption of an animal
-                from West-MEC?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="ifUnder18Yes">Yes</label>
-                    <input name="ifUnder18" type="radio" id="ifUnder18Yes">
-                </li>
-                <li>
-                    <label for="ifUnder18No">No</label>
-                    <input name="ifUnder18" type="radio" id="ifUnder18No">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>Please provide contact info for legal guardian or adult responsible for residency of animal</h1>
-            <br>
-            <input type="text" maxlength="100" placeholder="Name" id="guardianName">
-            <br>
-            <input type="tel" maxlength="100" placeholder="Phone Number" id="guardianNumber">
-            <br>
-            <input type="email" maxlength="100" placeholder="Email" id="guardianEmail">
-        </div>
-        <div class="question">
-            <h1>What pets do you currently have in your home (specific type and number)?</h1>
-            <br>
-            <textarea maxlength="240" id="homePets"></textarea>
-        </div>
-        <div class="question">
-            <h1>Are your pets sterilized and up to date on vaccinations?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="otherPetSterNVaxYes">Yes</label>
-                    <input name="otherPetSterNVax" type="radio" id="otherPetSterNVaxYes">
-                </li>
-                <li>
-                    <label for="otherPetSterNVaxNo">No</label>
-                    <input name="otherPetSterNVax" type="radio" id="otherPetSterNVaxNo">
-                </li>
-                <li>
-                    <label for="otherPetSterNVaxNA">I don't have any other pets</label>
-                    <input name="otherPetSterNVax" type="radio" id="otherPetSterNVaxNA">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>If not, please explain why</h1>
-            <br>
-            <textarea maxlength="240" id="sterNVaxExplain"></textarea>
-        </div>
-        <div class="question">
-            <h1>Do your pets receive an annual examination by a veterinarian?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="annualExamYes">Yes</label>
-                    <input name="annualExam" type="radio" id="annualExamYes">
-                </li>
-                <li>
-                    <label for="annualExamNo">No</label>
-                    <input name="annualExam" type="radio" id="annualExamNo">
-                </li>
-                <li>
-                    <label for="annualExamNA">I don't have any other pets</label>
-                    <input name="annualExam" type="radio" id="annualExamNA">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>If not, please explain why</h1>
-            <br>
-            <textarea maxlength="240" id="annualExamExplain"></textarea>
-        </div>
-        <div class="question">
-            <h1>Please explain why you are the best candidate to adopt [use js to put pet name here]</h1>
-            <br>
-            <textarea maxlength="240" id="bestCandidateExplain"></textarea>
-        </div>
-        <div class="question">
-            <h1>If adopted, where will the animal spend most of their time?</h1>
-            <br>
-            <textarea maxlength="240" id="petTimeSpent"></textarea>
-        </div>
-        <div class="question">
-            <h1>Are you financially able to provide medical care to the animal if illness or injury occurs?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="financialYes">Yes</label>
-                    <input name="financial" type="radio" id="financialYes">
-                </li>
-                <li>
-                    <label for="financialNo">No</label>
-                    <input name="financial" type="radio" id="financialNo">
-                </li>
-                <li>
-                    <label for="financialMaybe">Maybe</label>
-                    <input name="financial" type="radio" id="financialMaybe">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>If adopting a cat, are you planning on declawing?</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="declawYes">Yes</label>
-                    <input name="declaw" type="radio" id="declawYes">
-                </li>
-                <li>
-                    <label for="declawNo">No</label>
-                    <input name="declaw" type="radio" id="declawNo">
-                </li>
-                <li>
-                    <label for="declawNA">N/A</label>
-                    <input name="declaw" type="radio" id="declawNA">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>By submitting this form, I/we acknowledge that all the information on this form is true and correct.
-                I/we understand
-                that any misrepresentations of fact may result in refusal of adoption. If approval for adoption is
-                granted, I/we
-                understand that we are responsible to provide daily care, food, water, shelter, and attention to the
-                animal, and medical
-                care when necessary.</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="acknowledgement">I have read and agree to the terms above</label>
-                    <input name="acknowledgement" type="checkbox" id="acknowledgement">
-                </li>
-            </ul>
-        </div>
-        <div class="question">
-            <h1>I/we understand that the submission of this application does NOT guarantee the adoption of the indicated
-                animal. This
-                form only demonstrates my interest in adoption of the indicated animal. West-MEC will review this
-                application, along
-                with other applications, and determine the best home for the animal. I/we understand that West-MEC
-                requires that I meet
-                the animal prior to adoption, as well as the introduction of any current pets to the animal I wish to
-                adopt.</h1>
-            <br>
-            <ul>
-                <li>
-                    <label for="acknowledgement2">I have read and agree to the terms above</label>
-                    <input name="acknowledgement2" type="checkbox" id="acknowledgement2">
-                </li>
-            </ul>
-        </div>
+    <div class="question" style="margin-top: 5vh;">
+        <h1>First and Last Name</h1>
+        <br>
+        <input type="text" maxlength="100" id="userFullName" required>
+    </div>
+    <div class="question">
+        <h1>Birthday</h1>
+        <br>
+        <input type="date" maxlength="100" id="userBirthday" required>
+    </div>
+    <div class="question">
+        <h1>Occupation</h1>
+        <br>
+        <input type="text" maxlength="100" id="userOccupation" required>
+    </div>
+    <div class="question">
+        <h1>Address</h1>
+        <br>
+        <input type="text" maxlength="100" id="userAddress" required>
+    </div>
+    <div class="question">
+        <h1>Phone Number</h1>
+        <br>
+        <input type="tel" maxlength="10" id="userPhoneNumber" required>
+    </div>
+    <div class="question">
+        <h1>Email</h1>
+        <br>
+        <input type="email" maxlength="100" id="userEmail" required>
+    </div>
+    <div class="question">
+        <h1>How did you hear about our adoptable animals?</h1>
+        <br>
+        <textarea maxlength="240" id="userReference" required></textarea>
+    </div>
+    <div class="question">
+        <h1>How many children live in your house?</h1>
+        <br>
+        <input type="number" max="20" min="0" id="numChildren" required>
+    </div>
+    <div class="question">
+        <h1>What type of home do you live in?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="House">House</label>
+                <input name="homeType" type="radio" id="House" required>
+            </li>
+            <li>
+                <label for="Apartment">Apartment</label>
+                <input name="homeType" type="radio" id="Apartment" required>
+            </li>
+            <li>
+                <label for="Condominium">Condominium</label>
+                <input name="homeType" type="radio" id="Condominium"required>
+            </li>
+            <li style="display: flex; align-items: center; justify-content: space-between;">
+                <label for="otherHomeRadio">Other</label>
+                <input name="homeType" type="radio" id="otherHomeRadio" style="margin: 0 0.1vw;"required>
+                <input disabled="true" name="homeType" type="text" id="Other" style="height: 3vh;">
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>If interested in a large dog, will you have adequate space to exercise them or walk them every day?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="lgDogYes">Yes</label>
+                <input name="lgDog" type="radio" id="lgDogYes" required>
+            </li>
+            <li>
+                <label for="lgDogNo">No</label>
+                <input name="lgDog" type="radio" id="lgDogNo" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>If under the age of 18 years, is your legal guardian aware and approving of the adoption of an animal from West-MEC?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="ifUnder18Yes">Yes</label>
+                <input name="ifUnder18" type="radio" id="ifUnder18Yes" required>
+            </li>
+            <li>
+                <label for="ifUnder18No">No</label>
+                <input name="ifUnder18" type="radio" id="ifUnder18No" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>Please provide contact info for legal guardian or adult responsible for residency of animal</h1>
+        <br>
+        <input type="text" maxlength="100" placeholder="Name" id="guardianName" required>
+        <br>
+        <input type="tel" maxlength="100" placeholder="Phone Number" id="guardianNumber" required>
+        <br>
+        <input type="email" maxlength="100" placeholder="Email" id="guardianEmail" required>
+    </div>
+    <div class="question">
+        <h1>What pets do you currently have in your home (specific type and number)?</h1>
+        <br>
+        <textarea maxlength="240" id="homePets" required></textarea>
+    </div>
+    <div class="question">
+        <h1>Are your pets sterilized and up to date on vaccinations?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="otherPetSterNVaxYes">Yes</label>
+                <input name="otherPetSterNVax" type="radio" id="otherPetSterNVaxYes" required>
+            </li>
+            <li>
+                <label for="otherPetSterNVaxNo">No</label>
+                <input name="otherPetSterNVax" type="radio" id="otherPetSterNVaxNo" required>
+            </li>
+            <li>
+                <label for="otherPetSterNVaxNA">I don't have any other pets</label>
+                <input name="otherPetSterNVax" type="radio" id="otherPetSterNVaxNA" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>If not, please explain why</h1>
+        <br>
+        <textarea maxlength="240" id="sterNVaxExplain" required></textarea>
+    </div>
+    <div class="question">
+        <h1>Do your pets receive an annual examination by a veterinarian?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="annualExamYes">Yes</label>
+                <input name="annualExam" type="radio" id="annualExamYes" required>
+            </li>
+            <li>
+                <label for="annualExamNo">No</label>
+                <input name="annualExam" type="radio" id="annualExamNo" required>
+            </li>
+            <li>
+                <label for="annualExamNA">I don't have any other pets</label>
+                <input name="annualExam" type="radio" id="annualExamNA" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>If not, please explain why</h1>
+        <br>
+        <textarea maxlength="240" id="annualExamExplain" required></textarea>
+    </div>
+    <div class="question">
+        <h1>Please explain why you are the best candidate to adopt [use js to put pet name here]</h1>
+        <br>
+        <textarea maxlength="240" id="bestCandidateExplain" required></textarea>
+    </div>
+    <div class="question">
+        <h1>If adopted, where will the animal spend most of their time?</h1>
+        <br>
+        <textarea maxlength="240" id="petTimeSpent" required></textarea>
+    </div>
+    <div class="question">
+        <h1>Are you financially able to provide medical care to the animal if illness or injury occurs?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="financialYes">Yes</label>
+                <input name="financial" type="radio" id="financialYes" required>
+            </li>
+            <li>
+                <label for="financialNo">No</label>
+                <input name="financial" type="radio" id="financialNo" required>
+            </li>
+            <li>
+                <label for="financialMaybe">Maybe</label>
+                <input name="financial" type="radio" id="financialMaybe" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>If adopting a cat, are you planning on declawing?</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="declawYes">Yes</label>
+                <input name="declaw" type="radio" id="declawYes" required>
+            </li>
+            <li>
+                <label for="declawNo">No</label>
+                <input name="declaw" type="radio" id="declawNo" required>
+            </li>
+            <li>
+                <label for="declawNA">N/A</label>
+                <input name="declaw" type="radio" id="declawNA" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>By submitting this form, I/we acknowledge that all the information on this form is true and correct. I/we understand
+        that any misrepresentations of fact may result in refusal of adoption. If approval for adoption is granted, I/we
+        understand that we are responsible to provide daily care, food, water, shelter, and attention to the animal, and medical
+        care when necessary.</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="acknowledgement">I have read and agree to the terms above</label>
+                <input name="acknowledgement" type="checkbox" id="acknowledgement" required>
+            </li>
+        </ul>
+    </div>
+    <div class="question">
+        <h1>I/we understand that the submission of this application does NOT guarantee the adoption of the indicated animal. This
+        form only demonstrates my interest in adoption of the indicated animal. West-MEC will review this application, along
+        with other applications, and determine the best home for the animal. I/we understand that West-MEC requires that I meet
+        the animal prior to adoption, as well as the introduction of any current pets to the animal I wish to adopt.</h1>
+        <br>
+        <ul>
+            <li>
+                <label for="acknowledgement2">I have read and agree to the terms above</label>
+                <input name="acknowledgement2" type="checkbox" id="acknowledgement2" required>
+            </li>
+        </ul>
+    </div>
         <br>
         <button id="submitAdoptForm" type="submit">Submit</button>
         <br>

@@ -1,0 +1,43 @@
+div#newPet {
+  margin-top: 4rem;
+  form {
+    background-color: $light-background;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    div#imageInput {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      div#images {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+    div#imageInput,
+    input[type="text"],
+    input[type="date"],
+    textarea,
+    select {
+      background-color: rgba($color: $clr-black, $alpha: 0.1);
+      border-bottom: 2px solid $accent-color;
+      padding: 1rem;
+      width: 100%;
+      outline: none;
+      font-size: 1.25rem;
+      margin: 0.1rem auto;
+      font-family: inherit;
+      color: inherit;
+      resize: none;
+    }
+    button {
+      background-color: $accent-color;
+      color: $clr-white;
+      font-family: inherit;
+      padding: 1rem;
+      width: clamp(200px, 10%, 500px);
+      margin: 0 auto;
+    }
+  }
+}

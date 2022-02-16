@@ -1,4 +1,4 @@
-const main = document.querySelector('#records main');
+const main = document.querySelector('#adminRecords main');
 
 async function getInfoAboutUs() {
 	try {

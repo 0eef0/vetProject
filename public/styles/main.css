@@ -193,10 +193,7 @@ p {
 
 p.reader {
   color: transparent !important;
-  -webkit-user-select: none !important;
-     -moz-user-select: none !important;
-      -ms-user-select: none !important;
-          user-select: none !important;
+  user-select: none !important;
 }
 
 hr {
@@ -316,8 +313,6 @@ div.homeGallery {
   }
 }
 #aboutUs .rows {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -430,11 +425,10 @@ div.petPage div.petInfo .row .col {
 }
 div.petPage div.petInfo .row .col.facts {
   gap: 0.25rem;
+  justify-content: space-between;
 }
 div.petPage div.petInfo .row .col ul {
-  list-style: circle;
-  width: -webkit-max-content;
-  width: -moz-max-content;
+  list-style: square;
   width: max-content;
   margin: 0 auto;
 }
@@ -448,8 +442,6 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -766,8 +758,7 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -808,8 +799,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -862,8 +852,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1071,8 +1059,6 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1098,15 +1084,11 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
+  font-weight: bold;
 }
 .infoBlock .appl {
   width: 75%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1117,4 +1099,50 @@ button#submitAdoptForm {
 }
 .infoBlock .appl .record:first-of-type {
   margin-top: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+div#newPet {
+  margin-top: 4rem;
+}
+div#newPet form {
+  background-color: #f5f6fa;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+div#newPet form div#imageInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+div#newPet form div#imageInput div#images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div#newPet form div#imageInput,
+div#newPet form input[type=text],
+div#newPet form input[type=date],
+div#newPet form textarea,
+div#newPet form select {
+  background-color: rgba(34, 34, 34, 0.1);
+  border-bottom: 2px solid #f7941d;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  font-size: 1.25rem;
+  margin: 0.1rem auto;
+  font-family: inherit;
+  color: inherit;
+  resize: none;
+}
+div#newPet form button {
+  background-color: #f7941d;
+  color: #fff;
+  font-family: inherit;
+  padding: 1rem;
+  width: clamp(200px, 10%, 500px);
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=main.css.map */
