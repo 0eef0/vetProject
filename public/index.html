@@ -1,3 +1,4 @@
+<!-- must use alts for images -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,23 +40,33 @@
     </nav>
 
     <!-- Galley Carousel -->
-<!--     <div class="banner">
+    <!--     <div class="banner">
         <img src='https://animalcareinfo.com/wp-content/uploads/2018/04/AdobeStock_129584968-1024x388.jpeg' alt='this is a cool image of a dog' />
         <h1>West-MEC Veterinary Science</h1>
     </div> -->
-    
+
     <div class="carousel homeGallery">
         <div class="carouselImages">
-            <img src="./assets/firstCarousel.jpg" class="carouselImg activeImg">
-            <img src="./assets/secondCarousel.jpg" class="carouselImg">
-            <img src="./assets/thirdCarousel.jpg" class="carouselImg">
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*" class="carouselImg activeImg">
+            <img src="https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560" class="carouselImg">
+            <img src="https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg" class="carouselImg">
         </div>
-        <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
-        <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
+        <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()">
+            <p class="reader">back</p>
+        </i>
+        <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()">
+            <p class="reader">next</p>
+        </i>
         <div class="carouselBtnPanel">
-            <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
-            <button class="carouselBtn" onclick="carouselChange(1)"></button>
-            <button class="carouselBtn" onclick="carouselChange(2)"></button>
+            <button class="carouselBtn activeBtn" onclick="carouselChange(0)">
+                <p class="reader">Image 1</p>
+            </button>
+            <button class="carouselBtn" onclick="carouselChange(1)">
+                <p class="reader">Image 2</p>
+            </button>
+            <button class="carouselBtn" onclick="carouselChange(2)">
+                <p class="reader">Image 3</p>
+            </button>
         </div>
     </div>
 
@@ -100,10 +111,34 @@
         <div class="row">
             <div class="socials">
                 <ul>
-                    <li><a href="/"><i class='fab fa-facebook-square'></i></a></li>
-                    <li><a href="/"><i class='fab fa-instagram'></i></a></li>
-                    <li><a href="/"><i class='fab fa-twitter-square'></i></a></li>
-                    <li><a href="/"><i class='fab fa-snapchat-square'></i></a></li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-facebook-square'>
+                                <p class="reader">facebook</p>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-instagram'>
+                                <p class="reader">instagram</p>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-twitter-square'>
+                                <p class="reader">twitter</p>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class='fab fa-snapchat-square'>
+                                <p class="reader">snapchat</p>
+                            </i>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <p>Company Name © 2021</p>
@@ -116,7 +151,7 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
-    <script src="./js/navbar.js"></script>
+    <script alt='script' src="./js/navbar.js"></script>
     <script src="./js/carousel.js"></script>
 </body>
 

@@ -5,6 +5,7 @@ const { getAllApplications, createApplication, getApplication, updateApplication
 
 //Controllers for application
 router.route('/').get(getAllApplications).post(createApplication);
+router.route('/adoptionform').post(createApplication)
 router.route('/:id').get(getApplication).patch(updateApplication).delete(deleteApplication);
 
 module.exports = router;
