@@ -12,7 +12,7 @@ const addImg = () => {
     }
 }
 
-newPetFormDOM.addEventListener('submit', (e) => {
+newPetFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let petName = document.getElementById('petName').value;
@@ -32,18 +32,27 @@ newPetFormDOM.addEventListener('submit', (e) => {
     }
 
     let petInfo = {
-        petName,
-        petBirthday,
-        petGender,
-        petSpecies,
-        petColor,
-        petBreed,
-        petMedical,
-        petPersonality,
-        petNotes,
-        petImages
+        Name: petName,
+        Birthday: petBirthday,
+        Gender: petGender,
+        Species: petSpecies,
+        Color: petColor,
+        Breed: petBreed,
+        Medical: petMedical,
+        Personality: petPersonality,
+        Notes: petNotes,
+        IMG: petImages
     }
-    console.log(petInfo);
+    //console.log(petInfo);
+    try {
+        await axios.post(url, petInfo, {
+            headers: {
+                'content-type': 'text/json'
+            }
+        });
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 const showPets = async () => {
