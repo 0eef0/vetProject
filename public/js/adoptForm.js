@@ -1,4 +1,4 @@
-const adoptFormDOM = document.querySelector('.adoptForm');
+const adoptFormDOM = document.querySelector('.newPetForm');
 const otherHomeInput = document.getElementById('otherHomeRadio');
 
 otherHomeInput.addEventListener('click', () => {
@@ -11,7 +11,6 @@ otherHomeInput.addEventListener('click', () => {
 
 adoptFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
 
     let fullName = document.getElementById('userFullName').value;
     let occupation = document.getElementById('userOccupation').value;
@@ -37,11 +36,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     let declaw = (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined;
     let acknowledgement = document.getElementById('acknowledgement').checked;
     let acknowledgementAdoption = document.getElementById('acknowledgement2').checked;
-<<<<<<< HEAD
-    //let wantedPet = document.getElementById('').value;
-=======
-    // let wantedPet = document.getElementById('').value
->>>>>>> ba58d1a134facbd475513ee9a4d58cc52203e05e
+
 
 
     let application = {
@@ -69,7 +64,6 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         Declaw: declaw,
         Acknowledgement: acknowledgement,
         AcknowledgementAdoption: acknowledgementAdoption,
-<<<<<<< HEAD
         //WantedPet:wantedPet
     };
 
@@ -77,8 +71,6 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         // await axios.post('/api/v1/applications', {fullName,  occupation, address, phoneNumber, email, userReference, children, housing, space, minor, guardianName, guardianPhone, guardianEmail, currentPets, petVaccination, petVaccinationReason, petExamine, petExamineReason, qualification, petTime, affordableMedication, declaw, acknowledgement, acknowledgementAdoption, wantedPet});
         // console.log(phoneNumber)
         await console.log(application);
-=======
-=======
     const petApplication = {
         fullname: document.getElementById('userFullName').value,
         occupation: document.getElementById('userOccupation').value,
@@ -136,14 +128,12 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         Declaw: petApplication.declaw,
         Acknowledgement: petApplication.acknowledgement,
         AcknowledgementAdoption: petApplication.acknowledgementAdoption,
->>>>>>> c8592877a6b0d8f739762f9ac0852d60c98b6b2c
         // WantedPet:wantedPet
     });
 
     try{
         await axios.post('/api/v1/applications', {appliJSON});
         console.log(phoneNumber)
->>>>>>> ba58d1a134facbd475513ee9a4d58cc52203e05e
     }catch(error){
         console.log(error.response.data)
     }

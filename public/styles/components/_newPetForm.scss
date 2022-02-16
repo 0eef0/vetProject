@@ -5,6 +5,11 @@ div#newPet {
     width: 80%;
     margin: 0 auto;
     padding: 0.5rem;
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      color: $accent-color;
+    }
     div#imageInput {
       display: flex;
       justify-content: space-between;
@@ -13,6 +18,12 @@ div#newPet {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+      }
+      @media only screen and (max-width: 700px) {
+        & {
+          flex-wrap: wrap;
+          gap: 0.1vh;
+        }
       }
     }
     div#imageInput,

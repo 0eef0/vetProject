@@ -1,67 +1,68 @@
 form {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 div.question {
-	margin: 1rem auto;
-	width: clamp(90%, 70%, 2000px);
-	background-color: $light-background;
-	padding: 1rem;
-	h1 {
-		font-size: $question-font-size;
-	}
-	input[type='text'],
-	input[type='tel'],
-	input[type='email'],
-	input[type='number'] {
-		background-color: rgba($color: $clr-black, $alpha: 0.1);
-		border-bottom: 2px solid $accent-color;
-		padding: 1rem;
-		width: 100%;
-		outline: none;
-		font-size: 1.25rem;
-	}
-	textarea {
-		background-color: rgba($color: $clr-black, $alpha: 0.1);
-		border-bottom: 2px solid $accent-color;
-		padding: 1rem;
-		width: 100%;
-		height: 10rem;
-		outline: none;
-		resize: none;
-		font-family: inherit;
-	}
-	input[type='text'],
-	input[type='tel'],
-	input[type='email'],
-	input[type='number'],
-	textarea {
-		position: relative;
-		&::after {
-			content: '';
-			position: absolute;
-			background-color: $accent-color;
-			inset: 0;
-		}
-	}
-	ul {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		border-bottom: 2px solid $accent-color;
-		padding: 1rem;
-		@media only screen and (max-width: 760px) {
-			& {
-				display: block;
-			}
-		}
-	}
+  margin: 1rem auto;
+  width: clamp(90%, 70%, 2000px);
+  background-color: $light-background;
+  padding: 1rem;
+  h1 {
+    font-size: $question-font-size;
+  }
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
+    background-color: rgba($color: $clr-black, $alpha: 0.1);
+    border-bottom: 2px solid $accent-color;
+    padding: 1rem;
+    width: 100%;
+    outline: none;
+    font-size: 1.25rem;
+  }
+  textarea {
+    background-color: rgba($color: $clr-black, $alpha: 0.1);
+    border-bottom: 2px solid $accent-color;
+    padding: 1rem;
+    width: 100%;
+    height: 10rem;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+  }
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $accent-color;
+      inset: 0;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid $accent-color;
+    padding: 1rem;
+    @media only screen and (max-width: 760px) {
+      & {
+        display: block;
+      }
+    }
+  }
 }
 button#submitAdoptForm {
-	background-color: $accent-color;
-	color: $clr-white;
-	font-family: inherit;
-	padding: 1rem;
-	width: clamp(200px, 10%, 500px);
-	margin: 0 auto;
+  background-color: $accent-color;
+  color: $clr-white;
+  font-family: inherit;
+  padding: 1rem;
+  width: clamp(200px, 10%, 500px);
+  margin: 0 auto;
 }

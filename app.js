@@ -67,11 +67,14 @@ app.get('/adminLogin', (req, res) => {
 app.get('/adminApplications', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
-app.get('/adminApplications/:id', (req, res) => {
+app.get('/adminApplication', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminIndApp.html'));
 })
 app.get('/adminPets', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminPets.html'));
+})
+app.get('/adminRecords', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminRecords.html'))
 })
 
 // uncomment this when adding DB functionality

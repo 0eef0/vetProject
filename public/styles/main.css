@@ -993,7 +993,8 @@ div.question h1 {
 div.question input[type=text],
 div.question input[type=tel],
 div.question input[type=email],
-div.question input[type=number] {
+div.question input[type=number],
+div.question input[type=date] {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
@@ -1110,6 +1111,11 @@ div#newPet form {
   margin: 0 auto;
   padding: 0.5rem;
 }
+div#newPet form h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #f7941d;
+}
 div#newPet form div#imageInput {
   display: flex;
   justify-content: space-between;
@@ -1119,6 +1125,12 @@ div#newPet form div#imageInput div#images {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 700px) {
+  div#newPet form div#imageInput {
+    flex-wrap: wrap;
+    gap: 0.1vh;
+  }
 }
 div#newPet form div#imageInput,
 div#newPet form input[type=text],
