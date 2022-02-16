@@ -6,13 +6,11 @@ const LocalStrategy = require('passport-local');
 const passportLocalMongoose = require('passport-local-mongoose');
 // const LocalStrategy = require('passport-local');
 // const passportLocalMongoose = require('passport-local-mongoose');
-
 const app = express();
 const path = require('path');
 const routes = require('./routes/pets.js');
 const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
-// const populateProducts = require('./populate');
 const loginRoute = require('./routes/login');
 
 const port = process.env.PORT || 5000;
