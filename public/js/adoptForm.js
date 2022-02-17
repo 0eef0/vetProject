@@ -42,39 +42,10 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
         // wantedPet: document.getElementById('').value
     }
-    console.log('test')
-    const appliJSON = JSON.stringify(petApplication);
-
-    console.log( {
-        FullName: petApplication.fullname,
-        Occupation: petApplication.occupation,
-        Address: petApplication.address,
-        PhoneNumber: petApplication.phoneNumber,
-        Email: petApplication.email,
-        UserReference: petApplication.userReference,
-        Children: petApplication.children,
-        Housing: petApplication.housing,
-        Space: petApplication.space,
-        Minor: petApplication.minor,
-        GuardianName: petApplication.guardianName,
-        GuardianPhone: petApplication.guardianPhone,
-        GuardianEmail: petApplication.guardianEmail,
-        CurrentPets: petApplication.currentPets,
-        PetVaccination: petApplication.petVaccination,
-        PetVaccinationReason: petApplication.petVaccinationReason,
-        PetExamine: petApplication.petExamine,
-        PetExamineReason: petApplication.petExamineReason,
-        Qualification: petApplication.qualification,
-        PetTime: petApplication.petTime,
-        AffordableMedication: petApplication.affordableMedication,
-        Declaw: petApplication.declaw,
-        Acknowledgement: petApplication.acknowledgement,
-        AcknowledgementAdoption: petApplication.acknowledgementAdoption,
-        // WantedPet:wantedPet
-    });
+    console.log(petApplication);
 
     try{
-        await axios.post('/api/v1/applications', appliJSON);
+        await axios.post('/api/v1/applications', petApplication);
         console.log(phoneNumber)
     }catch(error){
         console.log(error.response.data);
