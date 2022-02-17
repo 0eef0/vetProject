@@ -14,9 +14,6 @@ const getAllApplications = async (req, res) => {
 //     } catch (error) { res.status(500).json({msg: error}) }
 // }
 
-// const createApplication = async (app = {}, req, res) => {
-//     try {
-//         const application = await applicationModel.create(app);
 const createApplication = async (req, res) => {
     console.log(req.body)
     try {
