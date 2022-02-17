@@ -9,6 +9,8 @@ const populateProducts = require('./populate');
 
 const port = process.env.PORT || 5000;
 
+var loggedIn = false;
+
 //important packages
 require('dotenv').config()
 
@@ -34,6 +36,14 @@ app.get('/pet', (req, res) => {
 })
 app.get('/adoptionform', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adoptForm.html'));
+})
+
+// Admin Pages
+app.get('/adminLogin', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
+})
+app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
 
 // uncomment this when adding DB functionality
