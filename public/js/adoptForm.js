@@ -28,7 +28,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         minor: (document.getElementById('ifUnder18Yes')) ? true : (document.getElementById('ifUnder18No')) ? false : undefined,
         guardianName: document.getElementById('guardianName').value,
         guardianPhone: document.getElementById('guardianNumber').value,
-        guaranteedEmail: document.getElementById('guardianEmail').value,
+        guardianEmail: document.getElementById('guardianEmail').value,
         currentPets: document.getElementById('homePets').value,
         petVaccination: (document.getElementById('otherPetSterNVaxYes').checked) ? true : (document.getElementById('otherPetSterNVaxNo').checked) ? false : (document.getElementById('otherPetSterNVaxNA').checked) ? 'N/A' : undefined,
         petVaccinationReason: document.getElementById('sterNVaxExplain').value,
@@ -42,6 +42,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
         // wantedPet: document.getElementById('').value
     }
+    console.log('test')
     const appliJSON = JSON.stringify(petApplication);
 
     console.log( {
@@ -57,7 +58,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         Minor: petApplication.minor,
         GuardianName: petApplication.guardianName,
         GuardianPhone: petApplication.guardianPhone,
-        GuardianEmail: petApplication.guaranteedEmail,
+        GuardianEmail: petApplication.guardianEmail,
         CurrentPets: petApplication.currentPets,
         PetVaccination: petApplication.petVaccination,
         PetVaccinationReason: petApplication.petVaccinationReason,
@@ -73,9 +74,9 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     });
 
     try{
-        await axios.post('/api/v1/applications', {appliJSON});
+        await axios.post('/api/v1/applications', appliJSON);
         console.log(phoneNumber)
     }catch(error){
-        console.log(error.response.data)
+        console.log(error.response.data);
     }
 })
