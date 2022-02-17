@@ -1,16 +1,61 @@
 const petCardContainerDOM = document.querySelector('.card-container');
-
+const newPetFormDOM = document.querySelector('.newPetForm');
 const url = "/api/v1/pets";
 
 let imgAmount = 3;
 const addImg = () => {
     if(imgAmount < 12) {
-        document.getElementById('images').innerHTML += '<input type="file" class="petImg" required><br>';
+        document.getElementById('images').innerHTML += '<input type="file" class="petImg" accept="image/*" required><br>';
         imgAmount++;
     } else {
         document.getElementById('addImgBtn').style.display = 'none';
     }
 }
+
+newPetFormDOM.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let petName = document.getElementById('petName').value;
+    let petBirthday = document.getElementById('petBirthday').value;
+    let petGender = document.getElementById('petGender').value;
+    let petSpecies = document.getElementById('petSpecies').value;
+    let petColor = document.getElementById('petColor').value;
+    let petBreed = document.getElementById('petBreed').value;
+    let petMedical = document.getElementById('petMedical').value.split(',');
+    let petPersonality = document.getElementById('petPersonality').value.split(',');
+    let petNotes = document.getElementById('petNotes').value;
+    let petImagesInput = document.getElementsByClassName('petImg');
+    let petImages = [];
+
+    for(let i = 0; i < petImagesInput.length; i++) {
+        petImages.push(petImagesInput[i].value);
+    }
+
+    let petInfo = {
+        Name: petName,
+        Birthday: petBirthday,
+        Gender: petGender,
+        Species: petSpecies,
+        Color: petColor,
+        Breed: petBreed,
+        Medical: petMedical,
+        Personality: petPersonality,
+        Notes: petNotes,
+        IMG: petImages
+    }
+    //console.log(petInfo);
+    try {
+        // await axios.post(url, petInfo, {
+        //     headers: {
+        //         'content-type': 'text/json'
+        //     }
+        // });
+        document.getElementsByClassName('newPetForm')[0].reset();
+        document.getElementById('newPetConfirmationBox').style.display = 'flex';
+    } catch (err) {
+        console.log(err);
+    }
+});
 
 const showPets = async () => {
     try {
