@@ -40,14 +40,12 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         declaw: (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined,
         acknowledgement: document.getElementById('acknowledgement').checked,
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
-        // wantedPet: document.getElementById('').value
     }
-    console.log(petApplication);
 
-    try{
+    try {
         await axios.post('/api/v1/applications', petApplication);
-        console.log(phoneNumber)
-    }catch(error){
+        await console.log("Application posted successfully");
+    } catch(error) {
         console.log(error.response.data);
     }
 })
