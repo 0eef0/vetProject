@@ -1163,4 +1163,31 @@ div#newPet form button {
   margin: 0 auto;
 }
 
+div.confirmationBox {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(45, 52, 54, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+div.confirmationBox div {
+  width: 40vw;
+  height: 40vh;
+  background-color: #f5f6fa;
+  border-bottom: 2px solid #f7941d;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+div.confirmationBox div h1 {
+  font-size: 2.5rem;
+  color: #f7941d;
+  text-align: center;
+}
+
 /*# sourceMappingURL=main.css.map */

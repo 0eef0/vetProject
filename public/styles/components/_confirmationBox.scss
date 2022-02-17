@@ -1,0 +1,26 @@
+div.confirmationBox {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: $dark-background, $alpha: 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  div {
+    width: 40vw;
+    height: 40vh;
+    background-color: $light-background;
+    border-bottom: 2px solid $accent-color;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    h1 {
+      font-size: 2.5rem;
+      color: $accent-color;
+      text-align: center;
+    }
+  }
+}

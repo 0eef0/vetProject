@@ -134,7 +134,11 @@ adoptFormDOM.addEventListener('submit', async (e) => {
     try{
         await axios.post('/api/v1/applications', {appliJSON});
         console.log(phoneNumber)
+        document.getElementsByClassName('adoptForm')[0].reset();
+        document.getElementById('adoptConfirmationBox').style.display = 'flex';
     }catch(error){
         console.log(error.response.data)
     }
-})
+}catch(err){
+    console.log(err);
+}})

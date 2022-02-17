@@ -45,11 +45,13 @@ newPetFormDOM.addEventListener('submit', async (e) => {
     }
     //console.log(petInfo);
     try {
-        await axios.post(url, petInfo, {
-            headers: {
-                'content-type': 'text/json'
-            }
-        });
+        // await axios.post(url, petInfo, {
+        //     headers: {
+        //         'content-type': 'text/json'
+        //     }
+        // });
+        document.getElementsByClassName('newPetForm')[0].reset();
+        document.getElementById('newPetConfirmationBox').style.display = 'flex';
     } catch (err) {
         console.log(err);
     }
