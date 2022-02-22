@@ -16,12 +16,14 @@
 		background: white;
 		padding: 10px;
 		box-sizing: border-box;
-		border: 2px solid black;
-		margin-bottom: -2px;
+		border-bottom: 2px solid black;
 		&.template{
 			border-radius: 10px;
 			font-weight: bold;
 			margin: 30px;
+			p{
+				cursor: pointer;
+			}
 		}
 		&:first-of-type{
 			margin-top: 30px;
@@ -39,7 +41,6 @@
 		height: fit-content;
 		margin-left: 5%;
 		display: none;
-		margin-top: 1px;
 		.record{
 			width: 100%;
 			&:first-of-type{

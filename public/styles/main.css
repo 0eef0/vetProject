@@ -347,7 +347,7 @@ div.homeGallery {
   margin-bottom: 10px;
 }
 
-#records input.search {
+#adminRecords input.search {
   height: 50px;
   width: 350px;
   border-radius: 50px;
@@ -355,7 +355,7 @@ div.homeGallery {
   margin: 50px;
   margin-bottom: 10px;
 }
-#records input.search:focus {
+#adminRecords input.search:focus {
   outline: none;
 }
 
@@ -527,6 +527,55 @@ form#login button {
     left: 10%;
     right: 10%;
   }
+}
+
+#adminIndApp main {
+  width: calc(100% - 3rem);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 2rem;
+}
+#adminIndApp main div {
+  width: 50%;
+  height: fit-content;
+  text-align: center;
+  word-wrap: break-word;
+  background-color: #f5f6fa;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+#adminIndApp main div h1 {
+  font-size: 1.7rem;
+}
+#adminIndApp main div img {
+  width: 100%;
+}
+#adminIndApp main div ul {
+  list-style: inside;
+}
+#adminIndApp main div .choice {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+#adminIndApp main div .choice button {
+  width: calc(50% - 1.3rem);
+  height: 2rem;
+}
+#adminIndApp main div .choice button:nth-of-type(1) {
+  background-color: #2ecc71;
+}
+#adminIndApp main div .choice button:nth-of-type(1):hover {
+  background-color: #208C4D;
+}
+#adminIndApp main div .choice button:nth-of-type(2) {
+  background-color: #ff3f34;
+}
+#adminIndApp main div .choice button:nth-of-type(2):hover {
+  background-color: #BF2E26;
 }
 
 .navbar {
@@ -931,7 +980,6 @@ footer .row.top .col ul li.title {
 footer .row.top .col ul li a {
   color: #f5f6fa;
   text-decoration: none;
-  margin-left: 2vw;
 }
 footer .row.top .col ul li a:active {
   color: #f7941d;
@@ -961,7 +1009,9 @@ footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 30px;
+  margin-top: 1rem;
+  margin-bottom: 2.15rem;
+  height: 0;
 }
 footer .row .socials ul {
   padding: 0;
@@ -969,13 +1019,15 @@ footer .row .socials ul {
   list-style: none;
   font-size: 200%;
   margin: 0;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 footer .row .socials ul li {
   display: flex;
   justify-content: center;
   width: 0;
   padding-inline: 1rem;
+  margin-right: 1.3rem;
+  margin-left: 1.3rem;
 }
 footer .row .socials ul li a {
   color: #f5f6fa;
@@ -1101,13 +1153,15 @@ button#submitAdoptForm {
   background: white;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid black;
-  margin-bottom: -2px;
+  border-bottom: 2px solid black;
 }
 .infoBlock .record.template {
   border-radius: 10px;
   font-weight: bold;
   margin: 30px;
+}
+.infoBlock .record.template p {
+  cursor: pointer;
 }
 .infoBlock .record:first-of-type {
   margin-top: 30px;
@@ -1124,7 +1178,6 @@ button#submitAdoptForm {
   height: fit-content;
   margin-left: 5%;
   display: none;
-  margin-top: 1px;
 }
 .infoBlock .appl .record {
   width: 100%;

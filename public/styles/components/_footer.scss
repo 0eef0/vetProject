@@ -33,7 +33,6 @@ footer {
             a {
               color: $font-light;
               text-decoration: none;
-              margin-left: 2vw;
               &:active {
                 color: $accent-color;
               }
@@ -69,19 +68,27 @@ footer {
       }
     }
     .socials {
-      margin-top: 30px;
+      margin: {
+        top: 1rem;
+        bottom: 2.15rem;
+      }
+      height: 0;
       ul {
         padding: 0;
         display: flex;
         list-style: none;
         font-size: 200%;
         margin: 0;
-        justify-content: space-evenly;
+        justify-content: center;
         li {
           display: flex;
           justify-content: center;
           width: 0;
           padding-inline: 1rem;
+          margin: {
+            right: 1.3rem;
+            left: 1.3rem;
+          }
           a {
             color: $font-light;
             &:active {
