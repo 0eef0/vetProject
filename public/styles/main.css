@@ -394,6 +394,12 @@ div.petPage {
   padding: 1rem;
   background-color: #f5f6fa;
 }
+div.petPage #petImageNames li {
+  font-size: 1rem;
+}
+div.petPage #petImageNames li:hover {
+  text-decoration: line-through 2px red;
+}
 div.petPage div {
   width: 40%;
 }
