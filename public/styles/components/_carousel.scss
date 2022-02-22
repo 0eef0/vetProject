@@ -20,6 +20,7 @@ div.carousel {
     &.rightArrow {
       right: 1vw;
       left: auto;
+      text-align: right;
     }
   }
 
@@ -32,8 +33,6 @@ div.carousel {
       height: calc(100% - 2rem - 3vh);
       opacity: 0;
       transition: opacity 0.75s;
-      //box-shadow: 50px 0 45px -4px $dark-background,
-      //-50px 0 45px -4px $dark-background;
       object-fit: cover;
 
       &.activeImg {

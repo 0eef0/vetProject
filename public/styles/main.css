@@ -749,6 +749,7 @@ div.carousel i.arrow.leftArrow {
 div.carousel i.arrow.rightArrow {
   right: 1vw;
   left: auto;
+  text-align: right;
 }
 div.carousel div.carouselImages .carouselImg {
   position: absolute;
@@ -927,6 +928,7 @@ footer .row.top .col ul li.title {
 footer .row.top .col ul li a {
   color: #f5f6fa;
   text-decoration: none;
+  margin-left: 2vw;
 }
 footer .row.top .col ul li a:active {
   color: #f7941d;
@@ -944,8 +946,16 @@ footer .row.top .col.desc h3 {
   color: #f7941d;
   font-size: 110%;
 }
-footer .row.top .col.desc p {
-  margin: 0;
+footer .row.top .col.desc a {
+  margin-left: 2vw;
+  color: #f5f6fa;
+  text-decoration: none;
+}
+footer .row.top .col.desc a:active {
+  color: #f7941d;
+}
+footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
+  text-decoration: underline;
 }
 footer .row .socials {
   margin-top: 30px;
@@ -1007,6 +1017,14 @@ div.question input[type=date] {
   width: 100%;
   outline: none;
   font-size: 1.25rem;
+  transition: border-bottom 0.3s;
+}
+div.question input[type=text]:focus,
+div.question input[type=tel]:focus,
+div.question input[type=email]:focus,
+div.question input[type=number]:focus,
+div.question input[type=date]:focus {
+  border-bottom: 4px solid #f7941d;
 }
 div.question textarea {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1017,6 +1035,10 @@ div.question textarea {
   outline: none;
   resize: none;
   font-family: inherit;
+  transition: border-bottom 0.3s;
+}
+div.question textarea:focus {
+  border-bottom: 4px solid #f7941d;
 }
 div.question input[type=text],
 div.question input[type=tel],
@@ -1153,6 +1175,14 @@ div#newPet form select {
   font-family: inherit;
   color: inherit;
   resize: none;
+  transition: border-bottom 0.3s;
+}
+div#newPet form div#imageInput:focus,
+div#newPet form input[type=text]:focus,
+div#newPet form input[type=date]:focus,
+div#newPet form textarea:focus,
+div#newPet form select:focus {
+  border-bottom: 4px solid #f7941d;
 }
 div#newPet form button {
   background-color: #f7941d;

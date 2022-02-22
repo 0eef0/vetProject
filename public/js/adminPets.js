@@ -51,6 +51,7 @@ newPetFormDOM.addEventListener('submit', async (e) => {
         //     }
         // });
         document.getElementsByClassName('newPetForm')[0].reset();
+        document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
         document.getElementById('newPetConfirmationBox').style.display = 'flex';
     } catch (err) {
         console.log(err);
