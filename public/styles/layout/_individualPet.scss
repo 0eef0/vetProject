@@ -6,6 +6,16 @@ div.petPage {
   margin: 2rem auto 0 auto;
   padding: 1rem;
   background-color: $light-background;
+
+  #petImageNames {
+    li {
+      font-size: 1rem;
+      &:hover {
+        text-decoration: line-through 2px red;
+      }
+    }
+  }
+
   div {
     width: 40%;
   }

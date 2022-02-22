@@ -10,15 +10,19 @@ const medicalListDOM = document.querySelector('.medical');
 const personalityListDOM = document.querySelector('.personality');
 const additionalNotesDOM = document.querySelector('.notes');
 const adoptBtnDOM = document.querySelector('.adopt-button');
+const petImageNamesDOM = document.querySelector('#petImageNames');
 
 const params = window.location.search
 const id = new URLSearchParams(params).get('id')
 const url = "/api/v1/pets";
 
+let petImages = [];
+
 const showPet = async () => {
     const { data: {pet},} = await axios.get(`${url}/${id}`)
     const {Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG} = pet;
-    const bDay = new Date(Birthday)
+    const bDay = new Date(Birthday);
+    petImages = IMG;
 
     document.title = `Adopt ${Name}`;
     petNameDOM.placeholder = `Name: ${Name}`;
@@ -41,16 +45,27 @@ const showPet = async () => {
     // }).join('');
     personalityListDOM.innerHTML = Personality;
 
-    const carouselImages = IMG.map((image) => {
-        return `
-        <img src="${image}" class="carouselImg">`
-    }).join('');
-    console.log(carouselImages)
-    carouselImgContainerDOM.innerHTML = carouselImages;
+    IMG.map((image, index) => {
+        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`
+    })
 
-    const firstImage = carouselImgContainerDOM.firstElementChild;
-    firstImage.classList.add('activeImg');
     console.log(pet)
     console.log(id)
 }
 showPet()
+
+const addImg = () => {
+    petImages.push(document.getElementById('petPhotoSub').value.split(`\\`)[2]);
+    petImageNamesDOM.innerHTML = '<form><input type="file"><button>Submit Photo</button></form>';
+    petImages.map((image, index) => {
+        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
+    })
+}
+
+const removeImg = (index) => {
+    petImages.splice(index, 1);
+    petImageNamesDOM.innerHTML = '<form><input type="file"><button>Submit Photo</button></form>';
+    petImages.map((image, index) => {
+        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
+    })
+}

@@ -40,17 +40,6 @@
     </nav>
 
     <div class="petPage">
-        <div class="carousel petGallery">
-            <div class="carouselImages"></div>
-            <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()"></i>
-            <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()"></i>
-            <div class="carouselBtnPanel">
-                <button class="carouselBtn activeBtn" onclick="carouselChange(0)"></button>
-                <button class="carouselBtn" onclick="carouselChange(1)"></button>
-                <button class="carouselBtn" onclick="carouselChange(2)"></button>
-            </div>
-        </div>
-
         <div class="petInfo">
             <!-- <h1 class="pet-name"></h1> -->
             <input type="text" placeholder="name" class="pet-name">
@@ -99,9 +88,18 @@
                         everything!</span> -->
                     <input type="text" class="notes">
                 </li>
+                <li class="edit-img">
+                    <p><strong>Images:</strong></p>
+                    <ul id="petImageNames">
+                        <form>
+                            <input type="file" id="petPhotoSub">
+                            <button type="button" onclick="addImg()">Submit Photo</button>
+                        </form>
+                    </ul>
+                </li>
 
             </ul>
-            <a href="/adoptionform" class="adopt-button">Save</a>
+            <a class="adopt-button">Save</a>
         </div>
     </div>
 
@@ -171,7 +169,6 @@
     <!-- other js files -->
     <script src="./js/adminIndPet.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="./js/carousel.js"></script>
 </body>
 
 </html>
