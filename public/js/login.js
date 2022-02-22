@@ -8,7 +8,13 @@ loginFormDOM.addEventListener('submit', async (e) => {
 
     console.log("You pressed the login button", username, password);
     try {
-        await axios.get('/login')
+        let loginInfo = await axios.get('/login');
+        loginInfo = await loginInfo.data.Login;
+        await console.log(loginInfo);
+        // await for (let index = 0; index < array.length; index++) {
+        //     const element = array[index];
+            
+        // }
         await console.log("Axios retrieved successfully");
     } catch(error) {
         console.log(error.response.data);
