@@ -4,59 +4,36 @@ const recordDrop = "this.parentElement.nextElementSibling.style.display = (this.
 
 async function getApplInfo() {
 	try {
-		// const { data: aboutUs, } = await axios.get(``);
+		const { data: { pets } } = await axios.get('/api/v1/pets');
+		console.log(pets)
 		main.innerHTML = `
-			<div class="record">
-				<p>Oldest to Newest</p>
-				<p>Adopter Email</p>
-				<p>Adopter Name</p>
-				<p>Pet Name</p>
-				<p class='moreInfo' onClick="${recordDrop}">See Applications</p>
-			</div>
-			<div class='appl'>
-				<div class="record">
-					<p>Oldest to Newest</p>
-					<p>Adopter Email</p>
-					<p>Adopter Name</p>
-					<p>Pet Name</p>
-					<p class='moreInfo'>More Info...</p>
-				</div>
-				<div class="record">
-					<p>Oldest to Newest</p>
-					<p>Adopter Email</p>
-					<p>Adopter Name</p>
-					<p>Pet Name</p>
-					<p class='moreInfo'>More Info...</p>
-				</div>
-			</div>
-			<div class="record">
-				<p>Oldest to Newest</p>
-				<p>Adopter Email</p>
-				<p>Adopter Name</p>
-				<p>Pet Name</p>
-				<p class='moreInfo' onClick="this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'flex') ? 'none' : 'flex'">See Applications</p>
-			</div>
-			<div class="record appl">
+			<div class="record template">
 				<p>Oldest to Newest</p>
 				<p>Adopter Email</p>
 				<p>Adopter Name</p>
 				<p>Pet Name</p>
 				<p class='moreInfo'>More Info...</p>
 			</div>
-			<div class="record">
-				<p>Oldest to Newest</p>
-				<p>Adopter Email</p>
-				<p>Adopter Name</p>
-				<p>Pet Name</p>
-				<p class='moreInfo' onClick="this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'flex') ? 'none' : 'flex'">See Applications</p>
-			</div>
-			<div class="record appl">
-				<p>Oldest to Newest</p>
-				<p>Adopter Email</p>
-				<p>Adopter Name</p>
-				<p>Pet Name</p>
-				<p class='moreInfo'>More Info...</p>
-			</div>
+			
+		${pets.map((pet) => {
+			return (
+				`<div class="record">
+					<p>${pet.Name}</p>
+					<p>Application count</p>
+					<p class='moreInfo' onClick="${recordDrop}">See Applications</p>
+				</div>
+				<div class='appl'>
+					<div class="record">
+						<p>Oldest to Newest</p>
+						<p>Adopter Email</p>
+						<p>Adopter Name</p>
+						<p>Pet Name</p>
+						<p class='moreInfo'>More Info...</p>
+					</div>
+				</div>
+				`
+			)
+		}).reduce((a, c) => a + c)}
 		`;
 	}
 	catch (error) {
