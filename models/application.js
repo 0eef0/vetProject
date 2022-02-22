@@ -143,11 +143,11 @@ const ApplicationsSchema = new mongoose.Schema({
             message: '{VALUE} is not supported'
         }
     },
-    // wantedPet: {
-    //     type: String,
-    //     required: [true, 'Must provide the name of pet you wish to adopt'],
-    //     trim: true
-    // }
+    wantedPet: {
+        type: String,
+        required: [true, 'Must provide the name of pet you wish to adopt'],
+        trim: true
+    }
 });
 
 // This is basic validation not advanced

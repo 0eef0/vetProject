@@ -21,24 +21,25 @@ const showPet = async () => {
     const bDay = new Date(Birthday)
 
     document.title = `Adopt ${Name}`;
-    petNameDOM.innerHTML = Name;
-    birthdayDOM.innerHTML = bDay.toISOString().slice(0, 10);
-    genderDOM.innerHTML = Gender;
-    colorDOM.innerHTML = Color;
-    breedDOM.innerHTML = Breed;
+    petNameDOM.placeholder = `Name: ${Name}`;
+    birthdayDOM.value = bDay.toISOString().slice(0, 10);
+    //genderDOM.innerHTML = Gender;
+    if(Gender === 'Female') document.getElementById('femaleSelector').selected = true;
+    colorDOM.placeholder = Color;
+    breedDOM.placeholder = Breed;
     // speciesDOM.innerHTML = Species;
-    additionalNotesDOM.innerHTML = Notes;
+    additionalNotesDOM.placeholder = Notes;
     adoptBtnDOM.href = `/adoptionform?id=${id}`;
 
-    const medicalInfo = Medical.map((info) => {
-        return `<li>${info}</li>`
-    }).join('');
-    medicalListDOM.innerHTML = medicalInfo;
+    // const medicalInfo = Medical.map((info) => {
+    //     return `<li>${info}</li>`
+    // }).join('');
+    medicalListDOM.innerHTML = Medical;
 
-    const personalInfo = Personality.map((traits) => {
-        return `<li>${traits}</li>`
-    }).join('');
-    personalityListDOM.innerHTML = personalInfo;
+    // const personalInfo = Personality.map((traits) => {
+    //     return `<li>${traits}</li>`
+    // }).join('');
+    personalityListDOM.innerHTML = Personality;
 
     const carouselImages = IMG.map((image) => {
         return `

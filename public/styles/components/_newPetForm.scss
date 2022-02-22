@@ -41,10 +41,10 @@ div#newPet {
       font-family: inherit;
       color: inherit;
       resize: none;
-      // transition: border-bottom 0.3s;
-      // &:active {
-      //   border-bottom: 4px solid $accent-color;
-      // }
+      transition: border-bottom 0.3s;
+      &:focus {
+        border-bottom: 4px solid $accent-color;
+      }
     }
     button {
       background-color: $accent-color;

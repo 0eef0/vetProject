@@ -32,16 +32,17 @@
             </div>
             <div class="align-right links closed">
                 <li class="nav-item"><a class="link" href="/">Applications</a></li>
-                <li class="nav-item"><a class="link active1" href="/">Pets</a></li>
+                <li class="nav-item"><a class="link active" href="/">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/">Record</a></li>
                 <li class="nav-item"><a class="link" href="/">Account</a></li>
             </div>
         </ul>
     </nav>
 
-    <div id="newPetConfirmationBox" class="confirmationBox" onclick="document.getElementById('newPetConfirmationBox').style.display = 'none'">
+    <div id="newPetConfirmationBox" class="confirmationBox"
+        onclick="document.getElementById('newPetConfirmationBox').style.display = 'none'">
         <div>
-            <h1>You have added [name] to the adoption list. Click anywhere to return to pets page.</h1>
+            <h1 id="confirmationMessage"></h1>
         </div>
     </div>
 
@@ -60,8 +61,10 @@
             </select>
             <input type="text" id="petColor" placeholder="Pet Color" required>
             <input type="text" id="petBreed" placeholder="Pet Breed" required>
-            <textarea name="medical" id="petMedical" placeholder="Medical Details (separate by commas)" required></textarea>
-            <textarea name="personality" id="petPersonality" placeholder="Personality Traits (separate by commas)" required></textarea>
+            <textarea name="medical" id="petMedical" placeholder="Medical Details (separate by commas)"
+                required></textarea>
+            <textarea name="personality" id="petPersonality" placeholder="Personality Traits (separate by commas)"
+                required></textarea>
             <input type="text" placeholder="Other Notes" id="petNotes">
             <div id="imageInput">
                 <p>Images:</p>
@@ -156,4 +159,5 @@
     <script src="./js/pets_filter.js"></script>
     <script src="./js/adminPets.js"></script>
 </body>
+
 </html>
