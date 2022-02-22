@@ -3,19 +3,18 @@ div.carousel {
   height: 80vh;
   overflow: hidden;
   background-color: $light-background;
-
   i.arrow {
     position: absolute;
     top: 50%;
     bottom: auto;
     font-size: 2rem;
     color: $transparent-dark;
+    cursor: pointer;
     &:hover {
       color: $transparent-darker;
     }
     &.leftArrow {
       left: 1vw;
-      right: auto;
     }
     &.rightArrow {
       right: 1vw;
@@ -34,6 +33,9 @@ div.carousel {
       opacity: 0;
       transition: opacity 0.75s;
       object-fit: cover;
+      //box-shadow: 50px 0 45px -4px $dark-background,
+      //-50px 0 45px -4px $dark-background;
+      // object-fit: contain;
 
       &.activeImg {
         opacity: 1;
@@ -54,10 +56,10 @@ div.carousel {
       flex-grow: 0.5;
       margin: 0 0.25rem;
       height: 3vh;
-      background-color: $transparent-dark;
+      background-color: $btn-light;
       transition: background-color 1s;
       &.activeBtn {
-        background-color: $transparent-darker;
+        background-color: $btn-dark;
       }
     }
   }

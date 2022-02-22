@@ -19,11 +19,14 @@ body {
 
 img {
 	background: $light-background;
+	object-fit: contain;
 }
 p {
 	padding: 10px;
 }
 p.reader{
+	width: 0;
+	height: 0;
 	color: transparent !important;
 	user-select: none !important;
 }
