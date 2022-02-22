@@ -31,9 +31,10 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="/">Home</a></li>
-                <li class="nav-item"><a class="link" href="/about">About</a></li>
-                <li class="nav-item"><a class="link active" href="/adopt">Adopt</a></li>
+                <li class="nav-item"><a class="link" href="/">Applications</a></li>
+                <li class="nav-item"><a class="link active" href="/">Pets</a></li>
+                <li class="nav-item"><a class="link" href="/">Record</a></li>
+                <li class="nav-item"><a class="link" href="/">Account</a></li>
             </div>
         </ul>
     </nav>
@@ -56,27 +57,48 @@
             <ul>
                 <div class="row">
                     <div class="col facts">
-                        <li><strong>Birthday:</strong> <span class="birthday"></span></li>
-                        <li><strong>Gender:</strong> <span class="gender"></span></li>
-                        <li><strong>Color:</strong> <span class="color"></span></li>
-                        <li><strong>Breed:</strong> <span class="breed"></span></li>
+                        <li>
+                            <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
+                            <input type="date" class="birthday">
+                        </li>
+                        <li>
+                            <strong>Gender:</strong> <!-- <span class="gender"> -->
+                            <select name="petGender" id="petGender">
+                                <option value="Male" id="maleSelector">Male</option>
+                                <option value="Female" id="femaleSelector">Female</option>
+                            </select>
+                            </span>
+                        </li>
+                        <li>
+                            <strong>Color:</strong> <!-- <span class="color"></span> -->
+                            <input type="text" class="color">
+                        </li>
+                        <li>
+                            <strong>Breed:</strong> <!-- <span class="breed"></span> -->
+                            <input type="text" class="breed">
+                        </li>
                         <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
                     <div class="col">
                         <li><strong>Medical Information:</strong>
-                            <ul class="medical">
+                            <!-- <ul class="medical">
                                 <li>drugs</li>
-                            </ul>
+                            </ul> -->
+                            <textarea name="medical" class="medical"></textarea>
                         </li>
                         <li><strong>Personality:</strong>
-                            <ul class="personality">
+                            <!-- <ul class="personality">
                                 <li>stupid</li>
-                            </ul>
+                            </ul> -->
+                            <textarea name="personality" class="personality"></textarea>
                         </li>
                     </div>
                 </div>
-                <li class="added-note"><strong>Additional Notes:</strong> <br /><span class="notes">Pees on absolutely
-                        everything!</span></li>
+                <li class="added-note">
+                    <strong>Additional Notes:</strong> <br /><!-- <span class="notes">Pees on absolutely
+                        everything!</span> -->
+                    <input type="text" class="notes">
+                </li>
 
             </ul>
             <a href="/adoptionform" class="adopt-button">Save</a>
@@ -149,6 +171,7 @@
     <!-- other js files -->
     <script src="./js/adminIndPet.js"></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>
