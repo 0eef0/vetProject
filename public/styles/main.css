@@ -947,15 +947,21 @@ footer .row.top .col.desc h3 {
 footer .row.top .col.desc p {
   margin: 0;
 }
+footer .row .socials {
+  margin-top: 30px;
+}
 footer .row .socials ul {
   padding: 0;
   display: flex;
   list-style: none;
   font-size: 200%;
   margin: 0;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 footer .row .socials ul li {
+  display: flex;
+  justify-content: center;
+  width: 0;
   padding-inline: 1rem;
 }
 footer .row .socials ul li a {
@@ -993,7 +999,8 @@ div.question h1 {
 div.question input[type=text],
 div.question input[type=tel],
 div.question input[type=email],
-div.question input[type=number] {
+div.question input[type=number],
+div.question input[type=date] {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
@@ -1110,6 +1117,11 @@ div#newPet form {
   margin: 0 auto;
   padding: 0.5rem;
 }
+div#newPet form h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #f7941d;
+}
 div#newPet form div#imageInput {
   display: flex;
   justify-content: space-between;
@@ -1119,6 +1131,12 @@ div#newPet form div#imageInput div#images {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 700px) {
+  div#newPet form div#imageInput {
+    flex-wrap: wrap;
+    gap: 0.1vh;
+  }
 }
 div#newPet form div#imageInput,
 div#newPet form input[type=text],
@@ -1143,6 +1161,33 @@ div#newPet form button {
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
   margin: 0 auto;
+}
+
+div.confirmationBox {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(45, 52, 54, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+div.confirmationBox div {
+  width: 40vw;
+  height: 40vh;
+  background-color: #f5f6fa;
+  border-bottom: 2px solid #f7941d;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+div.confirmationBox div h1 {
+  font-size: 2.5rem;
+  color: #f7941d;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
