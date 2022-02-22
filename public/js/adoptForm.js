@@ -1,5 +1,24 @@
-const adoptFormDOM = document.querySelector('.newPetForm');
+//const application = require("../../models/application");
+
+const adoptFormDOM = document.querySelector('.adoptForm');
 const otherHomeInput = document.getElementById('otherHomeRadio');
+
+const params = window.location.search
+const id = new URLSearchParams(params).get('id')
+const url = "/api/v1/pets";
+
+let petName;
+let petSpecies;
+
+const getPet = async () => {
+    const { data: {pet},} = await axios.get(`${url}/${id}`)
+    const {Name, Species} = pet;
+    petName = Name;
+    petSpecies = Species;
+    document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
+    document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
+};
+getPet();
 
 otherHomeInput.addEventListener('click', () => {
     if(otherHomeInput.checked) {
@@ -100,51 +119,52 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         declaw: (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined,
         acknowledgement: document.getElementById('acknowledgement').checked,
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
+        wantedPet: getPet()
     }
+    console.log(petApplication);
 
-    try {
-        await axios.post('/api/v1/applications', petApplication);
-        await console.log("Application posted successfully");
-    } catch(error) {
-        console.log(error.response.data);
-//     const appliJSON = JSON.stringify(petApplication);
+        try {
+            await axios.post('/api/v1/applications', petApplication);
+            await console.log("Application posted successfully");
+        } catch(error) {
+            console.log(error.response.data);
+    //     const appliJSON = JSON.stringify(petApplication);
 
-//     console.log( {
-//         FullName: petApplication.fullname,
-//         Occupation: petApplication.occupation,
-//         Address: petApplication.address,
-//         PhoneNumber: petApplication.phoneNumber,
-//         Email: petApplication.email,
-//         UserReference: petApplication.userReference,
-//         Children: petApplication.children,
-//         Housing: petApplication.housing,
-//         Space: petApplication.space,
-//         Minor: petApplication.minor,
-//         GuardianName: petApplication.guardianName,
-//         GuardianPhone: petApplication.guardianPhone,
-//         GuardianEmail: petApplication.guaranteedEmail,
-//         CurrentPets: petApplication.currentPets,
-//         PetVaccination: petApplication.petVaccination,
-//         PetVaccinationReason: petApplication.petVaccinationReason,
-//         PetExamine: petApplication.petExamine,
-//         PetExamineReason: petApplication.petExamineReason,
-//         Qualification: petApplication.qualification,
-//         PetTime: petApplication.petTime,
-//         AffordableMedication: petApplication.affordableMedication,
-//         Declaw: petApplication.declaw,
-//         Acknowledgement: petApplication.acknowledgement,
-//         AcknowledgementAdoption: petApplication.acknowledgementAdoption,
-//         // WantedPet:wantedPet
-//     });
+    //     console.log( {
+    //         FullName: petApplication.fullname,
+    //         Occupation: petApplication.occupation,
+    //         Address: petApplication.address,
+    //         PhoneNumber: petApplication.phoneNumber,
+    //         Email: petApplication.email,
+    //         UserReference: petApplication.userReference,
+    //         Children: petApplication.children,
+    //         Housing: petApplication.housing,
+    //         Space: petApplication.space,
+    //         Minor: petApplication.minor,
+    //         GuardianName: petApplication.guardianName,
+    //         GuardianPhone: petApplication.guardianPhone,
+    //         GuardianEmail: petApplication.guaranteedEmail,
+    //         CurrentPets: petApplication.currentPets,
+    //         PetVaccination: petApplication.petVaccination,
+    //         PetVaccinationReason: petApplication.petVaccinationReason,
+    //         PetExamine: petApplication.petExamine,
+    //         PetExamineReason: petApplication.petExamineReason,
+    //         Qualification: petApplication.qualification,
+    //         PetTime: petApplication.petTime,
+    //         AffordableMedication: petApplication.affordableMedication,
+    //         Declaw: petApplication.declaw,
+    //         Acknowledgement: petApplication.acknowledgement,
+    //         AcknowledgementAdoption: petApplication.acknowledgementAdoption,
+    //         // WantedPet:wantedPet
+    //     });
 
-//     try{
-//         await axios.post('/api/v1/applications', {appliJSON});
-//         console.log(phoneNumber)
-//         document.getElementsByClassName('adoptForm')[0].reset();
-//         document.getElementById('adoptConfirmationBox').style.display = 'flex';
-//     }catch(error){
-//         console.log(error.response.data)
+    //     try{
+    //         await axios.post('/api/v1/applications', {appliJSON});
+    //         console.log(phoneNumber)
+    //         document.getElementsByClassName('adoptForm')[0].reset();
+    //         document.getElementById('adoptConfirmationBox').style.display = 'flex';
+    //     }catch(error){
+    //         console.log(error.response.data)
+        }
     }
-}catch(err){
-    console.log(err);
-}})
+)

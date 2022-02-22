@@ -9,6 +9,7 @@ const speciesDOM = document.querySelector('.species');
 const medicalListDOM = document.querySelector('.medical');
 const personalityListDOM = document.querySelector('.personality');
 const additionalNotesDOM = document.querySelector('.notes');
+const adoptBtnDOM = document.querySelector('.adopt-button');
 
 const params = window.location.search
 const id = new URLSearchParams(params).get('id')
@@ -27,6 +28,7 @@ const showPet = async () => {
     breedDOM.innerHTML = Breed;
     // speciesDOM.innerHTML = Species;
     additionalNotesDOM.innerHTML = Notes;
+    adoptBtnDOM.href = `/adoptionform?id=${id}`;
 
     const medicalInfo = Medical.map((info) => {
         return `<li>${info}</li>`

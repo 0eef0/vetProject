@@ -185,6 +185,7 @@ body {
 
 img {
   background: #f5f6fa;
+  object-fit: contain;
 }
 
 p {
@@ -192,6 +193,8 @@ p {
 }
 
 p.reader {
+  width: 0;
+  height: 0;
   color: transparent !important;
   user-select: none !important;
 }
@@ -737,14 +740,14 @@ div.carousel i.arrow {
   top: 50%;
   bottom: auto;
   font-size: 2rem;
-  color: #00000033;
+  color: #00000066;
+  cursor: pointer;
 }
 div.carousel i.arrow:hover {
-  color: #00000066;
+  color: #00000099;
 }
 div.carousel i.arrow.leftArrow {
   left: 1vw;
-  right: auto;
 }
 div.carousel i.arrow.rightArrow {
   right: 1vw;
@@ -779,11 +782,11 @@ div.carousel div.carouselBtnPanel button.carouselBtn {
   flex-grow: 0.5;
   margin: 0 0.25rem;
   height: 3vh;
-  background-color: #00000033;
+  background-color: #949494;
   transition: background-color 1s;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
-  background-color: #00000066;
+  background-color: #303030;
 }
 
 .card {
