@@ -51,6 +51,7 @@ newPetFormDOM.addEventListener('submit', async (e) => {
         //     }
         // });
         document.getElementsByClassName('newPetForm')[0].reset();
+        document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
         document.getElementById('newPetConfirmationBox').style.display = 'flex';
     } catch (err) {
         console.log(err);
@@ -75,7 +76,7 @@ const showPets = async () => {
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
                     <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
                     <div class="btnContainer">
-                        <a href="/pet?id=${id}">Edit</a>
+                        <a href="/adminPet?id=${id}">Edit</a>
                         <a href="/pet?id=${id}">Delete</a>
                     </div>
                 </div>

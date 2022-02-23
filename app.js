@@ -51,6 +51,9 @@ app.get('/adminApplication', (req, res) => {
 app.get('/adminPets', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminPets.html'));
 })
+app.get('/adminPet', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminIndPet.html'));
+})
 app.get('/adminRecords', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminRecords.html'))
 })

@@ -1,4 +1,3 @@
-<!-- must use alts for images -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +17,7 @@
         rel="stylesheet">
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
-    <title>Vet Science</title>
+    <title>Edit</title>
 </head>
 
 <body>
@@ -28,71 +27,83 @@
             <div class="align-left">
                 <li class="nav-logo"><img src="./assets/VetLogoNoBorder.png" alt="West-MEC Veterinary Science Logo">
                 </li>
-                <li class="nav-item title"><a href="">West-MEC Veterinary Science</a></li>
+                <li class="nav-item title"><a href="/">West-MEC Veterinary Science</a></li>
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link active" href="/">Home</a></li>
-                <li class="nav-item"><a class="link" href="/about">About</a></li>
-                <li class="nav-item"><a class="link" href="/adopt">Adopt</a></li>
+                <li class="nav-item"><a class="link" href="/adminHomePage">Applications</a></li>
+                <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
+                <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
+                <li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
             </div>
         </ul>
     </nav>
 
-    <!-- Galley Carousel -->
-    <!--     <div class="banner">
-        <img src='https://animalcareinfo.com/wp-content/uploads/2018/04/AdobeStock_129584968-1024x388.jpeg' alt='this is a cool image of a dog' />
-        <h1>West-MEC Veterinary Science</h1>
-    </div> -->
+    <div class="petPage">
+        <div class="petInfo adminPetInfo">
+            <!-- <h1 class="pet-name"></h1> -->
+            <input type="text" placeholder="name" class="pet-name">
+            <ul>
+                <div class="row">
+                    <div class="col facts">
+                        <li>
+                            <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
+                            <input type="date" class="birthday">
+                        </li>
+                        <li>
+                            <strong>Gender:</strong> <!-- <span class="gender"> -->
+                            <select name="petGender" id="petGender">
+                                <option value="Male" id="maleSelector">Male</option>
+                                <option value="Female" id="femaleSelector">Female</option>
+                            </select>
+                            </span>
+                        </li>
+                        <li>
+                            <strong>Color:</strong> <!-- <span class="color"></span> -->
+                            <input type="text" class="color">
+                        </li>
+                        <li>
+                            <strong>Breed:</strong> <!-- <span class="breed"></span> -->
+                            <input type="text" class="breed">
+                        </li>
+                        <!-- <li>Species: <span class="species"></span></li> -->
+                    </div>
+                    <div class="col">
+                        <li><strong>Medical Information:</strong>
+                            <!-- <ul class="medical">
+                                <li>drugs</li>
+                            </ul> -->
+                            <textarea name="medical" class="medical"></textarea>
+                        </li>
+                        <li><strong>Personality:</strong>
+                            <!-- <ul class="personality">
+                                <li>stupid</li>
+                            </ul> -->
+                            <textarea name="personality" class="personality"></textarea>
+                        </li>
+                    </div>
+                </div>
+                <li class="added-note">
+                    <strong>Additional Notes:</strong> <br />
+                    <!-- <span class="notes">Pees on absolutely
+                        everything!</span> -->
+                    <input type="text" class="notes">
+                </li>
+                <li class="edit-img">
+                    <p><strong>Images:</strong></p>
+                    <ul id="petImageNames">
+                        <form>
+                            <input type="file" id="petPhotoSub" accept="image/*" >
+                            <button type="button" onclick="addImg()">Submit Photo</button>
+                        </form>
+                        <br>
+                    </ul>
+                </li>
 
-    <div class="carousel homeGallery">
-        <div class="carouselImages">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*"
-                class="carouselImg activeImg">
-            <img src="https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560"
-                class="carouselImg">
-            <img src="https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
-                class="carouselImg">
-        </div>
-        <i class="fas fa-arrow-left arrow leftArrow" onclick="prevImg()">
-            <p class="reader">back</p>
-        </i>
-        <i class="fas fa-arrow-right arrow rightArrow" onclick="nextImg()">
-            <p class="reader">next</p>
-        </i>
-        <div class="carouselBtnPanel">
-            <button class="carouselBtn activeBtn" onclick="carouselChange(0)">
-                <p class="reader">Image 1</p>
-            </button>
-            <button class="carouselBtn" onclick="carouselChange(1)">
-                <p class="reader">Image 2</p>
-            </button>
-            <button class="carouselBtn" onclick="carouselChange(2)">
-                <p class="reader">Image 3</p>
-            </button>
+            </ul>
+            <button class="adopt-button" onclick="updatePet()">Save</button>
         </div>
     </div>
-
-    <!-- Basic about information -->
-    <div class="aboutUsSummary">
-        <h1>About Us</h1>
-        <div>
-            <p>
-                The West-MEC Veterinary Sciences program has a partnership with Pinal County Animal Control to rescue
-                animals. Students
-                work with a veterinarian to spay, neuter, and vaccinate the animals to prepare them for adoption.
-                <br /><br />
-                These four-legged companions are available for adoption and looking for their forever home.
-                <br /><br />
-                If you are interested in one of our pets, please schedule an appointment to visit with us as we are a
-                public high school
-                campus.
-            </p>
-            <img src="./assets/placeholder.jpg">
-        </div>
-    </div>
-
-
 
     <!-- footer -->
     <footer>
@@ -153,14 +164,13 @@
         </div>
     </footer>
 
-
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
+    <script src="./js/adminIndPet.js"></script>
     <script src="./js/navbar.js"></script>
-    <script src="./js/carousel.js"></script>
 </body>
 
 </html>

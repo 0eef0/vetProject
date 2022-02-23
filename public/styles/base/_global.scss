@@ -12,20 +12,19 @@ html {
 body {
 	background: #2f3640; //TEMPORARY COLOR
 	font-family: 'Roboto', 'sans-serif';
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
 
 img {
 	background: $light-background;
+	object-fit: contain;
 }
 p {
 	padding: 10px;
 }
 p.reader{
-	color: transparent !important;
-	user-select: none !important;
+	display: none;
 }
 hr {
 	margin: 0;

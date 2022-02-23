@@ -1,5 +1,24 @@
-const adoptFormDOM = document.querySelector('.newPetForm');
+//const application = require("../../models/application");
+
+const adoptFormDOM = document.querySelector('.adoptForm');
 const otherHomeInput = document.getElementById('otherHomeRadio');
+
+const params = window.location.search
+const id = new URLSearchParams(params).get('id')
+const url = "/api/v1/pets";
+
+let petName;
+let petSpecies;
+
+const getPet = async () => {
+    const { data: {pet},} = await axios.get(`${url}/${id}`)
+    const {Name, Species} = pet;
+    petName = Name;
+    petSpecies = Species;
+    // document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
+    // document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
+};
+getPet();
 
 otherHomeInput.addEventListener('click', () => {
     if(otherHomeInput.checked) {
@@ -50,9 +69,10 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         declaw: (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined,
         acknowledgement: document.getElementById('acknowledgement').checked,
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
-        wantedPet: getPet()
+        wantedPet: petName,
+        dateCreated: new Date,
     }
-
+    //console.log(petApplication);
     try {
         await axios.post('/api/v1/applications', petApplication);
         await console.log("Application posted successfully");

@@ -178,13 +178,13 @@ html {
 body {
   background: #2f3640;
   font-family: "Roboto", "sans-serif";
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 img {
   background: #f5f6fa;
+  object-fit: contain;
 }
 
 p {
@@ -192,8 +192,7 @@ p {
 }
 
 p.reader {
-  color: transparent !important;
-  user-select: none !important;
+  display: none;
 }
 
 hr {
@@ -344,16 +343,22 @@ div.homeGallery {
   margin-bottom: 10px;
 }
 
-#records input.search {
+#adminRecords input {
   height: 50px;
   width: 350px;
   border-radius: 50px;
   padding-left: 20px;
-  margin: 50px;
-  margin-bottom: 10px;
+  margin: 50px auto 10px auto;
 }
-#records input.search:focus {
+#adminRecords input search-cancel-button {
+  cursor: pointer;
+}
+#adminRecords input:focus {
   outline: none;
+}
+#adminRecords .infoBlock:nth-of-type(1) {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .card-container {
@@ -390,6 +395,12 @@ div.petPage {
   margin: 2rem auto 0 auto;
   padding: 1rem;
   background-color: #f5f6fa;
+}
+div.petPage #petImageNames li {
+  font-size: 1rem;
+}
+div.petPage #petImageNames li:hover {
+  text-decoration: line-through 2px red;
 }
 div.petPage div {
   width: 40%;
@@ -523,6 +534,60 @@ form#login button {
     width: 80%;
     left: 10%;
     right: 10%;
+  }
+}
+
+#adminIndApp main {
+  width: calc(100% - 3rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 2rem;
+}
+#adminIndApp main div {
+  width: calc(50% - 3rem);
+  height: fit-content;
+  text-align: center;
+  word-wrap: break-word;
+  background-color: #f5f6fa;
+  padding: 1rem;
+}
+#adminIndApp main div h1 {
+  font-size: 1.7rem;
+}
+#adminIndApp main div img {
+  width: 100%;
+}
+#adminIndApp main div ul {
+  list-style: inside;
+}
+#adminIndApp main div .choice {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+#adminIndApp main div .choice button {
+  width: calc(50% - 1.3rem);
+  height: 2rem;
+}
+#adminIndApp main div .choice button:nth-of-type(1) {
+  background-color: #2ecc71;
+}
+#adminIndApp main div .choice button:nth-of-type(1):hover {
+  background-color: #208C4D;
+}
+#adminIndApp main div .choice button:nth-of-type(2) {
+  background-color: #d62828;
+}
+#adminIndApp main div .choice button:nth-of-type(2):hover {
+  background-color: #961D1D;
+}
+@media screen and (max-width: 850px) {
+  #adminIndApp main div {
+    width: 100%;
   }
 }
 
@@ -737,18 +802,19 @@ div.carousel i.arrow {
   top: 50%;
   bottom: auto;
   font-size: 2rem;
-  color: #00000033;
+  color: #00000066;
+  cursor: pointer;
 }
 div.carousel i.arrow:hover {
-  color: #00000066;
+  color: #00000099;
 }
 div.carousel i.arrow.leftArrow {
   left: 1vw;
-  right: auto;
 }
 div.carousel i.arrow.rightArrow {
   right: 1vw;
   left: auto;
+  text-align: right;
 }
 div.carousel div.carouselImages .carouselImg {
   position: absolute;
@@ -778,11 +844,11 @@ div.carousel div.carouselBtnPanel button.carouselBtn {
   flex-grow: 0.5;
   margin: 0 0.25rem;
   height: 3vh;
-  background-color: #00000033;
+  background-color: #949494;
   transition: background-color 1s;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
-  background-color: #00000066;
+  background-color: #303030;
 }
 
 .card {
@@ -944,11 +1010,21 @@ footer .row.top .col.desc h3 {
   color: #f7941d;
   font-size: 110%;
 }
-footer .row.top .col.desc p {
-  margin: 0;
+footer .row.top .col.desc a {
+  margin-left: 2vw;
+  color: #f5f6fa;
+  text-decoration: none;
+}
+footer .row.top .col.desc a:active {
+  color: #f7941d;
+}
+footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
+  text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 30px;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  height: 0;
 }
 footer .row .socials ul {
   padding: 0;
@@ -956,13 +1032,14 @@ footer .row .socials ul {
   list-style: none;
   font-size: 200%;
   margin: 0;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 footer .row .socials ul li {
   display: flex;
   justify-content: center;
   width: 0;
-  padding-inline: 1rem;
+  margin-right: 2.3rem;
+  margin-left: 2.3rem;
 }
 footer .row .socials ul li a {
   color: #f5f6fa;
@@ -1007,6 +1084,14 @@ div.question input[type=date] {
   width: 100%;
   outline: none;
   font-size: 1.25rem;
+  transition: border-bottom 0.3s;
+}
+div.question input[type=text]:focus,
+div.question input[type=tel]:focus,
+div.question input[type=email]:focus,
+div.question input[type=number]:focus,
+div.question input[type=date]:focus {
+  border-bottom: 4px solid #f7941d;
 }
 div.question textarea {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1017,6 +1102,10 @@ div.question textarea {
   outline: none;
   resize: none;
   font-family: inherit;
+  transition: border-bottom 0.3s;
+}
+div.question textarea:focus {
+  border-bottom: 4px solid #f7941d;
 }
 div.question input[type=text],
 div.question input[type=tel],
@@ -1063,6 +1152,8 @@ button#submitAdoptForm {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 .infoBlock .record {
   width: 80%;
@@ -1076,16 +1167,15 @@ button#submitAdoptForm {
   background: white;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid black;
-  margin-bottom: -2px;
+  border-bottom: 2px solid black;
 }
 .infoBlock .record.template {
   border-radius: 10px;
   font-weight: bold;
   margin: 30px;
 }
-.infoBlock .record:first-of-type {
-  margin-top: 30px;
+.infoBlock .record.template p {
+  cursor: pointer;
 }
 .infoBlock .record .moreInfo {
   margin-left: auto;
@@ -1099,7 +1189,6 @@ button#submitAdoptForm {
   height: fit-content;
   margin-left: 5%;
   display: none;
-  margin-top: 1px;
 }
 .infoBlock .appl .record {
   width: 100%;
@@ -1153,6 +1242,14 @@ div#newPet form select {
   font-family: inherit;
   color: inherit;
   resize: none;
+  transition: border-bottom 0.3s;
+}
+div#newPet form div#imageInput:focus,
+div#newPet form input[type=text]:focus,
+div#newPet form input[type=date]:focus,
+div#newPet form textarea:focus,
+div#newPet form select:focus {
+  border-bottom: 4px solid #f7941d;
 }
 div#newPet form button {
   background-color: #f7941d;
@@ -1188,6 +1285,47 @@ div.confirmationBox div h1 {
   font-size: 2.5rem;
   color: #f7941d;
   text-align: center;
+}
+
+div.adminPetInfo {
+  width: 90% !important;
+}
+div.adminPetInfo form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+div.adminPetInfo form button {
+  display: block;
+  color: #fff;
+  background-color: #f7941d;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  width: max-content;
+  text-decoration: none;
+}
+div.adminPetInfo input.pet-name {
+  width: 90%;
+}
+div.adminPetInfo input,
+div.adminPetInfo textarea,
+div.adminPetInfo select {
+  font-family: inherit;
+  padding: 0.1rem;
+  resize: none;
+  background-color: rgba(34, 34, 34, 0.1);
+  border-bottom: 2px solid #f7941d;
+  padding: 1rem;
+}
+div.adminPetInfo input[type=file] {
+  background-color: transparent;
+  border: none;
+}
+div.adminPetInfo textarea {
+  width: 100%;
+  height: 10vh;
 }
 
 /*# sourceMappingURL=main.css.map */
