@@ -12,7 +12,6 @@ html {
 body {
 	background: #2f3640; //TEMPORARY COLOR
 	font-family: 'Roboto', 'sans-serif';
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -25,10 +24,7 @@ p {
 	padding: 10px;
 }
 p.reader{
-	width: 0;
-	height: 0;
-	color: transparent !important;
-	user-select: none !important;
+	display: none;
 }
 hr {
 	margin: 0;

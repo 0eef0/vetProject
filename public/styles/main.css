@@ -178,7 +178,6 @@ html {
 body {
   background: #2f3640;
   font-family: "Roboto", "sans-serif";
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -193,10 +192,7 @@ p {
 }
 
 p.reader {
-  width: 0;
-  height: 0;
-  color: transparent !important;
-  user-select: none !important;
+  display: none;
 }
 
 hr {
@@ -347,16 +343,22 @@ div.homeGallery {
   margin-bottom: 10px;
 }
 
-#adminRecords input.search {
+#adminRecords input {
   height: 50px;
   width: 350px;
   border-radius: 50px;
   padding-left: 20px;
-  margin: 50px;
-  margin-bottom: 10px;
+  margin: 50px auto 10px auto;
 }
-#adminRecords input.search:focus {
+#adminRecords input search-cancel-button {
+  cursor: pointer;
+}
+#adminRecords input:focus {
   outline: none;
+}
+#adminRecords .infoBlock:nth-of-type(1) {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .card-container {
@@ -539,18 +541,18 @@ form#login button {
   width: calc(100% - 3rem);
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 2rem;
 }
 #adminIndApp main div {
-  width: 50%;
+  width: calc(50% - 3rem);
   height: fit-content;
   text-align: center;
   word-wrap: break-word;
   background-color: #f5f6fa;
   padding: 1rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
 }
 #adminIndApp main div h1 {
   font-size: 1.7rem;
@@ -578,10 +580,15 @@ form#login button {
   background-color: #208C4D;
 }
 #adminIndApp main div .choice button:nth-of-type(2) {
-  background-color: #ff3f34;
+  background-color: #d62828;
 }
 #adminIndApp main div .choice button:nth-of-type(2):hover {
-  background-color: #BF2E26;
+  background-color: #961D1D;
+}
+@media screen and (max-width: 850px) {
+  #adminIndApp main div {
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -1016,7 +1023,7 @@ footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
 }
 footer .row .socials {
   margin-top: 1rem;
-  margin-bottom: 2.15rem;
+  margin-bottom: 2.5rem;
   height: 0;
 }
 footer .row .socials ul {
@@ -1031,9 +1038,8 @@ footer .row .socials ul li {
   display: flex;
   justify-content: center;
   width: 0;
-  padding-inline: 1rem;
-  margin-right: 1.3rem;
-  margin-left: 1.3rem;
+  margin-right: 2.3rem;
+  margin-left: 2.3rem;
 }
 footer .row .socials ul li a {
   color: #f5f6fa;
@@ -1146,6 +1152,8 @@ button#submitAdoptForm {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 .infoBlock .record {
   width: 80%;
@@ -1168,9 +1176,6 @@ button#submitAdoptForm {
 }
 .infoBlock .record.template p {
   cursor: pointer;
-}
-.infoBlock .record:first-of-type {
-  margin-top: 30px;
 }
 .infoBlock .record .moreInfo {
   margin-left: auto;

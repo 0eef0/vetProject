@@ -3,19 +3,17 @@
 		width: calc(100% - 3rem);
 		display: flex;
 		flex-direction: row;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
 		margin: auto;
 		margin-top: 2rem;
 		div{
-			width: 50%;
+			width: calc(50% - 3rem);
 			height: fit-content;
 			text-align: center;
 			word-wrap: break-word;
 			background-color: $light-background;
 			padding: 1rem;
-			margin: {
-				right: 1rem;
-				left: 1rem;
-			}
 			h1{
 				font-size: 1.7rem;
 			}
@@ -40,12 +38,17 @@
 						}
 					}
 					&:nth-of-type(2){
-						background-color: #ff3f34;
+						background-color: #d62828;
 						&:hover{
-							background-color: #BF2E26;
+							background-color: #961D1D
 						}
 					}
 				}
+			}
+		}
+		@media screen and (max-width: 850px){
+			div{
+				width: 100%;
 			}
 		}
 	}

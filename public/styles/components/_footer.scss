@@ -70,7 +70,7 @@ footer {
     .socials {
       margin: {
         top: 1rem;
-        bottom: 2.15rem;
+        bottom: 2.5rem;
       }
       height: 0;
       ul {
@@ -84,10 +84,9 @@ footer {
           display: flex;
           justify-content: center;
           width: 0;
-          padding-inline: 1rem;
           margin: {
-            right: 1.3rem;
-            left: 1.3rem;
+            right: 2.3rem;
+            left: 2.3rem;
           }
           a {
             color: $font-light;

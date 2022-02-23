@@ -4,6 +4,8 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 30px;
 	.record{
 		width: 80%;
 		height: fit-content;
@@ -24,9 +26,6 @@
 			p{
 				cursor: pointer;
 			}
-		}
-		&:first-of-type{
-			margin-top: 30px;
 		}
 		.moreInfo{
 			margin-left: auto;
