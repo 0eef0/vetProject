@@ -9,16 +9,28 @@ otherHomeInput.addEventListener('click', () => {
     }
 });
 
+const getPet = async () => {
+    const { data: {pet},} = await axios.get(`${url}/${id}`)
+    const {Name, Species} = pet;
+    petName = Name;
+    petSpecies = Species;
+    document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
+    document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
+};
+getPet();
+
 adoptFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const petApplication = {
-        fullName: document.getElementById('userFullName').value,
-        birthday: document.getElementById("userBirthday").value,
+        fullname: document.getElementById('userFullName').value,
         occupation: document.getElementById('userOccupation').value,
         address: document.getElementById('userAddress').value,
         phoneNumber: document.getElementById('userPhoneNumber').value,
         email: document.getElementById('userEmail').value,
+        userReference: document.getElementById('userReference').value,
+        children: document.getElementById('numChildren').value,
+        housing: (document.getElementById('House').checked) ? 'House' : (document.getElementById('Apartment').checked) ? 'Apartment' : (document.getElementById('Condominium').checked) ? 'Condominium' : document.getElementById('Other'),
         userReference: document.getElementById('userReference').value,
         children: document.getElementById('numChildren').value,
         housing: (document.getElementById('House').checked) ? 'House' : (document.getElementById('Apartment').checked) ? 'Apartment' : (document.getElementById('Condominium').checked) ? 'Condominium' : document.getElementById('Other'),
@@ -38,6 +50,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         declaw: (document.getElementById('declawYes')) ? 'Yes' : (document.getElementById('declawNo')) ? 'No' : (document.getElementById('declawNA').checked) ? 'N/A' : undefined,
         acknowledgement: document.getElementById('acknowledgement').checked,
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
+        wantedPet: getPet()
     }
 
     try {
