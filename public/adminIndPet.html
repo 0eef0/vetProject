@@ -40,7 +40,7 @@
     </nav>
 
     <div class="petPage">
-        <div class="petInfo">
+        <div class="petInfo adminPetInfo">
             <!-- <h1 class="pet-name"></h1> -->
             <input type="text" placeholder="name" class="pet-name">
             <ul>
@@ -93,14 +93,15 @@
                     <p><strong>Images:</strong></p>
                     <ul id="petImageNames">
                         <form>
-                            <input type="file" id="petPhotoSub">
+                            <input type="file" id="petPhotoSub" accept="image/*" >
                             <button type="button" onclick="addImg()">Submit Photo</button>
                         </form>
+                        <br>
                     </ul>
                 </li>
 
             </ul>
-            <a class="adopt-button">Save</a>
+            <button class="adopt-button" onclick="updatePet()">Save</button>
         </div>
     </div>
 

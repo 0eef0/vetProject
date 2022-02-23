@@ -24,15 +24,15 @@ const showPet = async () => {
     const bDay = new Date(Birthday);
     petImages = IMG;
 
-    document.title = `Adopt ${Name}`;
-    petNameDOM.placeholder = `Name: ${Name}`;
+    document.title = `Edit ${Name}`;
+    petNameDOM.value = `${Name}`;
     birthdayDOM.value = bDay.toISOString().slice(0, 10);
     //genderDOM.innerHTML = Gender;
     if(Gender === 'Female') document.getElementById('femaleSelector').selected = true;
-    colorDOM.placeholder = Color;
-    breedDOM.placeholder = Breed;
+    colorDOM.value = Color;
+    breedDOM.value = Breed;
     // speciesDOM.innerHTML = Species;
-    additionalNotesDOM.placeholder = Notes;
+    additionalNotesDOM.value = Notes;
     adoptBtnDOM.href = `/adoptionform?id=${id}`;
 
     // const medicalInfo = Medical.map((info) => {
@@ -55,11 +55,13 @@ const showPet = async () => {
 showPet()
 
 const addImg = () => {
-    petImages.push(document.getElementById('petPhotoSub').value.split(`\\`)[2]);
-    petImageNamesDOM.innerHTML = '<form><input type="file"><button>Submit Photo</button></form>';
-    petImages.map((image, index) => {
-        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
-    })
+    if(document.getElementById('petPhotoSub').value.split(`\\`)[2]) {   
+        petImages.push(document.getElementById('petPhotoSub').value.split(`\\`)[2]);
+        petImageNamesDOM.innerHTML = '<form><input type="file" accept="image/*" ><button>Submit Photo</button></form>';
+        petImages.map((image, index) => {
+            petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
+        })
+    }
 }
 
 const removeImg = (index) => {
@@ -67,5 +69,19 @@ const removeImg = (index) => {
     petImageNamesDOM.innerHTML = '<form><input type="file"><button>Submit Photo</button></form>';
     petImages.map((image, index) => {
         petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
+    })
+}
+
+const updatePet = () => {
+    console.log({
+        Name: petNameDOM.value,
+        Birthday: birthdayDOM.value,
+        Gender: (document.getElementById('femaleSelector').selected) ? 'Female' : 'Male',
+        Color: colorDOM.value,
+        Breed:breedDOM.value,
+        Medical: medicalListDOM.value.split(','),
+        Personality: personalityListDOM.value.split(','),
+        Notes: additionalNotesDOM.value,
+        IMG: petImages
     })
 }
