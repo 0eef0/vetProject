@@ -4,7 +4,8 @@ const recordDrop = "this.parentElement.nextElementSibling.style.display = (this.
 
 async function getApplInfo() {
 	try {
-		console.log(await axios.get('/api/v1/pets'));
+		const { data: { applications } } = await axios.get('/api/v1/applications');
+		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
 		main.innerHTML = `
 			<div>
 				<h1>Adopter Information</h1>
