@@ -4,17 +4,127 @@ const recordDrop = "this.parentElement.nextElementSibling.style.display = (this.
 
 async function getApplInfo() {
 	try {
+		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
 		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
+		console.log(curApp)
 		main.innerHTML = `
-			<div>
+			<div class='appBlock'>
 				<h1>Adopter Information</h1>
-				<p>${'Lorem ipsum dolor sit amet consectetur, adipisicing elidddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddt. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis ipsa hic libero quis incidunt Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis ipsa hic libero quis incidunt ?'}</p>
+				<div class='row'>
+					<h2>Full Name:</h2>
+					<p>${curApp.fullName}</p>
+				</div>
+				<div class='row'>
+					<h2>Birthday:</h2>
+					<p>${curApp.birthday}</p>
+				</div>
+				<div class='row'>
+					<h2>Occupation:</h2>
+					<p>${curApp.occupation}</p>
+				</div>
+				<div class='row'>
+					<h2>Address:</h2>
+					<p>${curApp.address}</p>
+				</div>
+				<div class='row'>
+					<h2>Phone Number:</h2>
+					<p>${curApp.phoneNumber}</p>
+				</div>
+				<div class='row'>
+					<h2>Email:</h2>
+					<p>${curApp.email}</p>
+				</div>
+				<div class='row'>
+					<h2>How they heard about our adoptable animals:</h2>
+					<p>${curApp.userReference}</p>
+				</div>
+				<div class='row'>
+					<h2>Number of children in house:</h2>
+					<p>${curApp.children}</p>
+				</div>
+				<div class='row'>
+					<h2>Type of home:</h2>
+					<p>${curApp.housing}</p>
+				</div>
+				<div class='row'>
+					<h2>Adequate space for large animal:</h2>
+					<p>${curApp.space}</p>
+				</div>
+				<div class='row'>
+					<h2>Guardian's awareness for adopting:</h2>
+					<p>${curApp.minor}</p>
+				</div>
+				<div class='row'>
+					<h2>Guardian name:</h2>
+					<p>${curApp.guardianName}</p>
+				</div>
+				<div class='row'>
+					<h2>Guardian phone:</h2>
+					<p>${curApp.guardianPhone}</p>
+				</div>
+				<div class='row'>
+					<h2>Pet count:</h2>
+					<p>${curApp.currentPets}</p>
+				</div>
+				<div class='row'>
+					<h2>Pet vaccination:</h2>
+					<p>${curApp.petVaccination}</p>
+				</div>
+				<div class='row'>
+					<h2>Reason for pet no vaccinations:</h2>
+					<p>${curApp.petVaccinationReason}</p>
+				</div>
+				<div class='row'>
+					<h2>Do pets receive annual examination:</h2>
+					<p>${curApp.petExamine}</p>
+				</div>
+				<div class='row'>
+					<h2>Reason for no pet examinations:</h2>
+					<p>${curApp.petExamineReason}</p>
+				</div>
+				<div class='row'>
+					<h2>Why they are the best candidate:</h2>
+					<p>${curApp.qualification}</p>
+				</div>
+				<div class='row'>
+					<h2>Where the animal will spend most time:</h2>
+					<p>${curApp.petTime}</p>
+				</div>
+				<div class='row'>
+					<h2>Financially able to provide medical for the animal:</h2>
+					<p>${curApp.affordableMedication}</p>
+				</div>
+				<div class='row'>
+					<h2>Declawing:</h2>
+					<p>${curApp.declaw}</p >
+				</div >
+				<div class='row'>
+					<h2>Acknowledgement for accuracy of this information:</h2>
+					<p>${curApp.acknowledgement}</p>
+				</div>
+				<div class='row'>
+					<h2>Acknowledgement that adoption of this animal is not guaranteed:</h2>
+					<p>${curApp.acknowledgementAdoption}</p>
+				</div>
+				<div class='row'>
+					<h2>How they heard about our adoptable animals:</h2>
+					<p>${curApp.wantedPet}</p>
+				</div>
+				<div class='row'>
+					<h2>Email:</h2>
+					<p>${curApp.email}</p>
+				</div>
+				<div class='row'>
+					<h2>How they heard about our adoptable animals:</h2>
+					<p>${curApp.dateCreated}</p>
+				</div>
 			</div>
-			<div>
+			</div >
+			<div class='appBlock'>
 				<h1>Pet Info</h1>
 				<img alt="image stuff" />
-				<p>${'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandaeLorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis ipsa hic libero quis incidunt ?'}</p>
+				<p>${'Lorem ipsum dssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandaeLorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis ipsa hic libero quis incidunt ?'}</p>
 				<ul>
 					${'<li>sdf</li><li>sdf</li>'}
 				</ul>
