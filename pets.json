@@ -24,7 +24,76 @@
     },
     {
         "Name":"Fluffy",
-        "Birthday":"1/01/2020",
+        "Birthday":"1/02/2020",
+        "Gender":"Male",
+        "Medical":[
+            "Needs daily antibiotics"
+        ],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[
+            "kind",
+            "playful",
+            "loud",
+            "jumpy"
+        ],
+        "Notes":"Pees the bed",
+        "IMG": [
+            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560",
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
+        ]
+    },
+    {
+        "Name":"Fluffy",
+        "Birthday":"1/03/2020",
+        "Gender":"Male",
+        "Medical":[
+            "Needs daily antibiotics"
+        ],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[
+            "kind",
+            "playful",
+            "loud",
+            "jumpy"
+        ],
+        "Notes":"Pees the bed",
+        "IMG": [
+            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg",
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560"
+        ]
+    },
+    {
+        "Name":"Fluffy",
+        "Birthday":"1/04/2020",
+        "Gender":"Male",
+        "Medical":[
+            "Needs daily antibiotics"
+        ],
+        "Color":"blue",
+        "Breed":"Boxer",
+        "Species":"Dog",
+        "Personality":[
+            "kind",
+            "playful",
+            "loud",
+            "jumpy"
+        ],
+        "Notes":"Pees the bed",
+        "IMG": [
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560",
+            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
+        ]
+    },
+    {
+        "Name":"Fluffy 1",
+        "Birthday":"October 26 2019",
         "Gender":"Male",
         "Medical":[
             "Needs daily antibiotics"
@@ -47,76 +116,7 @@
     },
     {
         "Name":"Fluffy",
-        "Birthday":"1/01/2020",
-        "Gender":"Male",
-        "Medical":[
-            "Needs daily antibiotics"
-        ],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[
-            "kind",
-            "playful",
-            "loud",
-            "jumpy"
-        ],
-        "Notes":"Pees the bed",
-        "IMG": [
-            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560",
-            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
-        ]
-    },
-    {
-        "Name":"Fluffy",
-        "Birthday":"1/01/2020",
-        "Gender":"Male",
-        "Medical":[
-            "Needs daily antibiotics"
-        ],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[
-            "kind",
-            "playful",
-            "loud",
-            "jumpy"
-        ],
-        "Notes":"Pees the bed",
-        "IMG": [
-            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560",
-            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
-        ]
-    },
-    {
-        "Name":"Fluffy",
-        "Birthday":"1/01/2020",
-        "Gender":"Male",
-        "Medical":[
-            "Needs daily antibiotics"
-        ],
-        "Color":"blue",
-        "Breed":"Boxer",
-        "Species":"Dog",
-        "Personality":[
-            "kind",
-            "playful",
-            "loud",
-            "jumpy"
-        ],
-        "Notes":"Pees the bed",
-        "IMG": [
-            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            "https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560",
-            "https://ggsc.s3.amazonaws.com/images/uploads/The_Science-Backed_Benefits_of_Being_a_Dog_Owner.jpg"
-        ]
-    },
-    {
-        "Name":"Fluffy",
-        "Birthday":"1/01/2020",
+        "Birthday":"1/06/2020",
         "Gender":"Male",
         "Medical":[
             "Needs daily antibiotics"
