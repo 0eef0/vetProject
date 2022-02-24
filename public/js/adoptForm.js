@@ -9,14 +9,16 @@ const url = "/api/v1/pets";
 
 let petName;
 let petSpecies;
+let petId;
 
 const getPet = async () => {
     const { data: {pet},} = await axios.get(`${url}/${id}`)
-    const {Name, Species} = pet;
+    const {Name, Species, _id} = pet;
     petName = Name;
     petSpecies = Species;
-    // document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
-    // document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
+    petId = _id;
+    document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
+    document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
 };
 getPet();
 
@@ -28,21 +30,22 @@ otherHomeInput.addEventListener('click', () => {
     }
 });
 
-const getPet = async () => {
-    const { data: {pet},} = await axios.get(`${url}/${id}`)
-    const {Name, Species} = pet;
-    petName = Name;
-    petSpecies = Species;
-    document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
-    document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
-};
-getPet();
+// const getPet = async () => {
+//     const { data: {pet},} = await axios.get(`${url}/${id}`)
+//     const {Name, Species} = pet;
+//     petName = Name;
+//     petSpecies = Species;
+//     document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
+//     document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
+// };
+// getPet();
 
 adoptFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const petApplication = {
-        fullname: document.getElementById('userFullName').value,
+        fullName: document.getElementById('userFullName').value,
+        birthday: document.getElementById('userBirthday').value,
         occupation: document.getElementById('userOccupation').value,
         address: document.getElementById('userAddress').value,
         phoneNumber: document.getElementById('userPhoneNumber').value,
@@ -70,12 +73,14 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         acknowledgement: document.getElementById('acknowledgement').checked,
         acknowledgementAdoption: document.getElementById('acknowledgement2').checked,
         wantedPet: petName,
+        wantedPetId: petId,
         dateCreated: new Date,
     }
     //console.log(petApplication);
     try {
         await axios.post('/api/v1/applications', petApplication);
         await console.log("Application posted successfully");
+        document.getElementById('adoptConfirmationBox').style.display = 'flex';
     } catch(error) {
         console.log(error.response.data);
     }

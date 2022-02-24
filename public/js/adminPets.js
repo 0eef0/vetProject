@@ -45,18 +45,25 @@ newPetFormDOM.addEventListener('submit', async (e) => {
     }
     //console.log(petInfo);
     try {
-        // await axios.post(url, petInfo, {
-        //     headers: {
-        //         'content-type': 'text/json'
-        //     }
-        // });
+        await console.log("successful push");
+        await axios.post(url, petInfo);
         document.getElementsByClassName('newPetForm')[0].reset();
         document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
         document.getElementById('newPetConfirmationBox').style.display = 'flex';
     } catch (err) {
-        console.log(err);
+        console.log(err.response.data);
     }
 });
+
+const deletePet = async (id) => {
+    try {
+        await axios.delete(`${url}/${id}`);
+        location.reload();
+    } catch (error) {
+        console.log(error);
+    }
+    //console.log(id)
+};
 
 const showPets = async () => {
     try {
@@ -77,7 +84,7 @@ const showPets = async () => {
                     <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
-                        <a href="/pet?id=${id}">Delete</a>
+                        <a onclick="deletePet('${id}')">Delete</a>
                     </div>
                 </div>
             </div>`
