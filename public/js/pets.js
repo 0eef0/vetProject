@@ -7,7 +7,8 @@ const filterDogsBtn = document.querySelector('#dogs');
 const sortByBtn = document.querySelector('.sort-by-container')
 const sortByElem = document.querySelector('.sort-by-value')
 
-const filters = ['Age', 'Date Added', 'A-Z', 'Z-A']
+const filters = ['A-Z', 'Z-A', 'Age'];
+let currentFilterIndex = 0;
 
 var filterPetSelection = '';
 
@@ -22,16 +23,10 @@ const showPets = async () => {
             return;
         }
 
-        if (filterPetSelection) {
-            console.log('not all')
-        } else {
-            console.log('all')
-        }
-
-        const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).map((pet) => {
+        const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a,b) => sortPets(a,b)).map((pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
             const bDay = new Date(Birthday);
-            console.log(Species)
+            // console.log(Birthday)
             return `
             <div class="card">
                 <img src='${IMG[0]}' alt='${Name}' />
@@ -44,7 +39,7 @@ const showPets = async () => {
                         </div>
                 </div>
             </div>`
-        }).sort((a,b) => sortZA(a, b)).join("")
+        }).join("")
         petCardContainerDOM.innerHTML = allPets;
     } catch (error) {
         console.error(error)
@@ -52,17 +47,30 @@ const showPets = async () => {
 }
 showPets()
 
-const sortAZ = (a, b) => {
-    if(a.Name < b.Name) { return -1; }
-    if(a.Name > b.Name) { return 1; }
+const sortPets = (a,b) => {
+ if (currentFilterIndex == 0) {
+    if(a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
+    if(a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
     return 0;
+ } else if (currentFilterIndex == 1) {
+    if(a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
+    if(a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
+    return 0;
+ } else {
+    const date1 = new Date(a.Birthday);
+    const date2 = new Date(b.Birthday);
+    return date1 - date2
+ }
+}
+const sortAZ = (a, b) => {
+    
 }
 const sortZA = (a, b) => {
-    if(a.Name < b.Name) { return 1; }
-    if(a.Name > b.Name) { return -1; }
-    return 0;
+    
 }
-
+const sortAge = (a, b) =>{
+    
+}
 
 filterAllBtn.addEventListener('click', () => {
     filterAllBtn.classList.add('active');
@@ -89,9 +97,12 @@ filterDogsBtn.addEventListener('click', () => {
     showPets();
 })
 
-sortByElem.innerHTML = filters[0];
+sortByElem.innerHTML = filters[currentFilterIndex];
 sortByBtn.addEventListener('click', () => {
-    nextFilter = filters[filters.indexOf(sortByElem.innerHTML) + 1];
-    if (!nextFilter) nextFilter = filters[0]
-    sortByElem.innerHTML = nextFilter;
+
+    currentFilterIndex < filters.length - 1 ? currentFilterIndex += 1 : currentFilterIndex = 0;
+    
+    sortByElem.innerHTML = filters[currentFilterIndex];
+
+    showPets();
 })
