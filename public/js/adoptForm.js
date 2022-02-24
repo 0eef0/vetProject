@@ -26,16 +26,6 @@ otherHomeInput.addEventListener('click', () => {
     }
 });
 
-// const getPets = async () => {
-//     const { data: {pet},} = await axios.get(`${url}/${id}`)
-//     const {Name, Species} = pet;
-//     petName = Name;
-//     petSpecies = Species;
-//     document.getElementById('adoptConfirmationBox').innerHTML = `<div><h1>You have applied to adopt ${Name}. Click anywhere to return to pets page.</h1></div>`;
-//     document.getElementById('adoptExplain').innerHTML = `Please explain why you are the best candidate to adopt ${Name}`;
-// };
-// getPets();
-
 adoptFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
 

@@ -19,6 +19,7 @@ app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
 app.use('/login', loginRoute)
+app.use('/adminLogin', require('./routes/auth'));
 app.use(express.static("./public"));
 
 // Front end
@@ -39,10 +40,10 @@ app.get('/adoptionform', (req, res) => {
 })
 
 // Admin Pages
-app.get('/adminLogin', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
-    // res.render('adminLogin')
-})
+// app.get('/adminLogin', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
+//     // res.render('adminLogin')
+// })
 app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
@@ -68,3 +69,5 @@ const start = async () => {
     } catch (error) { console.log(error) }
 }
 start();
+
+module.exports = router;
