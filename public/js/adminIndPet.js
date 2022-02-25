@@ -17,12 +17,14 @@ const id = new URLSearchParams(params).get('id')
 const url = "/api/v1/pets";
 
 let petImages = [];
+let petId;
 
 const showPet = async () => {
     const { data: {pet},} = await axios.get(`${url}/${id}`)
     const {Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG} = pet;
     const bDay = new Date(Birthday);
     petImages = IMG;
+    document.getElementById('confirmationMessage').innerHTML = `You have updated ${Name}. Click anywhere to return to pets page.`
 
     document.title = `Edit ${Name}`;
     petNameDOM.value = `${Name}`;
@@ -72,8 +74,8 @@ const removeImg = (index) => {
     })
 }
 
-const updatePet = () => {
-    console.log({
+const updatePet = async () => {
+    let updatedPet = {
         Name: petNameDOM.value,
         Birthday: birthdayDOM.value,
         Gender: (document.getElementById('femaleSelector').selected) ? 'Female' : 'Male',
@@ -83,5 +85,7 @@ const updatePet = () => {
         Personality: personalityListDOM.value.split(','),
         Notes: additionalNotesDOM.value,
         IMG: petImages
-    })
+    }
+    await axios.patch(`${url}/${id}`, updatedPet);
+    document.getElementById('newPetConfirmationBox').style.display = 'flex';
 }
