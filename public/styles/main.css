@@ -227,7 +227,7 @@ div.aboutUsSummary div p {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 div.aboutUsSummary div img {
-  width: 40%;
+  width: 50%;
   min-width: 8rem;
 }
 @media only screen and (max-width: 760px) {
@@ -273,7 +273,7 @@ div.homeGallery {
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
-  margin: 5rem auto;
+  margin: 3rem auto;
 }
 #aboutUs #infoAboutUs h1 {
   text-align: center;
@@ -293,7 +293,7 @@ div.homeGallery {
   width: 40%;
   min-width: 8rem;
 }
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 975px) {
   #aboutUs #infoAboutUs h1 {
     font-size: 1.25rem;
   }
@@ -316,7 +316,8 @@ div.homeGallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
-  padding: 0 1rem;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
 }
 @media screen and (max-width: 1240px) {
   #aboutUs .rows {
@@ -348,7 +349,7 @@ div.homeGallery {
   width: 350px;
   border-radius: 50px;
   padding-left: 20px;
-  margin: 50px auto 10px auto;
+  margin: 2rem auto 2rem auto;
 }
 #adminRecords input search-cancel-button {
   cursor: pointer;
@@ -367,7 +368,8 @@ div.homeGallery {
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 1rem;
-  margin: 0.5rem 1rem;
+  margin: 1rem;
+  margin-top: 0.5rem;
 }
 @media screen and (max-width: 1280px) {
   .card-container {
@@ -546,47 +548,65 @@ form#login button {
   margin: auto;
   margin-top: 2rem;
 }
-#adminIndApp main div {
+#adminIndApp main .appBlock {
   width: calc(50% - 3rem);
   height: fit-content;
   text-align: center;
-  word-wrap: break-word;
   background-color: #f5f6fa;
+  word-wrap: break-word;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
-#adminIndApp main div h1 {
-  font-size: 1.7rem;
+#adminIndApp main .appBlock .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid black;
 }
-#adminIndApp main div img {
+#adminIndApp main .appBlock h1 {
+  width: 100%;
+  font-size: 2rem;
+}
+#adminIndApp main .appBlock h2 {
+  padding: 10px;
+}
+#adminIndApp main .appBlock p {
+  max-width: 100%;
+}
+#adminIndApp main .appBlock img {
   width: 100%;
 }
-#adminIndApp main div ul {
+#adminIndApp main .appBlock ul {
   list-style: inside;
 }
-#adminIndApp main div .choice {
+#adminIndApp main .appBlock .choice {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 0;
+  margin-top: 0.5rem;
 }
-#adminIndApp main div .choice button {
+#adminIndApp main .appBlock .choice button {
   width: calc(50% - 1.3rem);
   height: 2rem;
 }
-#adminIndApp main div .choice button:nth-of-type(1) {
+#adminIndApp main .appBlock .choice button:nth-of-type(1) {
   background-color: #2ecc71;
 }
-#adminIndApp main div .choice button:nth-of-type(1):hover {
+#adminIndApp main .appBlock .choice button:nth-of-type(1):hover {
   background-color: #208C4D;
 }
-#adminIndApp main div .choice button:nth-of-type(2) {
+#adminIndApp main .appBlock .choice button:nth-of-type(2) {
   background-color: #d62828;
 }
-#adminIndApp main div .choice button:nth-of-type(2):hover {
+#adminIndApp main .appBlock .choice button:nth-of-type(2):hover {
   background-color: #961D1D;
 }
 @media screen and (max-width: 850px) {
-  #adminIndApp main div {
+  #adminIndApp main .appBlock {
     width: 100%;
   }
 }
@@ -721,8 +741,8 @@ form#login button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem auto;
-  width: clamp(90%, 800px, 50%);
+  margin: 1rem auto;
+  width: calc(100% - 2rem);
   background-color: #f5f6fa;
 }
 .filters .selection-buttons {
@@ -853,7 +873,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 .card {
   width: 100%;
-  max-width: 550px;
   aspect-ratio: 16/9;
   margin: auto;
   background-color: white;
@@ -1022,8 +1041,8 @@ footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
+  margin-top: 0.7rem;
+  margin-bottom: 2.3rem;
   height: 0;
 }
 footer .row .socials ul {
@@ -1148,6 +1167,7 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1172,7 +1192,6 @@ button#submitAdoptForm {
 .infoBlock .record.template {
   border-radius: 10px;
   font-weight: bold;
-  margin: 30px;
 }
 .infoBlock .record.template p {
   cursor: pointer;
@@ -1204,7 +1223,7 @@ div#newPet form {
   background-color: #f5f6fa;
   width: 80%;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 div#newPet form h1 {
   font-size: 3rem;
@@ -1257,7 +1276,7 @@ div#newPet form button {
   font-family: inherit;
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
-  margin: 0 auto;
+  margin: 1.5rem auto;
 }
 
 div.confirmationBox {

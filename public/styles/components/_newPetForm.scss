@@ -4,7 +4,7 @@ div#newPet {
     background-color: $light-background;
     width: 80%;
     margin: 0 auto;
-    padding: 0.5rem;
+    padding: 2rem;
     h1 {
       font-size: 3rem;
       text-align: center;
@@ -52,7 +52,7 @@ div#newPet {
       font-family: inherit;
       padding: 1rem;
       width: clamp(200px, 10%, 500px);
-      margin: 0 auto;
+      margin: 1.5rem auto;
     }
   }
 }
