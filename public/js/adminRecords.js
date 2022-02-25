@@ -14,10 +14,10 @@ async function getInfoAboutUs(applications) {
 					<p>Oldest to Newest</p>
 					<p>${app.guardianEmail}</p>
 					<p>${app.guardianName}</p>
-					<p>Pet Name</p>
-					<p class="moreInfo">More Info...</p>
-				</div>
-				`
+					<p>${'s'}</p >
+					<a class="moreInfo" href="/adminApplication?_id=${app._id}">More Info...</a>
+				</div >
+			`
 		}).reduce((a, c) => a + c)}
             `;
 	}

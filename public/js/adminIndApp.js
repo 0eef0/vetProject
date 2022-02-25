@@ -7,10 +7,15 @@ async function getApplInfo() {
 		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
 		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
-		console.log(curApp)
+		const curPet = pets.find(pet => pet._id === curApp.petId);
+		console.log(curPet, curApp, pets)
 		main.innerHTML = `
 			<div class='appBlock'>
 				<h1>Adopter Information</h1>
+				<div class='row'>
+					<h2>Date of submission:</h2>
+					<p>${curApp.dateCreated}</p>
+				</div>
 				<div class='row'>
 					<h2>Full Name:</h2>
 					<p>${curApp.fullName}</p>
@@ -108,26 +113,18 @@ async function getApplInfo() {
 					<p>${curApp.acknowledgementAdoption}</p>
 				</div>
 				<div class='row'>
-					<h2>How they heard about our adoptable animals:</h2>
+					<h2>Name of desired pet:</h2>
 					<p>${curApp.wantedPet}</p>
-				</div>
-				<div class='row'>
-					<h2>Email:</h2>
-					<p>${curApp.email}</p>
-				</div>
-				<div class='row'>
-					<h2>How they heard about our adoptable animals:</h2>
-					<p>${curApp.dateCreated}</p>
 				</div>
 			</div>
 			</div >
 			<div class='appBlock'>
 				<h1>Pet Info</h1>
-				<img alt="image stuff" />
-				<p>${'Lorem ipsum dssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssdssssssssssssssolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandaeLorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quos soluta, accusamus culpa, sunt sit mollitia laborum, atque aut recusandae assumenda perferendis nisi odio itaque impedit odit perspiciatis ipsa hic libero quis incidunt ?'}</p>
-				<ul>
-					${'<li>sdf</li><li>sdf</li>'}
-				</ul>
+				<img alt="${curPet.Name}" />
+				<div class='row'>
+					<h2>Name of desired pet:</h2>
+					<p>${curApp.wantedPet}</p>
+				</div>
 				<div class="choice">
 					<button>Accept</button>
 					<button>Decline</button>

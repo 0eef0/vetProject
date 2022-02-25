@@ -40,9 +40,9 @@ app.get('/adoptionform', (req, res) => {
 
 // Admin Pages
 app.get('/adminLogin', (req, res) => {
-    res.render('adminLogin')
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
-app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
+app.get('/adminHomepage', /* loggedIn, */(req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
 app.get('/adminApplication', (req, res) => {
