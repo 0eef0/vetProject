@@ -32,7 +32,7 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <!-- <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="/adminHomePage">Applications</a></li>
+                <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
                 <li class="nav-item"><a class="link active" href="/adminLogin">Account</a></li>
@@ -40,7 +40,7 @@
         </ul>
     </nav>
 
-    <form id="login" action="Login">
+    <form id="login" action="/adminLogin" method="POST">
         <h1>West-MEC Veterinary Science</h1>
         <br>
         <img src="./assets/VetLogo.svg" alt="West-MEC Veterinary Science Logo">
@@ -48,14 +48,15 @@
         <section>
             <label for="loginEmail">Username:</label>
             <br>
-            <input type="text" id="loginEmail">
+            <input type="text" id="loginEmail" name="username">
         </section>
         <br>
         <section>
             <label for="loginEmail">Password:</label>
             <br>
-            <input type="password" id="loginPass">
+            <input type="password" id="loginPass" name="password">
         </section>
+        <script src="js/login.js"></script>
         <button type="submit">Login</button>
     </form>
 
@@ -66,7 +67,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
     <script src="./js/navbar.js"></script>
-    <script src="js/login.js"></script>
 
 </body>
 

@@ -38,7 +38,11 @@
 				width: 100%;
 			}
 			ul{
+				display: flex;
+				flex-direction: column;
+				align-items: start;
 				list-style:inside;
+				margin: 1rem;
 			}
 			.choice{
 				width: 100%;
