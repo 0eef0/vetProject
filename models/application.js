@@ -148,6 +148,11 @@ const ApplicationsSchema = new mongoose.Schema({
         required: [true, 'Must provide the name of pet you wish to adopt'],
         trim: true
     },
+    wantedPetId: {
+        type: String,
+        required: [true, 'Must provide the id of pet you wish to adopt'],
+        trim: true
+    },
     dateCreated: {
         type: Date,
         required: [true, 'Need provide date created']

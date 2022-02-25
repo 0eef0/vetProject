@@ -59,6 +59,7 @@ app.get('/adminRecords', (req, res) => {
 })
 
 // uncomment this when adding DB functionality
+
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
