@@ -7,8 +7,7 @@ async function getApplInfo() {
 		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
 		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
-		const curPet = pets.find(pet => pet._id === curApp.petId);
-		console.log(curPet, curApp, pets)
+		const curPet = pets.find(pet => pet._id === curApp.wantedPetId);
 		main.innerHTML = `
 			<div class='appBlock'>
 				<h1>Adopter Information</h1>
@@ -19,6 +18,10 @@ async function getApplInfo() {
 				<div class='row'>
 					<h2>Full Name:</h2>
 					<p>${curApp.fullName}</p>
+				</div>
+				<div class='row'>
+					<h2>Name of desired pet:</h2>
+					<p>${curApp.wantedPet}</p>
 				</div>
 				<div class='row'>
 					<h2>Birthday:</h2>
@@ -61,11 +64,11 @@ async function getApplInfo() {
 					<p>${curApp.minor}</p>
 				</div>
 				<div class='row'>
-					<h2>Guardian name:</h2>
+					<h2>Guardian Name:</h2>
 					<p>${curApp.guardianName}</p>
 				</div>
 				<div class='row'>
-					<h2>Guardian phone:</h2>
+					<h2>Guardian Phone:</h2>
 					<p>${curApp.guardianPhone}</p>
 				</div>
 				<div class='row'>
@@ -73,7 +76,7 @@ async function getApplInfo() {
 					<p>${curApp.currentPets}</p>
 				</div>
 				<div class='row'>
-					<h2>Pet vaccination:</h2>
+					<h2>Pet Vaccination:</h2>
 					<p>${curApp.petVaccination}</p>
 				</div>
 				<div class='row'>
@@ -112,25 +115,53 @@ async function getApplInfo() {
 					<h2>Acknowledgement that adoption of this animal is not guaranteed:</h2>
 					<p>${curApp.acknowledgementAdoption}</p>
 				</div>
-				<div class='row'>
-					<h2>Name of desired pet:</h2>
-					<p>${curApp.wantedPet}</p>
-				</div>
 			</div>
 			</div >
 			<div class='appBlock'>
 				<h1>Pet Info</h1>
-				<img alt="${curPet.Name}" />
 				<div class='row'>
 					<h2>Name of desired pet:</h2>
-					<p>${curApp.wantedPet}</p>
-				</div>
-				<div class="choice">
-					<button>Accept</button>
-					<button>Decline</button>
-				</div>
+					<p>${curPet.Name}</p >
+				</div >
+				<img src="${curPet.IMG[0]}" alt="${curPet.Name}" />
+				<div class='row'>
+					<h2>Pet's Birthday:</h2>
+					<p>${curPet.Birthday}</p >
+				</div >
+				<div class='row'>
+					<h2>Pet's Gender:</h2>
+					<p>${curPet.Gender}</p >
+				</div >
+				<div class='row'>
+					<h2>Pet's Medical:</h2>
+					<ul>${curPet.Medical.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)}</ul>
+				</div >
+				<div class='row'>
+					<h2>Pet's Color:</h2>
+					<p>${curPet.Color}</p >
+				</div >
+				<div class='row'>
+					<h2>Pet's Breed:</h2>
+					<p>${curPet.Breed}</p >
+				</div >
+				<div class='row'>
+					<h2>Pet's Species:</h2>
+					<p>${curPet.Species}</p >
+				</div >
+				<div class='row'>
+					<h2>Pet's Personality:</h2>
+					<ul>${curPet.Personality.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)}</ul>
+				</div >
+				<div class='row'>
+					<h2>Notes:</h2>
+					<p>${curPet.Notes}</p >
+				</div >
+			<div class="choice">
+				<button>Accept</button>
+				<button>Decline</button>
 			</div>
-		`;
+			</div >
+			`;
 	}
 	catch (error) {
 		console.log(error)
