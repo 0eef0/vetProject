@@ -29,6 +29,7 @@ div#newPet {
     div#imageInput,
     input[type="text"],
     input[type="date"],
+    input[type="url"],
     textarea,
     select {
       background-color: rgba($color: $clr-black, $alpha: 0.1);

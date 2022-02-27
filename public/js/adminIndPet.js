@@ -29,36 +29,23 @@ const showPet = async () => {
     document.title = `Edit ${Name}`;
     petNameDOM.value = `${Name}`;
     birthdayDOM.value = bDay.toISOString().slice(0, 10);
-    //genderDOM.innerHTML = Gender;
     if(Gender === 'Female') document.getElementById('femaleSelector').selected = true;
     colorDOM.value = Color;
     breedDOM.value = Breed;
-    // speciesDOM.innerHTML = Species;
     additionalNotesDOM.value = Notes;
     adoptBtnDOM.href = `/adoptionform?id=${id}`;
-
-    // const medicalInfo = Medical.map((info) => {
-    //     return `<li>${info}</li>`
-    // }).join('');
     medicalListDOM.innerHTML = Medical;
-
-    // const personalInfo = Personality.map((traits) => {
-    //     return `<li>${traits}</li>`
-    // }).join('');
     personalityListDOM.innerHTML = Personality;
 
     IMG.map((image, index) => {
         petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`
     })
-
-    console.log(pet)
-    console.log(id)
 }
 showPet()
 
 const addImg = () => {
-    if(document.getElementById('petPhotoSub').value.split(`\\`)[2]) {   
-        petImages.push(document.getElementById('petPhotoSub').value.split(`\\`)[2]);
+    if(document.getElementById('petPhotoSub').value) {   
+        petImages.push(document.getElementById('petPhotoSub').value);
         petImageNamesDOM.innerHTML = '<form><input type="file" accept="image/*" ><button>Submit Photo</button></form>';
         petImages.map((image, index) => {
             petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;

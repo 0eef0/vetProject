@@ -778,7 +778,7 @@ form#login button {
   background-color: #d8d8d8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   .filters {
     flex-direction: column;
     align-items: flex-start;
@@ -1249,6 +1249,7 @@ div#newPet form div#imageInput div#images {
 div#newPet form div#imageInput,
 div#newPet form input[type=text],
 div#newPet form input[type=date],
+div#newPet form input[type=url],
 div#newPet form textarea,
 div#newPet form select {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1266,6 +1267,7 @@ div#newPet form select {
 div#newPet form div#imageInput:focus,
 div#newPet form input[type=text]:focus,
 div#newPet form input[type=date]:focus,
+div#newPet form input[type=url]:focus,
 div#newPet form textarea:focus,
 div#newPet form select:focus {
   border-bottom: 4px solid #f7941d;
