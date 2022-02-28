@@ -1,6 +1,5 @@
 const User = require('../models/users')
 const LocalStrategy = require('passport-local').Strategy;
-
 const bcrypt = require('bcrypt')
 
 module.exports = function(passport) {
@@ -20,7 +19,12 @@ module.exports = function(passport) {
                         return done(null, false, { message: 'password Incorrect'})
                     }
                 })
+                console.log(user.username)
+                console.log(username)
+                console.log(password)
+                console.log(user.password)
             })
+             .catch((err)=>{console.log(err)})
         })
     )
 

@@ -6,7 +6,7 @@ const routes = require('./routes/pets.js');
 const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
 const passport = require('passport');
-
+const flash = require('connect-flash');
 const loginRoute = require('./routes/login');
 const populateProducts = require('./populate');
 const session = require('express-session');
@@ -26,6 +26,12 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(flash())
+// app.use((req,res,next) => {
+//     res.locals.success.msg = req.flash('success_msg');
+//     res.locals.error.msg = req.flash('error_msg');
+
+// })
 
 
 //middleware functions

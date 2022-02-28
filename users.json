@@ -1,26 +1,32 @@
 [
-    {
-        "Username": "Vet_Overlord",
-        "Password": "4d0p7_411_p375",
-        "Status": "Master",
-        "Logs": []
-    },
-    {
-        "Username": "Animal_King",
-        "Password": "d095_423_837732",
-        "Status": "Master",
-        "Logs": []
-    },
-    {
-        "Username": "asdf",
-        "Password": "asdf",
-        "Status": "Admin",
-        "Logs": []
-    },
-    {
-        "Username": "asdf",
-        "Password": "asdf",
-        "Status": "Admin",
-        "Logs": []
-    }
+    {
+        "Username": "Vet_Overlord",
+        "Password": "4d0p7_411_p375",
+        "Status": "Master",
+        "Logs": []
+    },
+    {
+        "Username": "Animal_King",
+        "Password": "d095_423_837732",
+        "Status": "Master",
+        "Logs": []
+    },
+    {
+        "Username": "Vet_Overlord",
+        "Password": {
+            "iv": "0bf7166d4406e52d36ae78fc52e2e8fe",
+            "content": "dd8f540dc2914319ed42af80a087"
+        },
+        "Status": "Master",
+        "Logs": []
+    },
+    {
+        "Username": "Animal_King",
+        "Password": {
+            "iv": "d6e2b2e6bc28da7422fc515ec2ca7489",
+            "content": "c5fe1e8198b3e00e8297ddc1ce768b"
+        },
+        "Status": "Master",
+        "Logs": []
+    }
 ]
