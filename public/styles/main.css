@@ -216,38 +216,36 @@ hr {
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
   width: clamp(80%, 70%, 2000px);
-  padding: 1rem;
-  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
   margin: 5rem auto;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 
 div.aboutUsSummary h1 {
   text-align: center;
+  margin: 1rem;
   font-size: calc(2vw + 1vh);
 }
 
-div.aboutUsSummary div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1vw;
+div.aboutUsSummary div p {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  display: block;
+  clear: both;
+  padding: 1rem;
 }
 
-div.aboutUsSummary div p {
-  width: 40%;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+div.aboutUsSummary div p:first-of-type {
+  clear: none;
+  height: 100%;
+  padding-top: 0;
 }
 
 div.aboutUsSummary div img {
   width: 40%;
-  min-width: 8rem;
+  margin: 0 1rem;
+  float: left;
 }
 
 @media only screen and (max-width: 760px) {
@@ -255,8 +253,17 @@ div.aboutUsSummary div img {
     font-size: 1.25rem;
   }
   div.aboutUsSummary div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1vw;
   }
   div.aboutUsSummary div p {
     -webkit-box-ordinal-group: 3;
@@ -1112,6 +1119,9 @@ div.carousel div.carouselBtnPanel {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
