@@ -5,21 +5,34 @@ const router = express.Router();
 const routes = require('./routes/pets.js');
 const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
+const passport = require('passport');
 const loginRoute = require('./routes/login');
 const populateProducts = require('./populate');
-const expressEJSLayouts = require('express-ejs-layouts');
+const session = require('express-session');
+const mongoose = require('mongoose');
+require('dotenv').config()
 
 const port = process.env.PORT || 5000;
 
 //important packages
-require('dotenv').config()
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true,useUnifiedTopology: true})
+.then(() => {console.log('connected to port 5000')})
+.catch((err) => {console.log(err)});
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true,
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 //middleware functions
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
 app.use('/login', loginRoute)
-//app.use('/adminLogin', require('./routes/auth'));
+app.use('/adminLogin', require('./routes/Passport'));
 app.use(express.static("./public"));
 
 // Front end
@@ -40,10 +53,10 @@ app.get('/adoptionform', (req, res) => {
 })
 
 // Admin Pages
-// app.get('/adminLogin', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
-//     // res.render('adminLogin')
-// })
+app.get('/adminLogin', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
+    // res.render('adminLogin')
+})
 app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
@@ -59,6 +72,9 @@ app.get('/adminPet', (req, res) => {
 app.get('/adminRecords', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminRecords.html'))
 })
+
+// routes for login page
+app.use('/',require('./public/index.html'))
 
 // uncomment this when adding DB functionality
 const start = async () => {
