@@ -63,15 +63,6 @@ const sortPets = (a,b) => {
     return date1 - date2
  }
 }
-const sortAZ = (a, b) => {
-    
-}
-const sortZA = (a, b) => {
-    
-}
-const sortAge = (a, b) =>{
-    
-}
 
 filterAllBtn.addEventListener('click', () => {
     filterAllBtn.classList.add('active');
