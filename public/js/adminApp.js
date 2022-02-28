@@ -2,8 +2,8 @@ const main = document.querySelector('#adminApp main');
 
 async function getApplInfo() {
 	try {
-		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
+		console.log(applications)
 		const appIndexes = {};
 		applications.forEach(app => { appIndexes[app.wantedPet] = (appIndexes[app.wantedPet]) ? appIndexes[app.wantedPet].concat(app) : [app] });
 		const returnString = [];
@@ -22,7 +22,7 @@ async function getApplInfo() {
 						<div class="record">
 							<p>${app.fullName}</p>
 							<p>${app.email}</p>
-							<p>${'app.date'}</p>
+							<p>${app.dateCreated}</p>
 							<a class='moreInfo' href="/adminApplication?_id=${app._id}">More Info...</a>
 						</div>
 					`

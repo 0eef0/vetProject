@@ -31,13 +31,21 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="/adminHomePage">Applications</a></li>
+                <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
                 <li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
             </div>
         </ul>
     </nav>
+
+    <a href="/adminPets">
+        <div id="newPetConfirmationBox" class="confirmationBox">
+            <div>
+                <h1 id="confirmationMessage"></h1>
+            </div>
+        </div>
+    </a>
 
     <div class="petPage">
         <div class="petInfo adminPetInfo">
@@ -93,7 +101,7 @@
                     <p><strong>Images:</strong></p>
                     <ul id="petImageNames">
                         <form>
-                            <input type="file" id="petPhotoSub" accept="image/*" >
+                            <input type="url" id="petPhotoSub" placeholder="Imgur Link" required>
                             <button type="button" onclick="addImg()">Submit Photo</button>
                         </form>
                         <br>

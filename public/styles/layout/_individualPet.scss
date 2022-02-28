@@ -3,10 +3,9 @@ div.petPage {
   justify-content: space-around;
   align-items: center;
   width: clamp(90%, 70%, 2000px);
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 2rem auto;
   padding: 1rem;
   background-color: $light-background;
-
   #petImageNames {
     li {
       font-size: 1rem;

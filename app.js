@@ -16,6 +16,7 @@ require('dotenv').config()
 
 //middleware functions
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
 app.use('/login', loginRoute)
@@ -40,9 +41,9 @@ app.get('/adoptionform', (req, res) => {
 
 // Admin Pages
 app.get('/adminLogin', (req, res) => {
-    res.render('adminLogin')
+    res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
-app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
+app.get('/adminHome', /* loggedIn, */(req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
 app.get('/adminApplication', (req, res) => {
@@ -58,7 +59,15 @@ app.get('/adminRecords', (req, res) => {
     res.sendFile(path.resolve(__dirname, './public/adminRecords.html'))
 })
 
+app.post('/adminLogin', (req, res) => {
+    console.log(req.body)
+    res.redirect('adminHome');
+})
+
+
+
 // uncomment this when adding DB functionality
+
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);

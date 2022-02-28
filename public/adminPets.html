@@ -31,7 +31,7 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="/adminHomePage">Applications</a></li>
+                <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
                 <li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
@@ -39,8 +39,7 @@
         </ul>
     </nav>
 
-    <div id="newPetConfirmationBox" class="confirmationBox"
-        onclick="document.getElementById('newPetConfirmationBox').style.display = 'none'">
+    <div id="newPetConfirmationBox" class="confirmationBox" onclick="location.reload()">
         <div>
             <h1 id="confirmationMessage"></h1>
         </div>
@@ -52,12 +51,12 @@
             <input type="text" placeholder="Pet Name" id="petName" required>
             <input type="date" placeholder="Pet Birthday" id="petBirthday" required>
             <select name="gender" id="petGender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
             </select>
             <select name="species" id="petSpecies" required>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
             </select>
             <input type="text" id="petColor" placeholder="Pet Color" required>
             <input type="text" id="petBreed" placeholder="Pet Breed" required>
@@ -69,9 +68,9 @@
             <div id="imageInput">
                 <p>Images:</p>
                 <div id="images">
-                    <input type="file" class="petImg" accept="image/*" required><br>
-                    <input type="file" class="petImg" accept="image/*" required><br>
-                    <input type="file" class="petImg" accept="image/*" required><br>
+                    <input type="url" class="petImg" placeholder="Imgur Link" required><br>
+                    <input type="url" class="petImg" placeholder="Imgur Link" required><br>
+                    <input type="url" class="petImg" placeholder="Imgur Link" required><br>
                 </div>
                 <i class="fas fa-plus" onclick="addImg();" id="addImgBtn"></i>
             </div>

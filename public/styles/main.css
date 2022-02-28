@@ -309,7 +309,7 @@ div.homeGallery {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
-  margin: 5rem auto;
+  margin: 3rem auto;
 }
 
 #aboutUs #infoAboutUs h1 {
@@ -339,7 +339,7 @@ div.homeGallery {
   min-width: 8rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 975px) {
   #aboutUs #infoAboutUs h1 {
     font-size: 1.25rem;
   }
@@ -372,7 +372,8 @@ div.homeGallery {
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
-  padding: 0 1rem;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (max-width: 1240px) {
@@ -418,7 +419,7 @@ div.homeGallery {
   width: 350px;
   border-radius: 50px;
   padding-left: 20px;
-  margin: 50px auto 10px auto;
+  margin: 2rem auto 2rem auto;
 }
 
 #adminRecords input search-cancel-button {
@@ -442,7 +443,8 @@ div.homeGallery {
       grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 1rem;
-  margin: 0.5rem 1rem;
+  margin: 1rem;
+  margin-top: 0.5rem;
 }
 
 @media screen and (max-width: 1280px) {
@@ -477,7 +479,7 @@ div.petPage {
       -ms-flex-align: center;
           align-items: center;
   width: clamp(90%, 70%, 2000px);
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 2rem auto;
   padding: 1rem;
   background-color: #f5f6fa;
 }
@@ -703,7 +705,9 @@ form#login button {
 }
 
 #adminIndApp main .appBlock .row {
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -711,20 +715,21 @@ form#login button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border-bottom: 2px solid black;
 }
 
 #adminIndApp main .appBlock h1 {
   width: 100%;
   font-size: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
 }
 
 #adminIndApp main .appBlock h2 {
@@ -740,7 +745,18 @@ form#login button {
 }
 
 #adminIndApp main .appBlock ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   list-style: inside;
+  margin: 1rem;
 }
 
 #adminIndApp main .appBlock .choice {
@@ -968,8 +984,8 @@ form#login button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2rem auto;
-  width: clamp(90%, 800px, 50%);
+  margin: 1rem auto;
+  width: calc(100% - 2rem);
   background-color: #f5f6fa;
 }
 
@@ -1142,7 +1158,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 .card {
   width: 100%;
-  max-width: 550px;
   aspect-ratio: 16 / 9;
   margin: auto;
   background-color: white;
@@ -1312,9 +1327,6 @@ footer .row.top .col {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 footer .row.top .col ul {
@@ -1379,8 +1391,8 @@ footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
 }
 
 footer .row .socials {
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
+  margin-top: 1.4rem;
+  margin-bottom: 2.4rem;
   height: 0;
 }
 
@@ -1541,6 +1553,9 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1585,7 +1600,6 @@ button#submitAdoptForm {
 .infoBlock .record.template {
   border-radius: 10px;
   font-weight: bold;
-  margin: 30px;
 }
 
 .infoBlock .record.template p {
@@ -1628,7 +1642,7 @@ div#newPet form {
   background-color: #f5f6fa;
   width: 80%;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 
 div#newPet form h1 {
@@ -1671,6 +1685,7 @@ div#newPet form div#imageInput div#images {
 div#newPet form div#imageInput,
 div#newPet form input[type="text"],
 div#newPet form input[type="date"],
+div#newPet form input[type="url"],
 div#newPet form textarea,
 div#newPet form select {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1690,6 +1705,7 @@ div#newPet form select {
 div#newPet form div#imageInput:focus,
 div#newPet form input[type="text"]:focus,
 div#newPet form input[type="date"]:focus,
+div#newPet form input[type="url"]:focus,
 div#newPet form textarea:focus,
 div#newPet form select:focus {
   border-bottom: 4px solid #f7941d;
@@ -1701,7 +1717,7 @@ div#newPet form button {
   font-family: inherit;
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
-  margin: 0 auto;
+  margin: 1.5rem auto;
 }
 
 div.confirmationBox {
