@@ -8,10 +8,12 @@ div.carousel {
     top: 50%;
     bottom: auto;
     font-size: 2rem;
-    color: $transparent-dark;
+    color: #2d3436;
+    mix-blend-mode: difference;
+
     cursor: pointer;
     &:hover {
-      color: $transparent-darker;
+      color: $clr-black;
     }
     &.leftArrow {
       left: 1vw;

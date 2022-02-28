@@ -394,7 +394,7 @@ div.petPage {
   justify-content: space-around;
   align-items: center;
   width: clamp(90%, 70%, 2000px);
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 2rem auto;
   padding: 1rem;
   background-color: #f5f6fa;
 }
@@ -558,17 +558,18 @@ form#login button {
   margin-bottom: 2rem;
 }
 #adminIndApp main .appBlock .row {
-  width: 100%;
+  width: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 2px solid black;
 }
 #adminIndApp main .appBlock h1 {
   width: 100%;
   font-size: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
 }
 #adminIndApp main .appBlock h2 {
   padding: 10px;
@@ -580,7 +581,11 @@ form#login button {
   width: 100%;
 }
 #adminIndApp main .appBlock ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   list-style: inside;
+  margin: 1rem;
 }
 #adminIndApp main .appBlock .choice {
   width: 100%;
@@ -822,11 +827,12 @@ div.carousel i.arrow {
   top: 50%;
   bottom: auto;
   font-size: 2rem;
-  color: #00000066;
+  color: #2d3436;
+  mix-blend-mode: difference;
   cursor: pointer;
 }
 div.carousel i.arrow:hover {
-  color: #00000099;
+  color: #222;
 }
 div.carousel i.arrow.leftArrow {
   left: 1vw;
@@ -1041,8 +1047,8 @@ footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 0.7rem;
-  margin-bottom: 2.3rem;
+  margin-top: 1.4rem;
+  margin-bottom: 2.4rem;
   height: 0;
 }
 footer .row .socials ul {
