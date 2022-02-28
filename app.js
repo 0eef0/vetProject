@@ -33,7 +33,7 @@ app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
 app.use('/login', loginRoute)
-app.use('/adminLogin', require('./routes/Passport'));
+// app.use('/adminLogin', require('./routes/Passport'));
 app.use(express.static("./public"));
 
 // Front end

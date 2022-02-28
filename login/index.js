@@ -4,8 +4,8 @@ const Router = express.Router()
 
 Router.post('/login', (req, res,next) => {
     passport.authenticate('local',{
-        successRedirect:'home',
-        failureRedirect:'', 
+        successRedirect:'./public/adminApp.html',
+        failureRedirect:'./public/adminLogin.html', 
         failureFlash:true,
     })(req,res,next);
 })
