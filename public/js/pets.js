@@ -25,7 +25,8 @@ const showPets = async () => {
 
         const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a,b) => sortPets(a,b)).map((pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
-            const bDay = new Date(Birthday);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const bDay = new Date(Birthday).toLocaleDateString('PST', options)
             // console.log(Birthday)
             return `
             <div class="card">
@@ -33,7 +34,7 @@ const showPets = async () => {
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
-                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
+                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
                     <div class="btnContainer">
                         <a href="/pet?id=${id}">More Info</a>
                         </div>
