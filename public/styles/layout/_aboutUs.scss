@@ -55,19 +55,33 @@
 			}
 		}
 	}
+
+	.teamContainer {
+		margin: 0 auto;
+		background-color: white;
+		width: clamp(80%, 70%, 2000px);
+		border-radius: $radius-small;
+		h1 {
+			color: $font-dark;
+			padding: 1rem;
+			margin: 0;
+		}
+	}
 	.rows {
 		height: fit-content;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-auto-flow: row;
 		padding: 0 2rem;
-		margin-bottom: 1.5rem;
+		padding-bottom: 2rem;
+		gap: 1rem;
 		@media screen and (max-width: 1240px) {
 			grid-template-columns: 1fr 1fr;
 		}
 		@media screen and (max-width: 750px) {
 			grid-template-columns: 1fr;
 		}
+
 		div {
 			display: flex;
 			flex-direction: column;
@@ -75,15 +89,25 @@
 			overflow-y: auto;
 			box-sizing: border-box;
 			background: $light-background;
-			padding: 30px;
-			margin: 15px;
+			border-radius: $radius-medium;
+			box-shadow: $dark-shadow;
 			h1 {
-				// margin: 7px;
-				// font-size: 18px;
+				font-size: 1.5rem;
+				padding: 0;
+				margin: 0.5rem;
 			}
+			p {
+				padding: 0 1rem;
+				padding-bottom: 1.5rem;
+				margin: 0.5rem;
+				text-align: left;
+				text-indent: 1.5rem;
+			}
+
 			img {
-				width: 80%;
-				margin-bottom: 10px;
+				width: auto;
+				// margin: 1rem;
+				display: block;
 			}
 		}
 	}

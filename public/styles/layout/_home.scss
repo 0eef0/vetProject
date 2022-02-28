@@ -3,14 +3,15 @@ div.aboutUsSummary {
 	width: clamp(80%, 70%, 2000px);
 	// padding: 1rem;
 	background-color: $light-background;
-	margin: 5rem auto;
+	margin: 4rem auto;
 
 	box-shadow: $dark-shadow;
 
 	border-radius: $radius-small;
 	h1 {
 		text-align: center;
-		margin: 1rem;
+		// margin: 1rem;
+		padding: 1rem;
 		font-size: $scalable-header-font;
 	}
 	div {
@@ -20,6 +21,7 @@ div.aboutUsSummary {
 			display: block;
 			clear: both;
 			padding: 1rem;
+			text-align: left;
 			&:first-of-type {
 				clear: none;
 				height: 100%;

@@ -3,6 +3,7 @@ div.carousel {
 	height: 80vh;
 	overflow: hidden;
 	background-color: $light-background;
+	border-radius: $radius-small;
 	i.arrow {
 		position: absolute;
 		top: 50%;

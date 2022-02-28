@@ -217,7 +217,7 @@ hr {
 div.aboutUsSummary {
   width: clamp(80%, 70%, 2000px);
   background-color: #f5f6fa;
-  margin: 5rem auto;
+  margin: 4rem auto;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -225,7 +225,7 @@ div.aboutUsSummary {
 
 div.aboutUsSummary h1 {
   text-align: center;
-  margin: 1rem;
+  padding: 1rem;
   font-size: calc(2vw + 1vh);
 }
 
@@ -234,6 +234,7 @@ div.aboutUsSummary div p {
   display: block;
   clear: both;
   padding: 1rem;
+  text-align: left;
 }
 
 div.aboutUsSummary div p:first-of-type {
@@ -363,6 +364,19 @@ div.homeGallery {
   }
 }
 
+#aboutUs .teamContainer {
+  margin: 0 auto;
+  background-color: white;
+  width: clamp(80%, 70%, 2000px);
+  border-radius: 2px;
+}
+
+#aboutUs .teamContainer h1 {
+  color: #2d3436;
+  padding: 1rem;
+  margin: 0;
+}
+
 #aboutUs .rows {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -373,7 +387,8 @@ div.homeGallery {
       grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   padding: 0 2rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 1240px) {
@@ -405,13 +420,28 @@ div.homeGallery {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #f5f6fa;
-  padding: 30px;
-  margin: 15px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#aboutUs .rows div h1 {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0.5rem;
+}
+
+#aboutUs .rows div p {
+  padding: 0 1rem;
+  padding-bottom: 1.5rem;
+  margin: 0.5rem;
+  text-align: left;
+  text-indent: 1.5rem;
 }
 
 #aboutUs .rows div img {
-  width: 80%;
-  margin-bottom: 10px;
+  width: auto;
+  display: block;
 }
 
 #adminRecords input {
@@ -1080,6 +1110,7 @@ div.carousel {
   height: 80vh;
   overflow: hidden;
   background-color: #f5f6fa;
+  border-radius: 2px;
 }
 
 div.carousel i.arrow {
@@ -1367,6 +1398,9 @@ footer .row.top .col.desc {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .row.top .col.desc h3 {
