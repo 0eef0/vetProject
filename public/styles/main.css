@@ -207,35 +207,43 @@ hr {
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
   width: clamp(80%, 70%, 2000px);
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
-  margin: 5rem auto;
+  margin: 4rem auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 div.aboutUsSummary h1 {
   text-align: center;
+  padding: 1rem;
   font-size: calc(2vw + 1vh);
 }
-div.aboutUsSummary div {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1vw;
-}
 div.aboutUsSummary div p {
-  width: 40%;
   font-size: clamp(1.25rem, 2vw, 1.5rem);
+  display: block;
+  clear: both;
+  padding: 1rem;
+  text-align: left;
+}
+div.aboutUsSummary div p:first-of-type {
+  clear: none;
+  height: 100%;
+  padding-top: 0;
 }
 div.aboutUsSummary div img {
-  width: 50%;
-  min-width: 8rem;
+  width: 40%;
+  margin: 0 1rem;
+  float: left;
 }
 @media only screen and (max-width: 760px) {
   div.aboutUsSummary h1 {
     font-size: 1.25rem;
   }
   div.aboutUsSummary div {
+    display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vw;
   }
   div.aboutUsSummary div p {
     order: 2;
@@ -311,13 +319,25 @@ div.homeGallery {
     margin: 0.1rem;
   }
 }
+#aboutUs .teamContainer {
+  margin: 0 auto;
+  background-color: white;
+  width: clamp(80%, 70%, 2000px);
+  border-radius: 2px;
+}
+#aboutUs .teamContainer h1 {
+  color: #2d3436;
+  padding: 1rem;
+  margin: 0;
+}
 #aboutUs .rows {
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   padding: 0 2rem;
-  margin-bottom: 1.5rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
 }
 @media screen and (max-width: 1240px) {
   #aboutUs .rows {
@@ -336,12 +356,24 @@ div.homeGallery {
   overflow-y: auto;
   box-sizing: border-box;
   background: #f5f6fa;
-  padding: 30px;
-  margin: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+#aboutUs .rows div h1 {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0.5rem;
+}
+#aboutUs .rows div p {
+  padding: 0 1rem;
+  padding-bottom: 1.5rem;
+  margin: 0.5rem;
+  text-align: left;
+  text-indent: 1.5rem;
 }
 #aboutUs .rows div img {
-  width: 80%;
-  margin-bottom: 10px;
+  width: auto;
+  display: block;
 }
 
 #adminRecords input {
@@ -394,7 +426,7 @@ div.petPage {
   justify-content: space-around;
   align-items: center;
   width: clamp(90%, 70%, 2000px);
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 2rem auto;
   padding: 1rem;
   background-color: #f5f6fa;
 }
@@ -558,17 +590,18 @@ form#login button {
   margin-bottom: 2rem;
 }
 #adminIndApp main .appBlock .row {
-  width: 100%;
+  width: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 2px solid black;
 }
 #adminIndApp main .appBlock h1 {
   width: 100%;
   font-size: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
 }
 #adminIndApp main .appBlock h2 {
   padding: 10px;
@@ -580,7 +613,11 @@ form#login button {
   width: 100%;
 }
 #adminIndApp main .appBlock ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   list-style: inside;
+  margin: 1rem;
 }
 #adminIndApp main .appBlock .choice {
   width: 100%;
@@ -822,11 +859,12 @@ div.carousel i.arrow {
   top: 50%;
   bottom: auto;
   font-size: 2rem;
-  color: #00000066;
+  color: #2d3436;
+  mix-blend-mode: difference;
   cursor: pointer;
 }
 div.carousel i.arrow:hover {
-  color: #00000099;
+  color: #222;
 }
 div.carousel i.arrow.leftArrow {
   left: 1vw;
@@ -858,6 +896,7 @@ div.carousel div.carouselBtnPanel {
   left: 0;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn {
@@ -1022,6 +1061,7 @@ footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
 footer .row.top .col.desc {
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
 }
 footer .row.top .col.desc h3 {
   margin: 0;
@@ -1041,8 +1081,8 @@ footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 0.7rem;
-  margin-bottom: 2.3rem;
+  margin-top: 1.4rem;
+  margin-bottom: 2.4rem;
   height: 0;
 }
 footer .row .socials ul {

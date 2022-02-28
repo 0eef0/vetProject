@@ -19,11 +19,12 @@ const url = "/api/v1/pets";
 const showPet = async () => {
     const { data: {pet},} = await axios.get(`${url}/${id}`)
     const {Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG} = pet;
-    const bDay = new Date(Birthday)
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const bDay = new Date(Birthday).toLocaleDateString('PST', options)
 
     document.title = `Adopt ${Name}`;
     petNameDOM.innerHTML = Name;
-    birthdayDOM.innerHTML = bDay.toISOString().slice(0, 10);
+    birthdayDOM.innerHTML = bDay;
     genderDOM.innerHTML = Gender;
     colorDOM.innerHTML = Color;
     breedDOM.innerHTML = Breed;
