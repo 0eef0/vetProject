@@ -6,6 +6,7 @@ const routes = require('./routes/pets.js');
 const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
 const passport = require('passport');
+
 const loginRoute = require('./routes/login');
 const populateProducts = require('./populate');
 const session = require('express-session');
@@ -74,7 +75,8 @@ app.get('/adminRecords', (req, res) => {
 })
 
 // routes for login page
-app.use('/',require('./public/index.html'))
+app.use('/',require('./login/index'))
+require('./routes/Passport')(passport)
 
 // uncomment this when adding DB functionality
 const start = async () => {

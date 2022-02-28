@@ -1,13 +1,18 @@
-const router = require("../app");
+const passport = require("passport")
+const express = require("express")
+const Router = express.Router()
 
-router.post('/login', (req, res,next) => {
+Router.post('/login', (req, res,next) => {
     passport.authenticate('local',{
         successRedirect:'home',
-        failureRedirect:'/users/login', 
+        failureRedirect:'', 
         failureFlash:true,
     })(req,res,next);
 })
 // Not finished yet
-router.post('/logout', (req, res, next) => {
-    req.logout('/')
+Router.post('/logout', (req, res, next) => {
+    req.logout();
+    res.redirect('')
 })
+
+module.exports = Router;

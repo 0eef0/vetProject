@@ -1,5 +1,6 @@
 const User = require('../models/users')
 const LocalStrategy = require('passport-local').Strategy;
+
 const bcrypt = require('bcrypt')
 
 module.exports = function(passport) {
@@ -22,4 +23,17 @@ module.exports = function(passport) {
             })
         })
     )
+
+    //Serialization + deserialization for simulatanious loggins
+    passport.serializeUser(function(user,done){
+        done(null, user.id)
+    })
+
+    passport.deserializeUser(function(id, done){
+        User.findById(id, function(err,user){
+            done(err,user)
+        })
+    })
+
+    
 }
