@@ -7,7 +7,8 @@ const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
 const passport = require('passport');
 const flash = require('connect-flash');
-const loginRoute = require('./routes/login');
+// const loginRoute = require('./routes/login');
+const loginAdmin = require('./login/index')
 const populateProducts = require('./populate');
 const session = require('express-session');
 const mongoose = require('mongoose');
@@ -38,8 +39,7 @@ app.use(passport.session());
 app.use(express.json())
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/applications', routesApp);
-app.use('/login', loginRoute)
-// app.use('/adminLogin', require('./routes/Passport'));
+
 app.use(express.static("./public"));
 
 // Front end
@@ -83,6 +83,7 @@ app.get('/adminRecords', (req, res) => {
 // routes for login page
 app.use('/',require('./login/index'))
 require('./routes/Passport')(passport)
+app.use('/login', loginAdmin)
 
 // uncomment this when adding DB functionality
 const start = async () => {
