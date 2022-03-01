@@ -16,7 +16,7 @@ var filterPetSelection = '';
 
 let imgAmount = 3;
 const addImg = () => {
-    if(imgAmount < 12) {
+    if (imgAmount < 12) {
         document.getElementById('images').innerHTML += '<input type="url" class="petImg" placeholder="Imgur Link" required><br>';
         imgAmount++;
     } else {
@@ -27,20 +27,26 @@ const addImg = () => {
 newPetFormDOM.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    let petName = document.getElementById('petName').value;
-    let petBirthday = document.getElementById('petBirthday').value;
-    let petGender = document.getElementById('petGender').value;
-    let petSpecies = document.getElementById('petSpecies').value;
-    let petColor = document.getElementById('petColor').value;
-    let petBreed = document.getElementById('petBreed').value;
-    let petMedical = document.getElementById('petMedical').value.split(',');
-    let petPersonality = document.getElementById('petPersonality').value.split(',');
-    let petNotes = document.getElementById('petNotes').value;
-    let petImagesInput = document.getElementsByClassName('petImg');
-    let petImages = [];
+    const petName = document.getElementById('petName').value;
+    const petBirthday = document.getElementById('petBirthday').value;
+    const petGender = document.getElementById('petGender').value;
+    const petSpecies = document.getElementById('petSpecies').value;
+    const petColor = document.getElementById('petColor').value;
+    const petBreed = document.getElementById('petBreed').value;
+    const petMedical = document.getElementById('petMedical').value.split(',');
+    const petPersonality = document.getElementById('petPersonality').value.split(',');
+    const petNotes = document.getElementById('petNotes').value;
+    const petImagesInput = document.getElementsByClassName('petImg');
+    const petImages = [];
 
-    for(let i = 0; i < petImagesInput.length; i++) {
-        petImages.push(petImagesInput[i].value);
+    for (let i = 0; i < petImagesInput.length; i++) {
+        var fileObject = petImagesInput[i].files[0];
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(fileObject);
+        fileReader.onload = () => {
+            console.log(fileReader.result)
+            petImages.push(fileReader.result);
+        };
     }
 
     let petInfo = {
@@ -55,7 +61,7 @@ newPetFormDOM.addEventListener('submit', async (e) => {
         Notes: petNotes,
         IMG: petImages
     }
-    //console.log(petInfo);
+    console.log(petInfo);
     try {
         await console.log("successful push");
         await axios.post(url, petInfo);
@@ -79,14 +85,15 @@ const deletePet = async (id) => {
 
 const showPets = async () => {
     try {
-         const { data: {pets},} = await axios.get(url)
-         if (pets.length < 1) {
+        const { data: { pets }, } = await axios.get(url)
+        if (pets.length < 1) {
             petCardContainerDOM.innerHTML = '<h5 class="empty-list">There are no pets available at this time...</h5>';
-             return;
-         }
-         const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a,b) => sortPets(a,b)).map((pet) => {
-            const {_id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG} = pet;
+            return;
+        }
+        const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map((pet) => {
+            const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
             const bDay = new Date(Birthday)
+            console.log(pet)
             return `
             <div class="card">
                 <img src='${IMG[0]}' alt='${Name}' />
@@ -108,20 +115,20 @@ const showPets = async () => {
 }
 showPets()
 
-const sortPets = (a,b) => {
- if (currentFilterIndex == 0) {
-    if(a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
-    if(a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
-    return 0;
- } else if (currentFilterIndex == 1) {
-    if(a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
-    if(a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
-    return 0;
- } else {
-    const date1 = new Date(a.Birthday);
-    const date2 = new Date(b.Birthday);
-    return date1 - date2
- }
+const sortPets = (a, b) => {
+    if (currentFilterIndex == 0) {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
+        return 0;
+    } else if (currentFilterIndex == 1) {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
+        return 0;
+    } else {
+        const date1 = new Date(a.Birthday);
+        const date2 = new Date(b.Birthday);
+        return date1 - date2
+    }
 }
 
 filterAllBtn.addEventListener('click', () => {
@@ -153,7 +160,7 @@ sortByElem.innerHTML = filters[currentFilterIndex];
 sortByBtn.addEventListener('click', () => {
 
     currentFilterIndex < filters.length - 1 ? currentFilterIndex += 1 : currentFilterIndex = 0;
-    
+
     sortByElem.innerHTML = filters[currentFilterIndex];
 
     showPets();
