@@ -1,47 +1,19 @@
-const crypto = require('crypto');
+const bcrypt = require('bcrypt');
 
-const algorithm = 'aes-256-ctr';
-const secretKey = 'vOVH6sdmpNWjRRIqCc7rdxs01lwHzfr3';
-const iv = crypto.randomBytes(16);
+/** One way, can't decrypt but can compare */
+const salt = bcrypt.genSaltSync(10);
 
-const encrypt = (text) => {
-    const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
-    const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
-    return {
-        iv: iv.toString('hex'),
-        content: encrypted.toString('hex')
-    };
-};
+/** Encrypt password */
+bcrypt.hash('4d0p7_411_p375', salt, (err, res) => {
+    console.log('hash', res);
+    hash = res;
+    compare(hash);
+});
 
-const decrypt = (hash) => {
-    const decipher = crypto.createDecipheriv(algorithm, secretKey, Buffer.from(hash.iv, 'hex'));
-    const decrpyted = Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
-    return decrpyted.toString();
-};
-
-module.exports = {
-    encrypt,
-    decrypt
-};
-
-
-
-// const { encrypt, decrypt } = require('./crypto');
-// const hash = encrypt('Hello World!');
-// console.log(hash);
-
-// {
-//     iv: '237f306841bd23a418878792252ff6c8',
-//     content: 'e2da5c6073dd978991d8c7cd'
-// }
-
-// const text = decrypt(hash);
-// // console.log(text); // Hello World!
-// console.log(text); // Hello World
-
-console.log('Encrypted:', encrypt('d095_423_837732'));
-console.log('Decrypted:', decrypt({
-    "iv": "d6e2b2e6bc28da7422fc515ec2ca7489",
-    "content": "c5fe1e8198b3e00e8297ddc1ce768b"
-}));
-
+/** Compare stored password with new encrypted password */
+function compare(encrypted) {
+    bcrypt.compare('4d0p7_411_p375', encrypted, (err, res) => {
+        // res == true or res == false
+        console.log('Compared result', res, hash)
+    })
+}

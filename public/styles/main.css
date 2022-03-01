@@ -184,7 +184,8 @@ body {
 
 img {
   background: #f5f6fa;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 p {
@@ -312,6 +313,8 @@ div.homeGallery {
   }
 }
 #aboutUs .rows {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -400,7 +403,8 @@ div.petPage #petImageNames li {
   font-size: 1rem;
 }
 div.petPage #petImageNames li:hover {
-  text-decoration: line-through 2px red;
+  -webkit-text-decoration: line-through 2px red;
+          text-decoration: line-through 2px red;
 }
 div.petPage div {
   width: 40%;
@@ -440,6 +444,8 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: square;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -453,6 +459,8 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -548,6 +556,8 @@ form#login button {
 }
 #adminIndApp main div {
   width: calc(50% - 3rem);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
   word-wrap: break-word;
@@ -824,7 +834,8 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -865,7 +876,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -918,6 +930,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1157,6 +1171,8 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1181,11 +1197,16 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-weight: bold;
 }
 .infoBlock .appl {
   width: 75%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1303,6 +1324,8 @@ div.adminPetInfo form button {
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -1326,6 +1349,4 @@ div.adminPetInfo input[type=file] {
 div.adminPetInfo textarea {
   width: 100%;
   height: 10vh;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

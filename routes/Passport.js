@@ -24,7 +24,7 @@ module.exports = function(passport) {
                 console.log(password)
                 console.log(user.password)
             })
-             .catch((err)=>{console.log(err)})
+            .catch((err)=>{console.log(err)})
         })
     )
 
