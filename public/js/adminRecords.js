@@ -11,7 +11,7 @@ async function getInfoAboutUs(applications) {
 		${applications.map(app => {
 			if (app.status === 'Active') return `
 				<div class="record">
-					<p>Oldest to Newest</p>
+					<p>${app.dateCreated}</p>
 					<p>${app.guardianEmail}</p>
 					<p>${app.guardianName}</p>
 					<p>${'s'}</p >
