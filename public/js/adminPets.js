@@ -80,7 +80,30 @@ const deletePet = async (id) => {
     } catch (error) {
         console.log(error);
     }
-    //console.log(id)
+}
+
+const confirmDeletePet = async (id) => {
+    let petDeletion = new Modal({
+        title: 'Warning!',
+        content: 'Are you sure you want to delete this pet?',
+        buttons: [
+            {
+                title: 'Yes',
+                type: 'primary',
+                action () {
+                    deletePet(id)
+                }
+            }, {
+                title: 'Cancel',
+                type: 'red',
+                action () {
+                    petDeletion.close()
+                }
+            }
+        ]
+    })
+
+    petDeletion.show()
 };
 
 const showPets = async () => {
@@ -103,7 +126,7 @@ const showPets = async () => {
                     <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
-                        <a onclick="deletePet('${id}')">Delete</a>
+                        <a onclick="confirmDeletePet('${id}')">Delete</a>
                     </div>
                 </div>
             </div>`
