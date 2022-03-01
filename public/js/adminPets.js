@@ -40,7 +40,13 @@ newPetFormDOM.addEventListener('submit', async (e) => {
     const petImages = [];
 
     for (let i = 0; i < petImagesInput.length; i++) {
-        petImages.push(petImagesInput[i].value);
+        var fileObject = petImagesInput[i].files[0];
+        var fileReader = new FileReader();
+        fileReader.readAsDataURL(fileObject);
+        fileReader.onload = () => {
+            console.log(fileReader.result)
+            petImages.push(fileReader.result);
+        };
     }
 
     let petInfo = {
@@ -55,7 +61,7 @@ newPetFormDOM.addEventListener('submit', async (e) => {
         Notes: petNotes,
         IMG: petImages
     }
-    //console.log(petInfo);
+    console.log(petInfo);
     try {
         await console.log("successful push");
         await axios.post(url, petInfo);
@@ -87,6 +93,7 @@ const showPets = async () => {
         const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map((pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
             const bDay = new Date(Birthday)
+            console.log(pet)
             return `
             <div class="card">
                 <img src='${IMG[0]}' alt='${Name}' />
