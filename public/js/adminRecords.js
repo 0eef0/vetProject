@@ -9,9 +9,12 @@ async function getInfoAboutUs(applications) {
 		}
 		main.innerHTML = `
 		${applications.map(app => {
+			const options = { year: 'numeric', month: 'long', day: 'numeric' };
+			const creationDate = new Date(app.dateCreated).toLocaleDateString('PST', options);
+
 			if (app.status === 'Active') return `
 				<div class="record">
-					<p>${app.dateCreated}</p>
+					<p>${creationDate}</p>
 					<p>${app.guardianEmail}</p>
 					<p>${app.guardianName}</p>
 					<p>${'s'}</p >

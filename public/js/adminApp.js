@@ -18,12 +18,15 @@ async function getApplInfo() {
 				</div>
 				<div class='appl'>
 			${appIndexes[pet].map(app => {
+				const {fullName, email, dateCreated, _id: id} = app;
+				const options = { year: 'numeric', month: 'long', day: 'numeric' };
+				const creationDate = new Date(dateCreated).toLocaleDateString('PST', options)
 				return `
 						<div class="record">
-							<p>${app.fullName}</p>
-							<p>${app.email}</p>
-							<p>${app.dateCreated}</p>
-							<a class='moreInfo' href="/adminApplication?_id=${app._id}">More Info...</a>
+							<p>${fullName}</p>
+							<p>${email}</p>
+							<p>${creationDate}</p>
+							<a class='moreInfo' href="/adminApplication?_id=${id}">More Info...</a>
 						</div>
 					`
 			}).reduce((a, c) => a + c)}

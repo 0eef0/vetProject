@@ -2,166 +2,98 @@ const main = document.querySelector('#adminIndApp main');
 
 const recordDrop = "this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'block') ? 'none' : 'block'";
 
+const appDateCreated = document.querySelector('#appDateCreated');
+const appName = document.querySelector('#appName');
+const appPetWanted = document.querySelector('#appPetWanted');
+const appBirthday = document.querySelector('#appBirthday');
+const appOccupation = document.querySelector('#appOccupation');
+const appAddress = document.querySelector('#appAddress');
+const appPhone = document.querySelector('#appPhone');
+const appEmail = document.querySelector('#appEmail');
+const appReference = document.querySelector('#appReference');
+const appChildren = document.querySelector('#appChildren');
+const appHousing = document.querySelector('#appHousing');
+const appSpace = document.querySelector('#appSpace');
+const appMinor = document.querySelector('#appMinor');
+const appGuardian = document.querySelector('#appGuardian');
+const appGuardianPhone = document.querySelector('#appGuardianPhone');
+const appCurrPets = document.querySelector('#appCurrPets');
+const appVaccination = document.querySelector('#appVaccination');
+const appVaccinationReason = document.querySelector('#appVaccinationReason');
+const appPetExamine = document.querySelector('#appPetExamine');
+const appPetExamineReason = document.querySelector('#appPetExamineReason');
+const appQualification = document.querySelector('#appQualification');
+const appPetTime = document.querySelector('#appPetTime');
+const appAffordableMedicine = document.querySelector('#appAffordableMedicine');
+const appDeclaw = document.querySelector('#appDeclaw');
+const appAcknowledgement = document.querySelector('#appAcknowledgement');
+const appAcknowledgementAdoption = document.querySelector('#appAcknowledgementAdoption');
+
+const petName = document.querySelector('#petName');
+const petImage = document.querySelector('#petImage');
+const petBirthday = document.querySelector('#petBirthday');
+const petGender = document.querySelector('#petGender');
+const petMedical = document.querySelector('#petMedical');
+const petColor = document.querySelector('#petColor');
+const petBreed = document.querySelector('#petBreed');
+const petSpecies = document.querySelector('#petSpecies');
+const petPersonality = document.querySelector('#petPersonality');
+const petNotes = document.querySelector('#petNotes');
+
+const acceptBtn = document.querySelector('#accept');
+const declineBtn = document.querySelector('#decline');
+
 async function getApplInfo() {
 	try {
 		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
 		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
 		const curPet = pets.find(pet => pet._id === curApp.wantedPetId);
-		main.innerHTML = `
-			<div class='appBlock'>
-				<h1>Adopter Information</h1>
-				<div class='row'>
-					<h2>Date of submission:</h2>
-					<p>${curApp.dateCreated}</p>
-				</div>
-				<div class='row'>
-					<h2>Full Name:</h2>
-					<p>${curApp.fullName}</p>
-				</div>
-				<div class='row'>
-					<h2>Name of desired pet:</h2>
-					<p>${curApp.wantedPet}</p>
-				</div>
-				<div class='row'>
-					<h2>Birthday:</h2>
-					<p>${curApp.birthday}</p>
-				</div>
-				<div class='row'>
-					<h2>Occupation:</h2>
-					<p>${curApp.occupation}</p>
-				</div>
-				<div class='row'>
-					<h2>Address:</h2>
-					<p>${curApp.address}</p>
-				</div>
-				<div class='row'>
-					<h2>Phone Number:</h2>
-					<p>${curApp.phoneNumber}</p>
-				</div>
-				<div class='row'>
-					<h2>Email:</h2>
-					<p>${curApp.email}</p>
-				</div>
-				<div class='row'>
-					<h2>How they heard about our adoptable animals:</h2>
-					<p>${curApp.userReference}</p>
-				</div>
-				<div class='row'>
-					<h2>Number of children in house:</h2>
-					<p>${curApp.children}</p>
-				</div>
-				<div class='row'>
-					<h2>Type of home:</h2>
-					<p>${curApp.housing}</p>
-				</div>
-				<div class='row'>
-					<h2>Adequate space for large animal:</h2>
-					<p>${curApp.space}</p>
-				</div>
-				<div class='row'>
-					<h2>Guardian's awareness for adopting:</h2>
-					<p>${curApp.minor}</p>
-				</div>
-				<div class='row'>
-					<h2>Guardian Name:</h2>
-					<p>${curApp.guardianName}</p>
-				</div>
-				<div class='row'>
-					<h2>Guardian Phone:</h2>
-					<p>${curApp.guardianPhone}</p>
-				</div>
-				<div class='row'>
-					<h2>Pet count:</h2>
-					<p>${curApp.currentPets}</p>
-				</div>
-				<div class='row'>
-					<h2>Pet Vaccination:</h2>
-					<p>${curApp.petVaccination}</p>
-				</div>
-				<div class='row'>
-					<h2>Reason for pet no vaccinations:</h2>
-					<p>${curApp.petVaccinationReason}</p>
-				</div>
-				<div class='row'>
-					<h2>Do pets receive annual examination:</h2>
-					<p>${curApp.petExamine}</p>
-				</div>
-				<div class='row'>
-					<h2>Reason for no pet examinations:</h2>
-					<p>${curApp.petExamineReason}</p>
-				</div>
-				<div class='row'>
-					<h2>Why they are the best candidate:</h2>
-					<p>${curApp.qualification}</p>
-				</div>
-				<div class='row'>
-					<h2>Where the animal will spend most time:</h2>
-					<p>${curApp.petTime}</p>
-				</div>
-				<div class='row'>
-					<h2>Financially able to provide medical for the animal:</h2>
-					<p>${curApp.affordableMedication}</p>
-				</div>
-				<div class='row'>
-					<h2>Declawing:</h2>
-					<p>${curApp.declaw}</p >
-				</div >
-				<div class='row'>
-					<h2>Acknowledgement for accuracy of this information:</h2>
-					<p>${curApp.acknowledgement}</p>
-				</div>
-				<div class='row'>
-					<h2>Acknowledgement that adoption of this animal is not guaranteed:</h2>
-					<p>${curApp.acknowledgementAdoption}</p>
-				</div>
-			</div>
-			</div >
-			<div class='appBlock'>
-				<h1>Pet Info</h1>
-				<div class='row'>
-					<h2>Name of desired pet:</h2>
-					<p>${curPet.Name}</p >
-				</div >
-				<img src="${curPet.IMG[0]}" alt="${curPet.Name}" />
-				<div class='row'>
-					<h2>Pet's Birthday:</h2>
-					<p>${curPet.Birthday}</p >
-				</div >
-				<div class='row'>
-					<h2>Pet's Gender:</h2>
-					<p>${curPet.Gender}</p >
-				</div >
-				<div class='row'>
-					<h2>Pet's Medical:</h2>
-					<ul>${curPet.Medical.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)}</ul>
-				</div >
-				<div class='row'>
-					<h2>Pet's Color:</h2>
-					<p>${curPet.Color}</p >
-				</div >
-				<div class='row'>
-					<h2>Pet's Breed:</h2>
-					<p>${curPet.Breed}</p >
-				</div >
-				<div class='row'>
-					<h2>Pet's Species:</h2>
-					<p>${curPet.Species}</p >
-				</div >
-				<div class='row'>
-					<h2>Pet's Personality:</h2>
-					<ul>${curPet.Personality.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)}</ul>
-				</div >
-				<div class='row'>
-					<h2>Notes:</h2>
-					<p>${curPet.Notes}</p >
-				</div >
-			<div class="choice">
-				<button>Accept</button>
-				<button>Decline</button>
-			</div>
-			</div >
-			`;
+
+		const options = { year: 'numeric', month: 'long', day: 'numeric' };
+		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
+		const appBirthday = new Date(curApp.birthday).toLocaleDateString('PST', options)
+		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
+		
+		console.log(appDateCreated)
+		appDateCreated.innerHTML = dateCreated;
+		appName.innerHTML = curApp.fullName;
+		appPetWanted.innerHTML = curApp.wantedPet;
+		appBirthday.innerHTML = appBirthday;
+		appOccupation.innerHTML = curApp.occupation;
+		appAddress.innerHTML = curApp.address;
+		appPhone.innerHTML = curApp.phoneNumber;
+		appEmail.innerHTML = curApp.email;
+		appReference.innerHTML = curApp.userReference;
+		appChildren.innerHTML = curApp.children;
+		appHousing.innerHTML = curApp.housing;
+		appSpace.innerHTML = curApp.space;
+		appMinor.innerHTML = curApp.minor;
+		appGuardian.innerHTML = curApp.guardianName;
+		appGuardianPhone.innerHTML = curApp.guardianPhone;
+		appCurrPets.innerHTML = curApp.currentPets;
+		appVaccination.innerHTML = curApp.petVaccination;
+		appVaccinationReason.innerHTML = curApp.perVaccinationReason;
+		appPetExamine.innerHTML = curApp.petExamine;
+		appPetExamineReason.innerHTML = curApp.appPetExamineReason;
+		appQualification.innerHTML = curApp.qualification;
+		appPetTime.innerHTML = curApp.petTime;
+		appAffordableMedicine.innerHTML = curApp.affordableMedication;
+		appDeclaw.innerHTML = curApp.declaw;
+		appAcknowledgement.innerHTML = curApp.appAcknowledgement;
+		appAcknowledgementAdoption.innerHTML = curApp.acknowledgementAdoption;
+
+		petName.innerHTML = curPet.Name;
+		petImage.src = curPet.IMG[0];
+		petImage.alt = curPet.Name;
+		petBirthday.innerHTML = petBDay;
+		petGender.innerHTML = curPet.Gender;
+		petMedical.innerHTML = curPet.Medical.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)
+		petColor.innerHTML = curPet.Color;
+		petBreed.innerHTML = curPet.Breed;
+		petSpecies.innerHTML = curPet.Species;
+		petPersonality.innerHTML = curPet.Personality.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)
+		petNotes.innerHTML = curPet.Notes;
 	}
 	catch (error) {
 		console.log(error)
