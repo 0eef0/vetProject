@@ -8,8 +8,6 @@ Router.post('/adminLogin', (req, res,next) => {
     passport.authenticate('local',{
         successRedirect:'/adminHomepage',
         failureRedirect:'/adminLogin', 
-
-        // failureFlash:true,
     })(req,res,next);
 })
 Router.post('/logout', (req, res, next) => {

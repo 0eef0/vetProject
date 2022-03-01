@@ -1,9 +1,7 @@
 const connectDB = require('./db/connect')
-
 const pets = require('./pets.json')
 const app = require('./applications.json')
-const users = require('./users.json')
-
+// const users = require('./users.json')
 const animal = require('./models/petModel')
 const form = require('./models/application')
 const usersModel = require('./models/users');

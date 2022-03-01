@@ -27,7 +27,6 @@ module.exports = function(passport) {
              .catch((err)=>{console.log(err)})
         })
     )
-
     //Serialization + deserialization for simulatanious loggins
     passport.serializeUser(function(user,done){
         done(null, user.id)
@@ -37,7 +36,5 @@ module.exports = function(passport) {
         User.findById(id, function(err,user){
             done(err,user)
         })
-    })
-
-    
+    })    
 }

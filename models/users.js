@@ -2,15 +2,19 @@ const mongoose = require('mongoose');
 // import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
-    Username: {
+    username: {
         type: String,
         required: [true, 'Must Provide a Username']
     },
-    Password: {
-        type: Object,
+    name:{
+        type: String,
+        required: [true, 'Must Provide a Name'],
+    },
+    password: {
+        type: String,
         required: [true, 'Must Provide a Password']
     },
-    Status: {
+    status: {
         type: String,
         required: [true, 'Must Provide a Status'],
         enum: {
@@ -18,7 +22,7 @@ const UserSchema = new mongoose.Schema({
             message: '{VALUE} is not supported',
         }
     },
-    Logs: {
+    logs: {
         type: Array,
         default: []
     }

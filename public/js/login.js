@@ -22,7 +22,7 @@
 //     try {
 //         let loginInfo = await axios.get('/login');
 //         loginInfo = await loginInfo.data.Login;
-//         // await console.log(loginInfo);
+//         await console.log(loginInfo);
 //         await console.log("Axios retrieved successfully");
 //     } catch (error) {
 //         console.log(error.response.data);
