@@ -2,8 +2,6 @@ const passport = require("passport")
 const express = require("express")
 const Router = express.Router()
 
-
-
 Router.post('/adminLogin', (req, res,next) => {
     passport.authenticate('local',{
         successRedirect:'/adminHomepage',
