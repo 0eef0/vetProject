@@ -1,6 +1,7 @@
 const express = require('express');
 const navigation = express.Router();
 const path = require('path');
+const ensureAuthenticated = require('../middleware/auth')
 
 // Front end
 navigation.get('/', (req, res) => {
