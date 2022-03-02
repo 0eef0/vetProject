@@ -8,6 +8,7 @@ const connectDB = require('./db/connect.js');
 const loginRoute = require('./routes/login');
 const populateProducts = require('./populate');
 const expressEJSLayouts = require('express-ejs-layouts');
+const test = require('./routes/test');
 
 const port = process.env.PORT || 5000;
 
@@ -15,9 +16,10 @@ const port = process.env.PORT || 5000;
 require('dotenv').config()
 
 //middleware functions
-app.use(express.json())
+app.use(express.json({ limit: '16MB' }))
 app.use(express.urlencoded({ extended: false }))
 app.use('/api/v1/pets', routes);
+app.use('/api/v1/petImages', test);
 app.use('/api/v1/applications', routesApp);
 app.use('/login', loginRoute)
 app.use(express.static("./public"));

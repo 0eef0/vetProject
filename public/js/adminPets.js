@@ -59,17 +59,18 @@ newPetFormDOM.addEventListener('submit', async (e) => {
         Medical: petMedical,
         Personality: petPersonality,
         Notes: petNotes,
-        IMG: petImages
+        // IMG: petImages
     }
     console.log(petInfo);
     try {
         await console.log("successful push");
         await axios.post(url, petInfo);
+        await axios.post('/api/v1/petImages', petImages)
         document.getElementsByClassName('newPetForm')[0].reset();
         document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
         document.getElementById('newPetConfirmationBox').style.display = 'flex';
     } catch (err) {
-        console.log(err.response.data);
+        console.log(err);
     }
 });
 
