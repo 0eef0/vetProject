@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express.Router();
+const ensureAuthenticated = require('../middleware/auth')
 
 // Front end
 app.get('/', (req, res) => {
@@ -22,7 +23,7 @@ app.get('/adoptionform', (req, res) => {
 app.get('/adminLogin', (req, res) => {
   res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
 })
-app.get('/adminHome', /* loggedIn, */(req, res) => {
+app.get('/adminHome', /* loggedIn, */ensureAuthenticated,(req, res) => {
   res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
 app.get('/adminApplication', (req, res) => {
