@@ -27,7 +27,7 @@ module.exports = function(passport) {
             .catch((err)=>{console.log(err)})
         })
     )
-    //Serialization + deserialization for simulatanious loggins
+    //Serialization + deserialization for simultaneous logins
     passport.serializeUser(function(user,done){
         done(null, user.id)
     })
