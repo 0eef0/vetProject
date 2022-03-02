@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 const router = express.Router();
 const routes = require('./routes/pets.js');
+const navigation = require('./routes/navigation.js');
 const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
 const passport = require('passport');
@@ -38,47 +38,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/api/v1/pets', routes);
 //app.use('/api/v1/petImages', test);
 app.use('/api/v1/applications', routesApp);
+app.use('/', navigation);
 
 app.use(express.static("./public"));
-
-// Front end
-// app.get('/', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/index.html'));
-// })
-// app.get('/about', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/aboutUs.html'));
-// })
-// app.get('/adopt', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/pets.html'));
-// })
-// app.get('/pet', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/individualPet.html'));
-// })
-// app.get('/adoptionform', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adoptForm.html'));
-// })
-
-// Admin Pages
-// app.get('/adminLogin', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adminLogin.html'));
-//     // res.render('adminLogin')
-// })
-// app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
-//     // user:req.user
-//     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
-// })
-// app.get('/adminApplication', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adminIndApp.html'));
-// })
-// app.get('/adminPets', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adminPets.html'));
-// })
-// app.get('/adminPet', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adminIndPet.html'));
-// })
-// app.get('/adminRecords', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './public/adminRecords.html'))
-// })
 
 // routes for login page
 app.use('/',require('./routes/login'))
