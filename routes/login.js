@@ -1,14 +1,16 @@
+const passport = require("passport")
+const express = require("express")
+const Router = express.Router()
 
-const express = require('express');
-const router = express.Router();
+Router.post('/adminLogin', (req, res,next) => {
+    passport.authenticate('local',{
+        successRedirect:'/adminHomepage',
+        failureRedirect:'/adminLogin', 
+    })(req,res,next);
+})
+Router.post('/logout', (req, res, next) => {
+    req.logout();
+    res.redirect('/adminLogin');
+})
 
-const { getAllAccounts, getOneAccount } = require('../controllers/LoginControllers')
-
-//Controllers for application
-router.route('/').get(getAllAccounts)
-router.route('/:id').get(getOneAccount)
-// router.route('/login').(hash)
-// .post(createNewAccount.patch(updateAccount).delete(deleteAccount););
-
-
-module.exports = router;
+module.exports = Router;
