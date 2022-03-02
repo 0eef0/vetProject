@@ -39,7 +39,7 @@ app.use(passport.session());
 app.use(express.json({ limit: '16MB' }))
 app.use(express.urlencoded({ extended: false }))
 app.use('/api/v1/pets', routes);
-app.use('/api/v1/petImages', test);
+//app.use('/api/v1/petImages', test);
 app.use('/api/v1/applications', routesApp);
 
 app.use(express.static("./public"));
