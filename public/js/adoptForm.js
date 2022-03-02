@@ -40,6 +40,7 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         address: document.getElementById('userAddress').value,
         phoneNumber: document.getElementById('userPhoneNumber').value,
         email: document.getElementById('userEmail').value,
+        birthday: document.getElementById('userBirthday').value,
         userReference: document.getElementById('userReference').value,
         children: document.getElementById('numChildren').value,
         housing: (document.getElementById('House').checked) ? 'House' : (document.getElementById('Apartment').checked) ? 'Apartment' : (document.getElementById('Condominium').checked) ? 'Condominium' : document.getElementById('Other'),
