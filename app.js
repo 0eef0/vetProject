@@ -8,7 +8,7 @@ const connectDB = require('./db/connect.js');
 const passport = require('passport');
 const flash = require('connect-flash');
 // const loginRoute = require('./routes/login');
-const loginAdmin = require('./login/index')
+const loginAdmin = require('./routes/login')
 const populateProducts = require('./populate');
 const session = require('express-session');
 const mongoose = require('mongoose');
@@ -65,6 +65,7 @@ app.get('/adminLogin', (req, res) => {
     // res.render('adminLogin')
 })
 app.get('/adminHomepage', /* loggedIn, */ (req, res) => {
+    // user:req.user
     res.sendFile(path.resolve(__dirname, './public/adminApp.html'));
 })
 app.get('/adminApplication', (req, res) => {
