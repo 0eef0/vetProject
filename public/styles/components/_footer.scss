@@ -10,14 +10,15 @@ footer {
 		&.top {
 			flex-direction: row;
 			justify-content: space-around;
+			align-items: space-around;
 			color: $font-light;
 			padding-top: 1rem;
 			.col {
 				display: flex;
-				max-width: 30vw;
+				// max-width: 30vw;
 				width: 100%;
 				text-align: left;
-				justify-content: space-between;
+				justify-content: space-around;
 				ul {
 					margin: 0;
 					padding: 0;
@@ -29,6 +30,7 @@ footer {
 							font-size: 110%;
 							font-weight: bold;
 							padding: 0.5rem;
+							padding-left: 0;
 						}
 						a {
 							color: $font-light;
@@ -43,29 +45,29 @@ footer {
 						}
 					}
 				}
-				&.desc {
-					flex-direction: column;
-					justify-content: flex-start;
-					align-items: center;
-					h3 {
-						margin: 0;
-						padding: 0.5rem;
-						color: $accent-color;
-						font-size: 110%;
-					}
-					a {
-						margin-left: 2vw;
-						color: $font-light;
-						text-decoration: none;
-						&:active {
-							color: $accent-color;
-						}
-						&:hover,
-						&:focus {
-							text-decoration: underline;
-						}
-					}
-				}
+				// &.desc {
+				// 	flex-direction: column;
+				// 	justify-content: flex-start;
+				// 	align-items: center;
+				// 	h3 {
+				// 		margin: 0;
+				// 		padding: 0.5rem;
+				// 		color: $accent-color;
+				// 		font-size: 110%;
+				// 	}
+				// 	a {
+				// 		margin-left: 2vw;
+				// 		color: $font-light;
+				// 		text-decoration: none;
+				// 		&:active {
+				// 			color: $accent-color;
+				// 		}
+				// 		&:hover,
+				// 		&:focus {
+				// 			text-decoration: underline;
+				// 		}
+				// 	}
+				// }
 			}
 		}
 		.socials {
@@ -205,8 +207,14 @@ footer {
 	// 	}
 }
 
-@media screen and (max-width: 456px) {
+@media screen and (max-width: 556px) {
 	ul {
 		text-align: center;
+	}
+	footer .top .col {
+		flex-direction: column;
+		.title {
+			padding-left: 0.5rem !important;
+		}
 	}
 }
