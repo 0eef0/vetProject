@@ -2,9 +2,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2rem auto;
+	margin: 1rem auto;
 
-	width: clamp(90%, 800px, 50%);
+	width: calc(100% - 2rem);
 	background-color: $light-background;
 
 	.selection-buttons {
@@ -45,7 +45,7 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
 	.filters {
 		flex-direction: column;
 		align-items: flex-start;

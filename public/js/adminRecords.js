@@ -9,15 +9,18 @@ async function getInfoAboutUs(applications) {
 		}
 		main.innerHTML = `
 		${applications.map(app => {
+			const options = { year: 'numeric', month: 'long', day: 'numeric' };
+			const creationDate = new Date(app.dateCreated).toLocaleDateString('PST', options);
+
 			if (app.status === 'Active') return `
 				<div class="record">
-					<p>Oldest to Newest</p>
+					<p>${creationDate}</p>
 					<p>${app.guardianEmail}</p>
 					<p>${app.guardianName}</p>
-					<p>Pet Name</p>
-					<p class="moreInfo">More Info...</p>
-				</div>
-				`
+					<p>${'s'}</p >
+					<a class="moreInfo" href="/adminApplication?_id=${app._id}">More Info...</a>
+				</div >
+			`
 		}).reduce((a, c) => a + c)}
             `;
 	}

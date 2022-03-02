@@ -15,6 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
     <title>Vet Science</title>
@@ -31,7 +32,7 @@
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
-                <li class="nav-item"><a class="link" href="/adminHomePage">Applications</a></li>
+                <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
                 <li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
@@ -39,8 +40,7 @@
         </ul>
     </nav>
 
-    <div id="newPetConfirmationBox" class="confirmationBox"
-        onclick="document.getElementById('newPetConfirmationBox').style.display = 'none'">
+    <div id="newPetConfirmationBox" class="confirmationBox" onclick="location.reload()">
         <div>
             <h1 id="confirmationMessage"></h1>
         </div>
@@ -52,12 +52,12 @@
             <input type="text" placeholder="Pet Name" id="petName" required>
             <input type="date" placeholder="Pet Birthday" id="petBirthday" required>
             <select name="gender" id="petGender" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
             </select>
             <select name="species" id="petSpecies" required>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
             </select>
             <input type="text" id="petColor" placeholder="Pet Color" required>
             <input type="text" id="petBreed" placeholder="Pet Breed" required>
@@ -69,9 +69,10 @@
             <div id="imageInput">
                 <p>Images:</p>
                 <div id="images">
-                    <input type="file" class="petImg" accept="image/*" required><br>
-                    <input type="file" class="petImg" accept="image/*" required><br>
-                    <input type="file" class="petImg" accept="image/*" required><br>
+                    <input type="file" class="petImg" name="img" accept="image/*">
+                    <!-- <input type="url" class="petImg" placeholder="Imgur Link" required><br>
+                    <input type="url" class="petImg" placeholder="Imgur Link" required><br>
+                    <input type="url" class="petImg" placeholder="Imgur Link" required><br> -->
                 </div>
                 <i class="fas fa-plus" onclick="addImg();" id="addImgBtn"></i>
             </div>
@@ -93,9 +94,9 @@
                     <p class="sort-by-value">Age</p>
                 </div>
             </button>
-            <select name="campus" id="campus-select">
+            <!-- <select name="campus" id="campus-select">
                 <option value="northeast">Northeast Campus</option>
-            </select>
+            </select> -->
         </div>
     </div>
 
@@ -115,7 +116,7 @@
 
 
     <!-- footer -->
-    <footer>
+    <!--     <footer>
         <div class="row top">
             <div class="col">
                 <ul>
@@ -147,7 +148,7 @@
             </div>
             <p>Company Name © 2021</p>
         </div>
-    </footer>
+    </footer> -->
 
 
     <!-- axios -->
@@ -156,7 +157,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
     <script src="./js/navbar.js"></script>
-    <script src="./js/pets_filter.js"></script>
+    <script src="./js/modal.class.js"></script>
     <script src="./js/adminPets.js"></script>
 </body>
 

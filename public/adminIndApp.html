@@ -19,14 +19,171 @@
 				<li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
 			</div>
 			<div class="align-right links closed">
-				<li class="nav-item"><a class="link active" href="/adminHomePage">Applications</a></li>
+				<li class="nav-item"><a class="link active" href="/adminHome">Applications</a></li>
 				<li class="nav-item"><a class="link" href="/adminPets">Pets</a></li>
 				<li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
 				<li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
 			</div>
 		</ul>
 	</nav>
-	<main></main>
+	<main>
+
+	<div class='appBlock'>
+		<h1>Adopter Information</h1>
+		<div class='row'>
+			<h2>Date of submission:</h2>
+			<p id="appDateCreated"></p>
+		</div>
+		<div class='row'>
+			<h2>Full Name:</h2>
+			<p id="appName"></p>
+		</div>
+		<div class='row'>
+			<h2>Name of desired pet:</h2>
+			<p id="appPetWanted"></p>
+		</div>
+		<div class='row'>
+			<h2>Birthday:</h2>
+			<p id="appBirthday"></p>
+		</div>
+		<div class='row'>
+			<h2>Occupation:</h2>
+			<p id="appOccupation"></p>
+		</div>
+		<div class='row'>
+			<h2>Address:</h2>
+			<p id="appAddress"></p>
+		</div>
+		<div class='row'>
+			<h2>Phone Number:</h2>
+			<p id="appPhone"></p>
+		</div>
+		<div class='row'>
+			<h2>Email:</h2>
+			<p id="appEmail"></p>
+		</div>
+		<div class='row'>
+			<h2>How they heard about our adoptable animals:</h2>
+			<p id="appReference"></p>
+		</div>
+		<div class='row'>
+			<h2>Number of children in house:</h2>
+			<p id="appChildren"></p>
+		</div>
+		<div class='row'>
+			<h2>Type of home:</h2>
+			<p id="appHousing"></p>
+		</div>
+		<div class='row'>
+			<h2>Adequate space for large animal:</h2>
+			<p id="appSpace"></p>
+		</div>
+		<div class='row'>
+			<h2>Guardian's awareness for adopting:</h2>
+			<p id="appMinor"></p>
+		</div>
+		<div class='row'>
+			<h2>Guardian Name:</h2>
+			<p id="appGuardian"></p>
+		</div>
+		<div class='row'>
+			<h2>Guardian Phone:</h2>
+			<p id="appGuardianPhone"></p>
+		</div>
+		<div class='row'>
+			<h2>Pet count:</h2>
+			<p id="appCurrPets"></p>
+		</div>
+		<div class='row'>
+			<h2>Pet Vaccination:</h2>
+			<p id="appVaccination"></p>
+		</div>
+		<div class='row'>
+			<h2>Reason for pet no vaccinations:</h2>
+			<p id="appVaccinationReason"></p>
+		</div>
+		<div class='row'>
+			<h2>Do pets receive annual examination:</h2>
+			<p id="appPetExamine"></p>
+		</div>
+		<div class='row'>
+			<h2>Reason for no pet examinations:</h2>
+			<p id="appPetExamineReason"></p>
+		</div>
+		<div class='row'>
+			<h2>Why they are the best candidate:</h2>
+			<p id="appQualification"></p>
+		</div>
+		<div class='row'>
+			<h2>Where the animal will spend most time:</h2>
+			<p id="appPetTime"></p>
+		</div>
+		<div class='row'>
+			<h2>Financially able to provide medical for the animal:</h2>
+			<p id="appAffordableMedicine"></p>
+		</div>
+		<div class='row'>
+			<h2>Declawing:</h2>
+			<p id="appDeclaw"></p >
+		</div >
+		<div class='row'>
+			<h2>Acknowledgement for accuracy of this information:</h2>
+			<p id="appAcknowledgement"></p>
+		</div>
+		<div class='row'>
+			<h2>Acknowledgement that adoption of this animal is not guaranteed:</h2>
+			<p id="appAcknowledgementAdoption"></p>
+		</div>
+	</div>
+	</div >
+
+	<div class='appBlock'>
+		<h1>Pet Info</h1>
+		<div class='row'>
+			<h2>Name of desired pet:</h2>
+			<p id="petName"></p>
+		</div >
+		<img id="petImage" src="" alt="" />
+		<div class='row'>
+			<h2>Pet's Birthday:</h2>
+			<p id="petBirthday"></p>
+		</div >
+		<div class='row'>
+			<h2>Pet's Gender:</h2>
+			<p id="petGender"></p>
+		</div >
+		<div class='row'>
+			<h2>Pet's Medical:</h2>
+			<ul id="petMedical"></ul>
+		</div >
+		<div class='row'>
+			<h2>Pet's Color:</h2>
+			<p id="petColor"></p>
+		</div >
+		<div class='row'>
+			<h2>Pet's Breed:</h2>
+			<p id="petBreed"></p>
+		</div >
+		<div class='row'>
+			<h2>Pet's Species:</h2>
+			<p id="petSpecies"></p>
+		</div >
+		<div class='row'>
+			<h2>Pet's Personality:</h2>
+			<ul id="petPersonality"></ul>
+		</div >
+		<div class='row'>
+			<h2>Notes:</h2>
+			<p id="petNotes"></p>
+		</div >
+		<div class="choice">
+			<button id="accept">Accept</button>
+			<button id="decline">Decline</button>
+		</div>
+	</div >
+
+</main>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
 		integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>

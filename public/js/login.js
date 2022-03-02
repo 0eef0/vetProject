@@ -27,4 +27,8 @@
 //     } catch (error) {
 //         console.log(error.response.data);
 //     }
+// loginFormDOM.addEventListener('submit', async (e) => {
+//     e.preventDefault()
+//     console.log(e)
+//     // await axios.post('/adminLogin', (await axios.get('/api/v1/applications')).data)
 // });

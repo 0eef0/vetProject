@@ -36,8 +36,10 @@ app.use(passport.session());
 
 
 //middleware functions
-app.use(express.json())
+app.use(express.json({ limit: '16MB' }))
+app.use(express.urlencoded({ extended: false }))
 app.use('/api/v1/pets', routes);
+app.use('/api/v1/petImages', test);
 app.use('/api/v1/applications', routesApp);
 
 app.use(express.static("./public"));
@@ -87,6 +89,7 @@ require('./routes/Passport')(passport)
 app.use('/login', loginAdmin)
 
 // uncomment this when adding DB functionality
+
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);

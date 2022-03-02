@@ -52,7 +52,8 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote::before, blockquote::after,
+blockquote::before,
+blockquote::after,
 q::before,
 q::after {
   content: "";
@@ -100,19 +101,19 @@ pre {
   word-wrap: break-word;
 }
 
-input [type=radio] {
+input [type="radio"] {
   vertical-align: text-bottom;
 }
 
-input [type=checkbox] {
+input [type="checkbox"] {
   vertical-align: bottom;
 }
 
-.ie7 input [type=checkbox] {
+.ie7 input [type="checkbox"] {
   vertical-align: baseline;
 }
 
-.ie6 input[type=checkbox] {
+.ie6 input[type="checkbox"] {
   vertical-align: text-bottom;
 }
 
@@ -147,15 +148,15 @@ sub {
 
 .clickable,
 label,
-input[type=button],
-input[type=submit],
-input[type=file],
+input[type="button"],
+input[type="submit"],
+input[type="file"],
 button {
   cursor: pointer;
 }
 
 button,
-input[type=button] {
+input[type="button"] {
   width: auto;
   overflow: hidden;
 }
@@ -185,7 +186,7 @@ body {
 img {
   background: #f5f6fa;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 p {
@@ -208,35 +209,43 @@ hr {
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
   width: clamp(80%, 70%, 2000px);
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
-  margin: 5rem auto;
+  margin: 4rem auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 div.aboutUsSummary h1 {
   text-align: center;
+  padding: 1rem;
   font-size: calc(2vw + 1vh);
 }
-div.aboutUsSummary div {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1vw;
-}
 div.aboutUsSummary div p {
-  width: 40%;
   font-size: clamp(1.25rem, 2vw, 1.5rem);
+  display: block;
+  clear: both;
+  padding: 1rem;
+  text-align: left;
+}
+div.aboutUsSummary div p:first-of-type {
+  clear: none;
+  height: 100%;
+  padding-top: 0;
 }
 div.aboutUsSummary div img {
   width: 40%;
-  min-width: 8rem;
+  margin: 0 1rem;
+  float: left;
 }
 @media only screen and (max-width: 760px) {
   div.aboutUsSummary h1 {
     font-size: 1.25rem;
   }
   div.aboutUsSummary div {
+    display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vw;
   }
   div.aboutUsSummary div p {
     order: 2;
@@ -274,7 +283,7 @@ div.homeGallery {
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #f5f6fa;
-  margin: 5rem auto;
+  margin: 3rem auto;
 }
 #aboutUs #infoAboutUs h1 {
   text-align: center;
@@ -294,7 +303,7 @@ div.homeGallery {
   width: 40%;
   min-width: 8rem;
 }
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 975px) {
   #aboutUs #infoAboutUs h1 {
     font-size: 1.25rem;
   }
@@ -312,6 +321,17 @@ div.homeGallery {
     margin: 0.1rem;
   }
 }
+#aboutUs .teamContainer {
+  margin: 0 auto;
+  background-color: white;
+  width: clamp(80%, 70%, 2000px);
+  border-radius: 2px;
+}
+#aboutUs .teamContainer h1 {
+  color: #2d3436;
+  padding: 1rem;
+  margin: 0;
+}
 #aboutUs .rows {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -319,7 +339,9 @@ div.homeGallery {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
-  padding: 0 1rem;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
 }
 @media screen and (max-width: 1240px) {
   #aboutUs .rows {
@@ -338,12 +360,24 @@ div.homeGallery {
   overflow-y: auto;
   box-sizing: border-box;
   background: #f5f6fa;
-  padding: 30px;
-  margin: 15px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+#aboutUs .rows div h1 {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0.5rem;
+}
+#aboutUs .rows div p {
+  padding: 0 1rem;
+  padding-bottom: 1.5rem;
+  margin: 0.5rem;
+  text-align: left;
+  text-indent: 1.5rem;
 }
 #aboutUs .rows div img {
-  width: 80%;
-  margin-bottom: 10px;
+  width: auto;
+  display: block;
 }
 
 #adminRecords input {
@@ -351,7 +385,7 @@ div.homeGallery {
   width: 350px;
   border-radius: 50px;
   padding-left: 20px;
-  margin: 50px auto 10px auto;
+  margin: 2rem auto 2rem auto;
 }
 #adminRecords input search-cancel-button {
   cursor: pointer;
@@ -370,7 +404,8 @@ div.homeGallery {
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-flow: row;
   grid-gap: 1rem;
-  margin: 0.5rem 1rem;
+  margin: 1rem;
+  margin-top: 0.5rem;
 }
 @media screen and (max-width: 1280px) {
   .card-container {
@@ -395,7 +430,7 @@ div.petPage {
   justify-content: space-around;
   align-items: center;
   width: clamp(90%, 70%, 2000px);
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto 2rem auto;
   padding: 1rem;
   background-color: #f5f6fa;
 }
@@ -404,7 +439,7 @@ div.petPage #petImageNames li {
 }
 div.petPage #petImageNames li:hover {
   -webkit-text-decoration: line-through 2px red;
-          text-decoration: line-through 2px red;
+  text-decoration: line-through 2px red;
 }
 div.petPage div {
   width: 40%;
@@ -476,7 +511,7 @@ div.petPage div.petInfo .adopt-button {
     font-size: 1.25rem !important;
   }
   div.petPage div p,
-div.petPage div li {
+  div.petPage div li {
     font-size: 1rem !important;
   }
   div.petPage div.petGallery {
@@ -554,49 +589,72 @@ form#login button {
   margin: auto;
   margin-top: 2rem;
 }
-#adminIndApp main div {
+#adminIndApp main .appBlock {
   width: calc(50% - 3rem);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   text-align: center;
-  word-wrap: break-word;
   background-color: #f5f6fa;
+  word-wrap: break-word;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
-#adminIndApp main div h1 {
-  font-size: 1.7rem;
+#adminIndApp main .appBlock .row {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
 }
-#adminIndApp main div img {
+#adminIndApp main .appBlock h1 {
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+#adminIndApp main .appBlock h2 {
+  padding: 10px;
+}
+#adminIndApp main .appBlock p {
+  max-width: 100%;
+}
+#adminIndApp main .appBlock img {
   width: 100%;
 }
-#adminIndApp main div ul {
+#adminIndApp main .appBlock ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   list-style: inside;
+  margin: 1rem;
 }
-#adminIndApp main div .choice {
+#adminIndApp main .appBlock .choice {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 0;
+  margin-top: 0.5rem;
 }
-#adminIndApp main div .choice button {
+#adminIndApp main .appBlock .choice button {
   width: calc(50% - 1.3rem);
   height: 2rem;
 }
-#adminIndApp main div .choice button:nth-of-type(1) {
+#adminIndApp main .appBlock .choice button:nth-of-type(1) {
   background-color: #2ecc71;
 }
-#adminIndApp main div .choice button:nth-of-type(1):hover {
-  background-color: #208C4D;
+#adminIndApp main .appBlock .choice button:nth-of-type(1):hover {
+  background-color: #208c4d;
 }
-#adminIndApp main div .choice button:nth-of-type(2) {
+#adminIndApp main .appBlock .choice button:nth-of-type(2) {
   background-color: #d62828;
 }
-#adminIndApp main div .choice button:nth-of-type(2):hover {
-  background-color: #961D1D;
+#adminIndApp main .appBlock .choice button:nth-of-type(2):hover {
+  background-color: #961d1d;
 }
 @media screen and (max-width: 850px) {
-  #adminIndApp main div {
+  #adminIndApp main .appBlock {
     width: 100%;
   }
 }
@@ -731,8 +789,8 @@ form#login button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem auto;
-  width: clamp(90%, 800px, 50%);
+  margin: 1rem auto;
+  width: calc(100% - 2rem);
   background-color: #f5f6fa;
 }
 .filters .selection-buttons {
@@ -768,14 +826,14 @@ form#login button {
   background-color: #d8d8d8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 425px) {
   .filters {
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
   }
   .filters .selection-buttons,
-.filters .sorting-inputs {
+  .filters .sorting-inputs {
     font-size: 1.15rem;
     margin: 0.5rem;
   }
@@ -788,7 +846,7 @@ form#login button {
     gap: 1rem;
   }
   .filters .sorting-inputs button,
-.filters .sorting-inputs select {
+  .filters .sorting-inputs select {
     margin: 0 0.75rem;
   }
   .filters .sorting-inputs select {
@@ -812,11 +870,12 @@ div.carousel i.arrow {
   top: 50%;
   bottom: auto;
   font-size: 2rem;
-  color: #00000066;
+  color: #2d3436;
+  mix-blend-mode: difference;
   cursor: pointer;
 }
 div.carousel i.arrow:hover {
-  color: #00000099;
+  color: #222;
 }
 div.carousel i.arrow.leftArrow {
   left: 1vw;
@@ -835,7 +894,7 @@ div.carousel div.carouselImages .carouselImg {
   opacity: 0;
   transition: opacity 0.75s;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -849,6 +908,7 @@ div.carousel div.carouselBtnPanel {
   left: 0;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
 }
 div.carousel div.carouselBtnPanel button.carouselBtn {
@@ -864,7 +924,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 .card {
   width: 100%;
-  max-width: 550px;
   aspect-ratio: 16/9;
   margin: auto;
   background-color: white;
@@ -877,7 +936,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -939,7 +998,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     transition: transform 300ms ease;
   }
   .card .content p,
-.card .content .btnContainer {
+  .card .content .btnContainer {
     opacity: 0;
     transition: opacity 200ms linear;
   }
@@ -955,14 +1014,16 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     visibility: visible;
     display: block;
   }
-  .card:hover .content, .card:focus-within .content {
+  .card:hover .content,
+  .card:focus-within .content {
     transform: translateY(0);
   }
   .card:hover .content h2,
-.card:hover .content p,
-.card:hover .content .btnContainer, .card:focus-within .content h2,
-.card:focus-within .content p,
-.card:focus-within .content .btnContainer {
+  .card:hover .content p,
+  .card:hover .content .btnContainer,
+  .card:focus-within .content h2,
+  .card:focus-within .content p,
+  .card:focus-within .content .btnContainer {
     opacity: 1;
   }
 }
@@ -980,15 +1041,15 @@ footer .row {
 footer .row.top {
   flex-direction: row;
   justify-content: space-around;
+  align-items: space-around;
   color: #f5f6fa;
   padding-top: 1rem;
 }
 footer .row.top .col {
   display: flex;
-  max-width: 30vw;
   width: 100%;
   text-align: left;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 footer .row.top .col ul {
   margin: 0;
@@ -1003,6 +1064,7 @@ footer .row.top .col ul li.title {
   font-size: 110%;
   font-weight: bold;
   padding: 0.5rem;
+  padding-left: 0;
 }
 footer .row.top .col ul li a {
   color: #f5f6fa;
@@ -1011,33 +1073,13 @@ footer .row.top .col ul li a {
 footer .row.top .col ul li a:active {
   color: #f7941d;
 }
-footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
-  text-decoration: underline;
-}
-footer .row.top .col.desc {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-footer .row.top .col.desc h3 {
-  margin: 0;
-  padding: 0.5rem;
-  color: #f7941d;
-  font-size: 110%;
-}
-footer .row.top .col.desc a {
-  margin-left: 2vw;
-  color: #f5f6fa;
-  text-decoration: none;
-}
-footer .row.top .col.desc a:active {
-  color: #f7941d;
-}
-footer .row.top .col.desc a:hover, footer .row.top .col.desc a:focus {
+footer .row.top .col ul li a:hover,
+footer .row.top .col ul li a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
+  margin-top: 1.4rem;
+  margin-bottom: 2.4rem;
   height: 0;
 }
 footer .row .socials ul {
@@ -1061,16 +1103,24 @@ footer .row .socials ul li a {
 footer .row .socials ul li a:active {
   color: #f7941d;
 }
-footer .row .socials ul li a:hover, footer .row .socials ul li a:focus {
+footer .row .socials ul li a:hover,
+footer .row .socials ul li a:focus {
   text-decoration: underline;
 }
 footer .row p {
   margin: 0.5rem 0;
 }
 
-@media screen and (max-width: 456px) {
+@media screen and (max-width: 556px) {
   ul {
     text-align: center;
+  }
+
+  footer .top .col {
+    flex-direction: column;
+  }
+  footer .top .col .title {
+    padding-left: 0.5rem !important;
   }
 }
 form {
@@ -1087,11 +1137,11 @@ div.question {
 div.question h1 {
   font-size: clamp(1rem, 2vw, 1.4rem);
 }
-div.question input[type=text],
-div.question input[type=tel],
-div.question input[type=email],
-div.question input[type=number],
-div.question input[type=date] {
+div.question input[type="text"],
+div.question input[type="tel"],
+div.question input[type="email"],
+div.question input[type="number"],
+div.question input[type="date"] {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
@@ -1100,11 +1150,11 @@ div.question input[type=date] {
   font-size: 1.25rem;
   transition: border-bottom 0.3s;
 }
-div.question input[type=text]:focus,
-div.question input[type=tel]:focus,
-div.question input[type=email]:focus,
-div.question input[type=number]:focus,
-div.question input[type=date]:focus {
+div.question input[type="text"]:focus,
+div.question input[type="tel"]:focus,
+div.question input[type="email"]:focus,
+div.question input[type="number"]:focus,
+div.question input[type="date"]:focus {
   border-bottom: 4px solid #f7941d;
 }
 div.question textarea {
@@ -1121,17 +1171,17 @@ div.question textarea {
 div.question textarea:focus {
   border-bottom: 4px solid #f7941d;
 }
-div.question input[type=text],
-div.question input[type=tel],
-div.question input[type=email],
-div.question input[type=number],
+div.question input[type="text"],
+div.question input[type="tel"],
+div.question input[type="email"],
+div.question input[type="number"],
 div.question textarea {
   position: relative;
 }
-div.question input[type=text]::after,
-div.question input[type=tel]::after,
-div.question input[type=email]::after,
-div.question input[type=number]::after,
+div.question input[type="text"]::after,
+div.question input[type="tel"]::after,
+div.question input[type="email"]::after,
+div.question input[type="number"]::after,
 div.question textarea::after {
   content: "";
   position: absolute;
@@ -1162,6 +1212,7 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1188,7 +1239,6 @@ button#submitAdoptForm {
 .infoBlock .record.template {
   border-radius: 10px;
   font-weight: bold;
-  margin: 30px;
 }
 .infoBlock .record.template p {
   cursor: pointer;
@@ -1198,10 +1248,15 @@ button#submitAdoptForm {
   padding-left: 0;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-weight: bold;
+}
+.infoBlock .record .moreInfo a,
+.infoBlock .record .moreInfo a:visited {
+  color: inherit;
+  text-decoration: none;
 }
 .infoBlock .appl {
   width: 75%;
@@ -1225,7 +1280,7 @@ div#newPet form {
   background-color: #f5f6fa;
   width: 80%;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 div#newPet form h1 {
   font-size: 3rem;
@@ -1249,8 +1304,9 @@ div#newPet form div#imageInput div#images {
   }
 }
 div#newPet form div#imageInput,
-div#newPet form input[type=text],
-div#newPet form input[type=date],
+div#newPet form input[type="text"],
+div#newPet form input[type="date"],
+div#newPet form input[type="url"],
 div#newPet form textarea,
 div#newPet form select {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1266,8 +1322,9 @@ div#newPet form select {
   transition: border-bottom 0.3s;
 }
 div#newPet form div#imageInput:focus,
-div#newPet form input[type=text]:focus,
-div#newPet form input[type=date]:focus,
+div#newPet form input[type="text"]:focus,
+div#newPet form input[type="date"]:focus,
+div#newPet form input[type="url"]:focus,
 div#newPet form textarea:focus,
 div#newPet form select:focus {
   border-bottom: 4px solid #f7941d;
@@ -1278,7 +1335,7 @@ div#newPet form button {
   font-family: inherit;
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
-  margin: 0 auto;
+  margin: 1.5rem auto;
 }
 
 div.confirmationBox {
@@ -1342,11 +1399,11 @@ div.adminPetInfo select {
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
 }
-div.adminPetInfo input[type=file] {
+div.adminPetInfo input[type="file"] {
   background-color: transparent;
   border: none;
 }
 div.adminPetInfo textarea {
   width: 100%;
   height: 10vh;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
