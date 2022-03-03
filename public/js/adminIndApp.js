@@ -48,12 +48,12 @@ async function getApplInfo() {
 		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
 		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
-		const curPet = pets.find(pet => pet._id === curApp.wantedPetId);
+		const curPet = pets.find(pet => pet.id === curApp.wantedPetId);
 
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
 		const appBirthday = new Date(curApp.birthday).toLocaleDateString('PST', options)
-		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
+		const petBDay = new Date(curPet.birthday).toLocaleDateString('PST', options)
 		
 		console.log(appDateCreated)
 		appDateCreated.innerHTML = dateCreated;

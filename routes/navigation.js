@@ -27,8 +27,8 @@ navigation.get('/adminLogin', (req, res) => {
 navigation.get('/adminHome',(req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminApp.html'));
 })
-navigation.get('/adminnavigationlication', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../public/adminIndnavigation.html'));
+navigation.get('/adminApplication', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../public/adminIndApp.html'));
 })
 navigation.get('/adminPets', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminPets.html'));
