@@ -24,8 +24,8 @@ navigation.get('/adoptionform', (req, res) => {
 navigation.get('/adminLogin', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminLogin.html'));
 })
-navigation.get('/adminHome', /* loggedIn, */(req, res) => {
-    res.sendFile(path.resolve(__dirname, '../public/adminnavigation.html'));
+navigation.get('/adminHome',(req, res) => {
+    res.sendFile(path.resolve(__dirname, '../public/adminIndApp.html'));
 })
 navigation.get('/adminnavigationlication', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminIndnavigation.html'));
