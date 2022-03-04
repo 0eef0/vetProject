@@ -1,7 +1,8 @@
 const main = document.querySelector('#adminIndApp main');
 
-const recordDrop = "this.parentElement.nextElementSibling.style.display = (this.parentElement.nextElementSibling.style.display === 'block') ? 'none' : 'block'";
+const url = "/api/v1/applications";
 
+const petAppInfo = document.querySelector('.petAppInfo');
 const appDateCreated = document.querySelector('#appDateCreated');
 const appName = document.querySelector('#appName');
 const appPetWanted = document.querySelector('#appPetWanted');
@@ -94,9 +95,86 @@ async function getApplInfo() {
 		petSpecies.innerHTML = curPet.Species;
 		petPersonality.innerHTML = curPet.Personality.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)
 		petNotes.innerHTML = curPet.Notes;
+
+		petAppInfo.innerHTML += `
+			<div class="choice">
+				<button id="accept" onClick="confirmAcceptApp('${curApp._id}')">Accept</button>
+				<button id="decline" onClick="confirmDeclineApp('${curApp._id}')">Decline</button>
+			</div>	
+		`
 	}
 	catch (error) {
 		console.log(error)
 	}
 }
 getApplInfo()
+
+const confirmAcceptApp = async (id) => {
+	const acceptAppPopup = new Modal({
+			title: 'Confirm Application Acceptance',
+			content: 'Are you sure you want to accept this application?',
+			buttons: [
+					{
+							title: 'Yes',
+							type: 'primary',
+							action () {
+									acceptApplication(id)
+									acceptAppPopup.close()
+							}
+					}, {
+							title: 'Cancel',
+							type: 'red',
+							action () {
+								acceptAppPopup.close()
+							}
+					}
+			]
+	})
+	
+	acceptAppPopup.show()
+};
+const acceptApplication = async (id) => {
+	let updatedApplication = {
+		accepted: true,
+		rejected: false
+	}
+	console.log(id)
+	await axios.patch(`${url}/${id}`, updatedApplication);
+}
+
+const confirmDeclineApp = async (id) => {
+	const declineAppPopup = new Modal({
+			title: 'Confirm Application Decline',
+			content: 'Are you sure you want to decline this application?',
+			buttons: [
+					{
+							title: 'Yes',
+							type: 'primary',
+							action () {
+								declineApplication(id)
+								declineAppPopup.close()
+							}
+					}, {
+							title: 'Cancel',
+							type: 'red',
+							action () {
+								declineAppPopup.close()
+							}
+					}
+			]
+	})
+	
+	declineAppPopup.show()
+};	
+const declineApplication = async (id) => {
+	const updatedApplication = {
+		accepted: false,
+		rejected: true
+	}
+	try {
+    await axios.patch(`${url}/${id}`, updatedApplication);
+		console.log('success')
+	} catch (error) {
+		console.error(error)
+	}
+}
