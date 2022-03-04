@@ -1,8 +1,8 @@
 const express = require('express');
 const navigation = express.Router();
 const path = require('path');
-// const ensureAuthenticated = require('../middleware/auth')
-const { ensureAuthenticated } = require('connect-ensure-authenticated');
+const {ensureAuthenticated} = require('../middleware/auth')
+// const { ensureAuthenticated } = require('connect-ensure-authenticated');
 
 // Front end
 navigation.get('/', (req, res) => {
@@ -25,7 +25,7 @@ navigation.get('/adoptionform', (req, res) => {
 navigation.get('/adminLogin', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminLogin.html'));
 })
-navigation.get('/adminHome', ensureAuthenticated(), (req, res) => {
+navigation.get('/adminHome', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminApp.html'));
 })
 navigation.get('/adminApplication', (req, res) => {

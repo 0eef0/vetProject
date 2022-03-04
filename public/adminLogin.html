@@ -15,6 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <script type="module" src="./js/loginForm.js"></script>
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
     <title>Admin Panel</title>
@@ -40,7 +41,7 @@
         </ul>
     </nav>
 
-    <form id="login" action="/adminLogin" method="POST">
+    <form id="login">
         <h1>West-MEC Veterinary Science</h1>
         <br>
         <img src="./assets/VetLogo.svg" alt="West-MEC Veterinary Science Logo">
@@ -57,6 +58,8 @@
             <input type="password" id="loginPass" name="password">
         </section>
         <button type="submit">Login</button>
+  
+        <p class="form-error">There Has Been an Error</p>
     </form>
 
 
