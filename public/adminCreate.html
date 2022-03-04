@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/VetLogo.svg" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- link to css -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Vet Science</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul>
+            <div class="align-left">
+                <li class="nav-logo"><img src="./assets/VetLogoNoBorder.png" alt="West-MEC Veterinary Science Logo">
+                </li>
+                <li class="nav-item title"><a href="/">West-MEC Veterinary Science</a></li>
+                <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
+            </div>
+            <div class="align-right links closed">
+                <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
+                <li class="nav-item"><a class="link" href="/adminPets">Pets</a></li>
+                <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
+                <li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div id="newUserConfirmationBox" class="confirmationBox" onclick="location.reload()">
+        <div>
+            <h1 id="confirmationMessage"></h1>
+        </div>
+    </div>
+
+    <div id="newUser">
+        <form class="newUserForm">
+            <h1>Create a new user</h1>
+            <input type="text" placeholder="Name" id="name" required>
+            <input type="text" placeholder="Username" id="username" required>
+            <input type="email" placeholder="User Email" id="email" required>
+            <input type="password" placeholder="User Password" id="pass" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- other js files -->
+    <script src="./js/navbar.js"></script>
+    <script src="./js/adminCreate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+div#newUser {
+  margin-top: 4rem;
+  form {
+    background-color: $light-background;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      color: $accent-color;
+    }
+    div#imageInput,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+      background-color: rgba($color: $clr-black, $alpha: 0.1);
+      border-bottom: 2px solid $accent-color;
+      padding: 1rem;
+      width: 100%;
+      outline: none;
+      font-size: 1.25rem;
+      margin: 0.1rem auto;
+      font-family: inherit;
+      color: inherit;
+      resize: none;
+      transition: border-bottom 0.3s;
+      &:focus {
+        border-bottom: 4px solid $accent-color;
+      }
+    }
+    button {
+      background-color: $accent-color;
+      color: $clr-white;
+      font-family: inherit;
+      padding: 1rem;
+      width: clamp(200px, 10%, 500px);
+      margin: 1.5rem auto;
+    }
+  }
+}

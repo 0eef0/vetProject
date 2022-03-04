@@ -40,6 +40,9 @@ navigation.get('/adminPet', (req, res) => {
 navigation.get('/adminRecords', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminRecords.html'))
 })
+navigation.get('/adminCreate', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../public/adminCreate.html'))
+})
 
 navigation.post('/adminLogin', (req, res) => {
     console.log(req.body)
