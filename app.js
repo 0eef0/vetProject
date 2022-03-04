@@ -6,12 +6,14 @@ const navigation = require('./routes/navigation.js');
 const routesApp = require('./routes/applicationRoute.js');
 const connectDB = require('./db/connect.js');
 const passport = require('passport');
+require('./middleware/Passport')(passport)
 const flash = require('connect-flash');
 // const loginRoute = require('./routes/login');
 const loginAdmin = require('./routes/loginAPI')
 const populateProducts = require('./populate');
 const session = require('express-session');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 require('dotenv').config()
 const gridFSRoutes = require("./routes/gridFSroute")
 
@@ -35,7 +37,11 @@ app.use(passport.session());
 
 //middleware functions
 app.use(express.json({ limit: '16MB' }))
-app.use(express.urlencoded({ extended: false }))
+
+// app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
 app.use('/api/v1/pets', routes);
 app.use('/api/v1/petImages', gridFSRoutes);
 app.use('/api/v1/applications', routesApp);
@@ -44,11 +50,8 @@ app.use('/', navigation);
 app.use(express.static("./public"));
 
 // routes for login page
-app.use('/', require('./routes/login'))
-require('./middleware/Passport')(passport)
+app.use('/adminLogin', require('./routes/login'))
 app.use('/login', loginAdmin)
-
-// uncomment this when adding DB functionality
 
 const start = async () => {
     try {

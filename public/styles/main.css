@@ -52,8 +52,7 @@ blockquote,
 q {
   quotes: none;
 }
-blockquote::before,
-blockquote::after,
+blockquote::before, blockquote::after,
 q::before,
 q::after {
   content: "";
@@ -101,19 +100,19 @@ pre {
   word-wrap: break-word;
 }
 
-input [type="radio"] {
+input [type=radio] {
   vertical-align: text-bottom;
 }
 
-input [type="checkbox"] {
+input [type=checkbox] {
   vertical-align: bottom;
 }
 
-.ie7 input [type="checkbox"] {
+.ie7 input [type=checkbox] {
   vertical-align: baseline;
 }
 
-.ie6 input[type="checkbox"] {
+.ie6 input[type=checkbox] {
   vertical-align: text-bottom;
 }
 
@@ -148,15 +147,15 @@ sub {
 
 .clickable,
 label,
-input[type="button"],
-input[type="submit"],
-input[type="file"],
+input[type=button],
+input[type=submit],
+input[type=file],
 button {
   cursor: pointer;
 }
 
 button,
-input[type="button"] {
+input[type=button] {
   width: auto;
   overflow: hidden;
 }
@@ -185,7 +184,6 @@ body {
 
 img {
   background: #f5f6fa;
-  -o-object-fit: contain;
   object-fit: contain;
 }
 
@@ -333,8 +331,6 @@ div.homeGallery {
   margin: 0;
 }
 #aboutUs .rows {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -438,7 +434,6 @@ div.petPage #petImageNames li {
   font-size: 1rem;
 }
 div.petPage #petImageNames li:hover {
-  -webkit-text-decoration: line-through 2px red;
   text-decoration: line-through 2px red;
 }
 div.petPage div {
@@ -479,8 +474,6 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: square;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -494,8 +487,6 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -511,7 +502,7 @@ div.petPage div.petInfo .adopt-button {
     font-size: 1.25rem !important;
   }
   div.petPage div p,
-  div.petPage div li {
+div.petPage div li {
     font-size: 1rem !important;
   }
   div.petPage div.petGallery {
@@ -591,8 +582,6 @@ form#login button {
 }
 #adminIndApp main .appBlock {
   width: calc(50% - 3rem);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
   background-color: #f5f6fa;
@@ -645,13 +634,13 @@ form#login button {
   background-color: #2ecc71;
 }
 #adminIndApp main .appBlock .choice button:nth-of-type(1):hover {
-  background-color: #208c4d;
+  background-color: #208C4D;
 }
 #adminIndApp main .appBlock .choice button:nth-of-type(2) {
   background-color: #d62828;
 }
 #adminIndApp main .appBlock .choice button:nth-of-type(2):hover {
-  background-color: #961d1d;
+  background-color: #961D1D;
 }
 @media screen and (max-width: 850px) {
   #adminIndApp main .appBlock {
@@ -833,7 +822,7 @@ form#login button {
     flex-wrap: wrap;
   }
   .filters .selection-buttons,
-  .filters .sorting-inputs {
+.filters .sorting-inputs {
     font-size: 1.15rem;
     margin: 0.5rem;
   }
@@ -846,7 +835,7 @@ form#login button {
     gap: 1rem;
   }
   .filters .sorting-inputs button,
-  .filters .sorting-inputs select {
+.filters .sorting-inputs select {
     margin: 0 0.75rem;
   }
   .filters .sorting-inputs select {
@@ -893,7 +882,6 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
@@ -935,7 +923,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 .card .content {
@@ -989,8 +976,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -998,7 +983,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     transition: transform 300ms ease;
   }
   .card .content p,
-  .card .content .btnContainer {
+.card .content .btnContainer {
     opacity: 0;
     transition: opacity 200ms linear;
   }
@@ -1014,16 +999,14 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
     visibility: visible;
     display: block;
   }
-  .card:hover .content,
-  .card:focus-within .content {
+  .card:hover .content, .card:focus-within .content {
     transform: translateY(0);
   }
   .card:hover .content h2,
-  .card:hover .content p,
-  .card:hover .content .btnContainer,
-  .card:focus-within .content h2,
-  .card:focus-within .content p,
-  .card:focus-within .content .btnContainer {
+.card:hover .content p,
+.card:hover .content .btnContainer, .card:focus-within .content h2,
+.card:focus-within .content p,
+.card:focus-within .content .btnContainer {
     opacity: 1;
   }
 }
@@ -1073,8 +1056,7 @@ footer .row.top .col ul li a {
 footer .row.top .col ul li a:active {
   color: #f7941d;
 }
-footer .row.top .col ul li a:hover,
-footer .row.top .col ul li a:focus {
+footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
@@ -1103,8 +1085,7 @@ footer .row .socials ul li a {
 footer .row .socials ul li a:active {
   color: #f7941d;
 }
-footer .row .socials ul li a:hover,
-footer .row .socials ul li a:focus {
+footer .row .socials ul li a:hover, footer .row .socials ul li a:focus {
   text-decoration: underline;
 }
 footer .row p {
@@ -1137,11 +1118,11 @@ div.question {
 div.question h1 {
   font-size: clamp(1rem, 2vw, 1.4rem);
 }
-div.question input[type="text"],
-div.question input[type="tel"],
-div.question input[type="email"],
-div.question input[type="number"],
-div.question input[type="date"] {
+div.question input[type=text],
+div.question input[type=tel],
+div.question input[type=email],
+div.question input[type=number],
+div.question input[type=date] {
   background-color: rgba(34, 34, 34, 0.1);
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
@@ -1150,11 +1131,11 @@ div.question input[type="date"] {
   font-size: 1.25rem;
   transition: border-bottom 0.3s;
 }
-div.question input[type="text"]:focus,
-div.question input[type="tel"]:focus,
-div.question input[type="email"]:focus,
-div.question input[type="number"]:focus,
-div.question input[type="date"]:focus {
+div.question input[type=text]:focus,
+div.question input[type=tel]:focus,
+div.question input[type=email]:focus,
+div.question input[type=number]:focus,
+div.question input[type=date]:focus {
   border-bottom: 4px solid #f7941d;
 }
 div.question textarea {
@@ -1171,17 +1152,17 @@ div.question textarea {
 div.question textarea:focus {
   border-bottom: 4px solid #f7941d;
 }
-div.question input[type="text"],
-div.question input[type="tel"],
-div.question input[type="email"],
-div.question input[type="number"],
+div.question input[type=text],
+div.question input[type=tel],
+div.question input[type=email],
+div.question input[type=number],
 div.question textarea {
   position: relative;
 }
-div.question input[type="text"]::after,
-div.question input[type="tel"]::after,
-div.question input[type="email"]::after,
-div.question input[type="number"]::after,
+div.question input[type=text]::after,
+div.question input[type=tel]::after,
+div.question input[type=email]::after,
+div.question input[type=number]::after,
 div.question textarea::after {
   content: "";
   position: absolute;
@@ -1222,8 +1203,6 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1247,9 +1226,6 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   font-weight: bold;
 }
@@ -1260,8 +1236,6 @@ button#submitAdoptForm {
 }
 .infoBlock .appl {
   width: 75%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1304,9 +1278,9 @@ div#newPet form div#imageInput div#images {
   }
 }
 div#newPet form div#imageInput,
-div#newPet form input[type="text"],
-div#newPet form input[type="date"],
-div#newPet form input[type="url"],
+div#newPet form input[type=text],
+div#newPet form input[type=date],
+div#newPet form input[type=url],
 div#newPet form textarea,
 div#newPet form select {
   background-color: rgba(34, 34, 34, 0.1);
@@ -1322,9 +1296,9 @@ div#newPet form select {
   transition: border-bottom 0.3s;
 }
 div#newPet form div#imageInput:focus,
-div#newPet form input[type="text"]:focus,
-div#newPet form input[type="date"]:focus,
-div#newPet form input[type="url"]:focus,
+div#newPet form input[type=text]:focus,
+div#newPet form input[type=date]:focus,
+div#newPet form input[type=url]:focus,
 div#newPet form textarea:focus,
 div#newPet form select:focus {
   border-bottom: 4px solid #f7941d;
@@ -1381,8 +1355,6 @@ div.adminPetInfo form button {
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -1399,7 +1371,7 @@ div.adminPetInfo select {
   border-bottom: 2px solid #f7941d;
   padding: 1rem;
 }
-div.adminPetInfo input[type="file"] {
+div.adminPetInfo input[type=file] {
   background-color: transparent;
   border: none;
 }
@@ -1436,9 +1408,7 @@ div.adminPetInfo textarea {
   overflow: hidden;
   animation-duration: 500ms;
   transition: all 100ms linear;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .modal-container .background .modal .title {
   border-top: 5px solid #f7941d;
@@ -1458,21 +1428,11 @@ div.adminPetInfo textarea {
   display: flex;
   align-items: center;
 }
-.modal-container
-  .background
-  .modal
-  .title
-  .container-actions
-  .fullscreen-modal {
+.modal-container .background .modal .title .container-actions .fullscreen-modal {
   transition: color 100ms linear;
   cursor: pointer;
 }
-.modal-container
-  .background
-  .modal
-  .title
-  .container-actions
-  .fullscreen-modal:hover {
+.modal-container .background .modal .title .container-actions .fullscreen-modal:hover {
   color: black;
 }
 .modal-container .background .modal .title .container-actions .close-modal {
@@ -1480,12 +1440,7 @@ div.adminPetInfo textarea {
   cursor: pointer;
   margin-left: 0.4rem;
 }
-.modal-container
-  .background
-  .modal
-  .title
-  .container-actions
-  .close-modal:hover {
+.modal-container .background .modal .title .container-actions .close-modal:hover {
   color: #bb2a2a;
 }
 .modal-container .background .modal .content {
@@ -1563,6 +1518,54 @@ div.adminPetInfo textarea {
   100% {
     border-top: 5px solid #f7941d;
   }
+}
+div#newUser {
+  margin-top: 4rem;
+}
+div#newUser form {
+  background-color: #f5f6fa;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+div#newUser form h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #f7941d;
+}
+div#newUser form div#imageInput,
+div#newUser form input[type=text],
+div#newUser form input[type=email],
+div#newUser form input[type=password],
+div#newUser form textarea,
+div#newUser form select {
+  background-color: rgba(34, 34, 34, 0.1);
+  border-bottom: 2px solid #f7941d;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  font-size: 1.25rem;
+  margin: 0.1rem auto;
+  font-family: inherit;
+  color: inherit;
+  resize: none;
+  transition: border-bottom 0.3s;
+}
+div#newUser form div#imageInput:focus,
+div#newUser form input[type=text]:focus,
+div#newUser form input[type=email]:focus,
+div#newUser form input[type=password]:focus,
+div#newUser form textarea:focus,
+div#newUser form select:focus {
+  border-bottom: 4px solid #f7941d;
+}
+div#newUser form button {
+  background-color: #f7941d;
+  color: #fff;
+  font-family: inherit;
+  padding: 1rem;
+  width: clamp(200px, 10%, 500px);
+  margin: 1.5rem auto;
 }
 
 /*# sourceMappingURL=main.css.map */

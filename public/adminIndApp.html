@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles/main.css">
 	<title>Vet Admin - Application</title>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body id="adminIndApp">
@@ -137,7 +139,7 @@
 	</div>
 	</div >
 
-	<div class='appBlock'>
+	<div class='appBlock petAppInfo'>
 		<h1>Pet Info</h1>
 		<div class='row'>
 			<h2>Name of desired pet:</h2>
@@ -176,10 +178,6 @@
 			<h2>Notes:</h2>
 			<p id="petNotes"></p>
 		</div >
-		<div class="choice">
-			<button id="accept">Accept</button>
-			<button id="decline">Decline</button>
-		</div>
 	</div >
 
 </main>
@@ -187,8 +185,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
 		integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="js/adminIndApp.js"></script>
 	<script src="./js/navbar.js"></script>
+	<script src="./js/modal.class.js"></script>
+	<script src="./js/adminIndApp.js"></script>
 </body>
 
 </html>
