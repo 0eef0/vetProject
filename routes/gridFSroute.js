@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const { gridUpload, gridGetAll } = require('../controllers/mavtest');
+const { imgGridUpload, getGridImgs, getGridImg } = require('../controllers/gridFsTest');
 
 //Controllers for pets
-router.route('/').post(gridUpload);
-// router.route('/:id').get(get).patch(update).delete(deleteIt);
+router.route('/').get(getGridImgs).post(imgGridUpload);
+router.route('/:id').get(getGridImg);
 
 module.exports = router;

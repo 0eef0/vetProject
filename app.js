@@ -13,6 +13,7 @@ const populateProducts = require('./populate');
 const session = require('express-session');
 const mongoose = require('mongoose');
 require('dotenv').config()
+const gridFSRoutes = require("./routes/gridFSroute")
 
 const port = process.env.PORT || 5000;
 
@@ -36,14 +37,14 @@ app.use(passport.session());
 app.use(express.json({ limit: '16MB' }))
 app.use(express.urlencoded({ extended: false }))
 app.use('/api/v1/pets', routes);
-//app.use('/api/v1/petImages', test);
+app.use('/api/v1/petImages', gridFSRoutes);
 app.use('/api/v1/applications', routesApp);
 app.use('/', navigation);
 
 app.use(express.static("./public"));
 
 // routes for login page
-app.use('/',require('./routes/login'))
+app.use('/', require('./routes/login'))
 require('./middleware/Passport')(passport)
 app.use('/login', loginAdmin)
 
