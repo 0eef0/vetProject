@@ -39,38 +39,38 @@ newPetFormDOM.addEventListener('submit', async (e) => {
     const petImagesInput = document.getElementsByClassName('petImg');
     const petImages = [];
 
-    for (let i = 0; i < petImagesInput.length; i++) {
-        var fileObject = petImagesInput[i].files[0];
-        var fileReader = new FileReader();
-        fileReader.readAsDataURL(fileObject);
+    const fileReader = new FileReader();
+    function postData(i = 0) {
+        if (i === petImagesInput.length) return postPet();
+        fileReader.readAsDataURL(petImagesInput[i].files[0]);
         fileReader.onload = () => {
-            console.log(fileReader.result)
             petImages.push(fileReader.result);
+            postData(i + 1)
         };
     }
+    postData();
 
-    let petInfo = {
-        Name: petName,
-        Birthday: petBirthday,
-        Gender: petGender,
-        Species: petSpecies,
-        Color: petColor,
-        Breed: petBreed,
-        Medical: petMedical,
-        Personality: petPersonality,
-        Notes: petNotes,
-        // IMG: petImages
-    }
-    console.log(petInfo);
-    try {
-        await console.log("successful push");
-        await axios.post(url, petInfo);
-        await axios.post('/api/v1/petImages', petImages)
-        document.getElementsByClassName('newPetForm')[0].reset();
-        document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
-        document.getElementById('newPetConfirmationBox').style.display = 'flex';
-    } catch (err) {
-        console.log(err);
+    async function postPet() {
+        const petInfo = {
+            Name: petName,
+            Birthday: petBirthday,
+            Gender: petGender,
+            Species: petSpecies,
+            Color: petColor,
+            Breed: petBreed,
+            Medical: petMedical,
+            Personality: petPersonality,
+            Notes: petNotes,
+            IMG: []
+        }
+        try {
+            await axios.post('/api/v1/petImages', { petImages, petInfo })
+            document.getElementsByClassName('newPetForm')[0].reset();
+            document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
+            document.getElementById('newPetConfirmationBox').style.display = 'flex';
+        } catch (err) {
+            console.log(err);
+        }
     }
 });
 
@@ -91,13 +91,13 @@ const confirmDeletePet = async (id) => {
             {
                 title: 'Yes',
                 type: 'primary',
-                action () {
+                action() {
                     deletePet(id)
                 }
             }, {
                 title: 'Cancel',
                 type: 'red',
-                action () {
+                action() {
                     petDeletion.close()
                 }
             }
@@ -109,18 +109,18 @@ const confirmDeletePet = async (id) => {
 
 const showPets = async () => {
     try {
-        const { data: { pets }, } = await axios.get(url)
+        const { data: { pets }, } = await axios.get(url);
         if (pets.length < 1) {
             petCardContainerDOM.innerHTML = '<h5 class="empty-list">There are no pets available at this time...</h5>';
             return;
         }
-        const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map((pet) => {
-            const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
-            const bDay = new Date(Birthday)
-            console.log(pet)
+        const allPets = await Promise.all(pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map(async (pet) => {
+            const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = await pet;
+            if (IMG[0] === "62229048606439126d36c719" || IMG[0] === "62229090f52cb993e8d7cd53") var { data: img } = await axios.get(`/api/v1/petImages/${IMG[0]}`);
+            const bDay = new Date(Birthday);
             return `
             <div class="card">
-                <img src='${IMG[0]}' alt='${Name}' />
+                <img src='${img || ''}' alt='${Name}' />
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
@@ -131,8 +131,8 @@ const showPets = async () => {
                     </div>
                 </div>
             </div>`
-        }).reverse().join("")
-        petCardContainerDOM.innerHTML = allPets;
+        }))
+        petCardContainerDOM.innerHTML = allPets.reverse().join("");
     } catch (error) {
         console.error(error)
     }

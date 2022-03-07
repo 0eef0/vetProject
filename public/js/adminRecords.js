@@ -17,7 +17,8 @@ async function getInfoAboutUs(applications) {
 					<p>${creationDate}</p>
 					<p>${app.guardianEmail}</p>
 					<p>${app.guardianName}</p>
-					<p>${'s'}</p >
+					<p>${(app.accepted || app.rejected) ? 'Inactive' : 'Active'}</p>
+					<p>${(app.accepted) ? 'Accepted' : (app.rejected) ? 'Rejected' : ''}</p>
 					<a class="moreInfo" href="/adminApplication?_id=${app._id}">More Info...</a>
 				</div >
 			`

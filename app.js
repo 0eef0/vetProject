@@ -15,6 +15,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 require('dotenv').config()
+const gridFSRoutes = require("./routes/gridFSroute")
 
 const port = process.env.PORT || 5000;
 
@@ -42,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
 app.use('/api/v1/pets', routes);
-//app.use('/api/v1/petImages', test);
+app.use('/api/v1/petImages', gridFSRoutes);
 app.use('/api/v1/applications', routesApp);
 app.use('/', navigation);
 
