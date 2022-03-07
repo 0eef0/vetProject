@@ -44,7 +44,7 @@ const showPet = async () => {
 
     const carouselImages = IMG.map((image) => {
         return `
-        <img src="${image}" class="carouselImg">`
+        <img src="${image}" class="carouselImg" alt="${Name}">`
     }).join('');
     console.log(carouselImages)
     carouselImgContainerDOM.innerHTML = carouselImages;
