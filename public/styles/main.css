@@ -1568,4 +1568,33 @@ div#newUser form button {
   margin: 1.5rem auto;
 }
 
+div#currUsers {
+  background-color: #f5f6fa;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+div#currUsers table {
+  width: 100%;
+}
+div#currUsers table tbody tr td.userInfo {
+  width: 20%;
+}
+div#currUsers table tbody tr td.btnPanel {
+  display: flex;
+  justify-content: center;
+}
+div#currUsers table tbody tr td.btnPanel button {
+  width: 50%;
+  background-color: #f7941d;
+  color: #fff;
+  padding: 0.5rem;
+}
+div#currUsers table tbody tr td.password {
+  -webkit-text-security: disc;
+}
+div#currUsers table tbody tr td.password:hover {
+  -webkit-text-security: none;
+}
+
 /*# sourceMappingURL=main.css.map */
