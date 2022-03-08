@@ -7,17 +7,18 @@ const bucket = new mongodb.GridFSBucket(db, { bucketName: 'petImages' });
 
 async function imgGridUpload(req, res) {
     await client.connect();
-    // console.log(await req.body.petImages);
+    bucket.drop();
     await req.body.petImages.forEach(image => {
         const imgId = (mongodb.ObjectId()).toString();
         req.body.petInfo.IMG.push(imgId);
-        fs.writeFileSync('./inputImage.png', JSON.stringify(image));
+        fs.writeFileSync('./inputImage.png', image);
         fs.createReadStream('./inputImage.png').
             pipe(bucket.openUploadStream(imgId, {
                 chunkSizeBytes: 10485760
             }));
     })
     await db.collection('pets').insertOne(req.body.petInfo);
+    fs.unlinkSync('./inputImage.png');
 }
 
 async function getGridImgs(req, res) {
