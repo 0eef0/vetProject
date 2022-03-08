@@ -7,12 +7,12 @@ const getAll = async (req, res) => {
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-// const deleteAll = async (req, res) => {
-//     try {
-//         const products = await Product.deleteMany({});
-//         res.status(201).json({products});
-//     } catch (error) { res.status(500).json({msg: error}) }
-// }
+const deleteAll = async (req, res) => {
+    try {
+        const products = await Product.deleteMany({});
+        res.status(201).json({products});
+    } catch (error) { res.status(500).json({msg: error}) }
+}
 
 const create = async (req, res) => {
     try {
@@ -44,5 +44,5 @@ const deleteIt = async (req, res) => {
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-module.exports = { getAll, create, get, update, deleteIt };
+module.exports = { getAll, deleteAll, create, get, update, deleteIt };
 

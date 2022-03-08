@@ -44,13 +44,13 @@ const showPet = async () => {
 
     const carouselImages = IMG.map((image) => {
         return `
-        <img src="${image}" class="carouselImg">`
+        <img src="${image}" class="carouselImg" alt="${Name}">`
     }).join('');
     console.log(carouselImages)
     carouselImgContainerDOM.innerHTML = carouselImages;
 
     IMG.map((image, index) => {
-        carouselBtnContainerDOM.innerHTML += `<button class="carouselBtn" onclick="carouselChange(${index})"></button>`
+        carouselBtnContainerDOM.innerHTML += `<button class="carouselBtn" onclick="carouselChange(${index})" name="carouselBtn"></button>`
     })
     carouselBtnContainerDOM.firstElementChild.classList.add('activeBtn')
 

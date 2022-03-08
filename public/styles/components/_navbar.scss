@@ -36,7 +36,7 @@
 				}
 				&.active {
 					background-color: $accent-color !important;
-					color: $font-light;
+					// color: $font-light;
 					&:hover {
 						filter: brightness(0.8);
 					}
