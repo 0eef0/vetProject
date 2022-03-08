@@ -17,7 +17,7 @@ var filterPetSelection = '';
 let imgAmount = 3;
 const addImg = () => {
     if (imgAmount < 12) {
-        document.getElementById('images').innerHTML += '<input type="url" class="petImg" placeholder="Imgur Link" required><br>';
+        document.getElementById('images').innerHTML += '<input type="file" class="petImg" name="img" accept="image/*">';
         imgAmount++;
     } else {
         document.getElementById('addImgBtn').style.display = 'none';
