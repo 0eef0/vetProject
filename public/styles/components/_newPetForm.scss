@@ -8,7 +8,7 @@ div#newPet {
     h1 {
       font-size: 3rem;
       text-align: center;
-      color: $accent-color;
+      color: $clr-black;
     }
     div#imageInput {
       display: flex;
@@ -49,7 +49,7 @@ div#newPet {
     }
     button {
       background-color: $accent-color;
-      color: $clr-white;
+      color: $clr-black;
       font-family: inherit;
       padding: 1rem;
       width: clamp(200px, 10%, 500px);

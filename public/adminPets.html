@@ -50,12 +50,12 @@
         <form class="newPetForm">
             <h1>Add a new pet!</h1>
             <input type="text" placeholder="Pet Name" id="petName" required>
-            <input type="date" placeholder="Pet Birthday" id="petBirthday" required>
-            <select name="gender" id="petGender" required>
+            <input type="date" placeholder="Pet Birthday" id="petBirthday" title="Pet birthday" required>
+            <select name="gender" id="petGender" title="Pet gender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
-            <select name="species" id="petSpecies" required>
+            <select name="species" id="petSpecies" title="Pet species" required>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
             </select>
@@ -69,7 +69,7 @@
             <div id="imageInput">
                 <p>Images:</p>
                 <div id="images">
-                    <input type="file" class="petImg" name="img" accept="image/*">
+                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
                     <!-- <input type="url" class="petImg" placeholder="Imgur Link" required><br>
                     <input type="url" class="petImg" placeholder="Imgur Link" required><br>
                     <input type="url" class="petImg" placeholder="Imgur Link" required><br> -->
