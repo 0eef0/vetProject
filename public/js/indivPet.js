@@ -50,7 +50,7 @@ const showPet = async () => {
     carouselImgContainerDOM.innerHTML = carouselImages;
 
     IMG.map((image, index) => {
-        carouselBtnContainerDOM.innerHTML += `<button class="carouselBtn" onclick="carouselChange(${index})" name="carouselBtn"></button>`
+        carouselBtnContainerDOM.innerHTML += `<button class="carouselBtn" onclick="carouselChange(${index})" title="carouselBtn"></button>`
     })
     carouselBtnContainerDOM.firstElementChild.classList.add('activeBtn')
 
