@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js';
-import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signOut, updateProfile } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyD3xChQTTgJDW9Fiv8XddObAyBkTEoeCY4",
   authDomain: "vet-website-b87a8.firebaseapp.com",
@@ -15,6 +15,15 @@ console.log('this is a test')
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log('user logged in')
+    console.log(user)
+
+    // updateProfile(auth.currentUser, {
+    //   displayName: "admin"
+    // }).then(() => {
+    //   console.log('profile updated')
+    // }).catch((error) => {
+    //   console.error(error)
+    // })
   } else {
     console.log('no user is signed in')
     window.location = '/'
