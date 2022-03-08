@@ -50,7 +50,6 @@
         <form class="newUserForm">
             <h1>Create a new user</h1>
             <input type="text" placeholder="Name" id="name" required>
-            <input type="text" placeholder="Username" id="username" required>
             <input type="email" placeholder="User Email" id="email" required>
             <input type="password" placeholder="User Password" id="pass" required>
             <button type="submit">Submit</button>
@@ -58,18 +57,12 @@
     </div>
     <br>
     <div id="currUsers">
-        <table>
-            <th scope="row">
-                <tr>
-                    <td>Name</td>
-                    <td>Username</td>
-                    <td>Email</td>
-                    <td>Password (hover to see)</td>
-                    <td></td>
-                </tr>
-            </th>
-            <tbody></tbody>
-        </table>
+        <div id="userHead">
+            <p class="name">Name</p>
+            <p class="email">Email</p>
+            <p class="pass">Password</p>
+            <p></p>
+        </div>
     </div>
 
     <!-- axios -->

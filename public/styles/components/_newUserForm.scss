@@ -47,30 +47,37 @@ div#currUsers {
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
-  table {
-    width: 100%;
-    tbody {
-      tr {
-        td.userInfo {
-          width: 20%;
-        }
-        td.btnPanel {
-          display: flex;
-          justify-content: center;
-          button {
-            width: 50%;
-            background-color: $accent-color;
-            color: $clr-black;
-            padding: 0.5rem;
-          }
-        }
-        td.password {
-          -webkit-text-security: disc;
-          &:hover {
-            -webkit-text-security: none;
-          }
-        }
+  #userHead {
+    font-weight: bold;
+  }
+  .user,
+  #userHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    p {
+      min-width: max-content;
+    }
+    p.name {
+      width: 15%;
+    }
+    p.email,
+    p.password {
+      width: 30%;
+    }
+    p.password {
+      -webkit-text-security: disc;
+      &:hover {
+        -webkit-text-security: none;
       }
+    }
+    button {
+      width: 15vw;
+      min-width: 150px;
+      background-color: $accent-color;
+      color: $clr-black;
+      padding: 0.5rem;
     }
   }
 }
