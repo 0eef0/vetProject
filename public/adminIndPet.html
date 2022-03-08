@@ -34,12 +34,12 @@
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
-                <li class="nav-item"><a class="link" href="/adminLogin">Account</a></li>
+				<li class="nav-item"><a class="link" id="logoutBtn">Logout</a></li>
             </div>
         </ul>
     </nav>
 
-    <a href="/adminPets">
+    <a href="/adminPets" title="return to admin pets">
         <div id="newPetConfirmationBox" class="confirmationBox">
             <div>
                 <h1 id="confirmationMessage"></h1>
@@ -50,17 +50,17 @@
     <div class="petPage">
         <div class="petInfo adminPetInfo">
             <!-- <h1 class="pet-name"></h1> -->
-            <input type="text" placeholder="name" class="pet-name">
+            <input type="text" placeholder="name" class="pet-name" title="pet name">
             <ul>
                 <div class="row">
                     <div class="col facts">
                         <li>
                             <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
-                            <input type="date" class="birthday">
+                            <input type="date" class="birthday" title="birthday">
                         </li>
                         <li>
                             <strong>Gender:</strong> <!-- <span class="gender"> -->
-                            <select name="petGender" id="petGender">
+                            <select name="petGender" id="petGender" title="pet gender">
                                 <option value="Male" id="maleSelector">Male</option>
                                 <option value="Female" id="femaleSelector">Female</option>
                             </select>
@@ -68,11 +68,11 @@
                         </li>
                         <li>
                             <strong>Color:</strong> <!-- <span class="color"></span> -->
-                            <input type="text" class="color">
+                            <input type="text" class="color" title="pet color">
                         </li>
                         <li>
                             <strong>Breed:</strong> <!-- <span class="breed"></span> -->
-                            <input type="text" class="breed">
+                            <input type="text" class="breed" title="pet breed">
                         </li>
                         <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
@@ -81,13 +81,13 @@
                             <!-- <ul class="medical">
                                 <li>drugs</li>
                             </ul> -->
-                            <textarea name="medical" class="medical"></textarea>
+                            <textarea name="medical" class="medical" title="medical info"></textarea>
                         </li>
                         <li><strong>Personality:</strong>
                             <!-- <ul class="personality">
                                 <li>stupid</li>
                             </ul> -->
-                            <textarea name="personality" class="personality"></textarea>
+                            <textarea name="personality" class="personality" title="pet personality"></textarea>
                         </li>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                     <strong>Additional Notes:</strong> <br />
                     <!-- <span class="notes">Pees on absolutely
                         everything!</span> -->
-                    <input type="text" class="notes">
+                    <input type="text" class="notes" title="Additional Notes">
                 </li>
                 <li class="edit-img">
                     <p><strong>Images:</strong></p>
@@ -179,6 +179,7 @@
     <!-- other js files -->
     <script src="./js/adminIndPet.js"></script>
     <script src="./js/navbar.js"></script>
+	<script type="module" src="./js/firebase.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@ div#newUser {
     h1 {
       font-size: 3rem;
       text-align: center;
-      color: $accent-color;
+      color: $clr-black;
     }
     div#imageInput,
     input[type="text"],
@@ -33,11 +33,51 @@ div#newUser {
     }
     button {
       background-color: $accent-color;
-      color: $clr-white;
+      color: $clr-black;
       font-family: inherit;
       padding: 1rem;
       width: clamp(200px, 10%, 500px);
       margin: 1.5rem auto;
+    }
+  }
+}
+
+div#currUsers {
+  background-color: $light-background;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  #userHead {
+    font-weight: bold;
+  }
+  .user,
+  #userHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    p {
+      min-width: max-content;
+    }
+    p.name {
+      width: 15%;
+    }
+    p.email,
+    p.password {
+      width: 30%;
+    }
+    p.password {
+      -webkit-text-security: disc;
+      &:hover {
+        -webkit-text-security: none;
+      }
+    }
+    button {
+      width: 15vw;
+      min-width: 150px;
+      background-color: $accent-color;
+      color: $clr-black;
+      padding: 0.5rem;
     }
   }
 }

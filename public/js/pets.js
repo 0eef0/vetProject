@@ -30,13 +30,13 @@ const showPets = async () => {
             // console.log(Birthday)
             return `
             <div class="card">
-                <img src='${IMG[0]}' alt='${Name}' />
+                <img src='/api/v1/petImages/${IMG[0]}' alt='${Name}' />
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
                     <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
                     <div class="btnContainer">
-                        <a href="/pet?id=${id}">More Info</a>
+                        <a href="/pet?id=${id}">More Pet Info</a>
                         </div>
                 </div>
             </div>`

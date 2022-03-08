@@ -51,7 +51,7 @@ app.use(express.static("./public"));
 
 // routes for login page
 app.use('/adminLogin', require('./routes/login'))
-app.use('/login', loginAdmin)
+app.use('/api/v1/login', loginAdmin)
 
 const start = async () => {
     try {
