@@ -42,15 +42,16 @@ newPetFormDOM.addEventListener('submit', async (e) => {
     const fileReader = new FileReader();
     function postData(i = 0) {
         if (i === petImagesInput.length) return postPet();
-        fileReader.readAsDataURL(petImagesInput[i].files[0]);
-        fileReader.onload = () => {
-            petImages.push(fileReader.result);
-            postData(i + 1)
-        };
+        // fileReader.readAsDataURL(petImagesInput[i].files[0]);
+        // fileReader.onload = () => {
+        petImages.push(petImagesInput[i].files[0]);
+        postData(i + 1)
+        // };
     }
     postData();
 
     async function postPet() {
+        console.log(petImages)
         const petInfo = {
             Name: petName,
             Birthday: petBirthday,
@@ -116,11 +117,11 @@ const showPets = async () => {
         }
         const allPets = await Promise.all(pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map(async (pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = await pet;
-            if (IMG[0] === "62229048606439126d36c719" || IMG[0] === "62229090f52cb993e8d7cd53") var { data: img } = await axios.get(`/api/v1/petImages/${IMG[0]}`);
+            const { data: img } = JSON.parse(await axios.get(`/api/v1/petImages/${IMG[0]}`));
             const bDay = new Date(Birthday);
             return `
             <div class="card">
-                <img src='${img || ''}' alt='${Name}' />
+                <img src='${img}' alt='${Name}' />
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
