@@ -30,7 +30,7 @@ const showPets = async () => {
             // console.log(Birthday)
             return `
             <div class="card">
-                <img src='${IMG[0]}' alt='${Name}' />
+                <img src='/api/v1/petImages/${IMG[0]}' alt='${Name}' />
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
