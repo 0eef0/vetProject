@@ -126,7 +126,7 @@ const showPets = async () => {
                     <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
-                        <a onclick="confirmDeletePet('${id}')">Delete</a>
+                        <a onclick="confirmDeletePet('${id}')" tabindex="0" role=link>Delete</a>
                     </div>
                 </div>
             </div>`
