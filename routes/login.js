@@ -17,7 +17,7 @@ app.post('/users', async (req, res) => {
         const hashedPassword = await bcrypt.hash(req.body.password, salt)
         console.log(`hashedPassword ${hashedPassword}`);
 
-        const user = {name: req.body.name, password: hashedPassword, email: req.body.email}
+        const user = { name: req.body.name, password: hashedPassword, email: req.body.email }
         users.push(user)
 
         res.status(201).send()
@@ -47,4 +47,4 @@ app.post('/users/login', async (req, res) => {
 //     res.redirect('/adminLogin');
 // })
 
-module.exports = Router;
+module.exports = app;

@@ -42,9 +42,9 @@ newPetFormDOM.addEventListener('submit', async (e) => {
     const fileReader = new FileReader();
     function postData(i = 0) {
         if (i === petImagesInput.length) return postPet();
-        fileReader.readAsDataURL(petImagesInput[i].files[0]);
+        fileReader.readAsText(petImagesInput[i].files[0]);
         fileReader.onload = () => {
-            petImages.push(fileReader.result);
+            petImages.push(fileReader.result.toString());
             postData(i + 1);
         };
     }
@@ -117,6 +117,7 @@ const showPets = async () => {
         }
         const allPets = await Promise.all(pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map(async (pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = await pet;
+            console.log(IMG[0])
             const { data: img } = await axios.get(`/api/v1/petImages/${IMG[0]}`);
             const bDay = new Date(Birthday);
             return `
