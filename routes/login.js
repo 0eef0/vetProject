@@ -47,4 +47,4 @@ app.post('/users/login', async (req, res) => {
 //     res.redirect('/adminLogin');
 // })
 
-module.exports = Router;
+module.exports = app;
