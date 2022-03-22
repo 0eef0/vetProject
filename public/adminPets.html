@@ -47,31 +47,29 @@
     </div>
 
     <div id="newPet">
-        <form class="newPetForm">
+        <form class="newPetForm" action='/api/v1/pets' method="post" enctype="multipart/form-data">
             <h1>Add a new pet!</h1>
-            <input type="text" placeholder="Pet Name" id="petName" required>
-            <input type="date" placeholder="Pet Birthday" id="petBirthday" title="Pet birthday" required>
-            <select name="gender" id="petGender" title="Pet gender" required>
+            <input type="text" placeholder="Pet Name" name="Name" required>
+            <input type="date" placeholder="Pet Birthday" name="Birthday" title="Pet birthday" required>
+            <select name="Gender" title="Pet gender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
-            <select name="species" id="petSpecies" title="Pet species" required>
+            <select name="Species" title="Pet species" required>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
             </select>
-            <input type="text" id="petColor" placeholder="Pet Color" required>
-            <input type="text" id="petBreed" placeholder="Pet Breed" required>
-            <textarea name="medical" id="petMedical" placeholder="Medical Details (separate by commas)"
-                required></textarea>
-            <textarea name="personality" id="petPersonality" placeholder="Personality Traits (separate by commas)"
-                required></textarea>
-            <input type="text" placeholder="Other Notes" id="petNotes">
+            <input type="text" name="Color" placeholder="Pet Color" required>
+            <input type="text" name="Breed" placeholder="Pet Breed" required>
+            <textarea name="Medical" placeholder="Medical Details (separate by commas)" required></textarea>
+            <textarea name="Personality" placeholder="Personality Traits (separate by commas)" required></textarea>
+            <input type="text" placeholder="Other Notes" name="Notes">
             <div id="imageInput">
                 <p>Images:</p>
                 <div id="images">
                     <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
-                    <!-- <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
-                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*"> -->
+                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
+                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
                 </div>
                 <i class="fas fa-plus" onclick="addImg();" id="addImgBtn"></i>
             </div>

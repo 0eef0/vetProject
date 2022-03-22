@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAll, deleteAll, create, get, update, deleteIt } = require('../controllers/petController')
+const { petUpload, petDelete } = require('../controllers/gridFs');
+const { getAll, deleteAll, get, update } = require('../controllers/petController')
 
 //Controllers for pets
-router.route('/').get(getAll).post(create).delete(deleteAll);
-router.route('/:id').get(get).patch(update).delete(deleteIt);
+router.route('/').get(getAll).post(petUpload).delete(deleteAll);
+router.route('/:id').get(get).patch(update).delete(petDelete);
 
 module.exports = router;

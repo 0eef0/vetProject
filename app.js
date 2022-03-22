@@ -16,10 +16,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 require('dotenv').config()
 const gridFSRoutes = require("./routes/gridFSroute")
+const upload = require('express-fileupload')
 
 const port = process.env.PORT || 5000;
 
 //important packages
+app.use(upload());
 app.use(session({
     secret: 'secret',
     resave: true,
