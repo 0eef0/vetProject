@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        required: [true, 'Must Provide a Status'],
+        default: "Admin",
         enum: {
             values: ['Admin', 'Master'],
             message: '{VALUE} is not supported',
