@@ -23,12 +23,15 @@
 				display: none;
 				visibility: hidden;
 			}
-			.nav-item a {
+			.nav-item a,
+			.nav-item button {
 				display: block;
 				color: $font-dark;
+				font-family: 'Roboto', sans-serif;
 				font-weight: 500;
 				text-decoration: none;
 				padding: 1rem 1.5rem;
+				background-color: transparent;
 				&.link:hover {
 					background-color: $medium-light-background;
 

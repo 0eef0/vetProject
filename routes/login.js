@@ -66,9 +66,9 @@ app.post('/login', async (req, res, next) => {
     })(req, res, next)
 })
 
-// Router.post('/logout', (req, res, next) => {
-//     req.logout();
-//     res.redirect('/adminLogin');
-// })
+app.post('/logout', (req, res, next) => {
+    req.logout();
+    res.redirect('/');
+})
 
 module.exports = app;
