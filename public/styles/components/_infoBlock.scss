@@ -34,11 +34,15 @@
       cursor: pointer;
       user-select: none;
       font-weight: bold;
-      a,
-      a:visited {
-        color: inherit;
-        text-decoration: none;
-      }
+    }
+    a.moreInfo,
+    a.moreInfo:visited {
+      color: $clr-black;
+      text-decoration: none;
+      background-color: $accent-color;
+      padding: 0.5rem;
+      border-radius: $radius-large;
+      text-align: center;
     }
   }
   .appl {
