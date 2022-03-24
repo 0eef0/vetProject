@@ -7,7 +7,7 @@ div.aboutUsSummary {
 
 	box-shadow: $dark-shadow;
 
-	border-radius: $radius-small;
+	border-radius: $radius-large;
 	h1 {
 		text-align: center;
 		// margin: 1rem;
@@ -66,6 +66,7 @@ div.homeGallery {
 	width: clamp(80%, 70%, 2000px);
 	padding: 1rem;
 	box-shadow: $dark-shadow;
+	border-radius: $radius-large;
 	margin: {
 		top: 5vh;
 		right: auto;
