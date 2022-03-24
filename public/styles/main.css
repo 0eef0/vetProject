@@ -191,7 +191,7 @@ body {
 }
 
 img {
-  background: #f5f6fa;
+  background: #f9f9f9;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -216,7 +216,7 @@ hr {
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
   width: clamp(80%, 70%, 2000px);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   margin: 4rem auto;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -309,7 +309,7 @@ div.homeGallery {
   padding: 1rem;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   margin: 3rem auto;
 }
 
@@ -419,7 +419,7 @@ div.homeGallery {
   overflow-y: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #f5f6fa;
+  background: #f9f9f9;
   border-radius: 8px;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -495,7 +495,7 @@ div.homeGallery {
   position: absolute;
   left: 0;
   font-size: 2rem;
-  color: #f5f6fa;
+  color: #f9f9f9;
   width: 100%;
   text-align: center;
 }
@@ -512,7 +512,7 @@ div.petPage {
   width: clamp(90%, 70%, 2000px);
   margin: 2rem auto 2rem auto;
   padding: 1rem;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
 }
 
 div.petPage #petImageNames li {
@@ -634,12 +634,10 @@ div.petPage div.petInfo .adopt-button {
 
 form#login {
   position: relative;
-  width: clamp(350px, 40%, 500px);
-  background-color: #f5f6fa;
+  width: clamp(250px, 40%, 500px);
+  background-color: #f9f9f9;
   padding: 1rem;
   height: 50vh;
-  min-height: 350px;
-  max-height: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
@@ -714,20 +712,6 @@ form#login .form-error {
   }
 }
 
-a#mainPgBtn,
-a#mainPgBtn:visited {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  background-color: #f7941d;
-  color: #222;
-  text-decoration: none;
-  text-align: center;
-  width: 20%;
-  min-width: 200px;
-  padding: 1rem;
-}
-
 #adminIndApp main {
   width: calc(100% - 3rem);
   display: -webkit-box;
@@ -752,7 +736,7 @@ a#mainPgBtn:visited {
   height: -moz-fit-content;
   height: fit-content;
   text-align: center;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   word-wrap: break-word;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -855,9 +839,12 @@ a#mainPgBtn:visited {
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   z-index: 1;
   top: 0;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-bottom: 0.05rem solid #2d3436;
 }
 
 .navbar ul {
@@ -879,7 +866,7 @@ a#mainPgBtn:visited {
 }
 
 .navbar ul div .nav-logo {
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .navbar ul div .nav-logo img {
@@ -928,9 +915,9 @@ a#mainPgBtn:visited {
 }
 
 .navbar ul div .title a {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   font-size: 1.25rem;
-  font-size: clamp(0.5rem, 4vw, 1.25rem);
+  font-size: clamp(0.75rem, 4vw, 1.5rem);
   white-space: nowrap;
 }
 
@@ -940,7 +927,7 @@ a#mainPgBtn:visited {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-color: #f5f6fa;
+    background-color: #f9f9f9;
     height: 7rem;
   }
   .navbar ul .menu-button {
@@ -972,7 +959,7 @@ a#mainPgBtn:visited {
             flex-direction: column;
   }
   .navbar ul .links .nav-item {
-    background-color: #f5f6fa;
+    background-color: #f9f9f9;
   }
   .navbar ul .links .link {
     background-color: #f5f6faaa;
@@ -1029,7 +1016,7 @@ a#mainPgBtn:visited {
 
 .banner h1 {
   position: absolute;
-  color: #f5f6fa;
+  color: #f9f9f9;
   font-size: clamp(1rem, 4vw, 2rem);
 }
 
@@ -1045,7 +1032,7 @@ a#mainPgBtn:visited {
           align-items: center;
   margin: 1rem auto;
   width: calc(100% - 2rem);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
 }
 
 .filters .selection-buttons {
@@ -1138,7 +1125,7 @@ div.carousel {
   position: relative;
   height: 80vh;
   overflow: hidden;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
 }
 
 div.carousel i.arrow {
@@ -1188,7 +1175,7 @@ div.carousel div.carouselBtnPanel {
   bottom: 0;
   height: 10%;
   padding: 1rem;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1348,7 +1335,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 }
 
 footer {
-  color: #f5f6fa;
+  color: #f9f9f9;
   background-color: #2d3436;
   margin-top: auto;
 }
@@ -1376,7 +1363,7 @@ footer .row.top {
   -webkit-box-align: space-around;
       -ms-flex-align: space-around;
           align-items: space-around;
-  color: #f5f6fa;
+  color: #f9f9f9;
   padding-top: 1rem;
 }
 
@@ -1409,7 +1396,7 @@ footer .row.top .col ul li.title {
 }
 
 footer .row.top .col ul li a {
-  color: #f5f6fa;
+  color: #f9f9f9;
   text-decoration: none;
 }
 
@@ -1453,7 +1440,7 @@ footer .row .socials ul li {
 }
 
 footer .row .socials ul li a {
-  color: #f5f6fa;
+  color: #f9f9f9;
 }
 
 footer .row .socials ul li a:active {
@@ -1496,7 +1483,7 @@ form {
 div.question {
   margin: 1rem auto;
   width: clamp(90%, 70%, 2000px);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   padding: 1rem;
 }
 
@@ -1685,7 +1672,7 @@ div#newPet {
 }
 
 div#newPet form {
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -1786,8 +1773,7 @@ div.confirmationBox {
 div.confirmationBox div {
   width: 40vw;
   height: 40vh;
-  min-width: 300px;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   border-bottom: 2px solid #f7941d;
   display: inherit;
   -webkit-box-pack: inherit;
@@ -1799,7 +1785,7 @@ div.confirmationBox div {
 }
 
 div.confirmationBox div h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #f7941d;
   text-align: center;
 }
@@ -1828,7 +1814,7 @@ div.adminPetInfo form {
 
 div.adminPetInfo form button {
   display: block;
-  color: #222;
+  color: #fff;
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
@@ -2084,7 +2070,7 @@ div#newUser {
 }
 
 div#newUser form {
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -2135,7 +2121,7 @@ div#newUser form button {
 }
 
 div#currUsers {
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
