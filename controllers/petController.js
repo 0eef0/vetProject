@@ -21,14 +21,14 @@ const get = async (req, res) => {
     } catch (error) { res.status(500).json({ msg: error }) }
 }
 
-const update = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const newPet = req.body;
-        const pet = await model.findOneAndUpdate({ _id: id }, newPet);
-        res.status(201).json({ newPet });
-    } catch (error) { res.status(500).json({ msg: error }) }
-}
+// const update = async (req, res) => {
+//     try {
+//         const { id } = req.params;
+//         const newPet = req.body;
+//         const pet = await model.findOneAndUpdate({ _id: id }, newPet);
+//         res.status(201).json({ newPet });
+//     } catch (error) { res.status(500).json({ msg: error }) }
+// }
 
 const deleteIt = async (req, res) => {
     try {
@@ -37,5 +37,5 @@ const deleteIt = async (req, res) => {
     } catch (error) { res.status(500).json({ msg: error }) }
 }
 
-module.exports = { getAll, deleteAll, get, update, deleteIt };
+module.exports = { getAll, deleteAll, get };
 
