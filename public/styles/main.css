@@ -220,7 +220,7 @@ div.aboutUsSummary {
   margin: 4rem auto;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
+  border-radius: 16px;
 }
 
 div.aboutUsSummary h1 {
@@ -288,6 +288,7 @@ div.homeGallery {
   padding: 1rem;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
   margin-top: 5vh;
   margin-right: auto;
   margin-left: auto;
@@ -368,7 +369,7 @@ div.homeGallery {
   margin: 0 auto;
   background-color: white;
   width: clamp(80%, 70%, 2000px);
-  border-radius: 2px;
+  border-radius: 16px;
 }
 
 #aboutUs .teamContainer h1 {
@@ -634,10 +635,13 @@ div.petPage div.petInfo .adopt-button {
 
 form#login {
   position: relative;
-  width: clamp(250px, 40%, 500px);
-  background-color: #f9f9f9;
+  width: clamp(350px, 40%, 500px);
+  background-color: #f5f6fa;
+  border-radius: 16px;
   padding: 1rem;
   height: 50vh;
+  min-height: 350px;
+  max-height: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
@@ -710,6 +714,20 @@ form#login .form-error {
     left: 10%;
     right: 10%;
   }
+}
+
+a#mainPgBtn,
+a#mainPgBtn:visited {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f7941d;
+  color: #222;
+  text-decoration: none;
+  text-align: center;
+  width: 20%;
+  min-width: 200px;
+  padding: 1rem;
 }
 
 #adminIndApp main {
@@ -1031,6 +1049,7 @@ form#login .form-error {
       -ms-flex-align: center;
           align-items: center;
   margin: 1rem auto;
+  border-radius: 8px;
   width: calc(100% - 2rem);
   background-color: #f9f9f9;
 }
@@ -1189,6 +1208,7 @@ div.carousel div.carouselBtnPanel {
 }
 
 div.carousel div.carouselBtnPanel button.carouselBtn {
+  border-radius: 16px;
   -webkit-box-flex: 0.5;
       -ms-flex-positive: 0.5;
           flex-grow: 0.5;
@@ -1773,6 +1793,7 @@ div.confirmationBox {
 div.confirmationBox div {
   width: 40vw;
   height: 40vh;
+  min-width: 300px;
   background-color: #f9f9f9;
   border-bottom: 2px solid #f7941d;
   display: inherit;
@@ -1785,7 +1806,7 @@ div.confirmationBox div {
 }
 
 div.confirmationBox div h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #f7941d;
   text-align: center;
 }
@@ -1814,7 +1835,7 @@ div.adminPetInfo form {
 
 div.adminPetInfo form button {
   display: block;
-  color: #fff;
+  color: #222;
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
