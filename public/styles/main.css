@@ -415,6 +415,7 @@ div.homeGallery {
 }
 .card-container .empty-list {
   position: absolute;
+  left: 0;
   font-size: 2rem;
   color: #f5f6fa;
   width: 100%;
@@ -513,10 +514,12 @@ div.petPage div li {
 
 form#login {
   position: relative;
-  width: clamp(250px, 40%, 500px);
+  width: clamp(350px, 40%, 500px);
   background-color: #f5f6fa;
   padding: 1rem;
   height: 50vh;
+  min-height: 350px;
+  max-height: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
@@ -575,6 +578,20 @@ form#login .form-error {
     left: 10%;
     right: 10%;
   }
+}
+
+a#mainPgBtn,
+a#mainPgBtn:visited {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f7941d;
+  color: #222;
+  text-decoration: none;
+  text-align: center;
+  width: 20%;
+  min-width: 200px;
+  padding: 1rem;
 }
 
 #adminIndApp main {
@@ -1332,6 +1349,7 @@ div.confirmationBox {
 div.confirmationBox div {
   width: 40vw;
   height: 40vh;
+  min-width: 300px;
   background-color: #f5f6fa;
   border-bottom: 2px solid #f7941d;
   display: inherit;
@@ -1339,7 +1357,7 @@ div.confirmationBox div {
   align-items: inherit;
 }
 div.confirmationBox div h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #f7941d;
   text-align: center;
 }
@@ -1356,7 +1374,7 @@ div.adminPetInfo form {
 }
 div.adminPetInfo form button {
   display: block;
-  color: #fff;
+  color: #222;
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;

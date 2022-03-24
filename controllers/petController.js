@@ -30,12 +30,12 @@ const update = async (req, res) => {
     } catch (error) { res.status(500).json({ msg: error }) }
 }
 
-// const deleteIt = async (req, res) => {
-//     try {
-//         const pet = await model.findByIdAndRemove(req.params.id);
-//         res.status(201).json({ pet });
-//     } catch (error) { res.status(500).json({ msg: error }) }
-// }
+const deleteIt = async (req, res) => {
+    try {
+        const pet = await model.findByIdAndRemove(req.params.id);
+        res.status(201).json({ pet });
+    } catch (error) { res.status(500).json({ msg: error }) }
+}
 
-module.exports = { getAll, deleteAll, get, update };
+module.exports = { getAll, deleteAll, get, update, deleteIt };
 

@@ -1,9 +1,11 @@
 form#login {
   position: relative;
-  width: clamp(250px, 40%, 500px);
-  background-color: $light-background;
+  width: clamp(350px, 40%, 500px);
+  background-color: #f5f6fa;
   padding: 1rem;
   height: 50vh;
+  min-height: 350px;
+  max-height: 400px;
   margin: {
     left: auto;
     right: auto;
@@ -68,4 +70,18 @@ form#login {
       }
     }
   }
+}
+
+a#mainPgBtn,
+a#mainPgBtn:visited {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: $accent-color;
+  color: $clr-black;
+  text-decoration: none;
+  text-align: center;
+  width: 20%;
+  min-width: 200px;
+  padding: 1rem;
 }
