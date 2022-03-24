@@ -3,11 +3,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/users')
 const path = require('path');
 
-console.log("Passport.js is running");
-
 module.exports = function (passport) {
-    console.log("The export function is working in Passport.js");
-
     //Serialization + deserialization for simultaneous logins
     passport.serializeUser(function (user, done) {
         console.log("Serialize is running");
@@ -25,12 +21,9 @@ module.exports = function (passport) {
 
     passport.use(
         new LocalStrategy({ username: 'username' }, (username, password, done) => {
-
-            console.log("Passport.use ran successfully");
-
             User.findOne({ username: username })
                 .then((user) => {
-                    console.log("This is in Passport.js", user);
+                    console.log("User:", user);
 
                     if(!user){
                         return done(null,false,{message: 'User not found'});
@@ -44,11 +37,6 @@ module.exports = function (passport) {
                             return done(null, false, { message: 'password Incorrect'})
                         }
                     })
-
-                    // console.log(user.username)
-                    // console.log(username)
-                    // console.log(password)
-                    // console.log(user.password)
                 })
                 .catch((err) => { console.log(err) })
         })
