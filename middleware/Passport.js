@@ -1,12 +1,9 @@
-const User = require('../models/users')
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt')
-
-console.log("Passport.js is running");
+const User = require('../models/users')
+const path = require('path');
 
 module.exports = function (passport) {
-    console.log("The export function is working in Passport.js");
-
     //Serialization + deserialization for simultaneous logins
     passport.serializeUser(function (user, done) {
         console.log("Serialize is running");
@@ -15,6 +12,7 @@ module.exports = function (passport) {
 
     passport.deserializeUser(function (id, done) {
         console.log("Deserialize is running");
+        console.log(User)
         User.findById(id, function (err, user) {
             console.log("User.findById is running");
             done(err, user)
@@ -22,29 +20,23 @@ module.exports = function (passport) {
     })
 
     passport.use(
-        new LocalStrategy({ usernameField: 'username' }, (username, password, done) => {
-
-            console.log("Passport.use ran successfully");
-
+        new LocalStrategy({ username: 'username' }, (username, password, done) => {
             User.findOne({ username: username })
                 .then((user) => {
-                    console.log("This is in Passport.js", user);
-                    // if(!user){
-                    //     return done(null,false,{message: 'User not found'});
-                    // }
-                    // //match pass
-                    // bcrypt.compare(password,user.password,(err,isMatch)=>{
-                    //     if (err) throw err;
-                    //     if (isMatch){
-                    //         return done(null,user);
-                    //     }else{
-                    //         return done(null, false, { message: 'password Incorrect'})
-                    //     }
-                    // })
-                    console.log(user.username)
-                    console.log(username)
-                    console.log(password)
-                    console.log(user.password)
+                    console.log("User:", user);
+
+                    if(!user){
+                        return done(null,false,{message: 'User not found'});
+                    }
+                    //match pass
+                    bcrypt.compare(password,user.password,(err,isMatch)=>{
+                        if (err) throw err;
+                        if (isMatch){
+                            return done(null,user);
+                        }else{
+                            return done(null, false, { message: 'password Incorrect'})
+                        }
+                    })
                 })
                 .catch((err) => { console.log(err) })
         })

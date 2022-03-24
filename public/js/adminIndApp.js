@@ -49,13 +49,13 @@ async function getApplInfo() {
 		const { data: { pets } } = await axios.get('/api/v1/pets');
 		const { data: { applications } } = await axios.get('/api/v1/applications');
 		const curApp = applications.find(app => app._id === (new URLSearchParams(window.location.search)).get('_id'));
-		const curPet = pets.find(pet => pet.id === curApp.wantedPetId);
+		const curPet = pets.find(pet => pet._id === curApp.wantedPetId);
 
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
 		const appBirthday = new Date(curApp.birthday).toLocaleDateString('PST', options)
 		const petBDay = new Date(curPet.birthday).toLocaleDateString('PST', options)
-		
+
 		console.log(appDateCreated)
 		appDateCreated.innerHTML = dateCreated;
 		appName.innerHTML = curApp.fullName;
@@ -85,7 +85,7 @@ async function getApplInfo() {
 		appAcknowledgementAdoption.innerHTML = curApp.acknowledgementAdoption;
 
 		petName.innerHTML = curPet.Name;
-		petImage.src = curPet.IMG[0];
+		petImage.src = `/api/v1/petImages/${curPet.IMG[0]}`;
 		petImage.alt = curPet.Name;
 		petBirthday.innerHTML = petBDay;
 		petGender.innerHTML = curPet.Gender;
@@ -111,26 +111,26 @@ getApplInfo()
 
 const confirmAcceptApp = async (id) => {
 	const acceptAppPopup = new Modal({
-			title: 'Confirm Application Acceptance',
-			content: 'Are you sure you want to accept this application?',
-			buttons: [
-					{
-							title: 'Yes',
-							type: 'primary',
-							action () {
-									acceptApplication(id)
-									acceptAppPopup.close()
-							}
-					}, {
-							title: 'Cancel',
-							type: 'red',
-							action () {
-								acceptAppPopup.close()
-							}
-					}
-			]
+		title: 'Confirm Application Acceptance',
+		content: 'Are you sure you want to accept this application?',
+		buttons: [
+			{
+				title: 'Yes',
+				type: 'primary',
+				action() {
+					acceptApplication(id)
+					acceptAppPopup.close()
+				}
+			}, {
+				title: 'Cancel',
+				type: 'red',
+				action() {
+					acceptAppPopup.close()
+				}
+			}
+		]
 	})
-	
+
 	acceptAppPopup.show()
 };
 const acceptApplication = async (id) => {
@@ -144,35 +144,35 @@ const acceptApplication = async (id) => {
 
 const confirmDeclineApp = async (id) => {
 	const declineAppPopup = new Modal({
-			title: 'Confirm Application Decline',
-			content: 'Are you sure you want to decline this application?',
-			buttons: [
-					{
-							title: 'Yes',
-							type: 'primary',
-							action () {
-								declineApplication(id)
-								declineAppPopup.close()
-							}
-					}, {
-							title: 'Cancel',
-							type: 'red',
-							action () {
-								declineAppPopup.close()
-							}
-					}
-			]
+		title: 'Confirm Application Decline',
+		content: 'Are you sure you want to decline this application?',
+		buttons: [
+			{
+				title: 'Yes',
+				type: 'primary',
+				action() {
+					declineApplication(id)
+					declineAppPopup.close()
+				}
+			}, {
+				title: 'Cancel',
+				type: 'red',
+				action() {
+					declineAppPopup.close()
+				}
+			}
+		]
 	})
-	
+
 	declineAppPopup.show()
-};	
+};
 const declineApplication = async (id) => {
 	const updatedApplication = {
 		accepted: false,
 		rejected: true
 	}
 	try {
-    await axios.patch(`${url}/${id}`, updatedApplication);
+		await axios.patch(`${url}/${id}`, updatedApplication);
 		console.log('success')
 	} catch (error) {
 		console.error(error)

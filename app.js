@@ -1,22 +1,33 @@
+//primary libraries and things
 const express = require('express');
-const app = express();
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('passport');
+require('./middleware/Passport')(passport)
+require('dotenv').config()
 const router = express.Router();
+const app = express();
+const mongoose = require('mongoose');
+const connectDB = require('./db/connect.js');
+
+//font-end navigation
 const routes = require('./routes/pets.js');
 const navigation = require('./routes/navigation.js');
 const routesApp = require('./routes/applicationRoute.js');
-const connectDB = require('./db/connect.js');
-const passport = require('passport');
-require('./middleware/Passport')(passport)
-const flash = require('connect-flash');
-// const loginRoute = require('./routes/login');
+
+//back-end navigation
+const loginRoute = require('./routes/login');
 const loginAdmin = require('./routes/loginAPI')
-const populateProducts = require('./populate');
-const session = require('express-session');
-const mongoose = require('mongoose');
+
+//for gridFS
 const bodyParser = require('body-parser')
-require('dotenv').config()
 const gridFSRoutes = require("./routes/gridFSroute")
 const upload = require('express-fileupload')
+
+// JWT
+const { authenticateToken } = require('./middleware/tokenAuthenticate');
+
+const populateProducts = require('./populate');
 
 const port = process.env.PORT || 5000;
 
@@ -41,7 +52,7 @@ app.use(passport.session());
 app.use(express.json({ limit: '16MB' }))
 
 // app.use(express.urlencoded({ extended: false }))
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
 app.use('/api/v1/pets', routes);
@@ -54,6 +65,34 @@ app.use(express.static("./public"));
 // routes for login page
 app.use('/adminLogin', require('./routes/login'))
 app.use('/api/v1/login', loginAdmin)
+app.use('/users', loginRoute)
+
+
+// Testing JWT
+const serverData = [
+    {
+        username: "Name_1",
+        secret: "This is the most secure token ever generated"
+    },
+    {
+        username: "Name_2",
+        secret: "This is the most secure token ever generated 1"
+    },
+    {
+        username: "Name_3",
+        secret: "This is the most secure token ever generated 2"
+    },
+    {
+        username: "Vet_Overlord",
+        secret: "Nothing to hide"
+    }
+]
+
+app.get('/posts', authenticateToken, (req, res) => {
+    res.json(serverData.filter(post => post.username === req.user.name))
+})
+
+
 
 const start = async () => {
     try {

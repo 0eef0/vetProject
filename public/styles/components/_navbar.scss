@@ -4,6 +4,9 @@
 	background-color: $light-background;
 	z-index: 1;
 	top: 0;
+
+	box-shadow: $dark-shadow;
+	border-bottom: 0.05rem solid $dark-background;
 	ul {
 		display: flex;
 		justify-content: space-between;
@@ -13,7 +16,7 @@
 			max-height: 3.5rem;
 			display: flex;
 			.nav-logo {
-				padding: 0.25rem 1rem;
+				padding: 0.5rem 1rem;
 				img {
 					height: 100%;
 					width: 100%;
@@ -23,12 +26,15 @@
 				display: none;
 				visibility: hidden;
 			}
-			.nav-item a {
+			.nav-item a,
+			.nav-item button {
 				display: block;
 				color: $font-dark;
+				font-family: 'Roboto', sans-serif;
 				font-weight: 500;
 				text-decoration: none;
 				padding: 1rem 1.5rem;
+				background-color: transparent;
 				&.link:hover {
 					background-color: $medium-light-background;
 
@@ -47,9 +53,9 @@
 				place-items: center;
 			}
 			.title a {
-				padding: 1rem 0;
+				padding: 0.75rem 0;
 				font-size: 1.25rem; //1rem
-				font-size: clamp(0.5rem, 4vw, 1.25rem);
+				font-size: clamp(0.75rem, 4vw, 1.5rem);
 
 				white-space: nowrap;
 			}

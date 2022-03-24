@@ -17,8 +17,8 @@ const id = new URLSearchParams(params).get('id')
 const url = "/api/v1/pets";
 
 const showPet = async () => {
-    const { data: {pet},} = await axios.get(`${url}/${id}`)
-    const {Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG} = pet;
+    const { data: { pet }, } = await axios.get(`${url}/${id}`)
+    const { Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG } = pet;
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const bDay = new Date(Birthday).toLocaleDateString('PST', options)
 
@@ -44,7 +44,7 @@ const showPet = async () => {
 
     const carouselImages = IMG.map((image) => {
         return `
-        <img src="${image}" class="carouselImg" alt="${Name}">`
+        <img src="/api/v1/petImages/${image}" class="carouselImg" alt="${Name}">`
     }).join('');
     console.log(carouselImages)
     carouselImgContainerDOM.innerHTML = carouselImages;

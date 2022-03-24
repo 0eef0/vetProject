@@ -26,16 +26,20 @@
     <nav class="navbar">
         <ul>
             <div class="align-left">
-                <li class="nav-logo"><img src="./assets/VetLogoNoBorder.png" alt="West-MEC Veterinary Science Logo">
+                <li class="nav-logo"><img src="./assets/NECLogoBanner.png" alt="West-MEC Veterinary Science Logo">
                 </li>
-                <li class="nav-item title"><a href="/">West-MEC Veterinary Science</a></li>
+                <li class="nav-item title"><a href="/">Veterinary Science</a></li>
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <div class="align-right links closed">
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
-                <li class="nav-item"><a class="link" id="logoutBtn">Logout</a></li>
+				<li class="nav-item">
+					<form action="/users/logout" method="post">
+						<button type="submit" class="link">Logout</button>
+					</form>
+				</li>
             </div>
         </ul>
     </nav>
@@ -48,7 +52,7 @@
 
     <div id="newPet">
         <form class="newPetForm" action='/api/v1/pets' method="post" enctype="multipart/form-data">
-            <h1>Add a new pet!</h1>
+            <h1>Add Pet</h1>
             <input type="text" placeholder="Pet Name" name="Name" required>
             <input type="date" placeholder="Pet Birthday" name="Birthday" title="Pet birthday" required>
             <select name="Gender" title="Pet gender" required>
@@ -156,7 +160,6 @@
     <script src="./js/navbar.js"></script>
     <script src="./js/modal.class.js"></script>
     <script src="./js/adminPets.js"></script>
-    <script type="module" src="./js/firebase.js"></script>
 </body>
 
 </html>

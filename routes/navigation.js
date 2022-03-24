@@ -25,19 +25,19 @@ navigation.get('/adoptionform', (req, res) => {
 navigation.get('/adminLogin', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminLogin.html'));
 })
-navigation.get('/adminHome', (req, res) => {
+navigation.get('/adminHome', ensureAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminApp.html'));
 })
-navigation.get('/adminApplication', (req, res) => {
+navigation.get('/adminApplication', ensureAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminIndApp.html'));
 })
-navigation.get('/adminPets', (req, res) => {
+navigation.get('/adminPets', ensureAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminPets.html'));
 })
-navigation.get('/adminPet', (req, res) => {
+navigation.get('/adminPet', ensureAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminIndPet.html'));
 })
-navigation.get('/adminRecords', (req, res) => {
+navigation.get('/adminRecords', ensureAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminRecords.html'))
 })
 navigation.get('/adminCreate', (req, res) => {

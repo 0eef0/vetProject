@@ -28,8 +28,8 @@
     <nav class="navbar">
         <ul>
             <div class="align-left">
-                <li class="nav-logo"><img src="./assets/VetLogo.svg" alt="West-MEC Veterinary Science Logo"></li>
-                <li class="nav-item title"><a href="/">West-MEC Veterinary Science</a></li>
+                <li class="nav-logo"><img src="./assets/NECLogoBanner.png" alt="West-MEC Veterinary Science Logo"></li>
+                <li class="nav-item title"><a href="/">Veterinary Science</a></li>
                 <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
             </div>
             <!-- <div class="align-right links closed">
@@ -41,15 +41,15 @@
         </ul>
     </nav>
 
-    <form id="login">
+    <form id="login" method="post" action="/users/login">
         <h1>West-MEC Veterinary Science</h1>
         <br>
         <img src="./assets/VetLogo.svg" alt="West-MEC Veterinary Science Logo">
         <br>
         <section>
-            <label for="loginEmail">Username:</label>
+            <label for="loginUsername">Username:</label>
             <br>
-            <input type="text" id="loginEmail" name="username">
+            <input type="text" id="loginUsername" name="username">
         </section>
         <br>
         <section>
@@ -61,6 +61,8 @@
   
         <p class="form-error">There Has Been an Error</p>
     </form>
+
+    <a id="mainPgBtn" href="/">Back to main page</a>
 
 
     <!-- axios -->
