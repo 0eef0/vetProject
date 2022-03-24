@@ -183,8 +183,9 @@ body {
 }
 
 img {
-  background: #f5f6fa;
-  object-fit: contain;
+  background: #f9f9f9;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 p {
@@ -207,10 +208,16 @@ hr {
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
   width: clamp(80%, 70%, 2000px);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   margin: 4rem auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
 }
 div.aboutUsSummary h1 {
   text-align: center;
@@ -262,6 +269,12 @@ div.homeGallery {
   width: clamp(80%, 70%, 2000px);
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
   margin-top: 5vh;
   margin-right: auto;
   margin-left: auto;
@@ -280,7 +293,7 @@ div.homeGallery {
   width: clamp(80%, 70%, 2000px);
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   margin: 3rem auto;
 }
 #aboutUs #infoAboutUs h1 {
@@ -323,7 +336,7 @@ div.homeGallery {
   margin: 0 auto;
   background-color: white;
   width: clamp(80%, 70%, 2000px);
-  border-radius: 2px;
+  border-radius: 16px;
 }
 #aboutUs .teamContainer h1 {
   color: #2d3436;
@@ -331,6 +344,8 @@ div.homeGallery {
   margin: 0;
 }
 #aboutUs .rows {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -355,7 +370,7 @@ div.homeGallery {
   justify-content: center;
   overflow-y: auto;
   box-sizing: border-box;
-  background: #f5f6fa;
+  background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -415,12 +430,30 @@ div.homeGallery {
 }
 .card-container .empty-list {
   position: absolute;
+  left: 0;
   font-size: 2rem;
-  color: #f5f6fa;
+  color: #f9f9f9;
   width: 100%;
   text-align: center;
 }
 
+.petTitle {
+  margin-top: 1rem;
+  background-color: #2d3436;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+}
+.petTitle p {
+  font-size: 5rem;
+  color: white;
+}
+
+@media screen and (max-width: 550px) {
+  .petTitle p {
+    font-size: 3rem;
+  }
+}
 div.petPage {
   display: flex;
   justify-content: space-around;
@@ -428,13 +461,14 @@ div.petPage {
   width: clamp(90%, 70%, 2000px);
   margin: 2rem auto 2rem auto;
   padding: 1rem;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
 }
 div.petPage #petImageNames li {
   font-size: 1rem;
 }
 div.petPage #petImageNames li:hover {
-  text-decoration: line-through 2px red;
+  -webkit-text-decoration: line-through 2px red;
+          text-decoration: line-through 2px red;
 }
 div.petPage div {
   width: 40%;
@@ -474,6 +508,8 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: square;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -487,6 +523,8 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -513,10 +551,16 @@ div.petPage div li {
 
 form#login {
   position: relative;
-  width: clamp(250px, 40%, 500px);
+  width: clamp(350px, 40%, 500px);
   background-color: #f5f6fa;
+<<<<<<< HEAD
+=======
+  border-radius: 16px;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
   padding: 1rem;
   height: 50vh;
+  min-height: 350px;
+  max-height: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
@@ -577,6 +621,20 @@ form#login .form-error {
   }
 }
 
+a#mainPgBtn,
+a#mainPgBtn:visited {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f7941d;
+  color: #222;
+  text-decoration: none;
+  text-align: center;
+  width: 20%;
+  min-width: 200px;
+  padding: 1rem;
+}
+
 #adminIndApp main {
   width: calc(100% - 3rem);
   display: flex;
@@ -588,14 +646,18 @@ form#login .form-error {
 }
 #adminIndApp main .appBlock {
   width: calc(50% - 3rem);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   word-wrap: break-word;
   padding: 1rem;
   margin-bottom: 2rem;
 }
 #adminIndApp main .appBlock .row {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -657,9 +719,11 @@ form#login .form-error {
 .navbar {
   position: fixed;
   width: 100%;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   z-index: 1;
   top: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-bottom: 0.05rem solid #2d3436;
 }
 .navbar ul {
   display: flex;
@@ -672,7 +736,7 @@ form#login .form-error {
   display: flex;
 }
 .navbar ul div .nav-logo {
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .navbar ul div .nav-logo img {
   height: 100%;
@@ -682,21 +746,27 @@ form#login .form-error {
   display: none;
   visibility: hidden;
 }
-.navbar ul div .nav-item a {
+.navbar ul div .nav-item a,
+.navbar ul div .nav-item button {
   display: block;
   color: #2d3436;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-decoration: none;
   padding: 1rem 1.5rem;
+  background-color: transparent;
 }
-.navbar ul div .nav-item a.link:hover {
+.navbar ul div .nav-item a.link:hover,
+.navbar ul div .nav-item button.link:hover {
   background-color: #d8d8d8;
   transition: background-color 100ms linear;
 }
-.navbar ul div .nav-item a.active {
+.navbar ul div .nav-item a.active,
+.navbar ul div .nav-item button.active {
   background-color: #f7941d !important;
 }
-.navbar ul div .nav-item a.active:hover {
+.navbar ul div .nav-item a.active:hover,
+.navbar ul div .nav-item button.active:hover {
   filter: brightness(0.8);
 }
 .navbar ul div .title {
@@ -704,16 +774,16 @@ form#login .form-error {
   place-items: center;
 }
 .navbar ul div .title a {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   font-size: 1.25rem;
-  font-size: clamp(0.5rem, 4vw, 1.25rem);
+  font-size: clamp(0.75rem, 4vw, 1.5rem);
   white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
   .navbar ul {
     flex-direction: column;
-    background-color: #f5f6fa;
+    background-color: #f9f9f9;
     height: 7rem;
   }
   .navbar ul .menu-button {
@@ -738,7 +808,7 @@ form#login .form-error {
     flex-direction: column;
   }
   .navbar ul .links .nav-item {
-    background-color: #f5f6fa;
+    background-color: #f9f9f9;
   }
   .navbar ul .links .link {
     background-color: #f5f6faaa;
@@ -775,7 +845,7 @@ form#login .form-error {
 }
 .banner h1 {
   position: absolute;
-  color: #f5f6fa;
+  color: #f9f9f9;
   font-size: clamp(1rem, 4vw, 2rem);
 }
 
@@ -784,8 +854,9 @@ form#login .form-error {
   justify-content: space-between;
   align-items: center;
   margin: 1rem auto;
+  border-radius: 8px;
   width: calc(100% - 2rem);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
 }
 .filters .selection-buttons {
   font-size: clamp(0.75rem, 2vw, 1.25rem);
@@ -857,7 +928,7 @@ div.carousel {
   position: relative;
   height: 80vh;
   overflow: hidden;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
 }
 div.carousel i.arrow {
   position: absolute;
@@ -887,7 +958,8 @@ div.carousel div.carouselImages .carouselImg {
   height: calc(100% - 2rem - 3vh);
   opacity: 0;
   transition: opacity 0.75s;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -897,7 +969,7 @@ div.carousel div.carouselBtnPanel {
   bottom: 0;
   height: 10%;
   padding: 1rem;
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   left: 0;
   display: flex;
   justify-content: space-around;
@@ -906,6 +978,13 @@ div.carousel div.carouselBtnPanel {
 }
 div.carousel div.carouselBtnPanel button.carouselBtn {
   flex-grow: 0.5;
+<<<<<<< HEAD
+=======
+  border-radius: 16px;
+  -webkit-box-flex: 0.5;
+      -ms-flex-positive: 0.5;
+          flex-grow: 0.5;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
   margin: 0 0.25rem;
   height: 3vh;
   background-color: #949494;
@@ -928,7 +1007,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -981,6 +1061,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1016,7 +1098,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   }
 }
 footer {
-  color: #f5f6fa;
+  color: #f9f9f9;
   background-color: #2d3436;
   margin-top: auto;
 }
@@ -1030,7 +1112,7 @@ footer .row.top {
   flex-direction: row;
   justify-content: space-around;
   align-items: space-around;
-  color: #f5f6fa;
+  color: #f9f9f9;
   padding-top: 1rem;
 }
 footer .row.top .col {
@@ -1043,6 +1125,11 @@ footer .row.top .col ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 footer .row.top .col ul li {
   padding: 0.1rem;
@@ -1055,7 +1142,7 @@ footer .row.top .col ul li.title {
   padding-left: 0;
 }
 footer .row.top .col ul li a {
-  color: #f5f6fa;
+  color: #f9f9f9;
   text-decoration: none;
 }
 footer .row.top .col ul li a:active {
@@ -1085,7 +1172,7 @@ footer .row .socials ul li {
   margin-left: 2.3rem;
 }
 footer .row .socials ul li a {
-  color: #f5f6fa;
+  color: #f9f9f9;
 }
 footer .row .socials ul li a:active {
   color: #f7941d;
@@ -1100,6 +1187,15 @@ footer .row p {
 @media screen and (max-width: 556px) {
   ul {
     text-align: center;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+
+  .col div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
 
   footer .top .col {
@@ -1117,7 +1213,7 @@ form {
 div.question {
   margin: 1rem auto;
   width: clamp(90%, 70%, 2000px);
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   padding: 1rem;
 }
 div.question h1 {
@@ -1198,6 +1294,8 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -1208,6 +1306,8 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1231,7 +1331,10 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-weight: bold;
 }
 .infoBlock .record .moreInfo a,
@@ -1241,6 +1344,8 @@ button#submitAdoptForm {
 }
 .infoBlock .appl {
   width: 75%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1256,7 +1361,7 @@ div#newPet {
   margin-top: 4rem;
 }
 div#newPet form {
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -1332,14 +1437,15 @@ div.confirmationBox {
 div.confirmationBox div {
   width: 40vw;
   height: 40vh;
-  background-color: #f5f6fa;
+  min-width: 300px;
+  background-color: #f9f9f9;
   border-bottom: 2px solid #f7941d;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
 }
 div.confirmationBox div h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #f7941d;
   text-align: center;
 }
@@ -1356,10 +1462,12 @@ div.adminPetInfo form {
 }
 div.adminPetInfo form button {
   display: block;
-  color: #fff;
+  color: #222;
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -1387,7 +1495,10 @@ div.adminPetInfo textarea {
 
 .modal-container {
   display: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .modal-container .background {
   position: fixed;
@@ -1401,7 +1512,8 @@ div.adminPetInfo textarea {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  animation-duration: 200ms;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
   background: rgba(9, 9, 9, 0.8);
 }
 .modal-container .background .modal {
@@ -1411,7 +1523,8 @@ div.adminPetInfo textarea {
   position: relative;
   z-index: 999999;
   overflow: hidden;
-  animation-duration: 500ms;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
   transition: all 100ms linear;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -1427,7 +1540,8 @@ div.adminPetInfo textarea {
   font-size: 1.6rem;
   font-weight: 500;
   cursor: default;
-  animation: border-top-color 2s infinite linear;
+  -webkit-animation: border-top-color 2s infinite linear;
+          animation: border-top-color 2s infinite linear;
 }
 .modal-container .background .modal .title .container-actions {
   display: flex;
@@ -1513,6 +1627,18 @@ div.adminPetInfo textarea {
   flex: 1;
 }
 
+@-webkit-keyframes border-top-color {
+  0% {
+    border-top: 5px solid #f7941d;
+  }
+  50% {
+    border-top: 5px solid #fab767;
+  }
+  100% {
+    border-top: 5px solid #f7941d;
+  }
+}
+
 @keyframes border-top-color {
   0% {
     border-top: 5px solid #f7941d;
@@ -1528,7 +1654,7 @@ div#newUser {
   margin-top: 4rem;
 }
 div#newUser form {
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -1574,7 +1700,7 @@ div#newUser form button {
 }
 
 div#currUsers {
-  background-color: #f5f6fa;
+  background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
@@ -1592,6 +1718,8 @@ div#currUsers #userHead {
 }
 div#currUsers .user p,
 div#currUsers #userHead p {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
   min-width: max-content;
 }
 div#currUsers .user p.name,
@@ -1630,6 +1758,4 @@ div#currUsers #userHead button {
   div#currUsers #userHead {
     display: none;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

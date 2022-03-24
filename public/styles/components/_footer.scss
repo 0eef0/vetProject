@@ -23,6 +23,11 @@ footer {
 					margin: 0;
 					padding: 0;
 					list-style: none;
+                    width: 25vw;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    text-align: center;
 					li {
 						padding: 0.1rem;
 						&.title {
@@ -210,7 +215,15 @@ footer {
 @media screen and (max-width: 556px) {
 	ul {
 		text-align: center;
+        width: max-content !important;
 	}
+    .col {
+        div {
+            display: flex;
+            justify-content: center;
+            margin-bottom: .5rem;
+        }
+    }
 	footer .top .col {
 		flex-direction: column;
 		.title {

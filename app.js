@@ -24,6 +24,9 @@ const bodyParser = require('body-parser')
 const gridFSRoutes = require("./routes/gridFSroute")
 const upload = require('express-fileupload')
 
+// JWT
+const { authenticateToken } = require('./middleware/tokenAuthenticate');
+
 const populateProducts = require('./populate');
 
 const port = process.env.PORT || 5000;
@@ -63,6 +66,33 @@ app.use(express.static("./public"));
 app.use('/adminLogin', require('./routes/login'))
 app.use('/api/v1/login', loginAdmin)
 app.use('/users', loginRoute)
+
+
+// Testing JWT
+const serverData = [
+    {
+        username: "Name_1",
+        secret: "This is the most secure token ever generated"
+    },
+    {
+        username: "Name_2",
+        secret: "This is the most secure token ever generated 1"
+    },
+    {
+        username: "Name_3",
+        secret: "This is the most secure token ever generated 2"
+    },
+    {
+        username: "Vet_Overlord",
+        secret: "Nothing to hide"
+    }
+]
+
+app.get('/posts', authenticateToken, (req, res) => {
+    res.json(serverData.filter(post => post.username === req.user.name))
+})
+
+
 
 const start = async () => {
     try {
