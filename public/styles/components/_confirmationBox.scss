@@ -12,13 +12,14 @@ div.confirmationBox {
   div {
     width: 40vw;
     height: 40vh;
+    min-width: 300px;
     background-color: $light-background;
     border-bottom: 2px solid $accent-color;
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: $accent-color;
       text-align: center;
     }
