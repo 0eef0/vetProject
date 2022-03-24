@@ -64,22 +64,6 @@ app.post('/login', async (req, res, next) => {
         successRedirect: '/adminHome',
         failureRedirect: '/adminLogin'
     })(req, res, next)
-    // const user = user.find(user => user.name = req.body.name)
-    // const users = await fetch('/api/v1/login')
-    // console.log(users);
-    // res.status(200)
-    // if (user == null) {
-    //     return res.status(400).send()
-    // }
-    // try {
-    //     if (await bcrypt.compare(req.body.password, user.password)) {
-    //         res.send('Success')
-    //     } else {
-    //         res.send('Not Allowed')
-    //     }
-    // } catch (error) {
-    //     res.status(500).send()
-    // }
 })
 
 // Router.post('/logout', (req, res, next) => {

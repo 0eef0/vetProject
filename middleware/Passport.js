@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt')
 const User = require('../models/users')
+const path = require('path');
 
 console.log("Passport.js is running");
 
@@ -15,6 +16,7 @@ module.exports = function (passport) {
 
     passport.deserializeUser(function (id, done) {
         console.log("Deserialize is running");
+        console.log(User)
         User.findById(id, function (err, user) {
             console.log("User.findById is running");
             done(err, user)
