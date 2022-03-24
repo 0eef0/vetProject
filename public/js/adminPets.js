@@ -116,7 +116,6 @@ const showPets = async () => {
         }
         const allPets = await Promise.all(pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map(async (pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = await pet;
-            if (Gender === undefined) alert(id);
             const bDay = new Date(Birthday);
             return `
             <div class="card">

@@ -6,6 +6,6 @@ const { getAll, deleteAll, get, update } = require('../controllers/petController
 
 //Controllers for pets
 router.route('/').get(getAll).post(petUpload).delete(deleteAll);
-router.route('/:id').get(get).patch(update).delete(petDelete);
+router.route('/:id').get(get).patch(update);
 
 module.exports = router;
