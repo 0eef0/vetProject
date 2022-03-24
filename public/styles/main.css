@@ -212,6 +212,12 @@ div.aboutUsSummary {
   margin: 4rem auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
 }
 div.aboutUsSummary h1 {
   text-align: center;
@@ -263,6 +269,12 @@ div.homeGallery {
   width: clamp(80%, 70%, 2000px);
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
+=======
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
   margin-top: 5vh;
   margin-right: auto;
   margin-left: auto;
@@ -324,7 +336,7 @@ div.homeGallery {
   margin: 0 auto;
   background-color: white;
   width: clamp(80%, 70%, 2000px);
-  border-radius: 2px;
+  border-radius: 16px;
 }
 #aboutUs .teamContainer h1 {
   color: #2d3436;
@@ -541,6 +553,10 @@ form#login {
   position: relative;
   width: clamp(350px, 40%, 500px);
   background-color: #f5f6fa;
+<<<<<<< HEAD
+=======
+  border-radius: 16px;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
   padding: 1rem;
   height: 50vh;
   min-height: 350px;
@@ -838,6 +854,7 @@ a#mainPgBtn:visited {
   justify-content: space-between;
   align-items: center;
   margin: 1rem auto;
+  border-radius: 8px;
   width: calc(100% - 2rem);
   background-color: #f9f9f9;
 }
@@ -961,6 +978,13 @@ div.carousel div.carouselBtnPanel {
 }
 div.carousel div.carouselBtnPanel button.carouselBtn {
   flex-grow: 0.5;
+<<<<<<< HEAD
+=======
+  border-radius: 16px;
+  -webkit-box-flex: 0.5;
+      -ms-flex-positive: 0.5;
+          flex-grow: 0.5;
+>>>>>>> 8e97156979d59b76ac8fbeca4e2e3510ca8ceba5
   margin: 0 0.25rem;
   height: 3vh;
   background-color: #949494;
@@ -1101,6 +1125,11 @@ footer .row.top .col ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 footer .row.top .col ul li {
   padding: 0.1rem;
@@ -1158,6 +1187,15 @@ footer .row p {
 @media screen and (max-width: 556px) {
   ul {
     text-align: center;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+
+  .col div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
 
   footer .top .col {
