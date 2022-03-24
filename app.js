@@ -52,7 +52,7 @@ app.use(express.json({ limit: '16MB' }))
 app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
-app.use('/api/v1/pets', routes);
+app.use(routes);
 app.use('/api/v1/petImages', gridFSRoutes);
 app.use('/api/v1/applications', routesApp);
 app.use('/', navigation);

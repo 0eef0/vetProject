@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "username": "name",
-  "password": "password123"
+  "password": "password"
 }
 ################################
 POST http://localhost:5000/users
@@ -15,3 +15,8 @@ Content-Type: application/json
   "password": "password",
   "status": "Admin"
 }
+################################
+POST http://localhost:5000/api/v1/petDelete/623b8baadfa5a22affd37778
+################################
+GET http://localhost:5000/api/v1/pets
+################################
