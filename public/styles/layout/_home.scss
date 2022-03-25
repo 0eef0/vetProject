@@ -1,16 +1,17 @@
 /* styles for the about us paragraph and image */
 div.aboutUsSummary {
-	width: clamp(80%, 70%, 2000px);
+	width: clamp(80%, 70%, 1000px);
+	max-width: 1400px;
 	// padding: 1rem;
 	background-color: $light-background;
 	margin: 4rem auto;
+	padding: 1rem;
 
 	box-shadow: $dark-shadow;
 
 	border-radius: $radius-small;
 	h1 {
 		text-align: center;
-		// margin: 1rem;
 		padding: 1rem;
 		font-size: $scalable-header-font;
 	}
@@ -19,9 +20,12 @@ div.aboutUsSummary {
 		p {
 			font-size: $scalable-text-font;
 			display: block;
-			clear: both;
-			padding: 1rem;
+			clear: none;
+			padding: 0.75rem;
 			text-align: left;
+			@media screen and (max-width: 924px) {
+				clear: both;
+			}
 			&:first-of-type {
 				clear: none;
 				height: 100%;
@@ -30,30 +34,33 @@ div.aboutUsSummary {
 		}
 		img {
 			width: 40%;
-			margin: 0 1rem;
-			// min-width: 8rem;
+			min-width: 22rem;
+			max-height: 20rem;
+			padding: 0 1rem;
 			float: left;
 		}
 	}
 	@media only screen and (max-width: 760px) {
 		& {
+			padding-block: 0;
 			h1 {
-				font-size: 1.25rem;
+				font-size: 1.5rem;
 			}
 			div {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-around;
 				align-items: center;
-				padding: 1vw;
+				padding: 0;
 				p {
 					order: 2;
-					width: 80%;
+					width: 100%;
 					font-size: 1rem;
+					padding: 0.75rem !important;
 				}
 				img {
 					order: 1;
-					width: 80%;
+					width: 100%;
 					margin: 0.1rem;
 				}
 			}
