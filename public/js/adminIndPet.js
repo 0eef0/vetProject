@@ -20,8 +20,8 @@ let petImages = [];
 let petId;
 
 const showPet = async () => {
-    const { data: {pet},} = await axios.get(`${url}/${id}`)
-    const {Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG} = pet;
+    const { data: { pet }, } = await axios.get(`${url}/${id}`)
+    const { Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG } = pet;
     const bDay = new Date(Birthday);
     petImages = IMG;
     document.getElementById('confirmationMessage').innerHTML = `You have updated ${Name}. Click anywhere to return to pets page.`
@@ -29,7 +29,7 @@ const showPet = async () => {
     document.title = `Edit ${Name}`;
     petNameDOM.value = `${Name}`;
     birthdayDOM.value = bDay.toISOString().slice(0, 10);
-    if(Gender === 'Female') document.getElementById('femaleSelector').selected = true;
+    if (Gender === 'Female') document.getElementById('femaleSelector').selected = true;
     colorDOM.value = Color;
     breedDOM.value = Breed;
     additionalNotesDOM.value = Notes;
@@ -44,7 +44,7 @@ const showPet = async () => {
 showPet()
 
 const addImg = () => {
-    if(document.getElementById('petPhotoSub').value) {   
+    if (document.getElementById('petPhotoSub').value) {
         petImages.push(document.getElementById('petPhotoSub').value);
         petImageNamesDOM.innerHTML = '<form><input type="file" accept="image/*" ><button>Submit Photo</button></form>';
         petImages.map((image, index) => {
@@ -53,12 +53,14 @@ const addImg = () => {
     }
 }
 
-const removeImg = (index) => {
+const removeImg = async (index) => {
+    await axios.delete(`/api/v1/petImages/${petImages[index]}`);
     petImages.splice(index, 1);
     petImageNamesDOM.innerHTML = '<form><input type="file"><button>Submit Photo</button></form>';
     petImages.map((image, index) => {
         petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
     })
+    // updatePet();
 }
 
 const updatePet = async () => {
@@ -67,7 +69,7 @@ const updatePet = async () => {
         Birthday: birthdayDOM.value,
         Gender: (document.getElementById('femaleSelector').selected) ? 'Female' : 'Male',
         Color: colorDOM.value,
-        Breed:breedDOM.value,
+        Breed: breedDOM.value,
         Medical: medicalListDOM.value.split(','),
         Personality: personalityListDOM.value.split(','),
         Notes: additionalNotesDOM.value,

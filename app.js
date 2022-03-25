@@ -21,7 +21,6 @@ const loginAdmin = require('./routes/loginAPI')
 
 //for gridFS
 const bodyParser = require('body-parser')
-const gridFSRoutes = require("./routes/gridFSroute")
 const upload = require('express-fileupload')
 
 // JWT
@@ -56,7 +55,6 @@ app.use(express.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
 app.use(routes);
-app.use('/api/v1/petImages', gridFSRoutes);
 app.use('/api/v1/applications', routesApp);
 app.use('/', navigation);
 

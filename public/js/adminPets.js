@@ -87,13 +87,12 @@ const confirmDeletePet = async (id) => {
     let petDeletion = new Modal({
         title: 'Warning!',
         content: 'Are you sure you want to delete this pet?',
-        buttons: [
+        forms: [
             {
                 title: 'Yes',
                 type: 'primary',
-                action() {
-                    deletePet(id)
-                }
+                action: `/api/v1/petDelete/${id}`,
+                method: 'post'
             }, {
                 title: 'Cancel',
                 type: 'red',
@@ -153,10 +152,6 @@ const sortPets = (a, b) => {
         return date1 - date2
     }
 }
-
-document.getElementById('test').addEventListener('submit', (e) => {
-    e.target.action = '/api/v1/petDelete/623ceda03df1a00a56877d7a';
-})
 
 filterAllBtn.addEventListener('click', () => {
     filterAllBtn.classList.add('active');

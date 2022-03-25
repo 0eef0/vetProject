@@ -27,12 +27,33 @@ async function petUpload(req, res) {
 
 async function petDelete(req, res) {
     try {
-        // await client.connect();
-        console.log(req.params.id)
-        model.findByIdAndDelete(req.params.id)
-        await bucket.find({ filename: await req.params.id }).forEach(doc => console.log(doc));
-        // await model.findByIdAndDelete(req.params.id);
-        return res.redirect('/adminPets');
+        await client.connect();
+        const user = await model.findById(req.params.id);
+        user.IMG.forEach(async imgName => {
+            const imageId = [];
+            const image = bucket.find({ filename: imgName });
+            await image.forEach(img => imageId.push(img._id));
+            await bucket.delete(imageId[0]);
+        })
+        await model.findByIdAndDelete(req.params.id);
+        res.redirect('/adminPets')
+    } catch (error) {
+        res.status(500).json({ msg: error });
+    }
+}
+
+async function petUpdate(req, res) {
+    try {
+        await client.connect();
+        const user = await model.findById(req.params.id);
+        user.IMG.forEach(async imgName => {
+            const imageId = [];
+            const image = bucket.find({ filename: imgName });
+            await image.forEach(img => imageId.push(img._id));
+            await bucket.delete(imageId[0]);
+        })
+        await model.findByIdAndDelete(req.params.id);
+        res.redirect('/adminPets')
     } catch (error) {
         res.status(500).json({ msg: error });
     }
@@ -61,4 +82,18 @@ async function getGridImg(req, res) {
         res.status(500).json({ msg: error });
     }
 }
-module.exports = { petUpload, petDelete, getGridImgs, getGridImg };
+
+async function deleteGridImg(req, res, next) {
+    try {
+        await client.connect();
+        const imageId = [];
+        const image = bucket.find({ filename: req.params.id });
+        await image.forEach(img => imageId.push(img._id));
+        await bucket.delete(imageId[0]);
+        console.log("sdf")
+        next();
+    } catch (error) {
+        res.status(500).json({ msg: error });
+    }
+}
+module.exports = { petUpload, petDelete, petUpdate, getGridImgs, getGridImg, deleteGridImg };

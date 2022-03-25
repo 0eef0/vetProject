@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 class Modal {
-  constructor (opts) {
+  constructor(opts) {
     this.ID = this._generateID()
     this._prepare(this.ID)
 
@@ -11,40 +11,47 @@ class Modal {
     // this.initDraggable()
 
     this._setDefaults(opts)
-    this._setButtons(opts)
+    this._setForms(opts)
   }
 
-  _setDefaults (opts) {
+  _setDefaults(opts) {
     const { title, content } = opts
 
     this.$instance.querySelector('.main-title').innerText = title
     this.$instance.querySelector('.content').innerHTML = content
   }
 
-  _setButtons (opts) {
-    const { buttons } = opts
+  _setForms(opts) {
+    const { forms } = opts
 
-    buttons.forEach(btn => {
-      const { title, type, action } = btn
-      const button = document.createElement('button')
+    forms.forEach(formData => {
+      const { title, type, action, method } = formData
+      const form = document.createElement('form')
 
-      button.classList.add(`${type}-button`)
-      button.innerHTML = title
-      button.addEventListener('click', action)
-      this.$instance.querySelector('.buttons').appendChild(button)
+      form.classList.add(`${type}-button`)
+      form.innerHTML = title
+      if (typeof action === 'string') {
+        form.action = action
+        form.addEventListener('click', () => {
+          form.submit()
+        })
+      }
+      else { form.addEventListener('click', action) }
+      form.method = method
+      this.$instance.querySelector('.buttons').appendChild(form)
     })
   }
 
-  _setHandle () {
+  _setHandle() {
     this.$instance.querySelectorAll('.close-modal').forEach(el => el.addEventListener('click', () => this.close()))
     this.$instance.querySelectorAll('.fullscreen-modal').forEach(el => el.addEventListener('click', () => this.toogleFullscreen()))
   }
 
-  _generateID () {
+  _generateID() {
     return Math.floor(Math.random() * (9999999999 - 0)) + 0
   }
 
-  _prepare (ID) {
+  _prepare(ID) {
     document.body.insertAdjacentHTML('beforeend',
       `
         <div class="modal-container modal-${ID}">
@@ -66,23 +73,23 @@ class Modal {
     )
   }
 
-/*                 <div class="container-actions">
-                  <div class="material-icons fullscreen-modal">fullscreen</div>
-                  <div class="material-icons close-modal">clear</div>
-                </div> */
+  /*                 <div class="container-actions">
+                    <div class="material-icons fullscreen-modal">fullscreen</div>
+                    <div class="material-icons close-modal">clear</div>
+                  </div> */
 
-  _destroy () {
+  _destroy() {
     this.$instance.style.display = 'none'
     this.$instance.remove()
   }
 
-  _animateCSS (node, animation, prefix = 'animate__') {
+  _animateCSS(node, animation, prefix = 'animate__') {
     return new Promise((resolve, reject) => {
       const animationName = `${prefix}${animation}`
       if (node) {
         node.classList.add(`${prefix}animated`, animationName)
 
-        function handleAnimationEnd (event) {
+        function handleAnimationEnd(event) {
           event.stopPropagation()
           node.classList.remove(`${prefix}animated`, animationName)
           resolve('Animation ended')
@@ -96,13 +103,13 @@ class Modal {
     })
   }
 
-  show () {
+  show() {
     this.$instance.style.display = 'block'
     this._animateCSS(this.$instance.querySelector('.background'), 'fadeIn')
     this._animateCSS(this.$instance.querySelector('.modal'), 'bounceIn')
   }
 
-  close () {
+  close() {
     this._animateCSS(this.$instance.querySelector('.modal'), 'bounceOut').then(() => {
       this.$instance.querySelector('.modal').style.display = 'none'
       this._animateCSS(this.$instance.querySelector('.background'), 'fadeOut').then(() => {
@@ -111,14 +118,14 @@ class Modal {
     })
   }
 
-  toogleFullscreen () {
+  toogleFullscreen() {
     const text = this.$instance.querySelector('.fullscreen-modal').innerText
     this.$instance.querySelector('.fullscreen-modal').innerText = text === 'fullscreen' ? 'close_fullscreen' : 'fullscreen'
 
     this.modal.classList.toggle('fullscreen')
   }
 
-  initDraggable () {
+  initDraggable() {
     let isDragActive = false
     let defaultValues = {}
     let originalPosition = {}
