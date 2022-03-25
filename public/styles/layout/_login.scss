@@ -2,6 +2,7 @@ form#login {
   position: relative;
   width: clamp(350px, 40%, 500px);
   background-color: #f5f6fa;
+  border-radius: $radius-large;
   padding: 1rem;
   height: 50vh;
   min-height: 350px;

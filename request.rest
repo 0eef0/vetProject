@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "username": "name",
-  "password": "password123"
+  "password": "password"
 }
 ################################
 POST http://localhost:5000/users

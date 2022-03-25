@@ -4,10 +4,12 @@ require('dotenv').config();
 const client = new mongodb.MongoClient(process.env.MONGO_URI);
 const db = client.db('myFirstDatabase');
 const bucket = new mongodb.GridFSBucket(db, { bucketName: 'petImages' });
+const model = require('../models/petModel');
 
 async function petUpload(req, res) {
     await client.connect();
     const pet = await req.body;
+    bucket.drop();
     pet.IMG = [];
     req.files.img.forEach((image, i) => {
         const imgId = (mongodb.ObjectId()).toString();
@@ -27,9 +29,10 @@ async function petDelete(req, res) {
     try {
         // await client.connect();
         console.log(req.params.id)
-        // await bucket.find({ filename: await req.params.id }).forEach(doc => bucket.delete(doc._id));
-        // await db.collection('pets').findOneAndDelete({ _id: req.params.id });
-        return res.send('kljsfd');
+        model.findByIdAndDelete(req.params.id)
+        await bucket.find({ filename: await req.params.id }).forEach(doc => console.log(doc));
+        // await model.findByIdAndDelete(req.params.id);
+        return res.redirect('/adminPets');
     } catch (error) {
         res.status(500).json({ msg: error });
     }

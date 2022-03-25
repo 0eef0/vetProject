@@ -53,14 +53,15 @@ async function getApplInfo() {
 
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
-		const appBirthday = new Date(curApp.birthday).toLocaleDateString('PST', options)
+		const appBday = new Date(curApp.birthday).toLocaleDateString('PST', options)
+		console.log(appBirthday, curApp.birthday);
 		const petBDay = new Date(curPet.birthday).toLocaleDateString('PST', options)
 
 		console.log(appDateCreated)
 		appDateCreated.innerHTML = dateCreated;
 		appName.innerHTML = curApp.fullName;
 		appPetWanted.innerHTML = curApp.wantedPet;
-		appBirthday.innerHTML = appBirthday;
+		appBirthday.innerHTML = appBday;
 		appOccupation.innerHTML = curApp.occupation;
 		appAddress.innerHTML = curApp.address;
 		appPhone.innerHTML = curApp.phoneNumber;

@@ -77,7 +77,7 @@ newPetFormDOM.addEventListener('submit', async (e) => {
 
 const deletePet = async (id) => {
     try {
-        await axios.delete(`${url}/${id}`);
+        await axios.post(`/api/v1/petDelete/${id}`);
     } catch (error) {
         console.log(error);
     }
@@ -153,6 +153,10 @@ const sortPets = (a, b) => {
         return date1 - date2
     }
 }
+
+document.getElementById('test').addEventListener('submit', (e) => {
+    e.target.action = '/api/v1/petDelete/623ceda03df1a00a56877d7a';
+})
 
 filterAllBtn.addEventListener('click', () => {
     filterAllBtn.classList.add('active');
