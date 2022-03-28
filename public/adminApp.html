@@ -2,40 +2,46 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles/main.css">
-	<title>Vet Admin - Applications</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Vet Admin - Applications</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/VetLogo.svg" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 
 <body id="adminApp">
-	<nav class="navbar">
-		<ul>
-			<div class="align-left">
-				<li class="nav-logo"><img src="./assets/NECLogoBanner.png" alt="West-MEC Veterinary Science Logo">
-				</li>
-				<li class="nav-item title"><a href="/">Veterinary Science</a></li>
-				<li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
-			</div>
-			<div class="align-right links closed">
-				<li class="nav-item"><a class="link active" href="/adminHome">Applications</a></li>
-				<li class="nav-item"><a class="link" href="/adminPets">Pets</a></li>
-				<li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
-				<li class="nav-item">
-					<form action="/users/logout" method="post">
-						<button type="submit" class="link">Logout</button>
-					</form>
-				</li>
-			</div>
-		</ul>
-	</nav>
-	<main class='infoBlock'></main>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-		integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="js/adminApp.js"></script>
-	<script src="./js/navbar.js"></script>
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul>
+            <div class="align-left">
+                <li class="nav-logo"><img src="./assets/NECLogoBanner.png" alt="West-MEC Veterinary Science Logo">
+                </li>
+                <li class="nav-item title"><a href="/">Veterinary Science</a></li>
+                <li class="menu-button"><button><i class="fas fa-bars"></i></button></li>
+            </div>
+            <div class="align-right links closed">
+                <li class="nav-item"><a class="link active" href="/adminHome">Applications</a></li>
+                <li class="nav-item"><a class="link" href="/adminPets">Pets</a></li>
+                <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
+                <li class="nav-item">
+                    <form action="/users/logout" method="post">
+                        <button type="submit" class="link">Logout</button>
+                    </form>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <main class='infoBlock'></main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/adminApp.js"></script>
+    <script src="./js/navbar.js"></script>
 </body>
 
 </html>

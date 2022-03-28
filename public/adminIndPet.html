@@ -52,19 +52,19 @@
     </a>
 
     <div class="petPage">
-        <div class="petInfo adminPetInfo">
+        <div id="edit-pet-form" class="petInfo adminPetInfo">
             <!-- <h1 class="pet-name"></h1> -->
-            <input type="text" placeholder="name" class="pet-name" title="pet name">
+            <input type="text" placeholder="name" class="pet-name" title="pet name" required>
             <ul>
                 <div class="row">
                     <div class="col facts">
                         <li>
                             <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
-                            <input type="date" class="birthday" title="birthday">
+                            <input type="date" class="birthday" title="birthday" required>
                         </li>
                         <li>
                             <strong>Gender:</strong> <!-- <span class="gender"> -->
-                            <select name="petGender" id="petGender" title="pet gender">
+                            <select name="petGender" id="petGender" title="pet gender" required>
                                 <option value="Male" id="maleSelector">Male</option>
                                 <option value="Female" id="femaleSelector">Female</option>
                             </select>
@@ -72,11 +72,11 @@
                         </li>
                         <li>
                             <strong>Color:</strong> <!-- <span class="color"></span> -->
-                            <input type="text" class="color" title="pet color">
+                            <input type="text" class="color" title="pet color" required>
                         </li>
                         <li>
                             <strong>Breed:</strong> <!-- <span class="breed"></span> -->
-                            <input type="text" class="breed" title="pet breed">
+                            <input type="text" class="breed" title="pet breed" required>
                         </li>
                         <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
@@ -85,13 +85,13 @@
                             <!-- <ul class="medical">
                                 <li>drugs</li>
                             </ul> -->
-                            <textarea name="medical" class="medical" title="medical info"></textarea>
+                            <textarea name="medical" class="medical" title="medical info" placeholder="Medical Details (separate by commas)" required></textarea>
                         </li>
                         <li><strong>Personality:</strong>
                             <!-- <ul class="personality">
                                 <li>stupid</li>
                             </ul> -->
-                            <textarea name="personality" class="personality" title="pet personality"></textarea>
+                            <textarea name="personality" class="personality" title="pet personality" placeholder="Personality Traits (separate by commas)" required></textarea>
                         </li>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     <p><strong>Images:</strong></p>
                     <ul id="petImageNames">
                         <form>
-                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
+                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
                             <button type="button" onclick="addImg()">Submit Photo</button>
                         </form>
                         <br>
