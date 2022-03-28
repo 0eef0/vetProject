@@ -56,8 +56,10 @@
             <input type="text" placeholder="Pet Name" name="Name" required>
             <input type="date" placeholder="Pet Birthday" name="Birthday" title="Pet birthday" required>
             <select name="Gender" title="Pet gender" required>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="Neutered Male">Neutered Male</option>
+                <option value="Spayed Female">Spayed Female</option>
+                <option value="Unneutered Male">Unneutered Male</option>
+                <option value="Unspayed Female">Unspayed Female</option>
             </select>
             <select name="Species" title="Pet species" required>
                 <option value="Dog">Dog</option>
@@ -77,11 +79,13 @@
                 </div>
                 <i class="fas fa-plus" onclick="addImg();" id="addImgBtn"></i>
             </div>
-            <button type="submit">Submit</button>
+            <button id="adminSubmit" type="submit">Submit</button>
         </form>
     </div>
     <br>
-
+    <div class="petTitle2">
+        <p>Current Pets</p>
+    </div>
     <div class="filters">
         <div class="selection-buttons">
             <button id="all" class="active">All</button>
