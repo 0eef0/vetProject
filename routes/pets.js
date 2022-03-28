@@ -1,3 +1,4 @@
+// check authentication for these functions
 const express = require('express');
 const app = express();
 

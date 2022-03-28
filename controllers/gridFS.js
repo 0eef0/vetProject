@@ -8,8 +8,7 @@ const model = require('../models/petModel');
 
 async function petUpload(req, res) {
     await client.connect();
-    const pet = await req.body;
-    bucket.drop();
+    const pet = req.body;
     pet.IMG = [];
     req.files.img.forEach((image, i) => {
         const imgId = (mongodb.ObjectId()).toString();
@@ -21,15 +20,15 @@ async function petUpload(req, res) {
             }));
         fs.unlinkSync(`./inputImage${i}.png`);
     })
-    await db.collection('pets').insertOne(pet);
+    await model.create(pet);
     res.redirect('/adminPets');
 }
 
 async function petDelete(req, res) {
     try {
         await client.connect();
-        const user = await model.findById(req.params.id);
-        user.IMG.forEach(async imgName => {
+        const pet = await model.findById(req.params.id);
+        pet.IMG.forEach(async imgName => {
             const imageId = [];
             const image = bucket.find({ filename: imgName });
             await image.forEach(img => imageId.push(img._id));
@@ -42,18 +41,23 @@ async function petDelete(req, res) {
     }
 }
 
-async function petUpdate(req, res) {
+async function petUpdate(req, res, next) {
     try {
         await client.connect();
-        const user = await model.findById(req.params.id);
-        user.IMG.forEach(async imgName => {
+        req.body.data = JSON.parse(req.body.data);
+        const pet = req.body.data.pet || await model.findById(req.params.id);
+        if (req.body.data.newImage) {
+            console.log(req.files);
+        }
+        if (req.body.data.imageName) {
             const imageId = [];
-            const image = bucket.find({ filename: imgName });
+            const image = bucket.find({ filename: req.body.data.imageName });
             await image.forEach(img => imageId.push(img._id));
             await bucket.delete(imageId[0]);
-        })
-        await model.findByIdAndDelete(req.params.id);
-        res.redirect('/adminPets')
+            pet.IMG = pet.IMG.filter(img => img != req.body.data.imageName);
+        }
+        await model.findByIdAndUpdate(req.params.id, pet);
+        res.redirect(`/adminPet?id=${req.params.id}`);
     } catch (error) {
         res.status(500).json({ msg: error });
     }
@@ -90,10 +94,10 @@ async function deleteGridImg(req, res, next) {
         const image = bucket.find({ filename: req.params.id });
         await image.forEach(img => imageId.push(img._id));
         await bucket.delete(imageId[0]);
-        console.log("sdf")
         next();
     } catch (error) {
         res.status(500).json({ msg: error });
     }
 }
+
 module.exports = { petUpload, petDelete, petUpdate, getGridImgs, getGridImg, deleteGridImg };
