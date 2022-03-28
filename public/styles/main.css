@@ -1560,6 +1560,10 @@ div.adminPetInfo textarea {
   height: 10vh;
 }
 
+.petPage {
+  border-radius: 8px;
+}
+
 .modal-container {
   display: none;
   -webkit-user-select: none;
