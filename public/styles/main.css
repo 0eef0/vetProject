@@ -454,7 +454,6 @@ div.homeGallery {
 
 .petTitle {
   margin-top: 1rem;
-  background-color: #2d3436;
   width: 100%;
   text-align: center;
   border-radius: 1rem;
@@ -1438,6 +1437,27 @@ div#newPet form button {
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
   margin: 1.5rem auto;
+}
+
+.petTitle2 {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+}
+.petTitle2 p {
+  font-size: 5rem;
+  color: white;
+}
+
+@media screen and (max-width: 550px) {
+  .petTitle2 p {
+    font-size: 3rem;
+  }
+}
+#adminSubmit {
+  border-radius: 0.5rem;
+  border: black 0.5px solid;
 }
 
 div.confirmationBox {
