@@ -8,13 +8,13 @@ const PetSchema = new mongoose.Schema({
     },
     Birthday: {
         type: Date,
-        required: [true, 'Must provide the age']
+        required: [true, 'Must provide the birthday']
     },
     Gender: {
         type: String,
         required: [true, 'Must provide their gender'],
         enum: {
-            values: ['Male','Female'],
+            values: ['Neutered Male','Spayed Female', 'Unneutered Male', 'Unspayed Female'],
             message: '{VALUE} is not supported',
         }
     },

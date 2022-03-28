@@ -9,7 +9,6 @@ const model = require('../models/petModel');
 async function petUpload(req, res) {
     await client.connect();
     const pet = await req.body;
-    bucket.drop();
     pet.IMG = [];
     req.files.img.forEach((image, i) => {
         const imgId = (mongodb.ObjectId()).toString();
