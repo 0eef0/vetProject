@@ -184,7 +184,8 @@ body {
 
 img {
   background: #f9f9f9;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 p {
@@ -345,6 +346,8 @@ div.homeGallery {
   margin: 0;
 }
 #aboutUs .rows {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -479,7 +482,8 @@ div.petPage #petImageNames li {
   font-size: 1rem;
 }
 div.petPage #petImageNames li:hover {
-  text-decoration: line-through 2px red;
+  -webkit-text-decoration: line-through 2px red;
+          text-decoration: line-through 2px red;
 }
 div.petPage div {
   width: 40%;
@@ -519,6 +523,8 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: square;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -532,6 +538,8 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -650,6 +658,8 @@ a#mainPgBtn:visited {
 }
 #adminIndApp main .appBlock {
   width: calc(50% - 3rem);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
   background-color: #f9f9f9;
@@ -658,6 +668,8 @@ a#mainPgBtn:visited {
   margin-bottom: 2rem;
 }
 #adminIndApp main .appBlock .row {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -790,8 +802,11 @@ a#mainPgBtn:visited {
     display: grid !important;
     visibility: visible !important;
     place-items: center;
-    margin-left: auto;
-    padding: 0 1rem;
+    position: absolute;
+    right: 0.25rem;
+    top: 0;
+    bottom: 0;
+    padding: 0.5rem 1rem;
     cursor: pointer;
   }
   .navbar ul .menu-button i {
@@ -964,7 +979,8 @@ div.carousel div.carouselImages .carouselImg {
   min-width: 100%;
   opacity: 0;
   transition: opacity 0.75s;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -1005,7 +1021,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -1058,6 +1075,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1182,6 +1201,8 @@ footer .row p {
 @media screen and (max-width: 556px) {
   ul {
     text-align: center;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
     width: max-content !important;
   }
 
@@ -1287,6 +1308,8 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -1297,6 +1320,8 @@ button#submitAdoptForm {
 }
 .infoBlock .record {
   width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1320,7 +1345,10 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-weight: bold;
 }
 .infoBlock .record a.moreInfo,
@@ -1334,6 +1362,8 @@ button#submitAdoptForm {
 }
 .infoBlock .appl {
   width: 75%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   display: none;
@@ -1454,6 +1484,8 @@ div.adminPetInfo form button {
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -1481,7 +1513,10 @@ div.adminPetInfo textarea {
 
 .modal-container {
   display: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .modal-container .background {
   position: fixed;
@@ -1495,7 +1530,8 @@ div.adminPetInfo textarea {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  animation-duration: 200ms;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
   background: rgba(9, 9, 9, 0.8);
 }
 .modal-container .background .modal {
@@ -1505,7 +1541,8 @@ div.adminPetInfo textarea {
   position: relative;
   z-index: 999999;
   overflow: hidden;
-  animation-duration: 500ms;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
   transition: all 100ms linear;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -1521,7 +1558,8 @@ div.adminPetInfo textarea {
   font-size: 1.6rem;
   font-weight: 500;
   cursor: default;
-  animation: border-top-color 2s infinite linear;
+  -webkit-animation: border-top-color 2s infinite linear;
+          animation: border-top-color 2s infinite linear;
 }
 .modal-container .background .modal .title .container-actions {
   display: flex;
@@ -1607,6 +1645,18 @@ div.adminPetInfo textarea {
   flex: 1;
 }
 
+@-webkit-keyframes border-top-color {
+  0% {
+    border-top: 5px solid #f7941d;
+  }
+  50% {
+    border-top: 5px solid #fab767;
+  }
+  100% {
+    border-top: 5px solid #f7941d;
+  }
+}
+
 @keyframes border-top-color {
   0% {
     border-top: 5px solid #f7941d;
@@ -1686,6 +1736,8 @@ div#currUsers #userHead {
 }
 div#currUsers .user p,
 div#currUsers #userHead p {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
   min-width: max-content;
 }
 div#currUsers .user p.name,
@@ -1724,6 +1776,4 @@ div#currUsers #userHead button {
   div#currUsers #userHead {
     display: none;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

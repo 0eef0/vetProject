@@ -71,8 +71,11 @@
 			display: grid !important;
 			visibility: visible !important;
 			place-items: center;
-			margin-left: auto;
-			padding: 0 1rem;
+            position: absolute;
+            right: .25rem;
+            top: 0;
+            bottom: 0;
+			padding: .5rem 1rem;
 			cursor: pointer;
 			i {
 				font-size: 2.5rem;
