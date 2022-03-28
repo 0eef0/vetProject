@@ -8,7 +8,8 @@
   margin-bottom: 20px;
   margin-top: 30px;
   .record {
-    width: 80%;
+    width: 100%;
+    max-width: 60rem;
     height: fit-content;
     font-size: 20px;
     display: flex;
@@ -34,6 +35,7 @@
       cursor: pointer;
       user-select: none;
       font-weight: bold;
+      flex-shrink: 0;
     }
     a.moreInfo,
     a.moreInfo:visited {
@@ -46,7 +48,7 @@
     }
   }
   .appl {
-    width: 75%;
+    width: 35rem;
     height: fit-content;
     margin-left: 5%;
     display: none;
@@ -55,6 +57,16 @@
       &:first-of-type {
         margin-top: 0;
       }
+    }
+  }
+  @media screen and (max-width: 870px) {
+    p {
+      width: 100%;
+    }
+    .moreInfo {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
   }
 }

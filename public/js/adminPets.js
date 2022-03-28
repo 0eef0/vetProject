@@ -115,14 +115,15 @@ const showPets = async () => {
         }
         const allPets = await Promise.all(pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map(async (pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = await pet;
-            const bDay = new Date(Birthday);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const bDay = new Date(Birthday).toLocaleDateString('PST', options);
             return `
             <div class="card">
                 <img src='/api/v1/petImages/${IMG[0]}' alt='${Name}' />
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
-                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay.toISOString().slice(0, 10)}.</p>
+                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
                         <a onclick="confirmDeletePet('${id}')" tabindex="0" role=link>Delete</a>
