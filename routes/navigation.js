@@ -1,7 +1,7 @@
 const express = require('express');
 const navigation = express.Router();
 const path = require('path');
-const {ensureAuthenticated} = require('../middleware/auth')
+const {ensureAuthenticated, ensureMasterAuthenticated} = require('../middleware/auth')
 // const { ensureAuthenticated } = require('connect-ensure-authenticated');
 
 // Front end
@@ -26,6 +26,8 @@ navigation.get('/adminLogin', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminLogin.html'));
 })
 navigation.get('/adminHome', ensureAuthenticated, (req, res) => {
+    console.log(req.user)
+    res.locals.currentUser = req.user;
     res.sendFile(path.resolve(__dirname, '../public/adminApp.html'));
 })
 navigation.get('/adminApplication', ensureAuthenticated, (req, res) => {
@@ -40,7 +42,7 @@ navigation.get('/adminPet', ensureAuthenticated, (req, res) => {
 navigation.get('/adminRecords', ensureAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminRecords.html'))
 })
-navigation.get('/adminCreate', (req, res) => {
+navigation.get('/adminCreate',ensureMasterAuthenticated, (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/adminCreate.html'))
 })
 

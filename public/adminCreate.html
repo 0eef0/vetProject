@@ -51,11 +51,11 @@
     </div>
 
     <div id="newUser">
-        <form class="newUserForm">
+        <form class="newUserForm" method="post" action="/users/">
             <h1>Create a new user</h1>
-            <input type="text" placeholder="Name" id="name" required>
-            <input type="email" placeholder="User Email" id="email" required>
-            <input type="password" placeholder="User Password" id="pass" required>
+            <input type="text" name="name" placeholder="Name" id="name" required>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <input type="password" name="password" placeholder="User Password" id="pass" required>
             <button type="submit">Submit</button>
         </form>
     </div>

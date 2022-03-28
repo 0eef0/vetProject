@@ -12,3 +12,10 @@ logoutBtn && logoutBtn.addEventListener('click', async () => {
     console.log('logout')
     await axios.post('/users/logout');
 })
+
+const getCurrentUser = async () => {
+    const { data: { user }, } = await axios.get('/users/current')
+
+    console.log(user)
+}
+getCurrentUser();
