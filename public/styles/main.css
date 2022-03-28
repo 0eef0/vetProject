@@ -1318,7 +1318,8 @@ button#submitAdoptForm {
   margin-top: 30px;
 }
 .infoBlock .record {
-  width: 80%;
+  width: 100%;
+  max-width: 60rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1349,6 +1350,7 @@ button#submitAdoptForm {
       -ms-user-select: none;
           user-select: none;
   font-weight: bold;
+  flex-shrink: 0;
 }
 .infoBlock .record a.moreInfo,
 .infoBlock .record a.moreInfo:visited {
@@ -1360,7 +1362,7 @@ button#submitAdoptForm {
   text-align: center;
 }
 .infoBlock .appl {
-  width: 75%;
+  width: 35rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1372,6 +1374,16 @@ button#submitAdoptForm {
 }
 .infoBlock .appl .record:first-of-type {
   margin-top: 0;
+}
+@media screen and (max-width: 870px) {
+  .infoBlock p {
+    width: 100%;
+  }
+  .infoBlock .moreInfo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 
 div#newPet {
