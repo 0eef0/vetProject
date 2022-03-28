@@ -835,6 +835,7 @@ a#mainPgBtn:visited {
   .navbar ul .links .link {
     transition: opacity 100ms linear;
     transition-delay: 100ms;
+    text-align: start;
   }
   .navbar ul .links.closed {
     transform: scaleY(0);
@@ -843,6 +844,15 @@ a#mainPgBtn:visited {
   .navbar ul .links.closed .link {
     opacity: 0;
     transition-delay: 0ms;
+  }
+
+  a.link {
+    max-width: 100vw;
+  }
+}
+@media screen and (max-width: 450px) {
+  li.title {
+    display: none !important;
   }
 }
 .banner {
@@ -1382,6 +1392,7 @@ div#newPet form {
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
+  border-radius: 8px;
 }
 div#newPet form h1 {
   font-size: 3rem;
@@ -1397,6 +1408,7 @@ div#newPet form div#imageInput div#images {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 @media only screen and (max-width: 700px) {
   div#newPet form div#imageInput {
@@ -1453,6 +1465,11 @@ div#newPet form button {
 @media screen and (max-width: 550px) {
   .petTitle2 p {
     font-size: 3rem;
+  }
+}
+@media screen and (max-width: 369px) {
+  form.newPetForm textarea {
+    height: 6.7rem;
   }
 }
 #adminSubmit {
