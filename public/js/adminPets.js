@@ -123,7 +123,7 @@ const showPets = async () => {
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
-                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
+                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender.split(' ')[1] == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
                         <a onclick="confirmDeletePet('${id}')" tabindex="0" role=link>Delete</a>

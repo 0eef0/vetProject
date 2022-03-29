@@ -184,7 +184,8 @@ body {
 
 img {
   background: #f9f9f9;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 p {
@@ -345,6 +346,8 @@ div.homeGallery {
   margin: 0;
 }
 #aboutUs .rows {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -478,7 +481,8 @@ div.petPage #petImageNames li {
   font-size: 1rem;
 }
 div.petPage #petImageNames li:hover {
-  text-decoration: line-through 2px red;
+  -webkit-text-decoration: line-through 2px red;
+          text-decoration: line-through 2px red;
 }
 div.petPage div {
   width: 40%;
@@ -518,6 +522,8 @@ div.petPage div.petInfo .row .col.facts {
 }
 div.petPage div.petInfo .row .col ul {
   list-style: square;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -531,6 +537,8 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -649,6 +657,8 @@ a#mainPgBtn:visited {
 }
 #adminIndApp main .appBlock {
   width: calc(50% - 3rem);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
   background-color: #f9f9f9;
@@ -657,6 +667,8 @@ a#mainPgBtn:visited {
   margin-bottom: 2rem;
 }
 #adminIndApp main .appBlock .row {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -976,7 +988,8 @@ div.carousel div.carouselImages .carouselImg {
   min-width: 100%;
   opacity: 0;
   transition: opacity 0.75s;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -1017,7 +1030,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -1070,6 +1084,8 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1194,6 +1210,8 @@ footer .row p {
 @media screen and (max-width: 556px) {
   ul {
     text-align: center;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
     width: max-content !important;
   }
 
@@ -1299,6 +1317,8 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -1307,17 +1327,11 @@ button#submitAdoptForm {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-<<<<<<< HEAD
-.infoBlock .record {
-  width: 100%;
-  max-width: 60rem;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-=======
 .infoBlock > .record {
   width: 80%;
   max-width: 60rem;
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1330,16 +1344,6 @@ button#submitAdoptForm {
   box-sizing: border-box;
   border-bottom: 2px solid black;
 }
-<<<<<<< HEAD
-.infoBlock .record.template {
-  border-radius: 10px;
-  font-weight: bold;
-}
-.infoBlock .record.template p {
-  cursor: pointer;
-}
-.infoBlock .record .moreInfo {
-=======
 .infoBlock > .record p {
   overflow-wrap: break-word;
 }
@@ -1351,21 +1355,18 @@ button#submitAdoptForm {
   cursor: pointer;
 }
 .infoBlock > .record .moreInfo {
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-weight: bold;
   flex-shrink: 0;
 }
-<<<<<<< HEAD
-.infoBlock .record a.moreInfo,
-.infoBlock .record a.moreInfo:visited {
-=======
 .infoBlock > .record a.moreInfo,
 .infoBlock > .record a.moreInfo:visited {
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
   color: #222;
   text-decoration: none;
   background-color: #f7941d;
@@ -1374,15 +1375,11 @@ button#submitAdoptForm {
   text-align: center;
 }
 .infoBlock .appl {
-<<<<<<< HEAD
-  width: 35rem;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-=======
   background-color: #fff;
   max-width: calc(60rem - 5%);
   width: 75%;
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   margin-bottom: 2px;
@@ -1391,6 +1388,8 @@ button#submitAdoptForm {
 }
 .infoBlock .appl .record {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   display: flex;
   flex-wrap: wrap;
@@ -1402,8 +1401,6 @@ button#submitAdoptForm {
 .infoBlock .appl .record:first-of-type {
   margin-top: 0;
 }
-<<<<<<< HEAD
-=======
 .infoBlock .appl .record .moreInfo {
   width: 30%;
   min-width: 150px;
@@ -1411,7 +1408,10 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-weight: bold;
   flex-shrink: 0;
 }
@@ -1424,7 +1424,6 @@ button#submitAdoptForm {
   border-radius: 16px;
   text-align: center;
 }
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
 @media screen and (max-width: 870px) {
   .infoBlock p {
     width: 100%;
@@ -1439,11 +1438,7 @@ button#submitAdoptForm {
 div#newPet {
   margin-top: 4rem;
 }
-<<<<<<< HEAD
-div#newPet form {
-=======
 div#newPet div.collapse {
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
   background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
@@ -1455,16 +1450,10 @@ div#newPet div.collapse {
   padding: 2rem;
   border-radius: 8px;
 }
-<<<<<<< HEAD
-div#newPet form h1 {
-=======
 div#newPet div.collapse h1 {
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
   font-size: 3rem;
   color: #222;
 }
-<<<<<<< HEAD
-=======
 div#newPet div.collapse #collapsible {
   background-color: #f9f9f9;
   font-size: 3rem;
@@ -1482,7 +1471,6 @@ div#newPet form {
   display: none;
   overflow: hidden;
 }
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
 div#newPet form div#imageInput {
   display: flex;
   justify-content: space-between;
@@ -1605,6 +1593,8 @@ div.adminPetInfo form button {
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -1630,13 +1620,12 @@ div.adminPetInfo textarea {
   height: 10vh;
 }
 
-.petPage {
-  border-radius: 8px;
-}
-
 .modal-container {
   display: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .modal-container .background {
   position: fixed;
@@ -1650,7 +1639,8 @@ div.adminPetInfo textarea {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  animation-duration: 200ms;
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
   background: rgba(9, 9, 9, 0.8);
 }
 .modal-container .background .modal {
@@ -1660,12 +1650,8 @@ div.adminPetInfo textarea {
   position: relative;
   z-index: 999999;
   overflow: hidden;
-<<<<<<< HEAD
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
-=======
-  animation-duration: 500ms;
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
   transition: all 100ms linear;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -1681,7 +1667,8 @@ div.adminPetInfo textarea {
   font-size: 1.6rem;
   font-weight: 500;
   cursor: default;
-  animation: border-top-color 2s infinite linear;
+  -webkit-animation: border-top-color 2s infinite linear;
+          animation: border-top-color 2s infinite linear;
 }
 .modal-container .background .modal .title .container-actions {
   display: flex;
@@ -1765,7 +1752,6 @@ div.adminPetInfo textarea {
 }
 .modal-container .background .fullscreen .content {
   flex: 1;
-<<<<<<< HEAD
 }
 
 @-webkit-keyframes border-top-color {
@@ -1778,8 +1764,6 @@ div.adminPetInfo textarea {
   100% {
     border-top: 5px solid #f7941d;
   }
-=======
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
 }
 
 @keyframes border-top-color {
@@ -1861,6 +1845,8 @@ div#currUsers #userHead {
 }
 div#currUsers .user p,
 div#currUsers #userHead p {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
   min-width: max-content;
 }
 div#currUsers .user p.name,
@@ -1899,10 +1885,4 @@ div#currUsers #userHead button {
   div#currUsers #userHead {
     display: none;
   }
-<<<<<<< HEAD
 }/*# sourceMappingURL=main.css.map */
-=======
-}
-
-/*# sourceMappingURL=main.css.map */
->>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
