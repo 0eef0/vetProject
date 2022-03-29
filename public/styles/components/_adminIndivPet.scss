@@ -5,7 +5,7 @@ div.adminPetInfo {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    flex-direction: row;
+    flex-direction: column;
     button {
       display: block;
       color: $clr-black;
@@ -28,10 +28,14 @@ div.adminPetInfo {
     background-color: rgba($color: $clr-black, $alpha: 0.1);
     border-bottom: 2px solid $accent-color;
     padding: 1rem;
+    width: 18rem;
   }
-  input[type="file"] {
-    background-color: transparent;
-    border: none;
+  div {
+    width: 100%;
+    input[type="file"] {
+        background-color: transparent;
+        border: none;
+    }
   }
   textarea {
     width: 100%;
@@ -39,9 +43,10 @@ div.adminPetInfo {
   }
 }
 
-.petPage {
-    border-radius: $radius-medium;
-}
-#edit-pet-form {
-    // Stuff goes here
+@media screen and (max-width: 760px) {
+    div.adminPetInfo {
+        select, input:not(#img-input) {
+            width: 75%;
+        }
+    }
 }

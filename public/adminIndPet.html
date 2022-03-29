@@ -61,23 +61,31 @@
                     <div class="col facts">
                         <li>
                             <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
-                            <input type="date" class="birthday" title="birthday" required>
+                            <div>
+                                <input type="date" class="birthday" title="birthday" required>
+                            </div>
                         </li>
                         <li>
                             <strong>Gender:</strong> <!-- <span class="gender"> -->
-                            <select name="petGender" id="petGender" title="pet gender" required>
-                                <option value="Male" id="maleSelector">Male</option>
-                                <option value="Female" id="femaleSelector">Female</option>
-                            </select>
+                            <div>
+                                <select name="petGender" id="petGender" title="pet gender" required>
+                                    <option value="Male" id="maleSelector">Male</option>
+                                    <option value="Female" id="femaleSelector">Female</option>
+                                </select>
+                            </div>
                             </span>
                         </li>
                         <li>
                             <strong>Color:</strong> <!-- <span class="color"></span> -->
-                            <input type="text" class="color" title="pet color" required>
+                            <div>
+                                <input type="text" class="color" title="pet color" required>
+                            </div>
                         </li>
                         <li>
                             <strong>Breed:</strong> <!-- <span class="breed"></span> -->
-                            <input type="text" class="breed" title="pet breed" required>
+                            <div>
+                                <input type="text" class="breed" title="pet breed" required>
+                            </div>
                         </li>
                         <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
@@ -96,19 +104,22 @@
                             <textarea name="personality" class="personality" title="pet personality"
                                 placeholder="Personality Traits (separate by commas)" required></textarea>
                         </li>
+                        <li class="added-note">
+                          <strong>Additional Notes:</strong> <br />
+                          <!-- <span class="notes">Pees on absolutely
+                                                everything!</span> -->
+                          <textarea type="text" class="notes" title="Additional Notes"></textarea>
+                        </li>
                     </div>
                 </div>
-                <li class="added-note">
-                    <strong>Additional Notes:</strong> <br />
-                    <!-- <span class="notes">Pees on absolutely
-                        everything!</span> -->
-                    <input type="text" class="notes" title="Additional Notes">
-                </li>
                 <li class="edit-img">
                     <p><strong>Images:</strong></p>
                     <ul id="petImageNames">
-                        <form>
-                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                        <form class="upload-form">
+                            <div>
+                                <input type="file" class="petImg custom-file-input" id="img-input" name="img"
+                                    title="Image upload" accept="image/*" required>
+                            </div>
                             <button type="button" onclick="addImg()">Submit Photo</button>
                         </form>
                         <br>

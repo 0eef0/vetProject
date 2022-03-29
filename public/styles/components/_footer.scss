@@ -213,10 +213,6 @@ footer {
 }
 
 @media screen and (max-width: 556px) {
-	ul {
-		text-align: center;
-        width: max-content !important;
-	}
     .col {
         div {
             display: flex;
@@ -229,5 +225,9 @@ footer {
 		.title {
 			padding-left: 0.5rem !important;
 		}
+    ul {
+      text-align: center;
+      width: max-content !important;
+    }
 	}
 }
