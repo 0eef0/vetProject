@@ -11,22 +11,29 @@ const personalityListDOM = document.querySelector('.personality');
 const additionalNotesDOM = document.querySelector('.notes');
 const adoptBtnDOM = document.querySelector('.adopt-button');
 const petImageNamesDOM = document.querySelector('#petImageNames');
+const imgAdd = document.getElementById('imgAdd');
 
 const params = window.location.search
 const id = new URLSearchParams(params).get('id')
 const url = "/api/v1/pets";
 
 let petImages;
-let petId;
 
 const showPet = async () => {
     const { data: { pet }, } = await axios.get(`${url}/${id}`)
     const { Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG } = pet;
-    console.log(pet)
     const bDay = new Date(Birthday);
     petImages = IMG;
+    if(petImages.length == 12){
+        imgAdd.style.display = 'none';
+    }else{
+        imgAdd.action = `/api/v1/petImages/${id}`;
+        imgAdd.addEventListener('submit', e => {
+            e.preventDefault();
+            confirmSubmit('Are you sure you want to add the image(s)?', e.target);
+        });
+    }
     document.getElementById('confirmationMessage').innerHTML = `You have updated ${Name}. Click anywhere to return to pets page.`
-
     document.title = `Edit ${Name}`;
     petNameDOM.value = `${Name}`;
     birthdayDOM.value = bDay.toISOString().slice(0, 10);
@@ -44,6 +51,30 @@ const showPet = async () => {
 }
 showPet()
 
+const confirmSubmit = async (content = 'Are you sure?', e) => {
+    let confirmBox = new Modal({
+        title: 'Warning!',
+        content,
+        forms: [
+            {
+                title: 'Yes',
+                type: 'primary',
+                action() {
+                    e.submit();
+                }
+            }, {
+                title: 'Cancel',
+                type: 'red',
+                action() {
+                    confirmBox.close();
+                }
+            }
+        ]
+    })
+
+    confirmBox.show()
+};
+
 const confirmUpdate = async (content = 'Are you sure?', id, data) => {
     let petUpdate = new Modal({
         title: 'Warning!',
@@ -52,7 +83,7 @@ const confirmUpdate = async (content = 'Are you sure?', id, data) => {
             {
                 title: 'Yes',
                 type: 'primary',
-                action: `/api/v1/pets/${id}`,
+                action: `${url}/${id}`,
                 method: 'post',
                 body: data
             }, {
@@ -67,10 +98,6 @@ const confirmUpdate = async (content = 'Are you sure?', id, data) => {
 
     petUpdate.show()
 };
-
-const addImg = () => {
-    // confirmUpdate('Are you sure you want to add the image(s)?', id, { newImage: true });
-}
 
 const removeImg = (index) => {
     confirmUpdate('Are you sure you want to delete this image?', id, { imageName: petImages[index] });
