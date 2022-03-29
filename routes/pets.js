@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-const { petUpload, petDelete, petUpdate, getGridImgs, getGridImg, deleteGridImg } = require('../controllers/gridFs');
+const { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg } = require('../controllers/gridFs');
 const { getAll, deleteAll, get } = require('../controllers/petController')
 
 app.get('/api/v1/pets/:id', get);
@@ -15,6 +15,6 @@ app.post('/api/v1/petDelete/:id', petDelete);
 
 app.get('/api/v1/petImages', getGridImgs);
 app.get('/api/v1/petImages/:id', getGridImg);
-app.delete('/api/v1/petImages/:id', deleteGridImg);
+app.post('/api/v1/petImages/:id', gridAddImg);
 
 module.exports = app;

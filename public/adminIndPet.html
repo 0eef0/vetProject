@@ -106,13 +106,11 @@
                 </li>
                 <li class="edit-img">
                     <p><strong>Images:</strong></p>
-                    <ul id="petImageNames">
-                        <form>
-                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
-                            <button type="button" onclick="addImg()">Submit Photo</button>
-                        </form>
-                        <br>
-                    </ul>
+                    <form id="imgAdd" method="post" enctype="multipart/form-data">
+                        <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                        <button type="submit">Submit Photo</button>
+                    </form>
+                    <ul id="petImageNames"></ul>
                 </li>
 
             </ul>

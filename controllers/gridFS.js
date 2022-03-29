@@ -6,19 +6,34 @@ const db = client.db('myFirstDatabase');
 const bucket = new mongodb.GridFSBucket(db, { bucketName: 'petImages' });
 const model = require('../models/petModel');
 
+async function gridAddImg(req, res) {
+    await client.connect();
+    const pet = await model.findById(req.params.id);
+    const imgId = (mongodb.ObjectId()).toString();
+    pet.IMG.push(imgId);
+    fs.writeFileSync(`./${imgId}.png`, req.files.img.data, { encoding: 'base64' });
+    fs.createReadStream(`./${imgId}.png`).
+        pipe(bucket.openUploadStream(imgId, {
+            chunkSizeBytes: 10485760
+        }));
+    fs.unlinkSync(`./${imgId}.png`);
+    await model.findByIdAndUpdate(req.params.id, pet);
+    res.redirect(`/adminPet?id=${req.params.id}`);
+}
+
 async function petUpload(req, res) {
     await client.connect();
     const pet = req.body;
     pet.IMG = [];
-    req.files.img.forEach((image, i) => {
+    req.files.img.forEach(image => {
         const imgId = (mongodb.ObjectId()).toString();
         pet.IMG.push(imgId);
-        fs.writeFileSync(`./inputImage${i}.png`, image.data, { encoding: 'base64' });
-        fs.createReadStream(`./inputImage${i}.png`).
+        fs.writeFileSync(`./${imgId}.png`, image.data, { encoding: 'base64' });
+        fs.createReadStream(`./${imgId}.png`).
             pipe(bucket.openUploadStream(imgId, {
                 chunkSizeBytes: 10485760
             }));
-        fs.unlinkSync(`./inputImage${i}.png`);
+        fs.unlinkSync(`./${imgId}.png`);
     })
     await model.create(pet);
     res.redirect('/adminPets');
@@ -46,9 +61,6 @@ async function petUpdate(req, res, next) {
         await client.connect();
         req.body.data = JSON.parse(req.body.data);
         const pet = req.body.data.pet || await model.findById(req.params.id);
-        if (req.body.data.newImage) {
-            console.log(req.files);
-        }
         if (req.body.data.imageName) {
             const imageId = [];
             const image = bucket.find({ filename: req.body.data.imageName });
@@ -87,17 +99,17 @@ async function getGridImg(req, res) {
     }
 }
 
-async function deleteGridImg(req, res, next) {
-    try {
-        await client.connect();
-        const imageId = [];
-        const image = bucket.find({ filename: req.params.id });
-        await image.forEach(img => imageId.push(img._id));
-        await bucket.delete(imageId[0]);
-        next();
-    } catch (error) {
-        res.status(500).json({ msg: error });
-    }
-}
+// async function deleteGridImg(req, res, next) {
+//     try {
+//         await client.connect();
+//         const imageId = [];
+//         const image = bucket.find({ filename: req.params.id });
+//         await image.forEach(img => imageId.push(img._id));
+//         await bucket.delete(imageId[0]);
+//         next();
+//     } catch (error) {
+//         res.status(500).json({ msg: error });
+//     }
+// }
 
-module.exports = { petUpload, petDelete, petUpdate, getGridImgs, getGridImg, deleteGridImg };
+module.exports = { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg };
