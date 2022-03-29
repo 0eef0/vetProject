@@ -335,7 +335,7 @@ div.homeGallery {
   }
 }
 #aboutUs .teamContainer {
-  margin: 0 auto;
+  margin: 2rem auto;
   background-color: white;
   width: clamp(80%, 70%, 2000px);
   border-radius: 16px;
@@ -459,15 +459,10 @@ div.homeGallery {
   border-radius: 1rem;
 }
 .petTitle p {
-  font-size: 5rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   color: white;
 }
 
-@media screen and (max-width: 550px) {
-  .petTitle p {
-    font-size: 3rem;
-  }
-}
 div.petPage {
   display: flex;
   justify-content: space-around;
@@ -775,11 +770,22 @@ a#mainPgBtn:visited {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-bottom: 0.05rem solid #2d3436;
 }
+.navbar .user-info {
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  margin: 1px;
+  right: 0;
+  background-color: #f9f9f9;
+}
 .navbar ul {
   display: flex;
   justify-content: space-between;
   font-size: 1.25rem;
   max-height: 3.5rem;
+}
+.navbar ul .userCreate {
+  display: none;
+  visibility: hidden;
 }
 .navbar ul div {
   max-height: 3.5rem;
@@ -830,7 +836,7 @@ a#mainPgBtn:visited {
   white-space: nowrap;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .navbar ul {
     flex-direction: column;
     background-color: #f9f9f9;
@@ -1214,24 +1220,21 @@ footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
   text-decoration: underline;
 }
 footer .row .socials {
-  margin-top: 1.4rem;
-  margin-bottom: 2.4rem;
-  height: 0;
+  margin-top: 1rem;
 }
 footer .row .socials ul {
   padding: 0;
   display: flex;
   list-style: none;
   font-size: 200%;
-  margin: 0;
+  margin: 0 auto;
   justify-content: center;
+  align-items: center;
 }
 footer .row .socials ul li {
   display: flex;
   justify-content: center;
-  width: 0;
-  margin-right: 2.3rem;
-  margin-left: 2.3rem;
+  margin-inline: 1rem;
 }
 footer .row .socials ul li a {
   color: #f9f9f9;
@@ -1244,9 +1247,17 @@ footer .row .socials ul li a:hover, footer .row .socials ul li a:focus {
 }
 footer .row p {
   margin: 0.5rem 0;
+  padding: 0.5rem;
 }
 
 @media screen and (max-width: 556px) {
+  ul {
+    text-align: center;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+
   .col div {
     display: flex;
     justify-content: center;
@@ -1365,8 +1376,8 @@ button#submitAdoptForm {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-.infoBlock .record {
-  width: 100%;
+.infoBlock > .record {
+  width: 80%;
   max-width: 60rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1382,14 +1393,17 @@ button#submitAdoptForm {
   box-sizing: border-box;
   border-bottom: 2px solid black;
 }
-.infoBlock .record.template {
+.infoBlock > .record p {
+  overflow-wrap: break-word;
+}
+.infoBlock > .record.template {
   border-radius: 10px;
   font-weight: bold;
 }
-.infoBlock .record.template p {
+.infoBlock > .record.template p {
   cursor: pointer;
 }
-.infoBlock .record .moreInfo {
+.infoBlock > .record .moreInfo {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
@@ -1400,8 +1414,8 @@ button#submitAdoptForm {
   font-weight: bold;
   flex-shrink: 0;
 }
-.infoBlock .record a.moreInfo,
-.infoBlock .record a.moreInfo:visited {
+.infoBlock > .record a.moreInfo,
+.infoBlock > .record a.moreInfo:visited {
   color: #222;
   text-decoration: none;
   background-color: #f7941d;
@@ -1410,18 +1424,54 @@ button#submitAdoptForm {
   text-align: center;
 }
 .infoBlock .appl {
-  width: 35rem;
+  background-color: #fff;
+  max-width: calc(60rem - 5%);
+  width: 75%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
+  margin-bottom: 2px;
+  padding: 1rem;
   display: none;
 }
 .infoBlock .appl .record {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+.infoBlock .appl .record p {
+  overflow-wrap: break-word;
 }
 .infoBlock .appl .record:first-of-type {
   margin-top: 0;
+}
+.infoBlock .appl .record .moreInfo {
+  width: 30%;
+  min-width: 150px;
+  max-width: 300px;
+  margin-left: auto;
+  padding-left: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+.infoBlock .appl .record a.moreInfo,
+.infoBlock .appl .record a.moreInfo:visited {
+  color: #222;
+  text-decoration: none;
+  background-color: #f7941d;
+  padding: 0.5rem;
+  border-radius: 16px;
+  text-align: center;
 }
 @media screen and (max-width: 870px) {
   .infoBlock p {
@@ -1437,17 +1487,38 @@ button#submitAdoptForm {
 div#newPet {
   margin-top: 4rem;
 }
+div#newPet div.collapse {
+  background-color: #f9f9f9;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  padding-left: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 8px;
+}
+div#newPet div.collapse h1 {
+  font-size: 3rem;
+  color: #222;
+}
+div#newPet div.collapse #collapsible {
+  background-color: #f9f9f9;
+  font-size: 3rem;
+  cursor: pointer;
+  margin: 2rem 2rem;
+}
+div#newPet div.collapse #collapsible :hover {
+  background-color: #d8d8d8;
+}
 div#newPet form {
   background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
-  border-radius: 8px;
-}
-div#newPet form h1 {
-  font-size: 3rem;
-  text-align: center;
-  color: #222;
+  display: none;
+  overflow: hidden;
 }
 div#newPet form div#imageInput {
   display: flex;

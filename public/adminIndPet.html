@@ -35,6 +35,7 @@
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
+				<li class="nav-item userCreate"><a class="link" href="/adminCreate">Create</a></li>
                 <li class="nav-item">
                     <form action="/users/logout" method="post">
                         <button type="submit" class="link">Logout</button>
@@ -42,6 +43,7 @@
                 </li>
             </div>
         </ul>
+        <p class="user-info">logged in as <span class="username"></span></p>
     </nav>
 
     <a href="/adminPets" title="return to admin pets">
@@ -53,9 +55,9 @@
     </a>
 
     <div class="petPage">
-        <div id="edit-pet-form" class="petInfo adminPetInfo">
+        <div class="petInfo adminPetInfo">
             <!-- <h1 class="pet-name"></h1> -->
-            <input type="text" placeholder="name" class="pet-name" title="pet name" required>
+            <input type="text" placeholder="name" class="pet-name" title="pet name">
             <ul>
                 <div class="row">
                     <div class="col facts">

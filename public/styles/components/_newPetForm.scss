@@ -1,16 +1,38 @@
 div#newPet {
   margin-top: 4rem;
+  div.collapse {
+    // border-radius: $radius-large;
+    background-color: $light-background;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    padding-left: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-radius: $radius-medium;
+    h1 {
+    font-size: 3rem;
+    color: $clr-black;
+  }
+  #collapsible {
+    background-color: $light-background;
+    font-size: 3rem;
+    cursor: pointer;
+    margin: 2rem 2rem;
+    :hover {
+      background-color: $medium-light-background;
+    }
+  }
+  }
   form {
     background-color: $light-background;
     width: 80%;
     margin: 0 auto;
     padding: 2rem;
-    border-radius: $radius-medium;
-    h1 {
-      font-size: 3rem;
-      text-align: center;
-      color: $clr-black;
-    }
+    display: none;
+    overflow: hidden;
     div#imageInput {
       display: flex;
       justify-content: space-between;

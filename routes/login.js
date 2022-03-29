@@ -5,8 +5,6 @@ const express = require("express")
 const app = express.Router()
 const bcrypt = require('bcrypt')
 const passport = require('passport');
-const { authenticate } = require('passport');
-const path = require('path');
 
 const users = require('../models/users');
 
@@ -46,14 +44,10 @@ app.post('/', async (req, res) => {
                             newUser.save()
                                 .then((value) => {
                                     console.log(value)
-                                    req.flash('success_msg', 'You have now registered')
-                                    res.redirect('/adminHome')
-                                    // res.sendFile(path.resolve(__dirname, '../public/adminCreate.html'));
+                                    // req.flash('success_msg', 'You have now registered')
+                                    res.send(200)
                                 })
-                                .catch(value => {
-                                    console.error(value)
-                                    res.redirect('/adminCreate')
-                                })
+                                .catch(value => console.log(value))
                         }
                     )
                 )
@@ -64,16 +58,6 @@ app.post('/', async (req, res) => {
     }
 })
 
-app.get('/current', async(req, res) => {
-    if (req.user === undefined) {
-        // The user is not logged in
-        res.json({});
-    } else {
-        res.json({
-            user: req.user
-        });
-    }
-})
 app.post('/login', async (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: '/adminHome',
@@ -101,6 +85,17 @@ app.post('/login', async (req, res, next) => {
     // } catch (error) {
     //     res.status(500).send()
     // }
+})
+
+app.get('/current', async(req, res) => {
+    if (req.user === undefined) {
+        // The user is not logged in
+        res.json({});
+    } else {
+        res.json({
+            user: req.user
+        });
+    }
 })
 
 app.post('/logout', (req, res, next) => {

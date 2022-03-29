@@ -53,8 +53,10 @@ async function getApplInfo() {
 
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
-		const appBday = (new Date(curApp.birthday) * 86400000).toLocaleDateString('PST', options)
-		console.log(curPet);
+
+		const tempDate = new Date(curApp.birthday);
+		const addDay = (tempDate.setDate(tempDate.getDate() + 1));
+		const appBday = new Date(new Date(addDay)).toLocaleDateString('PST', options)
 		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
 
 		console.log(appDateCreated)
@@ -74,15 +76,16 @@ async function getApplInfo() {
 		appGuardian.innerHTML = curApp.guardianName;
 		appGuardianPhone.innerHTML = curApp.guardianPhone;
 		appCurrPets.innerHTML = curApp.currentPets;
+
 		appVaccination.innerHTML = curApp.petVaccination;
-		appVaccinationReason.innerHTML = curApp.perVaccinationReason;
+		appVaccinationReason.innerHTML = curApp.petVaccinationReason;
 		appPetExamine.innerHTML = curApp.petExamine;
-		appPetExamineReason.innerHTML = curApp.appPetExamineReason;
+		appPetExamineReason.innerHTML = curApp.petExamineReason;
 		appQualification.innerHTML = curApp.qualification;
 		appPetTime.innerHTML = curApp.petTime;
 		appAffordableMedicine.innerHTML = curApp.affordableMedication;
 		appDeclaw.innerHTML = curApp.declaw;
-		appAcknowledgement.innerHTML = curApp.appAcknowledgement;
+		appAcknowledgement.innerHTML = curApp.acknowledgement;
 		appAcknowledgementAdoption.innerHTML = curApp.acknowledgementAdoption;
 
 		petName.innerHTML = curPet.Name;
