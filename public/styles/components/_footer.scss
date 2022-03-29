@@ -23,11 +23,11 @@ footer {
 					margin: 0;
 					padding: 0;
 					list-style: none;
-                    width: 25vw;
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-                    text-align: center;
+					width: 25vw;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					text-align: center;
 					li {
 						padding: 0.1rem;
 						&.title {
@@ -76,26 +76,19 @@ footer {
 			}
 		}
 		.socials {
-			margin: {
-				top: 1.4rem;
-				bottom: 2.4rem;
-			}
-			height: 0;
+			margin-top: 1rem;
 			ul {
 				padding: 0;
 				display: flex;
 				list-style: none;
 				font-size: 200%;
-				margin: 0;
+				margin: 0 auto;
 				justify-content: center;
+				align-items: center;
 				li {
 					display: flex;
 					justify-content: center;
-					width: 0;
-					margin: {
-						right: 2.3rem;
-						left: 2.3rem;
-					}
+					margin-inline: 1rem;
 					a {
 						color: $font-light;
 						&:active {
@@ -111,6 +104,7 @@ footer {
 		}
 		p {
 			margin: 0.5rem 0;
+			padding: 0.5rem;
 		}
 	}
 	// 	color: $font-light;
@@ -215,15 +209,15 @@ footer {
 @media screen and (max-width: 556px) {
 	ul {
 		text-align: center;
-        width: max-content !important;
+		width: max-content !important;
 	}
-    .col {
-        div {
-            display: flex;
-            justify-content: center;
-            margin-bottom: .5rem;
-        }
-    }
+	.col {
+		div {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 0.5rem;
+		}
+	}
 	footer .top .col {
 		flex-direction: column;
 		.title {

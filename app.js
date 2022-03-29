@@ -1,6 +1,7 @@
 //primary libraries and things
 const express = require('express');
 const session = require('express-session');
+const flash = require('connect-flash');
 const passport = require('passport');
 require('./middleware/Passport')(passport)
 require('dotenv').config()
@@ -38,6 +39,12 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(flash())
+// app.use((req,res,next) => {
+//     res.locals.success.msg = req.flash('success_msg');
+//     res.locals.error.msg = req.flash('error_msg');
+
+// })
 
 
 //middleware functions
@@ -78,7 +85,6 @@ const serverData = [
         secret: "Nothing to hide"
     }
 ]
-
 
 app.get('/posts', authenticateToken, (req, res) => {
     res.json(serverData.filter(post => post.username === req.user.name))

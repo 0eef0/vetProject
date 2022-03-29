@@ -6,6 +6,9 @@ Content-Type: application/json
   "password": "password"
 }
 ################################
+GET http://localhost:5000/users/current
+content-type: application/json
+################################
 POST http://localhost:5000/users
 Content-Type: application/json
 

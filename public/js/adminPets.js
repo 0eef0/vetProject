@@ -72,7 +72,7 @@ const showPets = async () => {
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
-                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
+                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender.split(' ')[1] == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
                         <a onclick="confirmDeletePet('${id}')" tabindex="0" role=link>Delete</a>
@@ -137,3 +137,20 @@ sortByBtn.addEventListener('click', () => {
 
     showPets();
 })
+
+
+var coll = document.getElementsByClassName("collapse");
+var i;
+
+for(i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if(content.style.display === 'block') {
+            content.style.display = "none";
+        } else {
+            content.style.display ="block";
+            content.style.transition ="width 2s";
+        }
+    })
+}
