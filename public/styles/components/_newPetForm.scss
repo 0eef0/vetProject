@@ -5,16 +5,13 @@ div#newPet {
     background-color: $light-background;
     width: 80%;
     margin: 0 auto;
-<<<<<<< HEAD
     display: flex;
     padding-left: 2rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-=======
     padding: 2rem;
     border-radius: $radius-medium;
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
     h1 {
     font-size: 3rem;
     color: $clr-black;
