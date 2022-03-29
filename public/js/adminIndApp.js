@@ -53,7 +53,7 @@ async function getApplInfo() {
 
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
-		const appBday = (new Date(curApp.birthday) * 86400000).toLocaleDateString('PST', options)
+		const appBday = new Date(curApp.birthday).toLocaleDateString('PST', options)
 		console.log(curPet);
 		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
 
