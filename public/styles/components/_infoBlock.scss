@@ -7,8 +7,8 @@
   text-align: center;
   margin-bottom: 20px;
   margin-top: 30px;
-  .record {
-    width: 100%;
+  > .record {
+    width: 80%;
     max-width: 60rem;
     height: fit-content;
     font-size: 20px;
@@ -21,6 +21,9 @@
     padding: 10px;
     box-sizing: border-box;
     border-bottom: 2px solid black;
+    p {
+      overflow-wrap: break-word;
+    }
     &.template {
       border-radius: 10px;
       font-weight: bold;
@@ -48,14 +51,45 @@
     }
   }
   .appl {
-    width: 35rem;
+    background-color: $clr-white;
+    max-width: calc(60rem - 5%);
+    width: 75%;
     height: fit-content;
     margin-left: 5%;
+    margin-bottom: 2px;
+    padding: 1rem;
     display: none;
     .record {
       width: 100%;
+      height: max-content;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+      p {
+        overflow-wrap: break-word;
+      }
       &:first-of-type {
         margin-top: 0;
+      }
+      .moreInfo {
+        width: 30%;
+        min-width: 150px;
+        max-width: 300px;
+        margin-left: auto;
+        padding-left: 0;
+        cursor: pointer;
+        user-select: none;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+      a.moreInfo,
+      a.moreInfo:visited {
+        color: $clr-black;
+        text-decoration: none;
+        background-color: $accent-color;
+        padding: 0.5rem;
+        border-radius: $radius-large;
+        text-align: center;
       }
     }
   }

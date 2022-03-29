@@ -15,6 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
     <title>Edit</title>
@@ -52,19 +53,19 @@
     </a>
 
     <div class="petPage">
-        <div id="edit-pet-form" class="petInfo adminPetInfo">
+        <div class="petInfo adminPetInfo">
             <!-- <h1 class="pet-name"></h1> -->
-            <input type="text" placeholder="name" class="pet-name" title="pet name" required>
+            <input type="text" placeholder="name" class="pet-name" title="pet name">
             <ul>
                 <div class="row">
                     <div class="col facts">
                         <li>
                             <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
-                            <input type="date" class="birthday" title="birthday" required>
+                            <input type="date" class="birthday" title="birthday">
                         </li>
                         <li>
                             <strong>Gender:</strong> <!-- <span class="gender"> -->
-                            <select name="petGender" id="petGender" title="pet gender" required>
+                            <select name="petGender" id="petGender" title="pet gender">
                                 <option value="Male" id="maleSelector">Male</option>
                                 <option value="Female" id="femaleSelector">Female</option>
                             </select>
@@ -72,11 +73,11 @@
                         </li>
                         <li>
                             <strong>Color:</strong> <!-- <span class="color"></span> -->
-                            <input type="text" class="color" title="pet color" required>
+                            <input type="text" class="color" title="pet color">
                         </li>
                         <li>
                             <strong>Breed:</strong> <!-- <span class="breed"></span> -->
-                            <input type="text" class="breed" title="pet breed" required>
+                            <input type="text" class="breed" title="pet breed">
                         </li>
                         <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
@@ -85,13 +86,23 @@
                             <!-- <ul class="medical">
                                 <li>drugs</li>
                             </ul> -->
-                            <textarea name="medical" class="medical" title="medical info" placeholder="Medical Details (separate by commas)" required></textarea>
+<<<<<<< HEAD
+                            <textarea name="medical" class="medical" title="medical info"></textarea>
+=======
+                            <textarea name="medical" class="medical" title="medical info"
+                                placeholder="Medical Details (separate by commas)" required></textarea>
+>>>>>>> 6af96989cc714d6cb17a68e7c4948a58d694668f
                         </li>
                         <li><strong>Personality:</strong>
                             <!-- <ul class="personality">
                                 <li>stupid</li>
                             </ul> -->
-                            <textarea name="personality" class="personality" title="pet personality" placeholder="Personality Traits (separate by commas)" required></textarea>
+<<<<<<< HEAD
+                            <textarea name="personality" class="personality" title="pet personality"></textarea>
+=======
+                            <textarea name="personality" class="personality" title="pet personality"
+                                placeholder="Personality Traits (separate by commas)" required></textarea>
+>>>>>>> 6af96989cc714d6cb17a68e7c4948a58d694668f
                         </li>
                     </div>
                 </div>
@@ -105,7 +116,7 @@
                     <p><strong>Images:</strong></p>
                     <ul id="petImageNames">
                         <form>
-                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
                             <button type="button" onclick="addImg()">Submit Photo</button>
                         </form>
                         <br>
@@ -182,6 +193,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- other js files -->
     <script src="./js/adminIndPet.js"></script>
+    <script src="./js/modal.class.js"></script>
     <script src="./js/navbar.js"></script>
 </body>
 

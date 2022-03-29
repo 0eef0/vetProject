@@ -53,10 +53,15 @@ async function getApplInfo() {
 
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const dateCreated = new Date(curApp.dateCreated).toLocaleDateString('PST', options)
+<<<<<<< HEAD
 
 		const tempDate = new Date(curApp.birthday);
 		const addDay = (tempDate.setDate(tempDate.getDate() + 1));
 		const appBday = new Date(new Date(addDay)).toLocaleDateString('PST', options)
+=======
+		const appBday = new Date(curApp.birthday).toLocaleDateString('PST', options)
+		console.log(curPet);
+>>>>>>> 9ac08b313db095c2d6cbd2367636bf58ea9d80c0
 		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
 
 		console.log(appDateCreated)

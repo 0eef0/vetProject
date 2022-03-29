@@ -13,13 +13,6 @@ const ensureAuthenticated = (req,res,next) => {
   // req.flash('error_message', 'please login to view this resourcenet');
   res.sendFile(path.resolve(__dirname, '../public/adminLogin.html'));
 }
-const ensureMasterAuthenticated = (req,res,next) => {
-  if (req.isAuthenticated() && req.user.status === 'Master') {
-    return next();
-  }
-  // req.flash('error_message', 'please login to view this resourcenet');
-  res.sendFile(path.resolve(__dirname, '../public/adminLogin.html'));
-}
 
 // app.use(express.json())
 // let refreshTokenDatabase = [];
@@ -60,6 +53,5 @@ const ensureMasterAuthenticated = (req,res,next) => {
 
 
 module.exports = {
-    ensureAuthenticated,
-    ensureMasterAuthenticated
+    ensureAuthenticated
 }
