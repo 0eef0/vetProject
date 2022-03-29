@@ -16,12 +16,13 @@ const params = window.location.search
 const id = new URLSearchParams(params).get('id')
 const url = "/api/v1/pets";
 
-let petImages = [];
+let petImages;
 let petId;
 
 const showPet = async () => {
     const { data: { pet }, } = await axios.get(`${url}/${id}`)
     const { Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG } = pet;
+    console.log(pet)
     const bDay = new Date(Birthday);
     petImages = IMG;
     document.getElementById('confirmationMessage').innerHTML = `You have updated ${Name}. Click anywhere to return to pets page.`
@@ -43,24 +44,36 @@ const showPet = async () => {
 }
 showPet()
 
+const confirmUpdate = async (content = 'Are you sure?', id, data) => {
+    let petUpdate = new Modal({
+        title: 'Warning!',
+        content,
+        forms: [
+            {
+                title: 'Yes',
+                type: 'primary',
+                action: `/api/v1/pets/${id}`,
+                method: 'post',
+                body: data
+            }, {
+                title: 'Cancel',
+                type: 'red',
+                action() {
+                    petUpdate.close()
+                }
+            }
+        ]
+    })
+
+    petUpdate.show()
+};
+
 const addImg = () => {
-    if (document.getElementById('petPhotoSub').value) {
-        petImages.push(document.getElementById('petPhotoSub').value);
-        petImageNamesDOM.innerHTML = '<form><input type="file" accept="image/*" ><button>Submit Photo</button></form>';
-        petImages.map((image, index) => {
-            petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
-        })
-    }
+    // confirmUpdate('Are you sure you want to add the image(s)?', id, { newImage: true });
 }
 
-const removeImg = async (index) => {
-    await axios.delete(`/api/v1/petImages/${petImages[index]}`);
-    petImages.splice(index, 1);
-    petImageNamesDOM.innerHTML = '<form><input type="file"><button>Submit Photo</button></form>';
-    petImages.map((image, index) => {
-        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`;
-    })
-    // updatePet();
+const removeImg = (index) => {
+    confirmUpdate('Are you sure you want to delete this image?', id, { imageName: petImages[index] });
 }
 
 const updatePet = async () => {
@@ -75,6 +88,6 @@ const updatePet = async () => {
         Notes: additionalNotesDOM.value,
         IMG: petImages
     }
-    await axios.patch(`${url}/${id}`, updatedPet);
-    document.getElementById('newPetConfirmationBox').style.display = 'flex';
+    confirmUpdate('Are you sure you want to update this pet?', id, { pet: updatedPet });
+    // document.getElementById('newPetConfirmationBox').style.display = 'flex';
 }

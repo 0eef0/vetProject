@@ -25,11 +25,19 @@ class Modal {
     const { forms } = opts
 
     forms.forEach(formData => {
-      const { title, type, action, method } = formData
+      const { title, type, action, method, body } = formData
       const form = document.createElement('form')
 
       form.classList.add(`${type}-button`)
       form.innerHTML = title
+      if (body) {
+        console.log(body)
+        const input = document.createElement('input')
+        input.style.display = 'none'
+        input.name = 'data'
+        input.value = JSON.stringify(body)
+        form.appendChild(input)
+      }
       if (typeof action === 'string') {
         form.action = action
         form.addEventListener('click', () => {
