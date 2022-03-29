@@ -380,7 +380,7 @@ div.homeGallery {
 }
 
 #aboutUs .teamContainer {
-  margin: 0 auto;
+  margin: 2rem auto;
   background-color: white;
   width: clamp(80%, 70%, 2000px);
   border-radius: 16px;
@@ -537,14 +537,8 @@ div.homeGallery {
 }
 
 .petTitle p {
-  font-size: 5rem;
+  font-size: clamp(2rem, 3vw, 3rem);
   color: white;
-}
-
-@media screen and (max-width: 550px) {
-  .petTitle p {
-    font-size: 3rem;
-  }
 }
 
 div.petPage {
@@ -1520,9 +1514,7 @@ footer .row.top .col ul li a:hover, footer .row.top .col ul li a:focus {
 }
 
 footer .row .socials {
-  margin-top: 1.4rem;
-  margin-bottom: 2.4rem;
-  height: 0;
+  margin-top: 1rem;
 }
 
 footer .row .socials ul {
@@ -1532,10 +1524,13 @@ footer .row .socials ul {
   display: flex;
   list-style: none;
   font-size: 200%;
-  margin: 0;
+  margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .row .socials ul li {
@@ -1545,9 +1540,7 @@ footer .row .socials ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 0;
-  margin-right: 2.3rem;
-  margin-left: 2.3rem;
+  margin-inline: 1rem;
 }
 
 footer .row .socials ul li a {
@@ -1564,6 +1557,7 @@ footer .row .socials ul li a:hover, footer .row .socials ul li a:focus {
 
 footer .row p {
   margin: 0.5rem 0;
+  padding: 0.5rem;
 }
 
 @media screen and (max-width: 556px) {
@@ -1580,7 +1574,7 @@ footer .row p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   footer .top .col {
     -webkit-box-orient: vertical;
@@ -1721,8 +1715,8 @@ button#submitAdoptForm {
   margin-top: 30px;
 }
 
-.infoBlock .record {
-  width: 100%;
+.infoBlock > .record {
+  width: 80%;
   max-width: 60rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1748,16 +1742,20 @@ button#submitAdoptForm {
   border-bottom: 2px solid black;
 }
 
-.infoBlock .record.template {
+.infoBlock > .record p {
+  overflow-wrap: break-word;
+}
+
+.infoBlock > .record.template {
   border-radius: 10px;
   font-weight: bold;
 }
 
-.infoBlock .record.template p {
+.infoBlock > .record.template p {
   cursor: pointer;
 }
 
-.infoBlock .record .moreInfo {
+.infoBlock > .record .moreInfo {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
@@ -1770,8 +1768,8 @@ button#submitAdoptForm {
       flex-shrink: 0;
 }
 
-.infoBlock .record a.moreInfo,
-.infoBlock .record a.moreInfo:visited {
+.infoBlock > .record a.moreInfo,
+.infoBlock > .record a.moreInfo:visited {
   color: #222;
   text-decoration: none;
   background-color: #f7941d;
@@ -1781,20 +1779,63 @@ button#submitAdoptForm {
 }
 
 .infoBlock .appl {
-  width: 35rem;
+  background-color: #fff;
+  max-width: calc(60rem - 5%);
+  width: 75%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
+  margin-bottom: 2px;
+  padding: 1rem;
   display: none;
 }
 
 .infoBlock .appl .record {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.infoBlock .appl .record p {
+  overflow-wrap: break-word;
 }
 
 .infoBlock .appl .record:first-of-type {
   margin-top: 0;
+}
+
+.infoBlock .appl .record .moreInfo {
+  width: 30%;
+  min-width: 150px;
+  max-width: 300px;
+  margin-left: auto;
+  padding-left: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: bold;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.infoBlock .appl .record a.moreInfo,
+.infoBlock .appl .record a.moreInfo:visited {
+  color: #222;
+  text-decoration: none;
+  background-color: #f7941d;
+  padding: 0.5rem;
+  border-radius: 16px;
+  text-align: center;
 }
 
 @media screen and (max-width: 870px) {
