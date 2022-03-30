@@ -46,7 +46,12 @@ const showPet = async () => {
     personalityListDOM.innerHTML = Personality;
 
     IMG.map((image, index) => {
-        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`
+        petImageNamesDOM.innerHTML += `
+            <div class='imgWrap'>
+                <li onclick="removeImg(${index})">${image}</li>
+                <img src="/api/v1/petImages/${image}" />
+            <div/>
+        `;
     })
 }
 showPet()
