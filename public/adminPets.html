@@ -51,9 +51,11 @@
     </div>
 
     <div id="newPet">
-        <div class="collapse">
+        <div id="collapse">
             <h1>Add Pet</h1>
-            <button id="collapsible" type="button"><i class="fas fa-plus"></i></button>
+            <button id="collapsible" type="button">
+                <i class="fa fa-plus"></i>
+            </button>
         </div>
         <form class="newPetForm" action='/api/v1/pets' method="post" enctype="multipart/form-data">
             <input type="text" placeholder="Pet Name" name="Name" required>

@@ -1,6 +1,6 @@
 div#newPet {
   margin-top: 4rem;
-  div.collapse {
+  div#collapse {
     // border-radius: $radius-large;
     background-color: $light-background;
     width: 80%;
@@ -11,7 +11,7 @@ div#newPet {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    border-radius: $radius-medium;
+    border-radius: 25px 25px 25px 25px;
     h1 {
     font-size: 3rem;
     color: $clr-black;
@@ -21,10 +21,10 @@ div#newPet {
     font-size: 3rem;
     cursor: pointer;
     margin: 2rem 2rem;
-    :hover {
-      background-color: $medium-light-background;
-    }
   }
+  }
+  div#collapse.active {
+    border-radius: 25px 25px 0 0;
   }
   form {
     background-color: $light-background;
@@ -33,6 +33,8 @@ div#newPet {
     padding: 2rem;
     display: none;
     overflow: hidden;
+    border-radius: 0 0 25px 25px;
+    transition: all ease-out;  
     div#imageInput {
       display: flex;
       justify-content: space-between;

@@ -1000,10 +1000,10 @@ a#mainPgBtn:visited {
     visibility: visible !important;
     place-items: center;
     position: absolute;
-    right: 0.25rem;
+    right: .25rem;
     top: 0;
     bottom: 0;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     cursor: pointer;
   }
   .navbar ul .menu-button i {
@@ -1044,13 +1044,9 @@ a#mainPgBtn:visited {
   .navbar ul .links .link {
     -webkit-transition: opacity 100ms linear;
     transition: opacity 100ms linear;
-<<<<<<< HEAD
     -webkit-transition-delay: 100ms;
             transition-delay: 100ms;
-=======
-    transition-delay: 100ms;
     text-align: start;
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
   }
   .navbar ul .links.closed {
     -webkit-transform: scaleY(0);
@@ -1063,11 +1059,11 @@ a#mainPgBtn:visited {
     -webkit-transition-delay: 0ms;
             transition-delay: 0ms;
   }
-
   a.link {
     max-width: 100vw;
   }
 }
+
 @media screen and (max-width: 450px) {
   li.title {
     display: none !important;
@@ -1713,12 +1709,8 @@ button#submitAdoptForm {
 }
 
 .infoBlock .record {
-<<<<<<< HEAD
-  width: 80%;
-=======
   width: 100%;
   max-width: 60rem;
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1761,7 +1753,8 @@ button#submitAdoptForm {
       -ms-user-select: none;
           user-select: none;
   font-weight: bold;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .infoBlock .record a.moreInfo,
@@ -1775,11 +1768,7 @@ button#submitAdoptForm {
 }
 
 .infoBlock .appl {
-<<<<<<< HEAD
-  width: 75%;
-=======
   width: 35rem;
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -1794,6 +1783,7 @@ button#submitAdoptForm {
 .infoBlock .appl .record:first-of-type {
   margin-top: 0;
 }
+
 @media screen and (max-width: 870px) {
   .infoBlock p {
     width: 100%;
@@ -1809,11 +1799,10 @@ div#newPet {
   margin-top: 4rem;
 }
 
-div#newPet div.collapse {
+div#newPet div#collapse {
   background-color: #f9f9f9;
   width: 80%;
   margin: 0 auto;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1828,28 +1817,24 @@ div#newPet div.collapse {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2rem;
+  border-radius: 25px 25px 25px 25px;
 }
 
-div#newPet div.collapse h1 {
-=======
-  padding: 2rem;
-  border-radius: 8px;
-}
-div#newPet form h1 {
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
+div#newPet div#collapse h1 {
   font-size: 3rem;
   color: #222;
 }
 
-div#newPet div.collapse #collapsible {
+div#newPet div#collapse #collapsible {
   background-color: #f9f9f9;
   font-size: 3rem;
   cursor: pointer;
   margin: 2rem 2rem;
 }
 
-div#newPet div.collapse #collapsible :hover {
-  background-color: #d8d8d8;
+div#newPet div#collapse.active {
+  border-radius: 25px 25px 0 0;
 }
 
 div#newPet form {
@@ -1859,6 +1844,9 @@ div#newPet form {
   padding: 2rem;
   display: none;
   overflow: hidden;
+  border-radius: 0 0 25px 25px;
+  -webkit-transition: all ease-out;
+  transition: all ease-out;
 }
 
 div#newPet form div#imageInput {
@@ -1877,17 +1865,12 @@ div#newPet form div#imageInput div#images {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< HEAD
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-=======
-  justify-content: center;
-  flex-wrap: wrap;
   max-width: 100%;
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
 }
 
 @media only screen and (max-width: 700px) {
@@ -1942,6 +1925,7 @@ div#newPet form button {
   text-align: center;
   border-radius: 1rem;
 }
+
 .petTitle2 p {
   font-size: 5rem;
   color: white;
@@ -1952,11 +1936,13 @@ div#newPet form button {
     font-size: 3rem;
   }
 }
+
 @media screen and (max-width: 369px) {
   form.newPetForm textarea {
     height: 6.7rem;
   }
 }
+
 #adminSubmit {
   border-radius: 0.5rem;
   border: black 0.5px solid;
@@ -2099,10 +2085,7 @@ div.adminPetInfo textarea {
   overflow: hidden;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
-<<<<<<< HEAD
   -webkit-transition: all 100ms linear;
-=======
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
   transition: all 100ms linear;
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
           box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
@@ -2266,18 +2249,6 @@ div.adminPetInfo textarea {
   }
 }
 
-@-webkit-keyframes border-top-color {
-  0% {
-    border-top: 5px solid #f7941d;
-  }
-  50% {
-    border-top: 5px solid #fab767;
-  }
-  100% {
-    border-top: 5px solid #f7941d;
-  }
-}
-
 @keyframes border-top-color {
   0% {
     border-top: 5px solid #f7941d;
@@ -2423,9 +2394,5 @@ div#currUsers #userHead button {
   div#currUsers #userHead {
     display: none;
   }
-<<<<<<< HEAD
 }
 /*# sourceMappingURL=main.css.map */
-=======
-}/*# sourceMappingURL=main.css.map */
->>>>>>> 518dba756b9529194c5b81376b5923ddd4f1a501
