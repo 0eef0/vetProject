@@ -35,6 +35,7 @@
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
+				<li class="nav-item userCreate"><a class="link" href="/adminCreate">Create</a></li>
                 <li class="nav-item">
                     <form action="/users/logout" method="post">
                         <button type="submit" class="link">Logout</button>
@@ -42,6 +43,7 @@
                 </li>
             </div>
         </ul>
+        <p class="user-info">logged in as <span class="username"></span></p>
     </nav>
 
     <div id="newPetConfirmationBox" class="confirmationBox" onclick="location.reload()">
@@ -78,9 +80,9 @@
             <div id="imageInput">
                 <p>Images:</p>
                 <div id="images">
-                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
-                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
-                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
+                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                    <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
                 </div>
                 <i class="fas fa-plus" onclick="addImg();" id="addImgBtn"></i>
             </div>

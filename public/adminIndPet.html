@@ -35,6 +35,7 @@
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
+				<li class="nav-item userCreate"><a class="link" href="/adminCreate">Create</a></li>
                 <li class="nav-item">
                     <form action="/users/logout" method="post">
                         <button type="submit" class="link">Logout</button>
@@ -42,6 +43,7 @@
                 </li>
             </div>
         </ul>
+        <p class="user-info">logged in as <span class="username"></span></p>
     </nav>
 
     <a href="/adminPets" title="return to admin pets">
@@ -61,23 +63,31 @@
                     <div class="col facts">
                         <li>
                             <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
-                            <input type="date" class="birthday" title="birthday">
+                            <div>
+                                <input type="date" class="birthday" title="birthday" required>
+                            </div>
                         </li>
                         <li>
                             <strong>Gender:</strong> <!-- <span class="gender"> -->
-                            <select name="petGender" id="petGender" title="pet gender">
-                                <option value="Male" id="maleSelector">Male</option>
-                                <option value="Female" id="femaleSelector">Female</option>
-                            </select>
+                            <div>
+                                <select name="petGender" id="petGender" title="pet gender" required>
+                                    <option value="Male" id="maleSelector">Male</option>
+                                    <option value="Female" id="femaleSelector">Female</option>
+                                </select>
+                            </div>
                             </span>
                         </li>
                         <li>
                             <strong>Color:</strong> <!-- <span class="color"></span> -->
-                            <input type="text" class="color" title="pet color">
+                            <div>
+                                <input type="text" class="color" title="pet color" required>
+                            </div>
                         </li>
                         <li>
                             <strong>Breed:</strong> <!-- <span class="breed"></span> -->
-                            <input type="text" class="breed" title="pet breed">
+                            <div>
+                                <input type="text" class="breed" title="pet breed" required>
+                            </div>
                         </li>
                         <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
@@ -86,41 +96,33 @@
                             <!-- <ul class="medical">
                                 <li>drugs</li>
                             </ul> -->
-<<<<<<< HEAD
-                            <textarea name="medical" class="medical" title="medical info"></textarea>
-=======
                             <textarea name="medical" class="medical" title="medical info"
                                 placeholder="Medical Details (separate by commas)" required></textarea>
->>>>>>> 6af96989cc714d6cb17a68e7c4948a58d694668f
                         </li>
                         <li><strong>Personality:</strong>
                             <!-- <ul class="personality">
                                 <li>stupid</li>
                             </ul> -->
-<<<<<<< HEAD
-                            <textarea name="personality" class="personality" title="pet personality"></textarea>
-=======
                             <textarea name="personality" class="personality" title="pet personality"
                                 placeholder="Personality Traits (separate by commas)" required></textarea>
->>>>>>> 6af96989cc714d6cb17a68e7c4948a58d694668f
+                        </li>
+                        <li class="added-note">
+                          <strong>Additional Notes:</strong> <br />
+                          <!-- <span class="notes">Pees on absolutely
+                                                everything!</span> -->
+                          <textarea type="text" class="notes" title="Additional Notes"></textarea>
                         </li>
                     </div>
                 </div>
-                <li class="added-note">
-                    <strong>Additional Notes:</strong> <br />
-                    <!-- <span class="notes">Pees on absolutely
-                        everything!</span> -->
-                    <input type="text" class="notes" title="Additional Notes">
-                </li>
                 <li class="edit-img">
                     <p><strong>Images:</strong></p>
-                    <ul id="petImageNames">
-                        <form>
-                            <input type="file" class="petImg" name="img" title="Image upload" accept="image/*">
-                            <button type="button" onclick="addImg()">Submit Photo</button>
-                        </form>
-                        <br>
-                    </ul>
+                    <form id="imgAdd" method="post" enctype="multipart/form-data">
+                        <div>
+                          <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                        </div>
+                        <button type="submit">Submit Photo</button>
+                    </form>
+                    <ul id="petImageNames"></ul>
                 </li>
 
             </ul>

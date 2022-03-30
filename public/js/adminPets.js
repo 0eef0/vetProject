@@ -24,57 +24,6 @@ const addImg = () => {
     }
 }
 
-newPetFormDOM.addEventListener('submit', async (e) => {
-    // e.preventDefault();
-
-    // const petName = document.getElementById('petName').value;
-    // const petBirthday = document.getElementById('petBirthday').value;
-    // const petGender = document.getElementById('petGender').value;
-    // const petSpecies = document.getElementById('petSpecies').value;
-    // const petColor = document.getElementById('petColor').value;
-    // const petBreed = document.getElementById('petBreed').value;
-    // const petMedical = document.getElementById('petMedical').value.split(',');
-    // const petPersonality = document.getElementById('petPersonality').value.split(',');
-    // const petNotes = document.getElementById('petNotes').value;
-    // const petImagesInput = document.getElementsByClassName('petImg');
-    // const petImages = [];
-
-    // const fileReader = new FileReader();
-    // function postData(i = 0) {
-    //     if (i === petImagesInput.length) return postPet();
-    //     fileReader.readAsText(petImagesInput[i].files[0]);
-    //     fileReader.onload = () => {
-    //         petImages.push(fileReader.result.toString());
-    //         postData(i + 1);
-    //     };
-    // }
-    // postData();
-
-    // async function postPet() {
-    //     console.log(petImages)
-    //     const petInfo = {
-    //         Name: petName,
-    //         Birthday: petBirthday,
-    //         Gender: petGender,
-    //         Species: petSpecies,
-    //         Color: petColor,
-    //         Breed: petBreed,
-    //         Medical: petMedical,
-    //         Personality: petPersonality,
-    //         Notes: petNotes,
-    //         IMG: []
-    //     }
-    //     try {
-    //         await axios.post('/api/v1/petImages', { petImages, petInfo })
-    //         document.getElementsByClassName('newPetForm')[0].reset();
-    //         document.getElementById('confirmationMessage').textContent = `You have added ${petName} to the adoption list! Click anywhere to return to pets page.`
-    //         document.getElementById('newPetConfirmationBox').style.display = 'flex';
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // }
-});
-
 const deletePet = async (id) => {
     try {
         await axios.post(`/api/v1/petDelete/${id}`);
@@ -123,7 +72,7 @@ const showPets = async () => {
                 <div class="content">
                     <h2>${Name}</h2>
                     <!-- <p>{gender} - {species} - {breed} - {age} months old - available at {location}</p> -->
-                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
+                    <p>${Name} is a ${Gender.toLowerCase()} ${Color.toLowerCase()} ${Breed.toLowerCase()}. ${Gender.split(' ')[1] == 'Male' ? 'He' : 'She'} was born on ${bDay}.</p>
                     <div class="btnContainer">
                         <a href="/adminPet?id=${id}">Edit</a>
                         <a onclick="confirmDeletePet('${id}')" tabindex="0" role=link>Delete</a>

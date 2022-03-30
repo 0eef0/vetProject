@@ -5,7 +5,42 @@ div.petPage {
   width: clamp(90%, 70%, 2000px);
   margin: 2rem auto 2rem auto;
   padding: 1rem;
+  border-radius: $radius-medium;
   background-color: $light-background;
+  .pet-name {
+    width: 100% !important;
+  }
+  ul {
+    max-width: 100%;
+  }
+  div.col {
+    display: flex;
+    align-items: space-between;
+    li {
+      padding: 0 .5rem;
+    }
+  }
+  div.col.facts {
+    div {
+      display: flex;
+      justify-content: center;
+    }
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  li.edit-img {
+    margin-top: 1rem;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  #img-input {
+    padding: 1rem 0;
+  }
   #petImageNames {
     li {
       font-size: 1rem;
@@ -14,26 +49,22 @@ div.petPage {
       }
     }
   }
-
-  div {
-    width: 40%;
-  }
   div.petInfo {
     text-align: center;
     .pet-name {
       font-size: 2.25rem;
-      margin: 1rem;
     }
     ul {
       display: flex;
       flex-direction: column;
       font-size: 1.25rem;
+      margin-top: 1rem;
     }
     .row {
       display: flex;
       width: 100%;
       justify-content: space-around;
-      @media screen and (max-width: 512px) {
+      @media screen and (max-width: 760px) {
         flex-direction: column;
         gap: 1rem;
       }
@@ -52,9 +83,6 @@ div.petPage {
           margin: 0 auto;
         }
       }
-    }
-    .added-note {
-      margin: 1rem 0.5rem;
     }
     .adopt-button {
       display: block;
@@ -79,12 +107,24 @@ div.petPage {
         p,
         li {
           font-size: 1rem !important;
+          margin: 0.3rem;
         }
       }
       div.petGallery {
         height: 40vh;
         margin-bottom: 1rem;
       }
+    }
+    ul#petImageNames {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            div {
+                width: max-content;
+                margin: 0 auto;
+            }
+        }
     }
   }
 }
