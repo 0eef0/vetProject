@@ -42,7 +42,10 @@ const confirmDeletePet = async (id) => {
                 type: 'primary',
                 action: `/api/v1/petDelete/${id}`,
                 method: 'post'
-            }, {
+            }
+        ],
+        buttons: [
+            {
                 title: 'Cancel',
                 type: 'red',
                 action() {
@@ -142,15 +145,15 @@ sortByBtn.addEventListener('click', () => {
 var coll = document.getElementsByClassName("collapse");
 var i;
 
-for(i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
-        if(content.style.display === 'block') {
+        if (content.style.display === 'block') {
             content.style.display = "none";
         } else {
-            content.style.display ="block";
-            content.style.transition ="width 2s";
+            content.style.display = "block";
+            content.style.transition = "width 2s";
         }
     })
 }

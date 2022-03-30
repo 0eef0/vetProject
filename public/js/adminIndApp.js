@@ -41,9 +41,6 @@ const petSpecies = document.querySelector('#petSpecies');
 const petPersonality = document.querySelector('#petPersonality');
 const petNotes = document.querySelector('#petNotes');
 
-const acceptBtn = document.querySelector('#accept');
-const declineBtn = document.querySelector('#decline');
-
 async function getApplInfo() {
 	try {
 		const { data: { pets } } = await axios.get('/api/v1/pets');

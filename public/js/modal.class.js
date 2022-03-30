@@ -12,6 +12,7 @@ class Modal {
 
     this._setDefaults(opts)
     this._setForms(opts)
+    this._setButtons(opts)
   }
 
   _setDefaults(opts) {
@@ -21,8 +22,25 @@ class Modal {
     this.$instance.querySelector('.content').innerHTML = content
   }
 
+  _setButtons(opts) {
+    const { buttons } = opts
+
+    if (!buttons) return
+
+    buttons.forEach(btn => {
+      const { title, type, action } = btn
+      const button = document.createElement('button')
+      button.classList.add(`${type}-button`)
+      button.innerHTML = title
+      button.addEventListener('click', action)
+      this.$instance.querySelector('.buttons').appendChild(button)
+    })
+  }
+
   _setForms(opts) {
     const { forms } = opts
+
+    if (!forms) return
 
     forms.forEach(formData => {
       const { title, type, action, method, body } = formData
