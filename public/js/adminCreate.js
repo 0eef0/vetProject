@@ -1,36 +1,46 @@
 const newUserFormDOM = document.querySelector('.newUserForm');
 const currUsersDOM = document.querySelector('#currUsers');
 
+let userArr = [];
+const getUsers = async () => {
+  const { data: { allUsers } } = await axios.get('/users/getAdmins');
+  //userArr = Login
+  for (user of allUsers) {
+    populateUsers(user);
+  }
+}
+getUsers();
+
 newUserFormDOM.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const pass = document.getElementById('pass').value;
+  const name = document.getElementById('name').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-    const user = {
-        name,email,pass
-    }
-    addUser(user);
-    newUserFormDOM.reset();
+  const user = {
+    username,
+    name,
+    password
+  }
+  addNewUser(user);
+  newUserFormDOM.reset();
 });
 
-const addUser = (user) => {
-    currUsersDOM.innerHTML += `<div class="user" user="${user.email}">
-                    <p class="name">${user.name}</p>
-                    <p class="email">${user.email}</p>
-                    <p class="password">${user.pass}</p>
-                    <p class="btnPanel">
-                        <button onclick="deleteUser('${user.email}')">Delete ${user.name}</button>
-                    </p>
+const populateUsers = (user) => {
+  currUsersDOM.innerHTML += `<div class="user" user="${user.username}">
+                  <p class="name">${user.name}</p>
+                  <p class="email">${user.username}</p>
+                  <button onclick="deleteUser('${user._id}')">Delete ${user.name}</button>
                 </div>`;
 };
 
-const deleteUser = (email) => {
-    for(let i = 0; i < currUsersDOM.children.length; i++) {
-        if (email === currUsersDOM.children[i].attributes.user.nodeValue) {
-            currUsersDOM.children[i].remove()
-            break;
-        }
-    }
+const addNewUser = async (user) => {
+  await axios.post(`/users`, user);
+  await location.reload();
+}
+
+const deleteUser = async (id) => {
+  await axios.delete(`/api/v1/login/${id}`);
+  await location.reload();
 };
