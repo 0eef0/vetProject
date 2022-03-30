@@ -1673,11 +1673,6 @@ div.adminPetInfo textarea {
   height: 10vh;
 }
 
-@media screen and (max-width: 760px) {
-  div.adminPetInfo select, div.adminPetInfo input:not(#img-input) {
-    width: 75%;
-  }
-}
 .modal-container {
   display: none;
   -webkit-user-select: none;
