@@ -1,16 +1,23 @@
 // const passport = require("passport")
 // const express = require("express")
 // const Router = express.Router()
-const express = require("express")
+const express = require('express')
 const app = express.Router()
 const bcrypt = require('bcrypt')
 const passport = require('passport');
+const {ensureAuthenticated} = require('../middleware/auth')
 
 const users = require('../models/users');
 
 app.use(express.json())
 // Router.post('/login', passport.authenticate('local', { successRedirect: '/adminHome', failureRedirect: '/adminLogin' }));
 
+app.get('/', ensureAuthenticated, async (req, res) => {
+    try {
+        const allUsers = await users.find({});
+        res.status(201).json({ allUsers });
+    } catch (error) { res.status(500).json({ msg: error }) }
+})
 app.post('/', async (req, res) => {
     const { username, name, password, status } = req.body;
     console.log(req.body)
