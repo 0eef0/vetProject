@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "description": "Simple pet adoption page for the use of the West-MEC Northeast Campus Veterinary Program",
   "main": "app.js",
-  "type": "commonjs",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +35,7 @@
     "passport-local": "^1.0.0"
   },
   "engines": {
-    "node": "14.x"
+    "node": "14.x",
+    "npm": "7.x"
   }
 }
