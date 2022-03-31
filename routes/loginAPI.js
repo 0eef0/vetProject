@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllAccounts, getOneAccount, createNewAccount, deleteAccount, updateAccount } = require('../controllers/LoginControllers')
+const { getAllAccounts, getOneAccount, createNewAccount, deleteAccount, updateAccount } = require('../controllers/LoginControllers.js')
 
 //Controllers for application
 router.route('/').get(getAllAccounts).post(createNewAccount);
