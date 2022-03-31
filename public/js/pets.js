@@ -23,7 +23,7 @@ const showPets = async () => {
             return;
         }
 
-        const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a,b) => sortPets(a,b)).map((pet) => {
+        const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map((pet) => {
             const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const bDay = new Date(Birthday).toLocaleDateString('PST', options)
@@ -40,7 +40,7 @@ const showPets = async () => {
                         </div>
                 </div>
             </div>`
-        }).join("")
+        }).join('')
         petCardContainerDOM.innerHTML = allPets;
     } catch (error) {
         console.error(error)
@@ -48,20 +48,20 @@ const showPets = async () => {
 }
 showPets()
 
-const sortPets = (a,b) => {
- if (currentFilterIndex == 0) {
-    if(a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
-    if(a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
-    return 0;
- } else if (currentFilterIndex == 1) {
-    if(a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
-    if(a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
-    return 0;
- } else {
-    const date1 = new Date(a.Birthday);
-    const date2 = new Date(b.Birthday);
-    return date1 - date2
- }
+const sortPets = (a, b) => {
+    if (currentFilterIndex == 0) {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
+        return 0;
+    } else if (currentFilterIndex == 1) {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
+        return 0;
+    } else {
+        const date1 = new Date(a.Birthday);
+        const date2 = new Date(b.Birthday);
+        return date1 - date2
+    }
 }
 
 filterAllBtn.addEventListener('click', () => {
@@ -93,7 +93,7 @@ sortByElem.innerHTML = filters[currentFilterIndex];
 sortByBtn.addEventListener('click', () => {
 
     currentFilterIndex < filters.length - 1 ? currentFilterIndex += 1 : currentFilterIndex = 0;
-    
+
     sortByElem.innerHTML = filters[currentFilterIndex];
 
     showPets();

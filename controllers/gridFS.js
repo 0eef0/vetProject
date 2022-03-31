@@ -24,6 +24,8 @@ async function gridAddImg(req, res) {
 async function petUpload(req, res) {
     await client.connect();
     const pet = req.body;
+    pet.Personality = pet.Personality.split(';');
+    pet.Medical = pet.Medical.split(';');
     pet.IMG = [];
     req.files.img.forEach(image => {
         const imgId = (mongodb.ObjectId()).toString();
@@ -61,6 +63,8 @@ async function petUpdate(req, res, next) {
         await client.connect();
         req.body.data = JSON.parse(req.body.data);
         const pet = req.body.data.pet || await model.findById(req.params.id);
+        pet.Personality = pet.Personality.split(';');
+        pet.Medical = pet.Medical.split(';');
         if (req.body.data.imageName) {
             const imageId = [];
             const image = bucket.find({ filename: req.body.data.imageName });

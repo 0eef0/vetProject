@@ -42,8 +42,8 @@ const showPet = async () => {
     breedDOM.value = Breed;
     additionalNotesDOM.value = Notes;
     adoptBtnDOM.href = `/adoptionform?id=${id}`;
-    medicalListDOM.innerHTML = Medical;
-    personalityListDOM.innerHTML = Personality;
+    medicalListDOM.innerHTML = Medical.join(';');
+    personalityListDOM.innerHTML = Personality.join(';');
 
     IMG.map((image, index) => {
         petImageNamesDOM.innerHTML += `
@@ -121,8 +121,8 @@ const updatePet = () => {
         Gender: (document.getElementById('femaleSelector').selected) ? 'Female' : 'Male',
         Color: colorDOM.value,
         Breed: breedDOM.value,
-        Medical: medicalListDOM.value.split(','),
-        Personality: personalityListDOM.value.split(','),
+        Medical: medicalListDOM.value,
+        Personality: personalityListDOM.value,
         Notes: additionalNotesDOM.value,
         IMG: petImages
     }

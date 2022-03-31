@@ -180,6 +180,7 @@ body {
   font-family: "Roboto", "sans-serif";
   display: flex;
   flex-direction: column;
+  word-break: break-word;
 }
 
 img {
@@ -238,7 +239,6 @@ div.aboutUsSummary div p:first-of-type {
 }
 div.aboutUsSummary div img {
   width: 40%;
-  min-width: 22rem;
   max-height: 20rem;
   padding: 0 1rem;
   float: left;
@@ -470,6 +470,9 @@ div.petPage {
   border-radius: 8px;
   background-color: #f9f9f9;
 }
+div.petPage .petGallery, div.petPage .petInfo {
+  width: 50%;
+}
 div.petPage .pet-name {
   width: 100% !important;
 }
@@ -520,28 +523,29 @@ div.petPage div.petInfo ul {
   font-size: 1.25rem;
   margin-top: 1rem;
 }
-div.petPage div.petInfo .row {
+div.petPage div.petInfo .col {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: space-around;
 }
 @media screen and (max-width: 760px) {
-  div.petPage div.petInfo .row {
+  div.petPage div.petInfo .col {
     flex-direction: column;
     gap: 1rem;
   }
 }
-div.petPage div.petInfo .row .col {
+div.petPage div.petInfo .col .col {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 1rem;
 }
-div.petPage div.petInfo .row .col.facts {
+div.petPage div.petInfo .col .col.facts {
   gap: 0.25rem;
   justify-content: space-between;
 }
-div.petPage div.petInfo .row .col ul {
+div.petPage div.petInfo .col .col ul {
   list-style: square;
   width: max-content;
   margin: 0 auto;
@@ -560,8 +564,10 @@ div.petPage div.petInfo .adopt-button {
   div.petPage {
     display: block;
   }
-  div.petPage div {
+  div.petPage .petGallery, div.petPage .petInfo {
     width: 80%;
+  }
+  div.petPage div {
     margin: 0 auto;
   }
   div.petPage div h1 {

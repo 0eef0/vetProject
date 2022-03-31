@@ -7,6 +7,9 @@ div.petPage {
   padding: 1rem;
   border-radius: $radius-medium;
   background-color: $light-background;
+  .petGallery, .petInfo{
+    width: 50%;
+  }
   .pet-name {
     width: 100% !important;
   }
@@ -60,8 +63,9 @@ div.petPage {
       font-size: 1.25rem;
       margin-top: 1rem;
     }
-    .row {
+    .col {
       display: flex;
+      flex-direction: column;
       width: 100%;
       justify-content: space-around;
       @media screen and (max-width: 760px) {
@@ -98,8 +102,10 @@ div.petPage {
   @media only screen and (max-width: 760px) {
     & {
       display: block;
-      div {
+      .petGallery, .petInfo{
         width: 80%;
+      }
+      div {
         margin: 0 auto;
         h1 {
           font-size: 1.25rem !important;
