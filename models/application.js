@@ -159,5 +159,4 @@ const ApplicationsSchema = new mongoose.Schema({
     }
 });
 
-// This is basic validation not advanced
 module.exports = mongoose.model('Application', ApplicationsSchema);
