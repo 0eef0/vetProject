@@ -21,13 +21,11 @@ const getCurrentUser = async () => {
     const {data: {user}} = await axios.get('/users/current')
     if (user) {
         const {name, status} = user;
-        usernameDOM.innerHTML = name;
+        usernameDOM ? usernameDOM.innerHTML = name : '';
         if (status == 'Master') {
             userCreateBtnDOM.style.visibility = 'visible';
             userCreateBtnDOM.style.display = 'block';
         }
-    } else {
-        
     }
 }
 getCurrentUser()
