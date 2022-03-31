@@ -4,7 +4,7 @@ async function getInfoAboutUs(applications) {
 	try {
 		if (!applications) applications = (await axios.get('/api/v1/applications')).data.applications;
 		if (!applications.length) {
-			main.innerHTML = '';
+			main.innerHTML = '<h1 class="error-title">No records available</h1>';
 			return;
 		}
 		main.innerHTML = `

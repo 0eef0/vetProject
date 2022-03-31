@@ -92,12 +92,12 @@ showPets()
 
 const sortPets = (a, b) => {
     if (currentFilterIndex == 0) {
-        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
-        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
-        return 0;
-    } else if (currentFilterIndex == 1) {
         if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
         if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
+        return 0;
+    } else if (currentFilterIndex == 1) {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
         return 0;
     } else {
         const date1 = new Date(a.Birthday);

@@ -9,8 +9,8 @@ const usersModel = require('./models/users');
 const populateProducts = async () => {
     try{
         await connectDB(process.env.MONGO_URI)
-        await animal.deleteMany()
-        // await form.deleteMany()
+        // await animal.deleteMany()
+        await form.deleteMany()
         // await usersModel.deleteMany()
 
         // await animal.create(pets)

@@ -1,6 +1,7 @@
 form#login {
   position: relative;
   width: clamp(350px, 40%, 500px);
+  max-width: 100%;
   background-color: #f5f6fa;
   border-radius: $radius-large;
   padding: 1rem;
