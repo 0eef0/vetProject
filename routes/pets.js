@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-const { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg } = require('../controllers/gridFs.js');
+const { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg } = require('../controllers/gridFS.js');
 const { getAll, get } = require('../controllers/petController.js');
 const { ensureAuthenticated } = require('../middleware/auth.js');
 
