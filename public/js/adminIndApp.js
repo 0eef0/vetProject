@@ -56,7 +56,6 @@ async function getApplInfo() {
 		const appBday = new Date(new Date(addDay)).toLocaleDateString('PST', options)
 		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
 
-		console.log(appDateCreated)
 		appDateCreated.innerHTML = dateCreated;
 		appName.innerHTML = curApp.fullName;
 		appPetWanted.innerHTML = curApp.wantedPet;
@@ -139,7 +138,6 @@ const acceptApplication = async (id) => {
 		accepted: true,
 		rejected: false
 	}
-	console.log(id)
 	await axios.patch(`${url}/${id}`, updatedApplication);
 }
 
@@ -174,7 +172,6 @@ const declineApplication = async (id) => {
 	}
 	try {
 		await axios.patch(`${url}/${id}`, updatedApplication);
-		console.log('success')
 	} catch (error) {
 		console.error(error)
 	}

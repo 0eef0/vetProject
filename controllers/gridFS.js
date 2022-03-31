@@ -99,17 +99,4 @@ async function getGridImg(req, res) {
     }
 }
 
-// async function deleteGridImg(req, res, next) {
-//     try {
-//         await client.connect();
-//         const imageId = [];
-//         const image = bucket.find({ filename: req.params.id });
-//         await image.forEach(img => imageId.push(img._id));
-//         await bucket.delete(imageId[0]);
-//         next();
-//     } catch (error) {
-//         res.status(500).json({ msg: error });
-//     }
-// }
-
 module.exports = { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg };

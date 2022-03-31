@@ -55,5 +55,4 @@ const PetSchema = new mongoose.Schema({
     }
 });
 
-// This is basic validation not advanced
 module.exports = mongoose.model('pets', PetSchema);
