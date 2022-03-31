@@ -16,17 +16,17 @@ const navigation = require('./routes/navigation.js');
 const routesApp = require('./routes/applicationRoute.js');
 
 //back-end navigation
-const loginRoute = require('./routes/login');
-const loginAdmin = require('./routes/loginAPI')
+const loginRoute = require('./routes/login.js');
+const loginAdmin = require('./routes/loginAPI.js')
 
 //for gridFS
 const bodyParser = require('body-parser')
 const upload = require('express-fileupload')
 
 // JWT
-const { authenticateToken } = require('./middleware/tokenAuthenticate');
+const { authenticateToken } = require('./middleware/tokenAuthenticate.js');
 
-const populateProducts = require('./populate');
+const populateProducts = require('./populate.js');
 
 const port = process.env.PORT || 5000;
 
@@ -59,7 +59,7 @@ app.use('/', navigation);
 app.use(express.static("./public"));
 
 // routes for login page
-app.use('/adminLogin', require('./routes/login'))
+app.use('/adminLogin', require('./routes/login.js'))
 app.use('/api/v1/login', loginAdmin)
 app.use('/users', loginRoute)
 
