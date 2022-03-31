@@ -180,7 +180,6 @@ body {
   font-family: "Roboto", "sans-serif";
   display: flex;
   flex-direction: column;
-  word-break: break-word;
 }
 
 img {
@@ -239,9 +238,11 @@ div.aboutUsSummary div p:first-of-type {
 }
 div.aboutUsSummary div img {
   width: 40%;
-  max-height: 20rem;
+  min-width: 22rem;
+  max-height: 16rem;
   padding: 0 1rem;
   float: left;
+  background: none;
 }
 @media only screen and (max-width: 760px) {
   div.aboutUsSummary {
@@ -265,7 +266,9 @@ div.aboutUsSummary div img {
   }
   div.aboutUsSummary div img {
     order: 1;
-    width: 100%;
+    width: 80%;
+    min-width: auto;
+    padding: 0;
     margin: 0.1rem;
   }
 }
@@ -469,6 +472,7 @@ div.petPage {
   padding: 1rem;
   border-radius: 8px;
   background-color: #f9f9f9;
+  word-break: break-word;
 }
 div.petPage .petGallery, div.petPage .petInfo {
   width: 50%;
@@ -888,7 +892,7 @@ a#mainPgBtn:visited {
   }
 }
 @media screen and (max-width: 450px) {
-  li.title {
+  .navbar li.title {
     display: none !important;
   }
 }
@@ -1357,6 +1361,7 @@ button#submitAdoptForm {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 30px;
+  word-break: break-word;
 }
 .infoBlock > .record {
   width: 80%;
@@ -1372,9 +1377,6 @@ button#submitAdoptForm {
   padding: 10px;
   box-sizing: border-box;
   border-bottom: 2px solid black;
-}
-.infoBlock > .record p {
-  overflow-wrap: break-word;
 }
 .infoBlock > .record.template {
   border-radius: 10px;
@@ -1459,37 +1461,39 @@ div#newPet {
 }
 div#newPet div#collapse {
   background-color: #f9f9f9;
-  width: 80%;
+  width: calc(100% - 2rem);
   margin: 0 auto;
   display: flex;
-  padding-left: 2rem;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 1rem;
 }
 div#newPet div#collapse h1 {
-  font-size: 3rem;
+  font-size: 1.5rem;
+  padding-inline: 1.5rem;
   color: #222;
 }
 div#newPet div#collapse #collapsible {
   background-color: #f9f9f9;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
-  margin: 2rem 2rem;
+  margin: 1rem 2rem;
+}
+div#newPet div#collapse #collapsible h1 {
+  font-size: 3rem;
 }
 div#newPet div#collapse.active {
-  border-radius: 25px 25px 0 0;
+  border-radius: 1rem 1rem 0 0;
 }
 div#newPet form {
   background-color: #f9f9f9;
-  width: 80%;
+  width: calc(100% - 2rem);
   margin: 0 auto;
   padding: 2rem;
   display: none;
   overflow: hidden;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 1rem 1rem;
   transition: all ease-out;
 }
 div#newPet form div#imageInput {
@@ -1545,13 +1549,12 @@ div#newPet form button {
 }
 
 .petTitle2 {
-  margin-top: 1rem;
   width: 100%;
   text-align: center;
   border-radius: 1rem;
 }
 .petTitle2 p {
-  font-size: 5rem;
+  font-size: 3rem;
   color: white;
 }
 
