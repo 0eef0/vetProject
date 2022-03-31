@@ -15,4 +15,3 @@ const get = async (req, res) => {
 }
 
 module.exports = { getAll, get };
-

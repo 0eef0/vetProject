@@ -127,5 +127,4 @@ const updatePet = () => {
         IMG: petImages
     }
     confirmUpdate('Are you sure you want to update this pet?', id, { pet: updatedPet });
-    // document.getElementById('newPetConfirmationBox').style.display = 'flex';
 }

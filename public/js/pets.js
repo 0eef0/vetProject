@@ -24,10 +24,9 @@ const showPets = async () => {
         }
 
         const allPets = pets.filter((pet) => filterPetSelection ? (pet.Species == filterPetSelection) : pet).sort((a, b) => sortPets(a, b)).map((pet) => {
-            const { _id: id, Name, Birthday, Gender, Medical, Color, Breed, Species, Personality, Notes, IMG } = pet;
+            const { _id: id, Name, Birthday, Gender, /* Medical, */ Color, Breed, /* Species, Personality, Notes, */ IMG } = pet;
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const bDay = new Date(Birthday).toLocaleDateString('PST', options)
-            // console.log(Birthday)
             return `
             <div class="card">
                 <img src='/api/v1/petImages/${IMG[0]}' alt='${Name}' />

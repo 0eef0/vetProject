@@ -1,8 +1,7 @@
 const express = require('express');
 const navigation = express.Router();
 const path = require('path');
-const {ensureAuthenticated, ensureMasterAuthenticated} = require('../middleware/auth')
-// const { ensureAuthenticated } = require('connect-ensure-authenticated');
+const {ensureAuthenticated, ensureMasterAuthenticated} = require('../middleware/auth.js')
 
 // Front end
 navigation.get('/', (req, res) => {
@@ -45,7 +44,6 @@ navigation.get('/adminCreate',ensureMasterAuthenticated, (req, res) => {
 })
 
 navigation.post('/adminLogin', (req, res) => {
-    console.log(req.body)
     res.redirect('/adminHome');
 })
 

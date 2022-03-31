@@ -2,9 +2,9 @@
 const express = require('express');
 const app = express();
 
-const { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg } = require('../controllers/gridFs');
-const { getAll, get } = require('../controllers/petController');
-const { ensureAuthenticated } = require('../middleware/auth');
+const { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg } = require('../controllers/gridFS.js');
+const { getAll, get } = require('../controllers/petController.js');
+const { ensureAuthenticated } = require('../middleware/auth.js');
 
 app.get('/api/v1/pets/:id', get);
 app.post('/api/v1/pets/:id', ensureAuthenticated, petUpdate);

@@ -28,7 +28,6 @@ const showPet = async () => {
     genderDOM.innerHTML = Gender;
     colorDOM.innerHTML = Color;
     breedDOM.innerHTML = Breed;
-    // speciesDOM.innerHTML = Species;
     additionalNotesDOM.innerHTML = Notes;
     adoptBtnDOM.href = `/adoptionform?id=${id}`;
 
@@ -46,7 +45,6 @@ const showPet = async () => {
         return `
         <img src="/api/v1/petImages/${image}" class="carouselImg" alt="${Name}">`
     }).join('');
-    console.log(carouselImages)
     carouselImgContainerDOM.innerHTML = carouselImages;
 
     IMG.map((image, index) => {
@@ -56,7 +54,5 @@ const showPet = async () => {
 
     const firstImage = carouselImgContainerDOM.firstElementChild;
     firstImage.classList.add('activeImg');
-    console.log(pet)
-    console.log(id)
 }
 showPet()

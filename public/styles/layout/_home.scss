@@ -16,7 +16,6 @@ div.aboutUsSummary {
 		font-size: $scalable-header-font;
 	}
 	div {
-		// display: flex;
 		p {
 			font-size: $scalable-text-font;
 			display: block;
@@ -34,9 +33,11 @@ div.aboutUsSummary {
 		}
 		img {
 			width: 40%;
-			max-height: 20rem;
+			min-width: 22rem;
+			max-height: 16rem;
 			padding: 0 1rem;
 			float: left;
+            background: none;
 		}
 	}
 	@media only screen and (max-width: 760px) {
@@ -59,7 +60,9 @@ div.aboutUsSummary {
 				}
 				img {
 					order: 1;
-					width: 100%;
+					width: 80%;
+					min-width: auto;
+					padding: 0;
 					margin: 0.1rem;
 				}
 			}

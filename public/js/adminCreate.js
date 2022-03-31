@@ -4,7 +4,6 @@ const currUsersDOM = document.querySelector('#currUsers');
 let userArr = [];
 const getUsers = async () => {
   const { data: { allUsers } } = await axios.get('/users/getAdmins');
-  //userArr = Login
   for (user of allUsers) {
     populateUsers(user);
   }

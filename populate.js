@@ -17,8 +17,7 @@ const populateProducts = async () => {
         // await form.create(app)
         // await usersModel.create(users)
 
-        console.log('populate.js ran Successfully')
-        // process.exit(0)
+        console.log('Populate.js ran Successfully')
     }catch(error){
         console.log(error)
     }

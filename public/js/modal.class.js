@@ -8,7 +8,6 @@ class Modal {
     this.modal = this.$instance.querySelector('.modal')
 
     this._setHandle()
-    // this.initDraggable()
 
     this._setDefaults(opts)
     this._setForms(opts)
@@ -49,7 +48,7 @@ class Modal {
       form.classList.add(`${type}-button`)
       form.innerHTML = title
       if (body) {
-        console.log(body)
+        // console.log(body)
         const input = document.createElement('input')
         input.style.display = 'none'
         input.name = 'data'
@@ -98,11 +97,6 @@ class Modal {
       `
     )
   }
-
-  /*                 <div class="container-actions">
-                    <div class="material-icons fullscreen-modal">fullscreen</div>
-                    <div class="material-icons close-modal">clear</div>
-                  </div> */
 
   _destroy() {
     this.$instance.style.display = 'none'
@@ -196,8 +190,6 @@ class Modal {
     })
 
     this.$instance.querySelector('.title').addEventListener('mouseup', e => {
-      console.log('mouseup')
-
       position = {
         x: originalPosition.right - (defaultValues.mouseX - e.clientX),
         y: originalPosition.bottom - (defaultValues.mouseY - e.clientY)
@@ -210,9 +202,6 @@ class Modal {
     })
 
     this.$instance.querySelector('.title').addEventListener('mouseleave', e => {
-      console.log('mouseleave')
-      console.log(e)
-
       position = {
         x: originalPosition.right - (defaultValues.mouseX - e.clientX),
         y: originalPosition.bottom - (defaultValues.mouseY - e.clientY)

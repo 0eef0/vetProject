@@ -3,7 +3,6 @@ const main = document.querySelector('#adminApp main');
 async function getApplInfo() {
 	try {
 		const { data: { applications } } = await axios.get('/api/v1/applications');
-		console.log(applications)
 		const appIndexes = {};
 		applications.forEach(app => { appIndexes[app.wantedPet] = (appIndexes[app.wantedPet]) ? appIndexes[app.wantedPet].concat(app) : [app] });
 		const returnString = [];
