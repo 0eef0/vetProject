@@ -39,4 +39,11 @@ const deleteApplication = async (req, res) => {
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-module.exports = { getAllApplications, createApplication, getApplication, updateApplication, deleteApplication };
+const deleteAll = async (req, res) => {
+    try {
+        await applicationModel.deleteMany({});
+        res.status(201).json({success: true, msg: "all applications deleted"})
+    }catch (error) {res.status(500).json({msg: error})}
+}
+
+module.exports = { getAllApplications, createApplication, getApplication, updateApplication, deleteApplication, deleteAll };
