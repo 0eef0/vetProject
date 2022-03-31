@@ -291,7 +291,9 @@ div.aboutUsSummary div img {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    width: 100%;
+    width: 80%;
+    min-width: auto;
+    padding: 0;
     margin: 0.1rem;
   }
 }

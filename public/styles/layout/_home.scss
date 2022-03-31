@@ -60,7 +60,9 @@ div.aboutUsSummary {
 				}
 				img {
 					order: 1;
-					width: 100%;
+					width: 80%;
+					min-width: auto;
+					padding: 0;
 					margin: 0.1rem;
 				}
 			}
