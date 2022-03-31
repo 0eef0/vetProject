@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -34,5 +33,4 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-// This is basic validation not advanced
 module.exports = mongoose.model('users', UserSchema);

@@ -4,10 +4,8 @@
 	align-items: center;
 	margin: 1rem auto;
 	border-radius: $radius-medium;
-
 	width: calc(100% - 2rem);
 	background-color: $light-background;
-
 	.selection-buttons {
 		font-size: clamp(0.75rem, 2vw, 1.25rem);
 		margin: 0.25rem 0.5rem;
@@ -17,7 +15,6 @@
 			outline: 1px solid $dark-background;
 			border-radius: $radius-small;
 			background-color: $medium-light-background;
-
 			&.active {
 				background-color: $accent-color;
 				color: $clr-black;
@@ -29,7 +26,6 @@
 	.sorting-inputs {
 		font-size: clamp(0.75rem, 2vw, 1.25rem);
 		margin: 0 0.5rem;
-
 		display: flex;
 		gap: 2rem;
 		.sort-by-container {
@@ -38,7 +34,6 @@
 		}
 		button,
 		select {
-			// padding: 0.5rem 1rem;
 			outline: 1px solid $dark-background;
 			border-radius: $radius-small;
 			background-color: $medium-light-background;
@@ -66,7 +61,6 @@
 			button,
 			select {
 				margin: 0 0.75rem;
-				// width: 100%;
 			}
 			select {
 				padding: 10px;

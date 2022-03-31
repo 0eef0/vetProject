@@ -1,5 +1,3 @@
-//const application = require("../../models/application");
-
 const adoptFormDOM = document.querySelector('.adoptForm');
 const otherHomeInput = document.getElementById('otherHomeRadio');
 
@@ -67,10 +65,8 @@ adoptFormDOM.addEventListener('submit', async (e) => {
         wantedPetId: petId,
         dateCreated: new Date,
     }
-    //console.log(petApplication);
     try {
         await axios.post('/api/v1/applications', petApplication);
-        await console.log("Application posted successfully");
         document.getElementById('adoptConfirmationBox').style.display = 'flex';
     } catch(error) {
         console.log(error.response.data);
