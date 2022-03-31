@@ -22,7 +22,7 @@ async function getInfoAboutUs(applications) {
 					<a class="moreInfo" href="/adminApplication?_id=${app._id}">More Info</a>
 				</div >
 			`
-		}).reduce((a, c) => a + c)}
+		}).join('')}
             `;
 	}
 	catch (error) {

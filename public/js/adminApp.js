@@ -17,7 +17,7 @@ async function getApplInfo() {
 				</div>
 				<div class='appl'>
 			${appIndexes[pet].map(app => {
-				const {fullName, email, dateCreated, _id: id} = app;
+				const { fullName, email, dateCreated, _id: id } = app;
 				const options = { year: 'numeric', month: 'long', day: 'numeric' };
 				const creationDate = new Date(dateCreated).toLocaleDateString('PST', options)
 				return `
@@ -28,11 +28,11 @@ async function getApplInfo() {
 							<a class='moreInfo' href="/adminApplication?_id=${id}">More Info...</a>
 						</div>
 					`
-			}).reduce((a, c) => a + c)}
+			}).join('')}
 				</div>
 			`);
 		}
-		main.innerHTML = returnString.reduce((a, c) => a + c);
+		main.innerHTML = returnString.join('');
 	}
 	catch (error) {
 		console.log(error)
