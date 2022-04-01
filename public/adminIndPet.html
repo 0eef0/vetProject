@@ -56,19 +56,18 @@
 
     <div class="petPage">
         <div class="petInfo adminPetInfo">
-            <!-- <h1 class="pet-name"></h1> -->
             <input type="text" placeholder="name" class="pet-name" title="pet name">
             <ul>
                 <div class="row">
                     <div class="col facts">
                         <li>
-                            <strong>Birthday:</strong> <!-- <span class="birthday"></span> -->
+                            <strong>Birthday:</strong>
                             <div>
                                 <input type="date" class="birthday" title="birthday" required>
                             </div>
                         </li>
                         <li>
-                            <strong>Gender:</strong> <!-- <span class="gender"> -->
+                            <strong>Gender:</strong>
                             <div>
                                 <select id="petGender" name="petGender" title="Pet gender" required>
                                     <option value="Neutered Male">Neutered Male</option>
@@ -80,38 +79,29 @@
                             </span>
                         </li>
                         <li>
-                            <strong>Color:</strong> <!-- <span class="color"></span> -->
+                            <strong>Color:</strong>
                             <div>
                                 <input type="text" class="color" title="pet color" required>
                             </div>
                         </li>
                         <li>
-                            <strong>Breed:</strong> <!-- <span class="breed"></span> -->
+                            <strong>Breed:</strong>
                             <div>
                                 <input type="text" class="breed" title="pet breed" required>
                             </div>
                         </li>
-                        <!-- <li>Species: <span class="species"></span></li> -->
                     </div>
                     <div class="col">
                         <li><strong>Medical Information:</strong>
-                            <!-- <ul class="medical">
-                                <li>drugs</li>
-                            </ul> -->
                             <textarea name="medical" class="medical" title="medical info"
-                                placeholder="Medical Details (separate by commas)" required></textarea>
+                                placeholder="Medical Details (separate by commas)"></textarea>
                         </li>
                         <li><strong>Personality:</strong>
-                            <!-- <ul class="personality">
-                                <li>stupid</li>
-                            </ul> -->
                             <textarea name="personality" class="personality" title="pet personality"
                                 placeholder="Personality Traits (separate by commas)" required></textarea>
                         </li>
                         <li class="added-note">
                           <strong>Additional Notes:</strong> <br />
-                          <!-- <span class="notes">Pees on absolutely
-                                                everything!</span> -->
                           <textarea type="text" class="notes" title="Additional Notes"></textarea>
                         </li>
                     </div>
@@ -119,7 +109,9 @@
                 <li class="edit-img">
                     <p><strong>Images:</strong></p>
                     <form id="imgAdd" method="post" enctype="multipart/form-data">
-                        <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                        <div>
+                          <input type="file" class="petImg" name="img" title="Image upload" accept="image/*" required>
+                        </div>
                         <button type="submit">Submit Photo</button>
                     </form>
                     <ul id="petImageNames"></ul>
@@ -129,65 +121,6 @@
             <button class="adopt-button" onclick="updatePet()">Save</button>
         </div>
     </div>
-
-    <!-- footer -->
-    <!--     <footer>
-        <div class="row top">
-            <div class="col">
-                <ul>
-                    <li class="title">Services</li>
-                    <li><a href="/">Web Design</a></li>
-                    <li><a href="/">Hosting</a></li>
-                    <li><a href="/">Development</a></li>
-                </ul>
-                <ul>
-                    <li class="title">About</li>
-                    <li><a href="/">Company</a></li>
-                    <li><a href="/">Team</a></li>
-                    <li><a href="/">Jobs</a></li>
-                </ul>
-            </div>
-            <div class="col desc">
-                <h3>Admin Access</h3>
-                <a href="/adminLogin">Click Here</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="socials">
-                <ul>
-                    <li>
-                        <a href="/">
-                            <i class='fab fa-facebook-square'>
-                                <p class="reader">facebook</p>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <i class='fab fa-instagram'>
-                                <p class="reader">instagram</p>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <i class='fab fa-twitter-square'>
-                                <p class="reader">twitter</p>
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <i class='fab fa-snapchat-square'>
-                                <p class="reader">snapchat</p>
-                            </i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Company Name © 2021</p>
-        </div>
-    </footer> -->
 
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"

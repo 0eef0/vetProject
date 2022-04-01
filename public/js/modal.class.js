@@ -8,10 +8,10 @@ class Modal {
     this.modal = this.$instance.querySelector('.modal')
 
     this._setHandle()
-    // this.initDraggable()
 
     this._setDefaults(opts)
     this._setForms(opts)
+    this._setButtons(opts)
   }
 
   _setDefaults(opts) {
@@ -21,8 +21,25 @@ class Modal {
     this.$instance.querySelector('.content').innerHTML = content
   }
 
+  _setButtons(opts) {
+    const { buttons } = opts
+
+    if (!buttons) return
+
+    buttons.forEach(btn => {
+      const { title, type, action } = btn
+      const button = document.createElement('button')
+      button.classList.add(`${type}-button`)
+      button.innerHTML = title
+      button.addEventListener('click', action)
+      this.$instance.querySelector('.buttons').appendChild(button)
+    })
+  }
+
   _setForms(opts) {
     const { forms } = opts
+
+    if (!forms) return
 
     forms.forEach(formData => {
       const { title, type, action, method, body } = formData
@@ -31,7 +48,7 @@ class Modal {
       form.classList.add(`${type}-button`)
       form.innerHTML = title
       if (body) {
-        console.log(body)
+        // console.log(body)
         const input = document.createElement('input')
         input.style.display = 'none'
         input.name = 'data'
@@ -80,11 +97,6 @@ class Modal {
       `
     )
   }
-
-  /*                 <div class="container-actions">
-                    <div class="material-icons fullscreen-modal">fullscreen</div>
-                    <div class="material-icons close-modal">clear</div>
-                  </div> */
 
   _destroy() {
     this.$instance.style.display = 'none'
@@ -178,8 +190,6 @@ class Modal {
     })
 
     this.$instance.querySelector('.title').addEventListener('mouseup', e => {
-      console.log('mouseup')
-
       position = {
         x: originalPosition.right - (defaultValues.mouseX - e.clientX),
         y: originalPosition.bottom - (defaultValues.mouseY - e.clientY)
@@ -192,9 +202,6 @@ class Modal {
     })
 
     this.$instance.querySelector('.title').addEventListener('mouseleave', e => {
-      console.log('mouseleave')
-      console.log(e)
-
       position = {
         x: originalPosition.right - (defaultValues.mouseX - e.clientX),
         y: originalPosition.bottom - (defaultValues.mouseY - e.clientY)

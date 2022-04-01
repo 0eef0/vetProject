@@ -41,9 +41,6 @@ const petSpecies = document.querySelector('#petSpecies');
 const petPersonality = document.querySelector('#petPersonality');
 const petNotes = document.querySelector('#petNotes');
 
-const acceptBtn = document.querySelector('#accept');
-const declineBtn = document.querySelector('#decline');
-
 async function getApplInfo() {
 	try {
 		const { data: { pets } } = await axios.get('/api/v1/pets');
@@ -59,7 +56,6 @@ async function getApplInfo() {
 		const appBday = new Date(new Date(addDay)).toLocaleDateString('PST', options)
 		const petBDay = new Date(curPet.Birthday).toLocaleDateString('PST', options)
 
-		console.log(appDateCreated)
 		appDateCreated.innerHTML = dateCreated;
 		appName.innerHTML = curApp.fullName;
 		appPetWanted.innerHTML = curApp.wantedPet;
@@ -93,11 +89,11 @@ async function getApplInfo() {
 		petImage.alt = curPet.Name;
 		petBirthday.innerHTML = petBDay;
 		petGender.innerHTML = curPet.Gender;
-		petMedical.innerHTML = curPet.Medical.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)
+		petMedical.innerHTML = curPet.Medical.map(e => { return `<li>${e}</li>` }).join('')
 		petColor.innerHTML = curPet.Color;
 		petBreed.innerHTML = curPet.Breed;
 		petSpecies.innerHTML = curPet.Species;
-		petPersonality.innerHTML = curPet.Personality.map(e => { return `<li>${e}</li>` }).reduce((a, c) => a + c)
+		petPersonality.innerHTML = curPet.Personality.map(e => { return `<li>${e}</li>` }).join('')
 		petNotes.innerHTML = curPet.Notes;
 
 		petAppInfo.innerHTML += `
@@ -142,7 +138,6 @@ const acceptApplication = async (id) => {
 		accepted: true,
 		rejected: false
 	}
-	console.log(id)
 	await axios.patch(`${url}/${id}`, updatedApplication);
 }
 
@@ -177,7 +172,6 @@ const declineApplication = async (id) => {
 	}
 	try {
 		await axios.patch(`${url}/${id}`, updatedApplication);
-		console.log('success')
 	} catch (error) {
 		console.error(error)
 	}

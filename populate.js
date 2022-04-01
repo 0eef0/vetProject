@@ -9,16 +9,15 @@ const usersModel = require('./models/users');
 const populateProducts = async () => {
     try{
         await connectDB(process.env.MONGO_URI)
-        await animal.deleteMany()
-        // await form.deleteMany()
+        // await animal.deleteMany()
+        await form.deleteMany()
         // await usersModel.deleteMany()
 
         // await animal.create(pets)
         // await form.create(app)
         // await usersModel.create(users)
 
-        console.log('populate.js ran Successfully')
-        // process.exit(0)
+        console.log('Populate.js ran Successfully')
     }catch(error){
         console.log(error)
     }

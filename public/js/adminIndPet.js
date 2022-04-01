@@ -24,9 +24,9 @@ const showPet = async () => {
     const { Name, Birthday, Gender, Color, Breed, Species, Medical, Personality, Notes, IMG } = pet;
     const bDay = new Date(Birthday);
     petImages = IMG;
-    if(petImages.length == 12){
+    if (petImages.length == 12) {
         imgAdd.style.display = 'none';
-    }else{
+    } else {
         imgAdd.action = `/api/v1/petImages/${id}`;
         imgAdd.addEventListener('submit', e => {
             e.preventDefault();
@@ -42,16 +42,21 @@ const showPet = async () => {
     breedDOM.value = Breed;
     additionalNotesDOM.value = Notes;
     adoptBtnDOM.href = `/adoptionform?id=${id}`;
-    medicalListDOM.innerHTML = Medical;
-    personalityListDOM.innerHTML = Personality;
+    medicalListDOM.innerHTML = Medical.join(';');
+    personalityListDOM.innerHTML = Personality.join(';');
 
     IMG.map((image, index) => {
-        petImageNamesDOM.innerHTML += `<li onclick="removeImg(${index})">${image}</li>`
+        petImageNamesDOM.innerHTML += `
+            <div class='imgWrap'>
+                <li onclick="removeImg(${index})">${image}</li>
+                <img src="/api/v1/petImages/${image}" />
+            <div/>
+        `;
     })
 }
 showPet()
 
-const confirmSubmit = async (content = 'Are you sure?', e) => {
+const confirmSubmit = (content = 'Are you sure?', e) => {
     let confirmBox = new Modal({
         title: 'Warning!',
         content,
@@ -62,7 +67,10 @@ const confirmSubmit = async (content = 'Are you sure?', e) => {
                 action() {
                     e.submit();
                 }
-            }, {
+            }
+        ],
+        buttons: [
+            {
                 title: 'Cancel',
                 type: 'red',
                 action() {
@@ -75,7 +83,7 @@ const confirmSubmit = async (content = 'Are you sure?', e) => {
     confirmBox.show()
 };
 
-const confirmUpdate = async (content = 'Are you sure?', id, data) => {
+const confirmUpdate = (content = 'Are you sure?', id, data) => {
     let petUpdate = new Modal({
         title: 'Warning!',
         content,
@@ -86,7 +94,10 @@ const confirmUpdate = async (content = 'Are you sure?', id, data) => {
                 action: `${url}/${id}`,
                 method: 'post',
                 body: data
-            }, {
+            }
+        ],
+        buttons: [
+            {
                 title: 'Cancel',
                 type: 'red',
                 action() {
@@ -103,18 +114,17 @@ const removeImg = (index) => {
     confirmUpdate('Are you sure you want to delete this image?', id, { imageName: petImages[index] });
 }
 
-const updatePet = async () => {
+const updatePet = () => {
     let updatedPet = {
         Name: petNameDOM.value,
         Birthday: birthdayDOM.value,
         Gender: document.getElementById('petGender').value,
         Color: colorDOM.value,
         Breed: breedDOM.value,
-        Medical: medicalListDOM.value.split(','),
-        Personality: personalityListDOM.value.split(','),
+        Medical: medicalListDOM.value,
+        Personality: personalityListDOM.value,
         Notes: additionalNotesDOM.value,
         IMG: petImages
     }
     confirmUpdate('Are you sure you want to update this pet?', id, { pet: updatedPet });
-    // document.getElementById('newPetConfirmationBox').style.display = 'flex';
 }

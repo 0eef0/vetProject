@@ -1,38 +1,41 @@
 div#newPet {
   margin-top: 4rem;
-  div.collapse {
-    // border-radius: $radius-large;
+  div#collapse {
     background-color: $light-background;
-    width: 80%;
+    width: calc(100% - 2rem);
     margin: 0 auto;
     display: flex;
-    padding-left: 2rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    border-radius: $radius-medium;
+    border-radius: 1rem;
     h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    padding-inline: 1.5rem;
     color: $clr-black;
   }
   #collapsible {
     background-color: $light-background;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
-    margin: 2rem 2rem;
-    :hover {
-      background-color: $medium-light-background;
+    margin: 1rem 2rem;
+    h1 {
+      font-size: 3rem;
     }
   }
   }
+  div#collapse.active {
+    border-radius: 1rem 1rem 0 0;
+  }
   form {
     background-color: $light-background;
-    width: 80%;
+    width: calc(100% - 2rem);
     margin: 0 auto;
     padding: 2rem;
     display: none;
     overflow: hidden;
+    border-radius: 0 0 1rem 1rem;
+    transition: all ease-out;  
     div#imageInput {
       display: flex;
       justify-content: space-between;
@@ -83,12 +86,11 @@ div#newPet {
 }
 
 .petTitle2{
-	margin-top:1rem;
 	width: 100%;
 	text-align:center;
 	border-radius: 1rem;
 	p{
-		font-size:5rem;
+		font-size:3rem;
 		color: white;
 	}
 }

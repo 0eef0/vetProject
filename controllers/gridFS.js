@@ -24,6 +24,8 @@ async function gridAddImg(req, res) {
 async function petUpload(req, res) {
     await client.connect();
     const pet = req.body;
+    pet.Personality = pet.Personality.split(';');
+    pet.Medical = pet.Medical.split(';');
     pet.IMG = [];
     req.files.img.forEach(image => {
         const imgId = (mongodb.ObjectId()).toString();
@@ -61,6 +63,8 @@ async function petUpdate(req, res, next) {
         await client.connect();
         req.body.data = JSON.parse(req.body.data);
         const pet = req.body.data.pet || await model.findById(req.params.id);
+        pet.Personality = pet.Personality.split(';');
+        pet.Medical = pet.Medical.split(';');
         if (req.body.data.imageName) {
             const imageId = [];
             const image = bucket.find({ filename: req.body.data.imageName });
@@ -98,18 +102,5 @@ async function getGridImg(req, res) {
         res.status(500).json({ msg: error });
     }
 }
-
-// async function deleteGridImg(req, res, next) {
-//     try {
-//         await client.connect();
-//         const imageId = [];
-//         const image = bucket.find({ filename: req.params.id });
-//         await image.forEach(img => imageId.push(img._id));
-//         await bucket.delete(imageId[0]);
-//         next();
-//     } catch (error) {
-//         res.status(500).json({ msg: error });
-//     }
-// }
 
 module.exports = { petUpload, petDelete, petUpdate, gridAddImg, getGridImgs, getGridImg };

@@ -7,18 +7,11 @@ const getAllApplications = async (req, res) => {
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-// const deleteAll = async (req, res) => {
-//     try {
-//         const products = await Product.deleteMany({});
-//         res.status(201).json({products});
-//     } catch (error) { res.status(500).json({msg: error}) }
-// }
-
 const createApplication = async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     try {
         const application = await applicationModel.create(req.body);
-        console.log(application)
+        // console.log(application)
         res.status(201).json({application});
     } catch (error) { res.status(500).json({msg: error}) }
 }
@@ -46,4 +39,11 @@ const deleteApplication = async (req, res) => {
     } catch (error) { res.status(500).json({msg: error}) }
 }
 
-module.exports = { getAllApplications, createApplication, getApplication, updateApplication, deleteApplication };
+const deleteAll = async (req, res) => {
+    try {
+        await applicationModel.deleteMany({});
+        res.status(201).json({success: true, msg: "all applications deleted"})
+    }catch (error) {res.status(500).json({msg: error})}
+}
+
+module.exports = { getAllApplications, createApplication, getApplication, updateApplication, deleteApplication, deleteAll };

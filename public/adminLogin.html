@@ -15,12 +15,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <script type="module" src="./js/loginForm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- link to css -->
     <link rel="stylesheet" href="./styles/main.css">
     <title>Admin Panel</title>
-
-
 </head>
 
 <body>
@@ -46,21 +44,18 @@
         <section>
             <label for="loginUsername">Username:</label>
             <br>
-            <input type="text" id="loginUsername" name="username" value='name'>
+            <input type="text" id="loginUsername" name="username">
         </section>
         <br>
         <section>
             <label for="loginPass">Password:</label>
             <br>
-            <input type="password" id="loginPass" name="password" title="password" value='password'>
+            <input type="password" id="loginPass" name="password" title="password">
         </section>
         <button type="submit">Login</button>
 
         <p class="form-error">There Has Been an Error</p>
     </form>
-
-    <!-- <a id="mainPgBtn" href="/">Back to main page</a> -->
-
 
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
@@ -71,16 +66,7 @@
     <!-- <script src="./js/login.js"></script> -->
 
     <!-- (A) LOAD CRYPTO JS LIBRARY -->
-    <!-- https://cryptojs.gitbook.io/docs/ -->
-    <!-- https://cdnjs.com/libraries/crypto-js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
-    <!-- THIS IS TEMPORARY PLEASE SOMEONE DELETE THIS LATER -->
-    <script>
-        // document.getElementById('loginUsername').value = 'name'
-        // document.getElementById('loginPass').value = 'password'
-        // document.getElementById('login').submit()
-    </script>
 </body>
 
 </html>

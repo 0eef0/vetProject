@@ -35,7 +35,7 @@
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
-				<li class="nav-item userCreate"><a class="link" href="/adminCreate">Create</a></li>
+				<li class="nav-item userCreate"><a class="link active" href="/adminCreate">Create</a></li>
 				<li class="nav-item">
 					<form action="/users/logout" method="post">
 						<button type="submit" class="link">Logout</button>
@@ -55,9 +55,9 @@
     <div id="newUser">
         <form class="newUserForm">
             <h1>Create a new user</h1>
-            <input type="text" placeholder="Name" id="name" required>
-            <input type="email" placeholder="User Email" id="email" required>
-            <input type="password" placeholder="User Password" id="pass" required>
+            <input type="text" placeholder="Name" id="name" maxlength="20" required>
+            <input type="text" placeholder="New Username" id="username" maxlength="20" required>
+            <input type="password" placeholder="New Password" id="password" required>
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -65,9 +65,7 @@
     <div id="currUsers">
         <div id="userHead">
             <p class="name">Name</p>
-            <p class="email">Email</p>
-            <p class="pass">Password</p>
-            <p></p>
+            <p class="email">Username</p>
         </div>
     </div>
 

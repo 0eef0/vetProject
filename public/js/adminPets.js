@@ -42,7 +42,10 @@ const confirmDeletePet = async (id) => {
                 type: 'primary',
                 action: `/api/v1/petDelete/${id}`,
                 method: 'post'
-            }, {
+            }
+        ],
+        buttons: [
+            {
                 title: 'Cancel',
                 type: 'red',
                 action() {
@@ -80,7 +83,7 @@ const showPets = async () => {
                 </div>
             </div>`
         }))
-        petCardContainerDOM.innerHTML = allPets.reverse().join("");
+        petCardContainerDOM.innerHTML = allPets.reverse().join('');
     } catch (error) {
         console.error(error)
     }
@@ -89,12 +92,12 @@ showPets()
 
 const sortPets = (a, b) => {
     if (currentFilterIndex == 0) {
-        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
-        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
-        return 0;
-    } else if (currentFilterIndex == 1) {
         if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return 1; }
         if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return -1; }
+        return 0;
+    } else if (currentFilterIndex == 1) {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) { return -1; }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) { return 1; }
         return 0;
     } else {
         const date1 = new Date(a.Birthday);
@@ -139,18 +142,24 @@ sortByBtn.addEventListener('click', () => {
 })
 
 
-var coll = document.getElementsByClassName("collapse");
+var coll = document.getElementById("collapse");
 var i;
 
-for(i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if(content.style.display === 'block') {
-            content.style.display = "none";
-        } else {
-            content.style.display ="block";
-            content.style.transition ="width 2s";
-        }
-    })
-}
+coll.addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === 'block') {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+    const icon = document.getElementById('collapsible').children[0];
+    if (icon.classList.contains("fa-plus")) {
+        icon.classList.remove("fa-plus");
+        icon.classList.add("fa-minus");
+    } else {
+        icon.classList.remove("fa-minus");
+        icon.classList.add("fa-plus");
+    }
+})
+
