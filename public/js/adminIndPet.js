@@ -2,7 +2,7 @@ const petNameDOM = document.querySelector('.pet-name');
 const carouselImgContainerDOM = document.querySelector('.carouselImages');
 
 const birthdayDOM = document.querySelector('.birthday');
-const genderDOM = document.querySelector('.gender');
+const genderDOM = document.querySelector('#petGender');
 const colorDOM = document.querySelector('.color');
 const breedDOM = document.querySelector('.breed');
 const speciesDOM = document.querySelector('.species');
@@ -37,7 +37,7 @@ const showPet = async () => {
     document.title = `Edit ${Name}`;
     petNameDOM.value = `${Name}`;
     birthdayDOM.value = bDay.toISOString().slice(0, 10);
-    if (Gender === 'Female') document.getElementById('femaleSelector').selected = true;
+    genderDOM.value = Gender;
     colorDOM.value = Color;
     breedDOM.value = Breed;
     additionalNotesDOM.value = Notes;
@@ -107,7 +107,7 @@ const updatePet = async () => {
     let updatedPet = {
         Name: petNameDOM.value,
         Birthday: birthdayDOM.value,
-        Gender: (document.getElementById('femaleSelector').selected) ? 'Female' : 'Male',
+        Gender: document.getElementById('petGender').value,
         Color: colorDOM.value,
         Breed: breedDOM.value,
         Medical: medicalListDOM.value.split(','),
