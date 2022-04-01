@@ -405,10 +405,11 @@ div.homeGallery {
   border-radius: 50px;
   padding-left: 20px;
   margin: 2rem auto 2rem auto;
-  background-position: right 10px bottom 12.5px;
+  background-position: right 1rem top 50%;
   background-size: 25px;
   background-image: url("https://icon-library.com/images/search-icon-jpg/search-icon-jpg-18.jpg");
   background-repeat: no-repeat;
+  max-width: 90vw;
 }
 #adminRecords input search-cancel-button {
   cursor: pointer;
@@ -1828,6 +1829,7 @@ div#newUser form {
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
+  border-radius: 8px;
 }
 div#newUser form h1 {
   font-size: 3rem;
@@ -1874,6 +1876,7 @@ div#currUsers {
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
+  border-radius: 8px;
 }
 div#currUsers #userHead {
   font-weight: bold;
