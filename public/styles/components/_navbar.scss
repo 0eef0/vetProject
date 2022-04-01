@@ -13,6 +13,7 @@
 		margin: 1px;
 		right: 0;
 		background-color: $light-background;
+		pointer-events: none;
 	}
 	ul {
 		display: flex;
