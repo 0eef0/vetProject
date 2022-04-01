@@ -184,8 +184,7 @@ body {
 
 img {
   background: #f9f9f9;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 p {
@@ -354,8 +353,6 @@ div.homeGallery {
   margin: 0;
 }
 #aboutUs .rows {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -404,6 +401,7 @@ div.homeGallery {
 #adminRecords input {
   height: 50px;
   width: 350px;
+  max-width: 100%;
   border-radius: 50px;
   padding-left: 20px;
   margin: 2rem auto 2rem auto;
@@ -483,6 +481,9 @@ div.petPage {
   background-color: #f9f9f9;
   word-break: break-word;
 }
+div.petPage input {
+  max-width: 100%;
+}
 div.petPage .petGallery, div.petPage .petInfo {
   width: 50%;
 }
@@ -522,8 +523,7 @@ div.petPage #petImageNames li {
   font-size: 1rem;
 }
 div.petPage #petImageNames li:hover {
-  -webkit-text-decoration: line-through 2px red;
-          text-decoration: line-through 2px red;
+  text-decoration: line-through 2px red;
 }
 div.petPage div.petInfo {
   text-align: center;
@@ -561,8 +561,6 @@ div.petPage div.petInfo .col .col.facts {
 }
 div.petPage div.petInfo .col .col ul {
   list-style: square;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
 }
@@ -573,8 +571,6 @@ div.petPage div.petInfo .adopt-button {
   padding: 0.75rem 1rem;
   margin: 2rem auto;
   border-radius: 8px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -606,8 +602,6 @@ div.petPage div li {
     justify-content: center;
   }
   div.petPage ul#petImageNames form div {
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     margin: 0 auto;
   }
@@ -708,8 +702,6 @@ a#mainPgBtn:visited {
 }
 #adminIndApp main .appBlock {
   width: calc(50% - 3rem);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
   background-color: #f9f9f9;
@@ -718,8 +710,6 @@ a#mainPgBtn:visited {
   margin-bottom: 2rem;
 }
 #adminIndApp main .appBlock .row {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -793,6 +783,7 @@ a#mainPgBtn:visited {
   margin: 1px;
   right: 0;
   background-color: #f9f9f9;
+  pointer-events: none;
 }
 .navbar ul {
   display: flex;
@@ -1050,8 +1041,7 @@ div.carousel div.carouselImages .carouselImg {
   min-width: 100%;
   opacity: 0;
   transition: opacity 0.75s;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 div.carousel div.carouselImages .carouselImg.activeImg {
   opacity: 1;
@@ -1092,8 +1082,7 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card .content {
   display: flex;
@@ -1146,8 +1135,6 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
 
 @media screen and (min-width: 769px) {
   .card .content {
-    height: -webkit-max-content;
-    height: -moz-max-content;
     height: max-content;
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -1270,8 +1257,6 @@ footer .row p {
 @media screen and (max-width: 556px) {
   ul {
     text-align: center;
-    width: -webkit-max-content !important;
-    width: -moz-max-content !important;
     width: max-content !important;
   }
 
@@ -1289,8 +1274,6 @@ footer .row p {
   }
   footer .top .col ul {
     text-align: center;
-    width: -webkit-max-content !important;
-    width: -moz-max-content !important;
     width: max-content !important;
   }
 }
@@ -1360,6 +1343,7 @@ div.question textarea::after {
   inset: 0;
 }
 div.question ul {
+  width: 100% !important;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1383,8 +1367,6 @@ button#submitAdoptForm {
 
 .infoBlock {
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -1397,8 +1379,6 @@ button#submitAdoptForm {
 .infoBlock > .record {
   width: 80%;
   max-width: 60rem;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   font-size: 20px;
   display: flex;
@@ -1422,10 +1402,7 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   font-weight: bold;
   flex-shrink: 0;
 }
@@ -1442,8 +1419,6 @@ button#submitAdoptForm {
   background-color: #fff;
   max-width: calc(60rem - 5%);
   width: 75%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
   margin-left: 5%;
   margin-bottom: 2px;
@@ -1452,8 +1427,6 @@ button#submitAdoptForm {
 }
 .infoBlock .appl .record {
   width: 100%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
   display: flex;
   flex-wrap: wrap;
@@ -1472,10 +1445,7 @@ button#submitAdoptForm {
   margin-left: auto;
   padding-left: 0;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   font-weight: bold;
   flex-shrink: 0;
 }
@@ -1583,12 +1553,13 @@ div#newPet form select:focus {
   border-bottom: 4px solid #f7941d;
 }
 div#newPet form button {
+  display: block;
   background-color: #f7941d;
   color: #222;
   font-family: inherit;
   padding: 1rem;
   width: clamp(200px, 10%, 500px);
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 0 auto;
 }
 
 .petTitle2 {
@@ -1607,11 +1578,15 @@ div#newPet form button {
   }
 }
 @media screen and (max-width: 369px) {
+  form.newPetForm #addImgBtn {
+    margin: 16px;
+  }
   form.newPetForm textarea {
     height: 6.7rem;
   }
 }
 #adminSubmit {
+  max-width: 100%;
   border-radius: 0.5rem;
   border: black 0.5px solid;
 }
@@ -1660,8 +1635,6 @@ div.adminPetInfo form button {
   background-color: #f7941d;
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   text-decoration: none;
 }
@@ -1691,8 +1664,6 @@ div.adminPetInfo textarea {
   height: 10vh;
 }
 div.adminPetInfo .imgWrap {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 8px 0px;
   border-bottom: 2px solid #f7941d;
@@ -1705,18 +1676,14 @@ div.adminPetInfo .imgWrap img {
   aspect-ratio: 16/9;
   width: 100%;
   max-width: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 8px;
   padding-top: 3px;
 }
 
 .modal-container {
   display: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .modal-container .background {
   position: fixed;
@@ -1730,8 +1697,7 @@ div.adminPetInfo .imgWrap img {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  -webkit-animation-duration: 200ms;
-          animation-duration: 200ms;
+  animation-duration: 200ms;
   background: rgba(9, 9, 9, 0.8);
 }
 .modal-container .background .modal {
@@ -1741,8 +1707,7 @@ div.adminPetInfo .imgWrap img {
   position: relative;
   z-index: 999999;
   overflow: hidden;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
+  animation-duration: 500ms;
   transition: all 100ms linear;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -1758,8 +1723,7 @@ div.adminPetInfo .imgWrap img {
   font-size: 1.6rem;
   font-weight: 500;
   cursor: default;
-  -webkit-animation: border-top-color 2s infinite linear;
-          animation: border-top-color 2s infinite linear;
+  animation: border-top-color 2s infinite linear;
 }
 .modal-container .background .modal .title .container-actions {
   display: flex;
@@ -1789,6 +1753,7 @@ div.adminPetInfo .imgWrap img {
   padding: 2rem;
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 .modal-container .background .modal .buttons form, .modal-container .background .modal .buttons button {
   border: none;
@@ -1843,18 +1808,6 @@ div.adminPetInfo .imgWrap img {
 }
 .modal-container .background .fullscreen .content {
   flex: 1;
-}
-
-@-webkit-keyframes border-top-color {
-  0% {
-    border-top: 5px solid #f7941d;
-  }
-  50% {
-    border-top: 5px solid #fab767;
-  }
-  100% {
-    border-top: 5px solid #f7941d;
-  }
 }
 
 @keyframes border-top-color {
@@ -1938,8 +1891,6 @@ div#currUsers #userHead {
 }
 div#currUsers .user p,
 div#currUsers #userHead p {
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
   min-width: max-content;
 }
 div#currUsers .user p.name,
@@ -1979,4 +1930,6 @@ div#currUsers #userHead button {
   div#currUsers #userHead {
     display: none;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
