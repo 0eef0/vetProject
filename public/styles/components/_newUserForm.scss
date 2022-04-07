@@ -5,6 +5,7 @@ div#newUser {
     width: 80%;
     margin: 0 auto;
     padding: 2rem;
+    border-radius: $radius-medium;
     h1 {
       font-size: 3rem;
       text-align: center;
@@ -47,6 +48,7 @@ div#currUsers {
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
+  border-radius: $radius-medium; 
 
   #userHead {
     font-weight: bold;

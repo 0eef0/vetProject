@@ -8,6 +8,9 @@ div.petPage {
   border-radius: $radius-medium;
   background-color: $light-background;
 	word-break: break-word;
+  input{
+    max-width: 100%;
+  }
   .petGallery, .petInfo{
     width: 50%;
   }
