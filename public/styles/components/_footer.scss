@@ -1,110 +1,114 @@
 footer {
-	color: $font-light;
-	background-color: $dark-background;
-	margin-top: auto;
-	.row {
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		&.top {
-			flex-direction: row;
-			justify-content: space-around;
-			align-items: space-around;
-			color: $font-light;
-			padding-top: 1rem;
-			.col {
-				display: flex;
-				width: 100%;
-				text-align: left;
-				justify-content: space-around;
-				ul {
-					margin: 0;
-					padding: 0;
-					list-style: none;
-					width: 25vw;
-					display: flex;
-					justify-content: center;
-					flex-direction: column;
-					text-align: center;
-					li {
-						padding: 0.1rem;
-						&.title {
-							color: $accent-color;
-							font-size: 110%;
-							font-weight: bold;
-							padding: 0.5rem;
-							padding-left: 0;
-						}
-						a {
-							color: $font-light;
-							text-decoration: none;
-							&:active {
-								color: $accent-color;
-							}
-							&:hover,
-							&:focus {
-								text-decoration: underline;
-							}
-						}
-					}
-				}
-			}
-		}
-		.socials {
-			margin-top: 1rem;
-			ul {
-				padding: 0;
-				display: flex;
-				list-style: none;
-				font-size: 200%;
-				margin: 0 auto;
-				justify-content: center;
-				align-items: center;
-				li {
-					display: flex;
-					justify-content: center;
-					margin-inline: 1rem;
-					a {
-						color: $font-light;
-						&:active {
-							color: $accent-color;
-						}
-						&:hover,
-						&:focus {
-							text-decoration: underline;
-						}
-					}
-				}
-			}
-		}
-		p {
-			margin: 0.5rem 0;
-			padding: 0.5rem;
-		}
-	}
+  color: $font-light;
+  background-color: $dark-background;
+  margin-top: auto;
+  .row {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &.top {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: space-around;
+      color: $font-light;
+      padding-top: 1rem;
+      .col {
+        display: flex;
+        width: 100%;
+        text-align: left;
+        justify-content: space-around;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          width: 25vw;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          li {
+            padding: 0.1rem;
+            min-width: 48px;
+            min-height: 48px;
+            &.title {
+              color: $accent-color;
+              font-size: 110%;
+              font-weight: bold;
+              padding: 0.5rem;
+              padding-left: 0;
+            }
+            a {
+              color: $font-light;
+              min-width: 48px;
+              min-height: 48px;
+              text-decoration: none;
+              &:active {
+                color: $accent-color;
+              }
+              &:hover,
+              &:focus {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .socials {
+      margin-top: 1rem;
+      ul {
+        padding: 0;
+        display: flex;
+        list-style: none;
+        font-size: 200%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        li {
+          display: flex;
+          justify-content: center;
+          margin-inline: 1rem;
+          a {
+            color: $font-light;
+            &:active {
+              color: $accent-color;
+            }
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    p {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
+  }
 }
 
 @media screen and (max-width: 556px) {
-	ul {
-		text-align: center;
-		width: max-content !important;
-	}
-	.col {
-		div {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 0.5rem;
-		}
-	}
-	footer .top .col {
-		flex-direction: column;
-		.title {
-			padding-left: 0.5rem !important;
-		}
-        ul {
-        text-align: center;
-        width: max-content !important;
-        }
-	}
+  ul {
+    text-align: center;
+    width: max-content !important;
+  }
+  .col {
+    div {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+  }
+  footer .top .col {
+    flex-direction: column;
+    .title {
+      padding-left: 0.5rem !important;
+    }
+    ul {
+      text-align: center;
+      width: max-content !important;
+    }
+  }
 }
