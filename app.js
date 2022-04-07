@@ -48,7 +48,7 @@ app.use(passport.session());
 
 
 //middleware functions
-app.use(express.json({ limit: '16MB' }))
+app.use(express.json())
 
 app.use(express.urlencoded({ extended: false }));
 
