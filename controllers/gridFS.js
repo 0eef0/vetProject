@@ -52,7 +52,7 @@ async function petDelete(req, res) {
             await bucket.delete(imageId[0]);
         })
         await model.findByIdAndDelete(req.params.id);
-        res.redirect('/adminPets')
+        res.redirect('/adminPets');
     } catch (error) {
         res.status(500).json({ msg: error });
     }
@@ -62,9 +62,14 @@ async function petUpdate(req, res, next) {
     try {
         await client.connect();
         req.body.data = JSON.parse(req.body.data);
-        const pet = req.body.data.pet || await model.findById(req.params.id);
-        pet.Personality = pet.Personality.split(';');
-        pet.Medical = pet.Medical.split(';');
+        var pet;
+        if (req.body.data.pet) {
+            pet = req.body.data.pet;
+            pet.Personality = pet.Personality.split(';');
+            pet.Medical = pet.Medical.split(';');
+        } else {
+            pet = await model.findById(req.params.id);
+        }
         if (req.body.data.imageName) {
             const imageId = [];
             const image = bucket.find({ filename: req.body.data.imageName });

@@ -12,6 +12,7 @@ const additionalNotesDOM = document.querySelector('.notes');
 const adoptBtnDOM = document.querySelector('.adopt-button');
 const petImageNamesDOM = document.querySelector('#petImageNames');
 const imgAdd = document.getElementById('imgAdd');
+const newImg = document.getElementById('newImg');
 
 const params = window.location.search
 const id = new URLSearchParams(params).get('id')
@@ -30,7 +31,23 @@ const showPet = async () => {
         imgAdd.action = `/api/v1/petImages/${id}`;
         imgAdd.addEventListener('submit', e => {
             e.preventDefault();
-            confirmSubmit('Are you sure you want to add the image(s)?', e.target);
+            if (newImg.files[0].size > 200000) {
+                let imgTooLarge = new Modal({
+                    title: 'Warning!',
+                    content: 'Image sizes must not exceed 200kb!',
+                    buttons: [
+                        {
+                            title: 'Close',
+                            type: 'red',
+                            action() {
+                                imgTooLarge.close()
+                            }
+                        }
+                    ]
+                })
+                return imgTooLarge.show()
+            }
+            confirmSubmit('Are you sure you want to add the image?', imgAdd);
         });
     }
     document.getElementById('confirmationMessage').innerHTML = `You have updated ${Name}. Click anywhere to return to pets page.`
@@ -47,9 +64,9 @@ const showPet = async () => {
 
     IMG.map((image, index) => {
         petImageNamesDOM.innerHTML += `
-            <div class='imgWrap'>
-                <li onclick="removeImg(${index})">${image}</li>
+            <div class='card' onclick="removeImg(${index})">
                 <img src="/api/v1/petImages/${image}" />
+                <p class='cardTitle'>${image}</p>
             <div/>
         `;
     })

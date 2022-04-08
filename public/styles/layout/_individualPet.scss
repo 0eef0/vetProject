@@ -49,11 +49,15 @@ div.petPage {
     padding: 1rem 0;
   }
   #petImageNames {
-    li {
-      font-size: 1rem;
-      &:hover {
-        text-decoration: line-through 2px red;
-      }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .card{
+      max-height: 225px;
+      width: auto;
+      margin: 15px 5px 0px 5px;
+      cursor: pointer;
     }
   }
   div.petInfo {
@@ -124,17 +128,6 @@ div.petPage {
         height: 40vh;
         margin-bottom: 1rem;
       }
-    }
-    ul#petImageNames {
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            div {
-                width: max-content;
-                margin: 0 auto;
-            }
-        }
     }
   }
 }

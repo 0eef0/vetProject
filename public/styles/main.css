@@ -519,11 +519,17 @@ div.petPage li.edit-img p {
 div.petPage #img-input {
   padding: 1rem 0;
 }
-div.petPage #petImageNames li {
-  font-size: 1rem;
+div.petPage #petImageNames {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-div.petPage #petImageNames li:hover {
-  text-decoration: line-through 2px red;
+div.petPage #petImageNames .card {
+  max-height: 225px;
+  width: auto;
+  margin: 15px 5px 0px 5px;
+  cursor: pointer;
 }
 div.petPage div.petInfo {
   text-align: center;
@@ -595,15 +601,6 @@ div.petPage div li {
   div.petPage div.petGallery {
     height: 40vh;
     margin-bottom: 1rem;
-  }
-  div.petPage ul#petImageNames form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  div.petPage ul#petImageNames form div {
-    width: max-content;
-    margin: 0 auto;
   }
 }
 
@@ -882,7 +879,7 @@ a#mainPgBtn:visited {
     background-color: #f9f9f9;
   }
   .navbar ul .links .link {
-    background-color: #f5f6faaa;
+    background-color: rgba(245, 246, 250, 0.6666666667);
   }
   .navbar ul .links {
     transform: scaleY(1);
@@ -1022,7 +1019,7 @@ div.carousel i.arrow {
   border-radius: 50%;
   width: 2rem;
   box-sizing: content-box;
-  background: #ffffff77;
+  background: rgba(255, 255, 255, 0.4666666667);
   cursor: pointer;
 }
 div.carousel i.arrow:hover {
@@ -1082,11 +1079,23 @@ div.carousel div.carouselBtnPanel button.carouselBtn.activeBtn {
   overflow: hidden;
   position: relative;
 }
+.card:hover .cardTitle {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
 .card img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.card .cardTitle {
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 .card .content {
   display: flex;
@@ -1670,23 +1679,6 @@ div.adminPetInfo div input[type=file] {
 div.adminPetInfo textarea {
   width: 100%;
   height: 10vh;
-}
-div.adminPetInfo .imgWrap {
-  width: fit-content;
-  padding: 8px 0px;
-  border-bottom: 2px solid #f7941d;
-  margin: auto;
-}
-div.adminPetInfo .imgWrap li {
-  cursor: pointer;
-}
-div.adminPetInfo .imgWrap img {
-  aspect-ratio: 16/9;
-  width: 100%;
-  max-width: 400px;
-  object-fit: cover;
-  border-radius: 8px;
-  padding-top: 3px;
 }
 
 .modal-container {

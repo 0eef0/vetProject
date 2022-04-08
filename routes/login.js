@@ -20,8 +20,8 @@ app.get('/getAdmins', ensureAuthenticated, async (req, res) => {
 })
 app.post('/', async (req, res) => {
   const { username, name, password, status } = req.body;
-//   console.log(req.body)
-//   console.log(username, name, password, status)
+  //   console.log(req.body)
+  //   console.log(username, name, password, status)
   let errors = [];
   try {
     // const salt = await bcrypt.genSalt(10)
