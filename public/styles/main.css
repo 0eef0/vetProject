@@ -730,7 +730,9 @@ a#mainPgBtn:visited {
   max-width: 100%;
 }
 #adminIndApp main .appBlock img {
-  width: 100%;
+  width: 70%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 #adminIndApp main .appBlock ul {
   display: flex;
@@ -754,13 +756,13 @@ a#mainPgBtn:visited {
   background-color: #2ecc71;
 }
 #adminIndApp main .appBlock .choice button:nth-of-type(1):hover {
-  background-color: #208C4D;
+  background-color: #208c4d;
 }
 #adminIndApp main .appBlock .choice button:nth-of-type(2) {
   background-color: #d62828;
 }
 #adminIndApp main .appBlock .choice button:nth-of-type(2):hover {
-  background-color: #961D1D;
+  background-color: #961d1d;
 }
 @media screen and (max-width: 850px) {
   #adminIndApp main .appBlock {

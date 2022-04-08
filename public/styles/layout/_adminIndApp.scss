@@ -1,78 +1,80 @@
-#adminIndApp{
-	main{
-		width: calc(100% - 3rem);
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-		margin: auto;
-		margin-top: 2rem;
-		.appBlock{
-			width: calc(50% - 3rem);
-			height: fit-content;
-			text-align: center;
-			background-color: $light-background;
-			word-wrap: break-word;
-			padding: 1rem;
-			margin-bottom: 2rem;
-			.row{
-				width: fit-content;
-				display: flex;
-				flex-direction: row;
-				justify-content: start;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-			h1{
-				width: 100%;
-				font-size: 2rem;
-				margin-bottom: 1rem;
-				text-decoration: underline;
-			}
-			h2{
-				padding: 10px;
-			}
-			p{
-				max-width: 100%;
-			}
-			img{
-				width: 100%;
-			}
-			ul{
-				display: flex;
-				flex-direction: column;
-				align-items: start;
-				list-style: inside;
-				margin: 1rem;
-			}
-			.choice{
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-				margin: 0;
-				margin-top: 0.5rem;
-				button{
-					width: calc(50% - 1.3rem);
-					height: 2rem;
-					&:nth-of-type(1){
-						background-color: #2ecc71;
-						&:hover{
-							background-color: #208C4D;
-						}
-					}
-					&:nth-of-type(2){
-						background-color: #d62828;
-						&:hover{
-							background-color: #961D1D
-						}
-					}
-				}
-			}
-		}
-		@media screen and (max-width: 850px){
-			.appBlock{
-				width: 100%;
-			}
-		}
-	}
+#adminIndApp {
+  main {
+    width: calc(100% - 3rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 2rem;
+    .appBlock {
+      width: calc(50% - 3rem);
+      height: fit-content;
+      text-align: center;
+      background-color: $light-background;
+      word-wrap: break-word;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      .row {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      h1 {
+        width: 100%;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-decoration: underline;
+      }
+      h2 {
+        padding: 10px;
+      }
+      p {
+        max-width: 100%;
+      }
+      img {
+        width: 70%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        list-style: inside;
+        margin: 1rem;
+      }
+      .choice {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        margin-top: 0.5rem;
+        button {
+          width: calc(50% - 1.3rem);
+          height: 2rem;
+          &:nth-of-type(1) {
+            background-color: #2ecc71;
+            &:hover {
+              background-color: #208c4d;
+            }
+          }
+          &:nth-of-type(2) {
+            background-color: #d62828;
+            &:hover {
+              background-color: #961d1d;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 850px) {
+      .appBlock {
+        width: 100%;
+      }
+    }
+  }
 }
