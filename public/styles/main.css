@@ -504,6 +504,14 @@ div.homeGallery {
   text-align: center;
 }
 
+#adminRecords .accepted {
+  border: 4px solid green;
+}
+
+#adminRecords .rejected {
+  border: 4px solid red;
+}
+
 .card-container {
   max-width: 100%;
   display: -ms-grid;
@@ -933,7 +941,8 @@ a#mainPgBtn:visited {
 #adminIndApp main .appBlock img {
   width: 70%;
   aspect-ratio: 1/1;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #adminIndApp main .appBlock ul {
