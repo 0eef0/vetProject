@@ -9,6 +9,9 @@ const filterDogsBtn = document.querySelector('#dogs');
 const sortByBtn = document.querySelector('.sort-by-container')
 const sortByElem = document.querySelector('.sort-by-value')
 
+const petUploadForm = document.getElementById('petUploadForm')
+const images = document.getElementById('images');
+
 const filters = ['A-Z', 'Z-A', 'Age'];
 let currentFilterIndex = 0;
 
@@ -17,7 +20,7 @@ var filterPetSelection = '';
 let imgAmount = 3;
 const addImg = () => {
     if (imgAmount < 12) {
-        document.getElementById('images').innerHTML += '<input type="file" class="petImg" name="img" accept="image/*">';
+        images.innerHTML += '<input type="file" class="petImg" name="img" accept="image/*">';
         imgAmount++;
     } else {
         document.getElementById('addImgBtn').style.display = 'none';
@@ -57,6 +60,30 @@ const confirmDeletePet = async (id) => {
 
     petDeletion.show()
 };
+
+petUploadForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const imageFiles = images.children;
+    for (var i = 0; i < imageFiles.length; i++) {
+        if (imageFiles[i].files[0].size > 200000) {
+            let imgTooLarge = new Modal({
+                title: 'Warning!',
+                content: 'Image sizes must not exceed 200kb!',
+                buttons: [
+                    {
+                        title: 'Close',
+                        type: 'red',
+                        action() {
+                            imgTooLarge.close()
+                        }
+                    }
+                ]
+            })
+            return imgTooLarge.show()
+        }
+    }
+    petUploadForm.submit();
+})
 
 const showPets = async () => {
     try {

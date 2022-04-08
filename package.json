@@ -4,7 +4,7 @@
   "description": "Simple pet adoption page for the use of the West-MEC Northeast Campus Veterinary Program",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",

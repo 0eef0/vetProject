@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- favicon -->
     <link rel="shortcut icon" href="./assets/VetLogo.svg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./assets/VetLogo.svg">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- roboto font -->
@@ -29,13 +30,14 @@
                 <li class="nav-logo"><img src="./assets/NECLogoBanner.png" alt="West-MEC Veterinary Science Logo">
                 </li>
                 <li class="nav-item title"><a href="/">Veterinary Science</a></li>
-                <li class="menu-button"><button aria-label="toggle-menu-button"><i class="fas fa-bars"></i></button></li>
+                <li class="menu-button"><button aria-label="toggle-menu-button"><i class="fas fa-bars"></i></button>
+                </li>
             </div>
             <div class="align-right links closed">
                 <li class="nav-item"><a class="link" href="/adminHome">Applications</a></li>
                 <li class="nav-item"><a class="link active" href="/adminPets">Pets</a></li>
                 <li class="nav-item"><a class="link" href="/adminRecords">Record</a></li>
-				<li class="nav-item userCreate"><a class="link" href="/adminCreate">Create</a></li>
+                <li class="nav-item userCreate"><a class="link" href="/adminCreate">Create</a></li>
                 <li class="nav-item">
                     <form action="/users/logout" method="post">
                         <button type="submit" class="link">Logout</button>
@@ -59,7 +61,7 @@
                 <i class="fa fa-plus"></i>
             </button>
         </div>
-        <form class="newPetForm" action='/api/v1/pets' method="post" enctype="multipart/form-data">
+        <form id="petUploadForm" class="newPetForm" action='/api/v1/pets' method="post" enctype="multipart/form-data">
             <input type="text" placeholder="Pet Name" name="Name" required>
             <input type="date" placeholder="Pet Birthday" name="Birthday" title="Pet birthday" required>
             <select name="Gender" title="Pet gender" required>
