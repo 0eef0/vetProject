@@ -13,7 +13,7 @@ async function getInfoAboutUs(applications) {
 			const creationDate = new Date(app.dateCreated).toLocaleDateString('PST', options);
 
 			if (app.status === 'Active') return `
-				<div class="record">
+				<div class="record ${app.accepted ? 'accepted' : (app.rejected ? 'rejected' : '')}">
 					<p>${creationDate}</p>
 					<p>${app.guardianEmail}</p>
 					<p>${app.guardianName}</p>

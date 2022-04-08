@@ -3,12 +3,13 @@ const main = document.querySelector('#adminApp main');
 async function getApplInfo() {
 	try {
 		const { data: { applications } } = await axios.get('/api/v1/applications');
+		console.log(applications)
 		if (applications.length <= 0) {
 			main.innerHTML = '<h1 class="error-title">No applications available</h1>'
 			return
 		} else {
 			const appIndexes = {};
-			applications.forEach(app => { appIndexes[app.wantedPet] = (appIndexes[app.wantedPet]) ? appIndexes[app.wantedPet].concat(app) : [app] });
+			applications.filter(app => !app.accepted).filter(app => !app.rejected).forEach(app => { appIndexes[app.wantedPet] = (appIndexes[app.wantedPet]) ? appIndexes[app.wantedPet].concat(app) : [app] });
 			const returnString = [];
 			for (const pet in appIndexes) {
 				returnString.push(`
