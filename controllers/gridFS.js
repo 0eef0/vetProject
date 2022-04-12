@@ -15,8 +15,9 @@ async function gridAddImg(req, res) {
     fs.createReadStream(`./${imgId}.png`).
         pipe(bucket.openUploadStream(imgId, {
             chunkSizeBytes: 10485760
-        }));
-    fs.unlinkSync(`./${imgId}.png`);
+        })).on('finish', () => {
+            fs.unlinkSync(`./${imgId}.png`)
+        });
     await model.findByIdAndUpdate(req.params.id, pet);
     res.redirect(`/adminPet?id=${req.params.id}`);
 }
@@ -34,8 +35,9 @@ async function petUpload(req, res) {
         fs.createReadStream(`./${imgId}.png`).
             pipe(bucket.openUploadStream(imgId, {
                 chunkSizeBytes: 10485760
-            }));
-        fs.unlinkSync(`./${imgId}.png`);
+            })).on('finish', () => {
+                fs.unlinkSync(`./${imgId}.png`)
+            });
     })
     await model.create(pet);
     res.redirect('/adminPets');
