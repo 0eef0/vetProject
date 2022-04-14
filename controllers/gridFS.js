@@ -1,29 +1,28 @@
 const mongodb = require('mongodb');
-const fs = require('fs');
+const stream = require('stream');
 require('dotenv').config();
 const client = new mongodb.MongoClient(process.env.MONGO_URI);
 const db = client.db('myFirstDatabase');
 const bucket = new mongodb.GridFSBucket(db, { bucketName: 'petImages' });
 const model = require('../models/petModel');
 
-async function gridAddImg(req, res) {
+(async () => {
     await client.connect();
+})();
+
+async function gridAddImg(req, res) {
     const pet = await model.findById(req.params.id);
     const imgId = (mongodb.ObjectId()).toString();
     pet.IMG.push(imgId);
-    fs.writeFileSync(`./${imgId}.png`, req.files.img.data, { encoding: 'base64' });
-    fs.createReadStream(`./${imgId}.png`).
+    stream.Readable.from(req.files.img.data).
         pipe(bucket.openUploadStream(imgId, {
             chunkSizeBytes: 10485760
-        })).on('finish', () => {
-            fs.unlinkSync(`./${imgId}.png`)
-        });
+        }))
     await model.findByIdAndUpdate(req.params.id, pet);
     res.redirect(`/adminPet?id=${req.params.id}`);
 }
 
 async function petUpload(req, res) {
-    await client.connect();
     const pet = req.body;
     pet.Personality = pet.Personality.split(';');
     pet.Medical = pet.Medical.split(';');
@@ -31,13 +30,10 @@ async function petUpload(req, res) {
     req.files.img.forEach(image => {
         const imgId = (mongodb.ObjectId()).toString();
         pet.IMG.push(imgId);
-        fs.writeFileSync(`./${imgId}.png`, image.data, { encoding: 'base64' });
-        fs.createReadStream(`./${imgId}.png`).
+        stream.Readable.from(image.data).
             pipe(bucket.openUploadStream(imgId, {
                 chunkSizeBytes: 10485760
-            })).on('finish', () => {
-                fs.unlinkSync(`./${imgId}.png`)
-            });
+            }))
     })
     await model.create(pet);
     res.redirect('/adminPets');
@@ -45,7 +41,6 @@ async function petUpload(req, res) {
 
 async function petDelete(req, res) {
     try {
-        await client.connect();
         const pet = await model.findById(req.params.id);
         pet.IMG.forEach(async imgName => {
             const imageId = [];
@@ -62,7 +57,6 @@ async function petDelete(req, res) {
 
 async function petUpdate(req, res, next) {
     try {
-        await client.connect();
         req.body.data = JSON.parse(req.body.data);
         var pet;
         if (req.body.data.pet) {
@@ -88,9 +82,7 @@ async function petUpdate(req, res, next) {
 
 async function getGridImgs(req, res) {
     try {
-        await client.connect();
-        const data = [];
-        await bucket.find({}).forEach(doc => data.push(doc));
+        const data = await bucket.find({}).toArray();
         res.status(201).json(data);
     } catch (error) {
         res.status(500).json({ msg: error });
@@ -99,11 +91,9 @@ async function getGridImgs(req, res) {
 
 async function getGridImg(req, res) {
     try {
-        await client.connect();
-        const data = [];
-        await bucket.find({ filename: await req.params.id }).forEach(doc => data.push(doc));
+        const data = await bucket.find({ filename: await req.params.id }).toArray();
         if (!data.length) return res.status(404).json({ msg: 'URL path does not exist' });
-        await bucket.openDownloadStreamByName(await req.params.id).pipe(await res);
+        await bucket.openDownloadStreamByName(req.params.id).pipe(res);
         res.status(201);
     } catch (error) {
         res.status(500).json({ msg: error });
